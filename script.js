@@ -51,13 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cards = document.querySelectorAll('.card');
     cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease-out';
-
         setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
+            card.classList.add('visible');
         }, 150 * index);
     });
 });
