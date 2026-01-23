@@ -15,7 +15,7 @@ const CONFIG = {
 
     // URLs - centralized for easy maintenance
     urls: {
-        radioStream: 'http://de4.streamingpulse.com:7014/stream',
+        radioStream: 'https://de4.streamingpulse.com:7014/stream',
         metadataBase: 'https://radio-rab.hr',
         corsProxy: 'https://api.allorigins.win/raw?url=',
         mapTiles: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
