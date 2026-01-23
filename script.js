@@ -41,6 +41,7 @@ function init() {
     initScrollEffects();
     initMarketplace();
     initVideos();
+    initMap();
 }
 
 // ===========================================
@@ -242,8 +243,127 @@ function getFilteredArticles() {
 }
 
 // ===========================================
-// INFINITE SCROLL
+// FERRY MAP & SIMULATION
 // ===========================================
+function initMap() {
+    const container = document.querySelector('#map .demo-placeholder');
+    if (!container) return;
+
+    // Clear placeholder
+    const mapSection = document.getElementById('map');
+    mapSection.innerHTML = `
+        <div id="leaflet-map" style="height: 600px; width: 100%; border-radius: var(--radius); z-index: 1;"></div>
+        <div class="map-overlayglass" style="position: absolute; bottom: 2rem; left: 2rem; z-index: 1000; padding: 1rem; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border);">
+            <h4>🚢 Status Trajekta</h4>
+            <div id="ferry-status">Učitavanje...</div>
+        </div>
+    `;
+
+    // Wait for Leaflet to load
+    if (typeof L === 'undefined') {
+        setTimeout(initMap, 500);
+        return;
+    }
+
+    // Init Map centered on Rab-Mainland channel
+    const map = L.map('leaflet-map').setView([44.715, 14.878], 13);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }).addTo(map);
+
+    // Ports
+    const misnjak = [44.7086, 14.8647];
+    const stinica = [44.7214, 14.8911];
+
+    L.marker(misnjak).addTo(map).bindPopup("Luka Mišnjak (RAB)");
+    L.marker(stinica).addTo(map).bindPopup("Luka Stinica (KOPNO)");
+
+    // Route Line
+    const route = L.polyline([misnjak, stinica], {
+        color: 'var(--primary)',
+        weight: 3,
+        opacity: 0.5,
+        dashArray: '10, 10'
+    }).addTo(map);
+
+    // Ferry Icon
+    const ferryIcon = L.divIcon({
+        className: 'ferry-icon-marker',
+        html: '<div style="font-size: 24px;">⛴️</div>',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+    });
+
+    const ferryMarker = L.marker(misnjak, { icon: ferryIcon }).addTo(map);
+
+    // Start Simulation Loop
+    startFerrySimulation(ferryMarker, misnjak, stinica);
+}
+
+function startFerrySimulation(marker, startPos, endPos) {
+    // Mock Schedule (Departures from Misnjak)
+    // Real ferry is roughly every hour or so in winter, continuous in summer
+    // Let's assume hourly for demo: XX:00 from Misnjak, XX:30 from Stinica
+    const durationMins = 15;
+
+    function update() {
+        const now = new Date();
+        const minutes = now.getMinutes() + (now.getSeconds() / 60);
+        const hours = now.getHours();
+
+        let progress = 0; // 0 = Misnjak, 1 = Stinica
+        let statusText = "Na vezu";
+        let isMoving = false;
+
+        // Logic: 
+        // 00 to 15 -> Misnjak to Stinica
+        // 30 to 45 -> Stinica to Misnjak
+
+        if (minutes >= 0 && minutes < durationMins) {
+            // Outbound (Rab -> Kopno)
+            progress = minutes / durationMins;
+            statusText = `Isplovio iz Mišnjaka (${Math.round(progress * 100)}%)`;
+            isMoving = true;
+        } else if (minutes >= 30 && minutes < 30 + durationMins) {
+            // Inbound (Kopno -> Rab)
+            progress = 1 - ((minutes - 30) / durationMins); // Reverse direction
+            statusText = `Plovidba prema Rabu (${Math.round((1 - progress) * 100)}%)`;
+            isMoving = true;
+        } else if (minutes >= durationMins && minutes < 30) {
+            // Waiting at Stinica
+            progress = 1;
+            statusText = "Luka Stinica (Ukrcaj/Iskrcaj)";
+        } else {
+            // Waiting at Misnjak
+            progress = 0;
+            statusText = "Luka Mišnjak (Ukrcaj/Iskrcaj)";
+        }
+
+        // LERP Position
+        const lat = startPos[0] + (endPos[0] - startPos[0]) * progress;
+        const lng = startPos[1] + (endPos[1] - startPos[1]) * progress;
+
+        marker.setLatLng([lat, lng]);
+
+        const statusEl = document.getElementById('ferry-status');
+        if (statusEl) {
+            statusEl.innerHTML = `
+                <div style="font-weight:bold; color: ${isMoving ? 'var(--success)' : 'var(--text-muted)'}">
+                    ${statusText}
+                </div>
+                <div style="font-size: 0.8rem; margin-top: 0.2rem">
+                    Brzina: ${isMoving ? '10 čvorova' : '0 čvorova'}
+                </div>
+            `;
+        }
+    }
+
+    setInterval(update, 1000);
+    update(); // First run
+}
 function initInfiniteScroll() {
     const grid = document.getElementById('news-grid');
     if (!grid) return;
