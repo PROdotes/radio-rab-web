@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Rab Digital | Budućnost Otoka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">RAB<span>2026</span></div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Naslovnica</a></li>
+                <li><a href="#">Vijesti</a></li>
+                <li><a href="#">Karta</a></li>
+                <li><a href="#">Zajednica</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-primary">Prijavi Vijest</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <img src="img/hero.png" alt="Otok Rab" class="hero-img">
+        <div class="hero-content">
+            <div class="badge">Sutrašnjica lokalnog medija</div>
+            <h1>Srce otoka u <span>digitalnom</span> ritmu.</h1>
+            <p>Prvi hiper-lokalni OS za zajednicu. Vijesti koje vas razumiju, podaci u stvarnom vremenu i snaga rabske riječi.</p>
+            <div class="hero-btns">
+                <button class="btn-main">Kreni u istraživanje</button>
+                <button class="btn-secondary">Slušaj uživo</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Grid -->
+    <main class="container">
+        <section class="grid">
+            <!-- AI Summary Card -->
+            <div class="card glass ai-card">
+                <div class="card-header">
+                    <span class="ai-badge">AI SAŽETAK</span>
+                    <h3>Što se događa danas?</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><span class="icon">⚓</span> Trajektni promet na liniji Mišnjak-Stinica je pojačan, čekanje 15 min.</li>
+                        <li><span class="icon">☀️</span> Sunčano vrijeme do kraja tjedna, idealno za radove u polju.</li>
+                        <li><span class="icon">🎭</span> Večeras u 20:00 otvorenje ljetnog kina u gradu Rabu.</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn-text">Slušaj audio verziju →</button>
+                </div>
+            </div>
+
+            <!-- Live Status Card -->
+            <div class="card glass status-card">
+                <h3>Otok Uživo</h3>
+                <div class="status-items">
+                    <div class="status-item">
+                        <span class="label">Parking dvorana</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                        <span class="value">Popunjeno 85%</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Temperatura mora</span>
+                        <span class="value highlight">24°C</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Aktivni događaji</span>
+                        <span class="value highlight">4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Feed Mockup -->
+            <div class="card news-card">
+                <div class="news-img-placeholder"></div>
+                <div class="news-content">
+                    <span class="category">GOSPODARSTVO</span>
+                    <h3>Novi plan uređenja luke Rab donosi digitalne priveze</h3>
+                    <p>Modernizacija pristaništa uključuje senzore za dubinu i automatsko plaćanje...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <p>&copy; 2026 Radio Rab Digital. Sva prava pridržana.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
