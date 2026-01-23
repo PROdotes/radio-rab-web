@@ -2,6 +2,7 @@
  * Radio Rab News Portal — Main Application
  * Version: 2.0.0
  */
+/* global L */
 
 // ===========================================
 // CONFIGURATION
