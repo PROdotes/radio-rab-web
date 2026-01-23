@@ -10,8 +10,43 @@ const CONFIG = {
     itemsPerBatch: 9,
     scrollThreshold: 200,
     animationDelay: 80,
-    loadDelay: 300
+    loadDelay: 300,
+    debug: false, // Set to true to enable console logging
+
+    // URLs - centralized for easy maintenance
+    urls: {
+        radioStream: 'http://de4.streamingpulse.com:7014/stream',
+        metadataBase: 'https://radio-rab.hr',
+        corsProxy: 'https://api.allorigins.win/raw?url=',
+        mapTiles: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+    },
+
+    // Ferry simulation settings
+    ferry: {
+        misnjak: [44.7086, 14.8647],
+        stinica: [44.7214, 14.8911],
+        tripDurationMins: 15
+    }
 };
+
+// Debug logging utility
+function debugLog(...args) {
+    if (CONFIG.debug) {
+        console.log(...args);
+    }
+}
+
+function debugWarn(...args) {
+    if (CONFIG.debug) {
+        console.warn(...args);
+    }
+}
+
+function debugError(...args) {
+    if (CONFIG.debug) {
+        console.error(...args);
+    }
+}
 
 // ===========================================
 // STATE
@@ -21,7 +56,9 @@ const state = {
     activeCategory: 'all',
     isLoading: false,
     observer: null,
-    mapInstance: null
+    mapInstance: null,
+    ferryInterval: null, // Track ferry simulation interval for cleanup
+    metadataTimeout: null // Track metadata polling timeout for cleanup
 };
 
 // ===========================================
@@ -43,6 +80,35 @@ function init() {
     initMarketplace();
     initVideos();
     initMap();
+    initGlobalEventListeners();
+}
+
+// ===========================================
+// GLOBAL EVENT LISTENERS
+// ===========================================
+function initGlobalEventListeners() {
+    // Reader mode exit button
+    document.getElementById('reader-exit-btn')?.addEventListener('click', toggleReaderMode);
+
+    // Newsletter form
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = newsletterForm.querySelector('button');
+        const input = newsletterForm.querySelector('input');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Hvala!';
+        btn.disabled = true;
+        input.disabled = true;
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            input.disabled = false;
+            input.value = '';
+        }, 2000);
+    });
 }
 
 // ===========================================
@@ -62,12 +128,12 @@ function initMarketplace() {
         <div class="market-grid">
             ${getMockMarketItems().map(item => `
                 <div class="market-card card-animate">
-                    <div class="market-img" style="background-image: url('${item.image}')">
-                        <span class="price-tag">${item.price}</span>
+                    <div class="market-img" style="background-image: url('${escapeHtml(item.image)}')">
+                        <span class="price-tag">${escapeHtml(item.price)}</span>
                     </div>
                     <div class="market-info">
-                        <h3>${item.title}</h3>
-                        <p class="seller">${item.seller}</p>
+                        <h3>${escapeHtml(item.title)}</h3>
+                        <p class="seller">${escapeHtml(item.seller)}</p>
                         <button class="btn-market">Kontaktiraj</button>
                     </div>
                 </div>
@@ -103,13 +169,13 @@ function initVideos() {
         <div class="video-grid">
              ${getMockVideos().map(video => `
                 <div class="video-card card-animate">
-                    <div class="video-thumb" style="background-image: url('${video.image}')">
+                    <div class="video-thumb" style="background-image: url('${escapeHtml(video.image)}')">
                         <div class="play-overlay">▶</div>
-                        <span class="video-duration">${video.duration}</span>
+                        <span class="video-duration">${escapeHtml(video.duration)}</span>
                     </div>
                     <div class="video-info">
-                        <h3>${video.title}</h3>
-                        <span class="video-views">${video.views} pregleda</span>
+                        <h3>${escapeHtml(video.title)}</h3>
+                        <span class="video-views">${escapeHtml(video.views)} pregleda</span>
                     </div>
                 </div>
             `).join('')}
@@ -160,19 +226,25 @@ function renderHero(article) {
                 </div>
 
                 <div class="meta-info">Piše: ${escapeHtml(article.author)}</div>
-        <div class="article-actions">
-                    <button class="action-btn" onclick="toggleReaderMode()" aria-label="Uključi način za čitanje">
+                <div class="article-actions">
+                    <button class="action-btn" id="reader-mode-btn" aria-label="Uključi način za čitanje">
                         <span class="icon">📖</span> <span class="label">Čitaj</span>
                     </button>
                     <div class="share-group">
-                        <button class="action-btn icon-only" onclick="shareArticle('copy')" aria-label="Kopiraj poveznicu">🔗</button>
-                        <button class="action-btn icon-only" onclick="shareArticle('twitter')" aria-label="Podijeli na X">𝕏</button>
-                        <button class="action-btn icon-only" onclick="shareArticle('facebook')" aria-label="Podijeli na Facebooku">f</button>
+                        <button class="action-btn icon-only" data-share="copy" aria-label="Kopiraj poveznicu">🔗</button>
+                        <button class="action-btn icon-only" data-share="twitter" aria-label="Podijeli na X">𝕏</button>
+                        <button class="action-btn icon-only" data-share="facebook" aria-label="Podijeli na Facebooku">f</button>
                     </div>
                 </div>
             </div>
         </article>
     `;
+
+    // Attach event listeners instead of inline onclick
+    container.querySelector('#reader-mode-btn')?.addEventListener('click', toggleReaderMode);
+    container.querySelectorAll('[data-share]').forEach(btn => {
+        btn.addEventListener('click', () => shareArticle(btn.dataset.share));
+    });
 }
 
 function loadMoreArticles() {
@@ -269,22 +341,22 @@ function initMap() {
     // Init Map centered on Rab-Mainland channel
     state.mapInstance = L.map('leaflet-map').setView([44.715, 14.878], 13);
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer(CONFIG.urls.mapTiles, {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     }).addTo(state.mapInstance);
 
-    // Ports
-    const misnjak = [44.7086, 14.8647];
-    const stinica = [44.7214, 14.8911];
+    // Ports (from config)
+    const misnjak = CONFIG.ferry.misnjak;
+    const stinica = CONFIG.ferry.stinica;
 
     // Custom Premium Markers for Ports
     const portIcon = (label) => L.divIcon({
         className: 'custom-port-marker',
         html: `
             <div class="port-marker-pin"></div>
-            <div class="port-marker-label">${label}</div>
+            <div class="port-marker-label">${escapeHtml(label)}</div>
         `,
         iconSize: [120, 40],
         iconAnchor: [10, 10]
@@ -294,7 +366,7 @@ function initMap() {
     L.marker(stinica, { icon: portIcon('STINICA') }).addTo(state.mapInstance);
 
     // Route Line
-    const route = L.polyline([misnjak, stinica], {
+    L.polyline([misnjak, stinica], {
         color: 'var(--primary)',
         weight: 3,
         opacity: 0.5,
@@ -316,21 +388,22 @@ function initMap() {
 }
 
 function startFerrySimulation(marker, startPos, endPos) {
-    // Mock Schedule (Departures from Misnjak)
-    // Real ferry is roughly every hour or so in winter, continuous in summer
-    // Let's assume hourly for demo: XX:00 from Misnjak, XX:30 from Stinica
-    const durationMins = 15;
+    // Clear any existing interval to prevent memory leaks
+    if (state.ferryInterval) {
+        clearInterval(state.ferryInterval);
+    }
+
+    const durationMins = CONFIG.ferry.tripDurationMins;
 
     function update() {
         const now = new Date();
         const minutes = now.getMinutes() + (now.getSeconds() / 60);
-        const hours = now.getHours();
 
         let progress = 0; // 0 = Misnjak, 1 = Stinica
         let statusText = "Na vezu";
         let isMoving = false;
 
-        // Logic: 
+        // Logic:
         // 00 to 15 -> Misnjak to Stinica
         // 30 to 45 -> Stinica to Misnjak
 
@@ -364,7 +437,7 @@ function startFerrySimulation(marker, startPos, endPos) {
         if (statusEl) {
             statusEl.innerHTML = `
                 <div style="font-weight:bold; color: ${isMoving ? 'var(--success)' : 'var(--text-muted)'}">
-                    ${statusText}
+                    ${escapeHtml(statusText)}
                 </div>
                 <div style="font-size: 0.8rem; margin-top: 0.2rem">
                     Brzina: ${isMoving ? '10 čvorova' : '0 čvorova'}
@@ -373,8 +446,15 @@ function startFerrySimulation(marker, startPos, endPos) {
         }
     }
 
-    setInterval(update, 1000);
+    state.ferryInterval = setInterval(update, 1000);
     update(); // First run
+}
+
+function stopFerrySimulation() {
+    if (state.ferryInterval) {
+        clearInterval(state.ferryInterval);
+        state.ferryInterval = null;
+    }
 }
 function initInfiniteScroll() {
     const grid = document.getElementById('news-grid');
@@ -568,16 +648,11 @@ function initRadioPlayer() {
     const playBtn = document.getElementById('radio-play');
     if (!playBtn) return;
 
-    // Stream URL
-    const streamUrl = 'http://de4.streamingpulse.com:7014/stream';
-    const audio = new Audio(streamUrl);
-
-    // Metadata URL (Jazler XML)
-    const metadataUrl = 'https://radio-rab.hr/NowOnAir.xml';
-    let metadataTimeout;
+    // Stream URL from config
+    const audio = new Audio(CONFIG.urls.radioStream);
 
     audio.addEventListener('error', (e) => {
-        console.error('Radio Stream Error:', e);
+        debugError('Radio Stream Error:', e);
     });
 
     playBtn.addEventListener('click', () => {
@@ -597,7 +672,7 @@ function initRadioPlayer() {
                 playBtn.classList.add('playing');
             }).catch(err => {
                 playBtn.classList.remove('loading');
-                console.error('Playback failed:', err);
+                debugError('Playback failed:', err);
                 alert('Ne mogu pokrenuti stream. Provjerite postavke preglednika.');
             });
         }
@@ -624,21 +699,26 @@ function initRadioPlayer() {
     }
 
     function stopMetadataUpdates() {
-        clearTimeout(metadataTimeout);
+        if (state.metadataTimeout) {
+            clearTimeout(state.metadataTimeout);
+            state.metadataTimeout = null;
+        }
     }
 
     async function fetchMetadata() {
-        // No longer guarding against play state
-
-
-        const proxyBase = 'https://api.allorigins.win/raw?url=';
+        const proxyBase = CONFIG.urls.corsProxy;
         const timestamp = Date.now();
         let nextDelay = 15000; // Default fallback
 
+        console.log('[Radio] Fetching metadata...');
+
         try {
-            const expireTime = await fetchCurrentSong(proxyBase, timestamp);
-            await fetchHistory(proxyBase, timestamp);
-            await fetchNext(proxyBase, timestamp);
+            // Fetch all three in parallel for faster initial load
+            const [expireTime] = await Promise.all([
+                fetchCurrentSong(proxyBase, timestamp),
+                fetchHistory(proxyBase, timestamp),
+                fetchNext(proxyBase, timestamp)
+            ]);
 
             if (expireTime) {
                 const now = new Date();
@@ -655,21 +735,25 @@ function initRadioPlayer() {
                 if (diff > 0) {
                     // Update 1s after song ends
                     nextDelay = diff + 1500;
-                    console.log(`Next update scheduled in ${Math.round(nextDelay / 1000)}s (at ${expireTime})`);
+                    debugLog(`Next update scheduled in ${Math.round(nextDelay / 1000)}s (at ${expireTime})`);
                 } else {
                     // Song supposedly ended, check soon
                     nextDelay = 5000;
                 }
             }
         } catch (e) {
-            console.warn('Metadata update cycle error:', e);
+            // Always log metadata errors to help with debugging
+            console.warn('[Radio] Metadata update cycle error:', e);
+            // On error, retry sooner
+            nextDelay = 5000;
         }
 
-        metadataTimeout = setTimeout(fetchMetadata, nextDelay);
+        console.log(`[Radio] Next update in ${Math.round(nextDelay / 1000)}s`);
+        state.metadataTimeout = setTimeout(fetchMetadata, nextDelay);
     }
 
     async function fetchCurrentSong(proxyBase, timestamp) {
-        const response = await fetch(proxyBase + encodeURIComponent(`https://radio-rab.hr/NowOnAir.xml?t=${timestamp}`));
+        const response = await fetch(proxyBase + encodeURIComponent(`${CONFIG.urls.metadataBase}/NowOnAir.xml?t=${timestamp}`));
         if (!response.ok) return null;
         const str = await response.text();
         const xmlDoc = new DOMParser().parseFromString(str, "text/xml");
@@ -695,8 +779,7 @@ function initRadioPlayer() {
     }
 
     async function fetchHistory(proxyBase, timestamp) {
-        // Fetch history
-        const response = await fetch(proxyBase + encodeURIComponent(`https://radio-rab.hr/AirPlayHistory.xml?t=${timestamp}`));
+        const response = await fetch(proxyBase + encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`));
         if (!response.ok) return;
         const str = await response.text();
         const xmlDoc = new DOMParser().parseFromString(str, "text/xml");
@@ -738,7 +821,7 @@ function initRadioPlayer() {
     }
 
     async function fetchNext(proxyBase, timestamp) {
-        const response = await fetch(proxyBase + encodeURIComponent(`https://radio-rab.hr/AirPlayNext.xml?t=${timestamp}`));
+        const response = await fetch(proxyBase + encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayNext.xml?t=${timestamp}`));
         if (!response.ok) return;
         const str = await response.text();
         const xmlDoc = new DOMParser().parseFromString(str, "text/xml");
@@ -760,6 +843,9 @@ function initRadioPlayer() {
 
     // Start polling immediately
     startMetadataUpdates();
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', stopMetadataUpdates);
 }
 
 // ===========================================
@@ -787,20 +873,21 @@ function initScrollEffects() {
     const nav = document.querySelector('.news-nav');
     if (!nav) return;
 
-    let ticking = false;
+    let scrollTimeout;
+
+    function handleScroll() {
+        const scrolled = window.scrollY > 100;
+        nav.style.background = scrolled
+            ? 'rgba(2, 6, 23, 0.95)'
+            : 'rgba(15, 23, 42, 0.85)';
+    }
 
     window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const scrolled = window.scrollY > 100;
-                nav.style.background = scrolled
-                    ? 'rgba(2, 6, 23, 0.95)'
-                    : 'rgba(15, 23, 42, 0.85)';
-                ticking = false;
-            });
-            ticking = true;
+        if (scrollTimeout) {
+            cancelAnimationFrame(scrollTimeout);
         }
-    });
+        scrollTimeout = requestAnimationFrame(handleScroll);
+    }, { passive: true });
 }
 
 // ===========================================

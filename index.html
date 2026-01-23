@@ -275,7 +275,7 @@
                     <div class="glass widget-card newsletter-widget card-animate" style="--delay: 7">
                         <h3>📧 NEWSLETTER</h3>
                         <p>Primajte najvažnije vijesti s otoka direktno u inbox.</p>
-                        <form class="newsletter-form" onsubmit="return false;">
+                        <form class="newsletter-form" id="newsletter-form">
                             <input type="email" placeholder="Vaš email" aria-label="Email za newsletter" required>
                             <button type="submit">Pretplati se</button>
                         </form>
@@ -366,10 +366,22 @@
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav glass" aria-label="Mobilna navigacija">
-        <a href="#feed" class="nav-trigger active" data-tab="feed" aria-label="Naslovnica">🏠</a>
-        <a href="#shorts" class="nav-trigger" data-tab="shorts" aria-label="Video">🎬</a>
-        <a href="#map" class="nav-trigger" data-tab="map" aria-label="Karta">📍</a>
-        <a href="#market" class="nav-trigger" data-tab="market" aria-label="Tržnica">🛒</a>
+        <a href="#feed" class="nav-trigger active" data-tab="feed" aria-label="Naslovnica" title="Naslovnica">
+            <span aria-hidden="true">🏠</span>
+            <span class="visually-hidden">Naslovnica</span>
+        </a>
+        <a href="#shorts" class="nav-trigger" data-tab="shorts" aria-label="Video sadržaj" title="Video">
+            <span aria-hidden="true">🎬</span>
+            <span class="visually-hidden">Video</span>
+        </a>
+        <a href="#map" class="nav-trigger" data-tab="map" aria-label="Interaktivna karta" title="Karta">
+            <span aria-hidden="true">📍</span>
+            <span class="visually-hidden">Karta</span>
+        </a>
+        <a href="#market" class="nav-trigger" data-tab="market" aria-label="Lokalna tržnica" title="Tržnica">
+            <span aria-hidden="true">🛒</span>
+            <span class="visually-hidden">Tržnica</span>
+        </a>
     </nav>
 
     <!-- Reporter Modal -->
@@ -378,7 +390,7 @@
             <button type="button" class="modal-close" aria-label="Zatvori">&times;</button>
             <h2 id="modal-title">Prijavi Vijest</h2>
             <p>Imate zanimljivu vijest ili fotografiju? Postanite dio Radio Rab zajednice!</p>
-            <form class="reporter-form" onsubmit="return false;">
+            <form class="reporter-form">
                 <input type="text" placeholder="Vaše ime" aria-label="Vaše ime" required>
                 <input type="email" placeholder="Email" aria-label="Email adresa" required>
                 <textarea placeholder="Opišite vijest..." aria-label="Opis vijesti" rows="4" required></textarea>
@@ -395,7 +407,7 @@
     </div>
 
     <!-- Reader Mode Exit Button -->
-    <button class="reader-exit-btn" onclick="toggleReaderMode()">Izađi iz načina čitanja</button>
+    <button class="reader-exit-btn" id="reader-exit-btn" aria-label="Izađi iz načina čitanja">Izađi iz načina čitanja</button>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
