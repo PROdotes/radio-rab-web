@@ -4,30 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Rab Digital | Budućnost Otoka</title>
+    <title>Radio Rab Digital | Vijesti s Otoka</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;600;700;800&family=Playfair+Display:wght@700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Floating Navigation Bar (Desktop) -->
-    <nav class="glass-nav">
-        <div class="nav-content">
-            <div class="logo">RADIO<span>RAB</span></div>
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="container flex-between">
+            <div class="date-time">Petak, 23. siječnja 2026.</div>
+            <div class="weather-mini">Rab: 14°C ☀️</div>
+        </div>
+    </div>
+
+    <!-- Breaking News Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker-label">NAJNOVIJE</div>
+        <div class="ticker">
+            <div class="ticker-item">Trajektna linija Mišnjak-Stinica u prekidu od 18:00 zbog bure...</div>
+        </div>
+    </div>
+
+    <!-- Editorial Masthead -->
+    <header class="masthead">
+        <div class="container flex-center">
+            <div class="brand">
+                <h1>RADIO<span>RAB</span></h1>
+                <p>Digitalni glas otoka raba</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- App Navigation (Editorial Style) -->
+    <nav class="news-nav">
+        <div class="container">
             <ul class="nav-links">
                 <li><a href="javascript:void(0)" class="nav-trigger active" data-tab="feed">Naslovnica</a></li>
                 <li><a href="javascript:void(0)" class="nav-trigger" data-tab="shorts">Shorts</a></li>
                 <li><a href="javascript:void(0)" class="nav-trigger" data-tab="map">Karta</a></li>
                 <li><a href="javascript:void(0)" class="nav-trigger" data-tab="market">Zajednica</a></li>
+                <li><a href="javascript:void(0)" class="nav-trigger" onclick="openReporter()">Prijavi Vijest</a></li>
             </ul>
-            <div class="nav-actions">
-                <div class="search-trigger">🔍</div>
-                <button class="btn-primary" onclick="openReporter()">Prijavi Vijest</button>
-            </div>
         </div>
     </nav>
 
@@ -35,132 +57,161 @@
     <div id="app-shell">
         <!-- TAB: FEED -->
         <section id="feed" class="tab-content active">
-            <!-- Hero Section -->
-            <header class="hero">
-                <div class="hero-overlay"></div>
-                <img src="img/hero.png" alt="Otok Rab" class="hero-img">
-                <div class="hero-content">
-                    <div class="badge">Sutrašnjica lokalnog medija</div>
-                    <h1>Srce otoka u <span>digitalnom</span> ritmu.</h1>
-                    <p>Prvi hiper-lokalni OS za zajednicu. Vijesti koje vas razumiju i snaga rabske riječi.</p>
-                </div>
-            </header>
-
             <main class="container">
-                <div class="feed-grid">
-                    <!-- Left Column: News -->
-                    <div class="news-stack">
-                        <div class="card news-card featured">
-                            <div class="news-img"
-                                style="background-image: url('https://source.unsplash.com/800x400/?adriatic,boat')">
-                            </div>
-                            <div class="news-content">
-                                <span class="category">GOSPODARSTVO</span>
-                                <h3>Novi plan uređenja luke Rab donosi digitalne priveze</h3>
-                                <p>Modernizacija pristaništa uključuje senzore za dubinu i automatsko plaćanje. Projekt
-                                    bi trebao biti završen do početka sezone 2026.</p>
-                                <div class="ai-summary-box">
-                                    <div class="ai-header">
-                                        ✨ <span class="typing">AI Sažetak</span>
-                                    </div>
-                                    <p>Projekt vrijedan 2.4M € | Automatizirani sustav naplate | Povećanje kapaciteta za
-                                        15%.</p>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Main News Grid -->
+                <div class="editorial-grid">
 
-                        <div class="card news-card">
+                    <!-- Main Editorial Column -->
+                    <div class="main-news">
+                        <article class="card news-card main-feature">
+                            <div class="news-img" style="background-image: url('img/hero.png')"></div>
                             <div class="news-content">
-                                <span class="category">KULTURA</span>
-                                <h3>Rabska Fjera 2026: Uvode se hologramski prikazi povijesti</h3>
-                                <div class="card-meta">2 sata ranije • Autor: I. Perić</div>
+                                <span class="category-badge">TOP VIJEST</span>
+                                <h2>Novi plan uređenja luke Rab donosi digitalne priveze i pametne senzore</h2>
+                                <p>Projekt vrijedan 2.4 milijuna eura postavlja senzore za dubinu, automatsku
+                                    rezervaciju vezova i real-time informiranje skipere preko Radio Rab aplikacije.
+                                    Saznajte kako će se promijeniti život u starom gradu i što to znači za lokalno
+                                    stanovništvo.</p>
+
+                                <div class="ai-box editorial-ai">
+                                    <div class="ai-label">✨ <span class="typing">AI SAŽETAK</span></div>
+                                    <p>Automatizacija naplate | Smart-vezovi | Povećanje kapaciteta luke za 15% uz
+                                        smanjenje gužvi.</p>
+                                </div>
+                                <div class="meta">Prije 15 min • Autor: Marko Rabljanin</div>
                             </div>
+                        </article>
+
+                        <div class="sub-news-grid">
+                            <article class="news-card-small">
+                                <div class="news-img-mini"
+                                    style="background-image: url('https://source.unsplash.com/400x300/?adriatic,coast')">
+                                </div>
+                                <div class="content">
+                                    <span class="category">TURIZAM</span>
+                                    <h4>Tursitička zajednica najavljuje rekordne predrezervacije za sezonu 2026.</h4>
+                                </div>
+                            </article>
+                            <article class="news-card-small">
+                                <div class="news-img-mini"
+                                    style="background-image: url('https://source.unsplash.com/400x300/?museum,history')">
+                                </div>
+                                <div class="content">
+                                    <span class="category">KULTURA</span>
+                                    <h4>Rabska Fjera uvodi hologramske vodiče kroz povijest otoka u Starom Gradu</h4>
+                                </div>
+                            </article>
                         </div>
                     </div>
 
-                    <!-- Right Column: Sidebar Widgets -->
-                    <aside class="sidebar-widgets">
-                        <div class="card glass status-card">
-                            <h3>Otok Uživo</h3>
-                            <div class="status-items">
-                                <div class="status-item">
-                                    <span class="label">Parking dvorana</span>
-                                    <div class="progress-bar">
-                                        <div class="progress" style="width: 85%;"></div>
-                                    </div>
-                                    <span class="value">Popunjeno 85%</span>
-                                </div>
-                                <div class="status-item">
-                                    <span class="label">Mišnjak Trajekt</span>
-                                    <span class="value highlight">Čekanje: 10 min</span>
-                                </div>
-                                <div class="status-item">
-                                    <span class="label">Senzor temperature</span>
-                                    <span class="value highlight">26°C / More 24°C</span>
-                                </div>
+                    <!-- Sidebar News Widgets -->
+                    <aside class="editorial-sidebar">
+                        <div class="card glass status-widget">
+                            <h3>OTOK UŽIVO</h3>
+                            <div class="live-item">
+                                <span class="label">Trajekt (Mišnjak)</span>
+                                <span class="value green">Bez čekanja</span>
+                            </div>
+                            <div class="live-item">
+                                <span class="label">Parking (Dvorana)</span>
+                                <span class="value orange">85% popunjeno</span>
+                            </div>
+                            <div class="live-item">
+                                <span class="label">Senzor Temp</span>
+                                <span class="value blue">14°C / More 12°C</span>
                             </div>
                         </div>
 
-                        <div class="card glass ad-widget-b2b">
-                            <h4>Vaša reklama ovdje?</h4>
-                            <p>Automatizirani zakup prostora uz e-Račun.</p>
-                            <button class="btn-outline">Saznaj više</button>
+                        <div class="trending-list">
+                            <h3>NAJČITANIJE</h3>
+                            <div class="trending-item">
+                                <span class="num">1</span>
+                                <p>Tko nastupa na otvorenju ljetnih večeri?</p>
+                            </div>
+                            <div class="trending-item">
+                                <span class="num">2</span>
+                                <p>Novi vozni red katamarana od ponedjeljka.</p>
+                            </div>
+                            <div class="trending-item">
+                                <span class="num">3</span>
+                                <p>Izvještaj s utakmice NK Rab - NK Pag.</p>
+                            </div>
+                        </div>
+
+                        <div class="card glass b2b-ad">
+                            <p>Ovaj prostor može biti vaš oglas.</p>
+                            <span class="small">Automatizirano uz e-Račun</span>
+                            <button class="btn-outline">Zakupi</button>
                         </div>
                     </aside>
                 </div>
+
+                <!-- Secondary News Section -->
+                <section class="news-section">
+                    <h3 class="section-title">LOKALNE TEME</h3>
+                    <div class="news-strip">
+                        <div class="strip-item">
+                            <span class="category">EKO</span>
+                            <h4>Nova akcija čišćenja podmorja</h4>
+                        </div>
+                        <div class="strip-item">
+                            <span class="category">GOSPODARSTVO</span>
+                            <h4>Otvara se novi obrtnički inkubator</h4>
+                        </div>
+                        <div class="strip-item">
+                            <span class="category">SPORT</span>
+                            <h4>Mladi rabljanin prvak u jedrenju</h4>
+                        </div>
+                    </div>
+                </section>
             </main>
         </section>
 
-        <!-- TAB: SHORTS -->
+        <!-- TAB: SHORTS (Multimedia) -->
         <section id="shorts" class="tab-content">
             <div class="shorts-container">
-                <!-- Mock Shorts Feed -->
                 <div class="short-video-mock">
                     <div class="overlay-info">
                         <h3>Delfini u Barbatu 🐬</h3>
                         <p>Snimio: @LukaRab</p>
                     </div>
                 </div>
-                <!-- Controls for demo -->
-                <div class="shorts-controls">
-                    <button class="up">↑</button>
-                    <button class="down">↓</button>
+                <div class="shorts-nav">
+                    <button>↑</button>
+                    <button>↓</button>
                 </div>
             </div>
         </section>
 
-        <!-- TAB: MAP -->
+        <!-- TAB: MAP (Utility) -->
         <section id="map" class="tab-content">
             <div class="map-placeholder">
                 <div class="map-ui">
-                    <div class="map-filter">
-                        <button class="active">Sve</button>
-                        <button>Događaji</button>
-                        <button>Radovi</button>
-                    </div>
+                    <h3>Situacija na otoku</h3>
                 </div>
                 <div class="map-mock-bg">
-                    <!-- SVG or Image Map of Rab -->
                     <div class="pulse-marker" style="top: 40%; left: 45%;"></div>
                     <div class="pulse-marker" style="top: 60%; left: 55%;"></div>
-                    <span>Interaktivna karta Raba (Demo)</span>
+                    <span>Interaktivna karta (Demo)</span>
                 </div>
             </div>
         </section>
 
-        <!-- TAB: MARKET -->
+        <!-- TAB: MARKET (Monetization) -->
         <section id="market" class="tab-content">
-            <div class="container margin-top">
-                <h2>Zajednica & Trgovina</h2>
+            <div class="container mt-5">
+                <h2>Rabska Tržnica & Događaji</h2>
                 <div class="market-grid">
                     <div class="card market-item">
-                        <div class="img-mock"></div>
+                        <div class="img-mock"
+                            style="background-image: url('https://source.unsplash.com/300x200/?honey')"></div>
                         <h4>Domaći Med (Oraj)</h4>
                         <span class="price">12.00 €</span>
-                        <button class="btn-buy">Kupi odmah</button>
+                        <button class="btn-buy">Kupi</button>
                     </div>
                     <div class="card market-item">
-                        <div class="img-mock blue"></div>
+                        <div class="img-mock"
+                            style="background-image: url('https://source.unsplash.com/300x200/?concert')"></div>
                         <h4>Ulaznica: Urban u kinu</h4>
                         <span class="price">15.00 €</span>
                         <button class="btn-buy">Rezerviraj</button>
@@ -170,7 +221,7 @@
         </section>
     </div>
 
-    <!-- Bottom Navigation (Mobile) -->
+    <!-- Bottom Navigation (Mobile Only) -->
     <nav class="mobile-nav">
         <a href="javascript:void(0)" class="nav-trigger active" data-tab="feed">🏠</a>
         <a href="javascript:void(0)" class="nav-trigger" data-tab="shorts">🎬</a>
@@ -182,15 +233,17 @@
     <div id="reporter-modal" class="modal">
         <div class="modal-content glass">
             <h2>Građanin Izvjestitelj</h2>
-            <p>Pošaljite nam vijest ili sliku izravno.</p>
-            <input type="text" placeholder="Naslov">
-            <textarea placeholder="Što se događa?"></textarea>
-            <button class="btn-primary" onclick="closeReporter()">Pošalji</button>
+            <p>Postanite dio redakcije. Pošaljite vijest ili sliku.</p>
+            <input type="text" placeholder="Naslov teme">
+            <textarea placeholder="Opišite događaj u par rečenica..."></textarea>
+            <button class="btn-primary" onclick="closeReporter()">Pošalji u redakciju</button>
         </div>
     </div>
 
-    <footer class="glass-footer">
-        <p>&copy; 2026 Radio Rab Digital. Sva prava pridržana.</p>
+    <footer class="editorial-footer">
+        <div class="container">
+            <p>&copy; 2026 Radio Rab Digital | Nezavisni glas otoka.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
