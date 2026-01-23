@@ -15,9 +15,10 @@ const CONFIG = {
 
     // URLs - centralized for easy maintenance
     urls: {
-        radioStream: 'https://de4.streamingpulse.com:7014/stream', // Re-testing HTTPS
+        radioStream: 'https://de4.streamingpulse.com:7014/stream', // Official domain
+        radioStreamDirect: 'http://de4.streamingpulse.com:7014/stream', // Direct HTTP failsafe
         metadataBase: 'https://radio-rab.hr',
-        corsProxy: 'https://corsproxy.io/?url=', // More reliable proxy
+        corsProxy: 'https://corsproxy.io/?url=',
         mapTiles: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
     },
 
@@ -676,7 +677,11 @@ function initRadioPlayer() {
             }).catch(err => {
                 playBtn.classList.remove('loading');
                 debugError('Playback failed:', err);
-                alert('Ne mogu pokrenuti stream. Provjerite postavke preglednika.');
+                // Help user with HTTPS/Mixed content block
+                if (window.location.protocol === 'https:') {
+                    alert('Problem s pokretanjem: Preglednik blokira ovaj stream na HTTPS stranici. Pokušajte kliknuti na direktni link ispod playera.');
+                    showDirectLink();
+                }
             });
         }
     });
@@ -714,6 +719,17 @@ function initRadioPlayer() {
             clearTimeout(state.metadataTimeout);
             state.metadataTimeout = null;
         }
+    }
+
+    function showDirectLink() {
+        const container = document.querySelector('.radio-widget');
+        if (!container || document.getElementById('direct-stream-link')) return;
+
+        const linkBox = document.createElement('div');
+        linkBox.id = 'direct-stream-link';
+        linkBox.style.cssText = 'font-size: 0.7rem; margin-top: 1rem; text-align: center; color: var(--text-muted);';
+        linkBox.innerHTML = `⚠️ Blokiran HTTPS od strane preglednika.<br><a href="${CONFIG.urls.radioStreamDirect}" target="_blank" style="color: var(--primary); text-decoration: underline;">Kliknite ovdje za slušanje u novom TAB-u</a>`;
+        container.appendChild(linkBox);
     }
 
     async function fetchMetadata() {
