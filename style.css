@@ -354,11 +354,13 @@ ul {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    transition: transform 0.3s var(--ease-out), border-color 0.3s;
+    transition: transform 0.3s var(--ease-out), border-color 0.3s, box-shadow 0.4s var(--ease-out);
+    position: relative;
 }
 
 .main-feature:hover {
     border-color: var(--border-hover);
+    box-shadow: 0 30px 60px -20px rgba(59, 130, 246, 0.2);
 }
 
 .feature-img-container {
@@ -499,12 +501,30 @@ ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s var(--ease-out), border-color 0.3s;
+    transition: transform 0.3s var(--ease-out), border-color 0.3s, box-shadow 0.3s var(--ease-out);
+    position: relative;
+}
+
+.small-news-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-sm);
+    background: radial-gradient(circle at 50% 0%, var(--primary-glow), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .small-news-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     border-color: var(--primary);
+    box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.3);
+}
+
+.small-news-card:hover::before {
+    opacity: 0.15;
 }
 
 .small-img-container {
@@ -551,6 +571,13 @@ ul {
 
 .widget-card {
     padding: 1.5rem;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s;
+}
+
+.widget-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+    border-color: var(--border-hover);
 }
 
 .widget-card h3 {
@@ -708,6 +735,55 @@ ul {
     height: 18px;
     border-left: 4px solid #fff;
     border-right: 4px solid #fff;
+}
+
+/* Audio Equalizer Visualizer */
+.equalizer {
+    display: none;
+    align-items: flex-end;
+    gap: 3px;
+    height: 20px;
+    margin-left: auto;
+    padding-left: 1rem;
+}
+
+.radio-player.is-playing .equalizer {
+    display: flex;
+}
+
+.eq-bar {
+    width: 4px;
+    background: var(--grad-blue);
+    border-radius: 2px;
+    animation: equalizer-bounce 0.8s ease-in-out infinite;
+}
+
+.eq-bar:nth-child(1) { height: 60%; animation-delay: 0s; }
+.eq-bar:nth-child(2) { height: 100%; animation-delay: 0.1s; }
+.eq-bar:nth-child(3) { height: 40%; animation-delay: 0.2s; }
+.eq-bar:nth-child(4) { height: 80%; animation-delay: 0.3s; }
+.eq-bar:nth-child(5) { height: 50%; animation-delay: 0.15s; }
+
+@keyframes equalizer-bounce {
+    0%, 100% {
+        transform: scaleY(0.3);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+/* Song title animation */
+.song-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.song-title.updating {
+    opacity: 0;
+    transform: translateY(-5px);
 }
 
 .radio-info {
@@ -1210,6 +1286,70 @@ ul {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+/* --- MOBILE NAVIGATION --- */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9000;
+    padding: 0.5rem 1rem;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+}
+
+.mobile-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    transition: all 0.2s var(--ease-out);
+    position: relative;
+}
+
+.mobile-nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 20px;
+    height: 3px;
+    background: var(--grad-blue);
+    border-radius: 2px;
+    transition: transform 0.2s var(--ease-out);
+}
+
+.mobile-nav a:active {
+    transform: scale(0.95);
+}
+
+.mobile-nav a.active {
+    color: var(--primary);
+}
+
+.mobile-nav a.active::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.mobile-nav a span[aria-hidden="true"] {
+    transition: transform 0.2s var(--ease-out);
+}
+
+.mobile-nav a.active span[aria-hidden="true"] {
+    transform: scale(1.1);
 }
 
 /* --- MEDIA QUERIES (Restored) --- */

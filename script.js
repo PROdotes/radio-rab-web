@@ -646,6 +646,7 @@ function closeModal(modal) {
 // ===========================================
 function initRadioPlayer() {
     const playBtn = document.getElementById('radio-play');
+    const radioPlayer = document.getElementById('radio-player');
     if (!playBtn) return;
 
     // Stream URL from config
@@ -663,6 +664,7 @@ function initRadioPlayer() {
             audio.pause();
             audio.currentTime = 0;
             playBtn.classList.remove('playing', 'loading');
+            radioPlayer?.classList.remove('is-playing');
         } else {
             // Play
             playBtn.classList.add('loading');
@@ -670,6 +672,7 @@ function initRadioPlayer() {
             audio.play().then(() => {
                 playBtn.classList.remove('loading');
                 playBtn.classList.add('playing');
+                radioPlayer?.classList.add('is-playing');
             }).catch(err => {
                 playBtn.classList.remove('loading');
                 debugError('Playback failed:', err);
@@ -684,7 +687,15 @@ function initRadioPlayer() {
         const songTitle = document.querySelector('.song-title');
         const nowPlayingLabel = document.querySelector('.now-playing');
 
-        if (songTitle) songTitle.textContent = text;
+        if (songTitle && songTitle.textContent !== text) {
+            // Animate the transition
+            songTitle.classList.add('updating');
+            setTimeout(() => {
+                songTitle.textContent = text;
+                songTitle.classList.remove('updating');
+            }, 300);
+        }
+
         if (nowPlayingLabel) {
             // Reset label if we are just showing station name
             if (text === 'Radio Rab - 24/7' || text === 'Radio Rab - Uživo (92.6FM)') {
