@@ -20,7 +20,8 @@ const state = {
     currentVisibleCount: 0,
     activeCategory: 'all',
     isLoading: false,
-    observer: null
+    observer: null,
+    mapInstance: null
 };
 
 // ===========================================
@@ -266,20 +267,31 @@ function initMap() {
     }
 
     // Init Map centered on Rab-Mainland channel
-    const map = L.map('leaflet-map').setView([44.715, 14.878], 13);
+    state.mapInstance = L.map('leaflet-map').setView([44.715, 14.878], 13);
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
-    }).addTo(map);
+    }).addTo(state.mapInstance);
 
     // Ports
     const misnjak = [44.7086, 14.8647];
     const stinica = [44.7214, 14.8911];
 
-    L.marker(misnjak).addTo(map).bindPopup("Luka Mišnjak (RAB)");
-    L.marker(stinica).addTo(map).bindPopup("Luka Stinica (KOPNO)");
+    // Custom Premium Markers for Ports
+    const portIcon = (label) => L.divIcon({
+        className: 'custom-port-marker',
+        html: `
+            <div class="port-marker-pin"></div>
+            <div class="port-marker-label">${label}</div>
+        `,
+        iconSize: [120, 40],
+        iconAnchor: [10, 10]
+    });
+
+    L.marker(misnjak, { icon: portIcon('MIŠNJAK') }).addTo(state.mapInstance);
+    L.marker(stinica, { icon: portIcon('STINICA') }).addTo(state.mapInstance);
 
     // Route Line
     const route = L.polyline([misnjak, stinica], {
@@ -287,17 +299,17 @@ function initMap() {
         weight: 3,
         opacity: 0.5,
         dashArray: '10, 10'
-    }).addTo(map);
+    }).addTo(state.mapInstance);
 
     // Ferry Icon
     const ferryIcon = L.divIcon({
         className: 'ferry-icon-marker',
-        html: '<div style="font-size: 24px;">⛴️</div>',
+        html: '<div style="font-size: 24px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));">⛴️</div>',
         iconSize: [30, 30],
         iconAnchor: [15, 15]
     });
 
-    const ferryMarker = L.marker(misnjak, { icon: ferryIcon }).addTo(map);
+    const ferryMarker = L.marker(misnjak, { icon: ferryIcon }).addTo(state.mapInstance);
 
     // Start Simulation Loop
     startFerrySimulation(ferryMarker, misnjak, stinica);
@@ -468,6 +480,13 @@ function switchTab(targetTab, navTriggers, tabContents) {
     tabContents.forEach(content => {
         const isActive = content.id === targetTab;
         content.classList.toggle('active', isActive);
+
+        // Fix Leaflet map sizing when becoming visible
+        if (isActive && targetTab === 'map' && state.mapInstance) {
+            setTimeout(() => {
+                state.mapInstance.invalidateSize();
+            }, 100);
+        }
     });
 
     // Scroll to top of content
