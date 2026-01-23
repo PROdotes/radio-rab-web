@@ -1,0 +1,22 @@
+{
+  "name": "radio-web",
+  "version": "1.0.0",
+  "description": "Radio Rab News Portal — static site",
+  "homepage": "https://prodotes.github.io/radio-rab-web/",
+  "scripts": {
+    "lint": "eslint '**/*.js'",
+    "format": "prettier --write '**/*.{js,css,html}'",
+    "lint-html": "htmlhint '**/*.html'",
+    "lint-css": "stylelint '**/*.css'",
+    "validate": "npm run lint && npm run lint-html && npm run lint-css",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "prettier": "^2.8.8",
+    "htmlhint": "^6.6.3",
+    "stylelint": "^15.9.1",
+    "stylelint-config-standard": "^26.0.0",
+    "gh-pages": "^4.0.0"
+  }
+}

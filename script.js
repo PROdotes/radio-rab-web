@@ -127,7 +127,7 @@ function initMarketplace() {
             <p>Najbolje od lokalnih proizvođača</p>
         </div>
         <div class="market-grid">
-            ${getMockMarketItems().map(item => `
+            ${((typeof MARKET_ITEMS !== 'undefined') ? MARKET_ITEMS : getMockMarketItems()).map(item => `
                 <div class="market-card card-animate">
                     <div class="market-img" style="background-image: url('${escapeHtml(item.image)}')">
                         <span class="price-tag">${escapeHtml(item.price)}</span>
@@ -168,7 +168,7 @@ function initVideos() {
             <p>Aktualno, kratko i jasno</p>
         </div>
         <div class="video-grid">
-             ${getMockVideos().map(video => `
+             ${((typeof VIDEO_ITEMS !== 'undefined') ? VIDEO_ITEMS : getMockVideos()).map(video => `
                 <div class="video-card card-animate">
                     <div class="video-thumb" style="background-image: url('${escapeHtml(video.image)}')">
                         <div class="play-overlay">▶</div>

@@ -310,3 +310,21 @@ function generateArticles() {
 }
 
 const ALL_ARTICLES = generateArticles();
+
+// Migration-ready static data bridges (used by UI for demos)
+const MARKET_ITEMS = [
+    { title: 'Domaće Maslinovo Ulje', seller: 'OPG Kaštelan', price: '18 €/l', image: 'https://picsum.photos/seed/oil/400/300' },
+    { title: 'Rapska Torta', seller: 'Vilma Slastice', price: '25 €', image: 'https://picsum.photos/seed/cake/400/300' },
+    { title: 'Med od Kadulje', seller: 'Pčelarstvo Krstić', price: '12 €', image: 'https://picsum.photos/seed/honey/400/300' },
+    { title: 'Ovčji Sir', seller: 'OPG Gvačić', price: '30 €/kg', image: 'https://picsum.photos/seed/cheese/400/300' },
+    { title: 'Suhe Smokve', seller: 'Domaća Radinost', price: '8 €', image: 'https://picsum.photos/seed/figs/400/300' },
+    { title: 'Eko Povrće Košarica', seller: 'Vrtovi Raba', price: '15 €', image: 'https://picsum.photos/seed/veg/400/300' }
+];
+
+const VIDEO_ITEMS = [
+    { title: 'Nevera pogodila luku Rab', duration: '0:45', views: '1.2k', image: 'https://picsum.photos/seed/storm/300/500' },
+    { title: 'Svečano otvorenje Fjere', duration: '1:20', views: '3.5k', image: 'https://picsum.photos/seed/fjera/300/500' },
+    { title: 'Novi trajekt "Otok Rab"', duration: '0:55', views: '800', image: 'https://picsum.photos/seed/ferry/300/500' },
+    { title: 'Intervju: Gradonačelnik', duration: '2:15', views: '2.1k', image: 'https://picsum.photos/seed/mayor/300/500' },
+    { title: 'Sportski vikend: Sažetak', duration: '1:05', views: '950', image: 'https://picsum.photos/seed/sport/300/500' }
+];
