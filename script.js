@@ -39,6 +39,90 @@ function init() {
     initRadioPlayer();
     initDateDisplay();
     initScrollEffects();
+    initMarketplace();
+    initVideos();
+}
+
+// ===========================================
+// MARKETPLACE
+// ===========================================
+function initMarketplace() {
+    const container = document.querySelector('#market .demo-placeholder');
+    if (!container) return; // Already initialized or missing
+
+    // Replace placeholder with grid
+    const marketSection = document.getElementById('market');
+    marketSection.innerHTML = `
+        <div class="section-header">
+            <h2>RAPSKA TRŽNICA</h2>
+            <p>Najbolje od lokalnih proizvođača</p>
+        </div>
+        <div class="market-grid">
+            ${getMockMarketItems().map(item => `
+                <div class="market-card card-animate">
+                    <div class="market-img" style="background-image: url('${item.image}')">
+                        <span class="price-tag">${item.price}</span>
+                    </div>
+                    <div class="market-info">
+                        <h3>${item.title}</h3>
+                        <p class="seller">${item.seller}</p>
+                        <button class="btn-market">Kontaktiraj</button>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function getMockMarketItems() {
+    return [
+        { title: 'Domaće Maslinovo Ulje', seller: 'OPG Kaštelan', price: '18 €/l', image: 'https://picsum.photos/seed/oil/400/300' },
+        { title: 'Rapska Torta', seller: 'Vilma Slastice', price: '25 €', image: 'https://picsum.photos/seed/cake/400/300' },
+        { title: 'Med od Kadulje', seller: 'Pčelarstvo Krstić', price: '12 €', image: 'https://picsum.photos/seed/honey/400/300' },
+        { title: 'Ovčji Sir', seller: 'OPG Gvačić', price: '30 €/kg', image: 'https://picsum.photos/seed/cheese/400/300' },
+        { title: 'Suhe Smokve', seller: 'Domaća Radinost', price: '8 €', image: 'https://picsum.photos/seed/figs/400/300' },
+        { title: 'Eko Povrće Košarica', seller: 'Vrtovi Raba', price: '15 €', image: 'https://picsum.photos/seed/veg/400/300' },
+    ];
+}
+
+// ===========================================
+// VIDEO / SHORTS
+// ===========================================
+function initVideos() {
+    const container = document.querySelector('#shorts .demo-placeholder');
+    if (!container) return;
+
+    const shortsSection = document.getElementById('shorts');
+    shortsSection.innerHTML = `
+        <div class="section-header">
+            <h2>VIDEO VIJESTI</h2>
+            <p>Aktualno, kratko i jasno</p>
+        </div>
+        <div class="video-grid">
+             ${getMockVideos().map(video => `
+                <div class="video-card card-animate">
+                    <div class="video-thumb" style="background-image: url('${video.image}')">
+                        <div class="play-overlay">▶</div>
+                        <span class="video-duration">${video.duration}</span>
+                    </div>
+                    <div class="video-info">
+                        <h3>${video.title}</h3>
+                        <span class="video-views">${video.views} pregleda</span>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function getMockVideos() {
+    return [
+        { title: 'Nevera pogodila luku Rab', duration: '0:45', views: '1.2k', image: 'https://picsum.photos/seed/storm/300/500' },
+        { title: 'Svečano otvorenje Fjere', duration: '1:20', views: '3.5k', image: 'https://picsum.photos/seed/fjera/300/500' },
+        { title: 'Novi trajekt "Otok Rab"', duration: '0:55', views: '800', image: 'https://picsum.photos/seed/ferry/300/500' },
+        { title: 'Intervju: Gradonačelnik', duration: '2:15', views: '2.1k', image: 'https://picsum.photos/seed/mayor/300/500' },
+        { title: 'Sportski vikend: Sažetak', duration: '1:05', views: '950', image: 'https://picsum.photos/seed/sport/300/500' },
+    ];
 }
 
 // ===========================================
@@ -74,6 +158,16 @@ function renderHero(article) {
                 </div>
 
                 <div class="meta-info">Piše: ${escapeHtml(article.author)}</div>
+        <div class="article-actions">
+                    <button class="action-btn" onclick="toggleReaderMode()" aria-label="Uključi način za čitanje">
+                        <span class="icon">📖</span> <span class="label">Čitaj</span>
+                    </button>
+                    <div class="share-group">
+                        <button class="action-btn icon-only" onclick="shareArticle('copy')" aria-label="Kopiraj poveznicu">🔗</button>
+                        <button class="action-btn icon-only" onclick="shareArticle('twitter')" aria-label="Podijeli na X">𝕏</button>
+                        <button class="action-btn icon-only" onclick="shareArticle('facebook')" aria-label="Podijeli na Facebooku">f</button>
+                    </div>
+                </div>
             </div>
         </article>
     `;
@@ -286,6 +380,35 @@ function initModal() {
             closeModal(modal);
         }
     });
+
+    // Form Submission (Demo)
+    const form = modal.querySelector('form');
+    form?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('.submit-btn');
+        const originalText = btn.textContent;
+
+        // Loading state
+        btn.textContent = 'Šaljem...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            // Success state
+            btn.textContent = 'Hvala! Poslano.';
+            btn.style.background = 'var(--success)';
+
+            setTimeout(() => {
+                closeModal(modal);
+                form.reset();
+                // Reset button after close
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                }, 300);
+            }, 1000);
+        }, 1500);
+    });
 }
 
 function openModal(modal) {
@@ -306,17 +429,198 @@ function initRadioPlayer() {
     const playBtn = document.getElementById('radio-play');
     if (!playBtn) return;
 
-    playBtn.addEventListener('click', () => {
-        playBtn.classList.toggle('playing');
+    // Stream URL
+    const streamUrl = 'http://de4.streamingpulse.com:7014/stream';
+    const audio = new Audio(streamUrl);
 
-        // Demo: In production, this would control actual audio
-        const songTitle = document.querySelector('.song-title');
-        if (songTitle) {
-            songTitle.textContent = playBtn.classList.contains('playing')
-                ? 'Radio Rab - Uživo'
-                : 'Radio Rab - 24/7';
+    // Metadata URL (Jazler XML)
+    const metadataUrl = 'https://radio-rab.hr/NowOnAir.xml';
+    let metadataTimeout;
+
+    audio.addEventListener('error', (e) => {
+        console.error('Radio Stream Error:', e);
+    });
+
+    playBtn.addEventListener('click', () => {
+        const isPlaying = playBtn.classList.contains('playing');
+        const isLoading = playBtn.classList.contains('loading');
+        if (isPlaying || isLoading) {
+            // Pause
+            audio.pause();
+            audio.currentTime = 0;
+            playBtn.classList.remove('playing', 'loading');
+        } else {
+            // Play
+            playBtn.classList.add('loading');
+
+            audio.play().then(() => {
+                playBtn.classList.remove('loading');
+                playBtn.classList.add('playing');
+            }).catch(err => {
+                playBtn.classList.remove('loading');
+                console.error('Playback failed:', err);
+                alert('Ne mogu pokrenuti stream. Provjerite postavke preglednika.');
+            });
         }
     });
+
+
+
+    function updateSongTitle(text) {
+        const songTitle = document.querySelector('.song-title');
+        const nowPlayingLabel = document.querySelector('.now-playing');
+
+        if (songTitle) songTitle.textContent = text;
+        if (nowPlayingLabel) {
+            // Reset label if we are just showing station name
+            if (text === 'Radio Rab - 24/7' || text === 'Radio Rab - Uživo (92.6FM)') {
+                nowPlayingLabel.textContent = 'Sada svira';
+                nowPlayingLabel.style.color = '';
+            }
+        }
+    }
+
+    function startMetadataUpdates() {
+        fetchMetadata();
+    }
+
+    function stopMetadataUpdates() {
+        clearTimeout(metadataTimeout);
+    }
+
+    async function fetchMetadata() {
+        // No longer guarding against play state
+
+
+        const proxyBase = 'https://api.allorigins.win/raw?url=';
+        const timestamp = Date.now();
+        let nextDelay = 15000; // Default fallback
+
+        try {
+            const expireTime = await fetchCurrentSong(proxyBase, timestamp);
+            await fetchHistory(proxyBase, timestamp);
+            await fetchNext(proxyBase, timestamp);
+
+            if (expireTime) {
+                const now = new Date();
+                const [hours, minutes, seconds] = expireTime.split(':').map(Number);
+                const expireDate = new Date();
+                expireDate.setHours(hours, minutes, seconds);
+
+                // Handle case where expire time is tomorrow (e.g. crossing midnight)
+                if (expireDate < now && (now.getTime() - expireDate.getTime()) > 12 * 60 * 60 * 1000) {
+                    expireDate.setDate(expireDate.getDate() + 1);
+                }
+
+                const diff = expireDate.getTime() - now.getTime();
+                if (diff > 0) {
+                    // Update 1s after song ends
+                    nextDelay = diff + 1500;
+                    console.log(`Next update scheduled in ${Math.round(nextDelay / 1000)}s (at ${expireTime})`);
+                } else {
+                    // Song supposedly ended, check soon
+                    nextDelay = 5000;
+                }
+            }
+        } catch (e) {
+            console.warn('Metadata update cycle error:', e);
+        }
+
+        metadataTimeout = setTimeout(fetchMetadata, nextDelay);
+    }
+
+    async function fetchCurrentSong(proxyBase, timestamp) {
+        const response = await fetch(proxyBase + encodeURIComponent(`https://radio-rab.hr/NowOnAir.xml?t=${timestamp}`));
+        if (!response.ok) return null;
+        const str = await response.text();
+        const xmlDoc = new DOMParser().parseFromString(str, "text/xml");
+
+        // Target the active event specifically
+        const event = xmlDoc.querySelector('Event[status="happening"]');
+        const artist = event?.querySelector('Artist')?.getAttribute('name');
+        const song = event?.querySelector('Song')?.getAttribute('title');
+        const expireTime = event?.querySelector('Expire')?.getAttribute('Time');
+
+        if (artist && song) {
+            updateSongTitle(`${artist} - ${song}`);
+            const nowPlayingLabel = document.querySelector('.now-playing');
+            if (nowPlayingLabel) {
+                // Visual feedback for live status
+                nowPlayingLabel.textContent = '🎵 UŽIVO';
+                nowPlayingLabel.style.color = 'var(--primary)';
+                nowPlayingLabel.style.fontWeight = 'bold';
+            }
+        }
+
+        return expireTime;
+    }
+
+    async function fetchHistory(proxyBase, timestamp) {
+        // Fetch history
+        const response = await fetch(proxyBase + encodeURIComponent(`https://radio-rab.hr/AirPlayHistory.xml?t=${timestamp}`));
+        if (!response.ok) return;
+        const str = await response.text();
+        const xmlDoc = new DOMParser().parseFromString(str, "text/xml");
+
+        // Items are in chronological order, so we take the last few for "most recent"
+        // But typically history file has oldest at top? Let's check structure. 
+        // Based on typical log: appending. So last items are newest?
+        // Let's take the last 5 items and reverse them so newest is at top.
+        const allSongs = Array.from(xmlDoc.querySelectorAll('Song'));
+        const songs = allSongs.slice(-5).reverse();
+
+        const listContainer = document.getElementById('playlist-items');
+        const mainContainer = document.getElementById('playlist-container');
+
+        if (songs.length > 0 && listContainer) {
+            mainContainer.hidden = false;
+            listContainer.innerHTML = '';
+
+            songs.forEach(song => {
+                const title = song.getAttribute('title');
+                const artist = song.querySelector('Artist')?.getAttribute('name');
+                const info = song.querySelector('Info');
+                const startTime = info?.getAttribute('StartTime')?.substring(0, 5) || ''; // HH:MM
+
+                if (title && artist) {
+                    const item = document.createElement('div');
+                    item.className = 'playlist-item';
+                    item.innerHTML = `
+                        <span class="playlist-time">${startTime}</span>
+                        <div class="playlist-meta">
+                            <span class="playlist-artist">${escapeHtml(artist)}</span>
+                            <span class="playlist-song">${escapeHtml(title)}</span>
+                        </div>
+                    `;
+                    listContainer.appendChild(item);
+                }
+            });
+        }
+    }
+
+    async function fetchNext(proxyBase, timestamp) {
+        const response = await fetch(proxyBase + encodeURIComponent(`https://radio-rab.hr/AirPlayNext.xml?t=${timestamp}`));
+        if (!response.ok) return;
+        const str = await response.text();
+        const xmlDoc = new DOMParser().parseFromString(str, "text/xml");
+
+        const nextSong = xmlDoc.querySelector('Event[status="coming up"] Song');
+
+        if (nextSong) {
+            const title = nextSong.getAttribute('title');
+            const artist = nextSong.querySelector('Artist')?.getAttribute('name');
+            const container = document.getElementById('next-up-container');
+
+            if (title && artist && container) {
+                container.hidden = false;
+                document.getElementById('next-artist').textContent = artist;
+                document.getElementById('next-song').textContent = title;
+            }
+        }
+    }
+
+    // Start polling immediately
+    startMetadataUpdates();
 }
 
 // ===========================================
@@ -365,7 +669,46 @@ function initScrollEffects() {
 // ===========================================
 function escapeHtml(text) {
     if (!text) return '';
+
+    // First decode any existing entities (e.g. &amp; -> &)
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = text;
+    const decoded = textarea.value;
+
+    // Then re-escape critical characters for display
     const div = document.createElement('div');
-    div.textContent = text;
+    div.textContent = decoded;
     return div.innerHTML;
+}
+
+// ===========================================
+// READER MODE & SHARING
+// ===========================================
+function toggleReaderMode() {
+    document.body.classList.toggle('reader-mode-active');
+
+    // Smooth scroll to top of article if we just entered reader mode
+    if (document.body.classList.contains('reader-mode-active')) {
+        const article = document.querySelector('.main-feature');
+        if (article) article.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function shareArticle(method) {
+    const url = window.location.href;
+    const title = document.querySelector('.main-feature h2')?.textContent || 'Radio Rab';
+
+    switch (method) {
+        case 'copy':
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Poveznica kopirana!');
+            });
+            break;
+        case 'twitter':
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`, '_blank');
+            break;
+        case 'facebook':
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+            break;
+    }
 }

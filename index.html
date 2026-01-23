@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Rab | Vijesti s otoka Raba</title>
-    <meta name="description" content="Radio Rab - vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba. Trajekti, vrijeme, kultura, sport i više.">
+    <meta name="description"
+        content="Radio Rab - vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba. Trajekti, vrijeme, kultura, sport i više.">
     <meta name="keywords" content="Radio Rab, otok Rab, vijesti, Hrvatska, Kvarner, trajekt, turizam">
     <meta name="author" content="Radio Rab">
 
@@ -22,7 +23,8 @@
     <meta name="twitter:description" content="Vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba.">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#020617">
@@ -30,7 +32,9 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -94,7 +98,8 @@
                     </div>
 
                     <!-- CATEGORY FILTER BAR -->
-                    <div class="filter-bar card-animate" style="--delay: 2" role="group" aria-label="Filtriraj vijesti po kategoriji">
+                    <div class="filter-bar card-animate" style="--delay: 2" role="group"
+                        aria-label="Filtriraj vijesti po kategoriji">
                         <button class="filter-btn active" data-cat="all" aria-pressed="true">Sve</button>
                         <button class="filter-btn" data-cat="LOKALNO" aria-pressed="false">Lokalno</button>
                         <button class="filter-btn" data-cat="SPORT" aria-pressed="false">Sport</button>
@@ -239,6 +244,25 @@
                                 <span class="song-title">Radio Rab - 24/7</span>
                             </div>
                         </div>
+
+                        <!-- Playlist Container -->
+                        <div class="recently-played" id="playlist-container" hidden>
+                            <div id="next-up-container" hidden>
+                                <h4 style="color: var(--accent);">SLIJEDI USKORO</h4>
+                                <div class="next-up-item">
+                                    <span class="pulse-dot" style="background:var(--accent)"></span>
+                                    <div class="playlist-meta">
+                                        <span class="playlist-artist" id="next-artist">...</span>
+                                        <span class="playlist-song" id="next-song">SLIJEDI</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 style="margin-top: 1.5rem">UPRAVO SVIRALO</h4>
+                            <div class="playlist-items" id="playlist-items">
+                                <!-- JS Injected Items -->
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Newsletter Widget -->
@@ -328,7 +352,8 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Radio Rab. Sva prava pridržana.</p>
-                <p class="demo-badge">🚧 Demo verzija — <a href="https://github.com/user/radio-web" target="_blank" rel="noopener">GitHub</a></p>
+                <p class="demo-badge">🚧 Demo verzija — <a href="https://github.com/user/radio-web" target="_blank"
+                        rel="noopener">GitHub</a></p>
             </div>
         </div>
     </footer>
@@ -351,10 +376,20 @@
                 <input type="text" placeholder="Vaše ime" aria-label="Vaše ime" required>
                 <input type="email" placeholder="Email" aria-label="Email adresa" required>
                 <textarea placeholder="Opišite vijest..." aria-label="Opis vijesti" rows="4" required></textarea>
+
+                <div class="file-upload-group">
+                    <label for="media-upload" class="upload-label">
+                        <span class="upload-icon">📎</span> Priloži sliku ili video
+                    </label>
+                    <input type="file" id="media-upload" accept="image/*,video/*" class="file-input">
+                </div>
                 <button type="submit" class="submit-btn">Pošalji</button>
             </form>
         </div>
     </div>
+
+    <!-- Reader Mode Exit Button -->
+    <button class="reader-exit-btn" onclick="toggleReaderMode()">Izađi iz načina čitanja</button>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
