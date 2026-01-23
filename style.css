@@ -361,6 +361,86 @@ h4 {
     text-decoration: none;
 }
 
+/* Footer */
+.editorial-footer {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 0;
+    margin-top: 5rem;
+    text-align: center;
+    border-top: 5px solid var(--accent);
+}
+
+.editorial-footer p {
+    font-weight: 700;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Market & Tab Utilities */
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.market-item {
+    background: white;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.market-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.price {
+    font-size: 1.5rem;
+    color: var(--accent);
+    display: block;
+    margin: 1rem 0;
+}
+
+.btn-buy {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* Shorts & Map Demos */
+.shorts-container {
+    height: 80vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.short-video-mock {
+    width: 320px;
+    height: 560px;
+    background: #1e293b;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+.map-placeholder {
+    height: 70vh;
+    background: #f1f5f9;
+    border: 1px solid var(--border);
+}
+
 /* Responsive */
 @media (max-width: 1000px) {
     .editorial-grid {
