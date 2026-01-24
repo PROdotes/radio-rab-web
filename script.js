@@ -191,8 +191,7 @@ async function initNPT() {
     }
 
     debugLog(
-      `NPT: Loaded ${alerts.length} alerts, ${
-        state.nptIslandWeather?.length || 0
+      `NPT: Loaded ${alerts.length} alerts, ${state.nptIslandWeather?.length || 0
       } island weather stations, Updated: ${updatedAt}`
     )
 
@@ -282,10 +281,12 @@ function updateNewsTickerWithNPT(alerts) {
   const critical = alerts
     .filter((a) => {
       const details = (a.details || '').toLowerCase()
-      const road = a.road || ''
+      const road = (a.road || '').toUpperCase()
+      const rabRegex = /\b(rab|rapsk)[a-z]{0,3}\b/i
+
       // Only show Ferry, Otok Rab specifically, or the bridge/access roads
       return (
-        details.includes('rab') ||
+        rabRegex.test(details) ||
         details.includes('stinica') ||
         details.includes('mišnjak') ||
         road.includes('D105') ||
@@ -300,8 +301,7 @@ function updateNewsTickerWithNPT(alerts) {
   const alertItems = critical
     .map(
       (a) => `
-        <span class="ticker-item" style="color: var(--warning); font-weight: 800;">⚠️ ${
-          a.road
+        <span class="ticker-item" style="color: var(--warning); font-weight: 800;">⚠️ ${a.road
         }: ${a.details.substring(0, 80)}${a.details.length > 80 ? '...' : ''}</span>
         <span class="ticker-separator">•</span>
     `
@@ -323,18 +323,47 @@ function updateTrafficAlerts(alerts, updatedAt) {
   // Filter for Rab-relevant alerts
   const relevant = alerts.filter((a) => {
     const details = (a.details || '').toLowerCase()
-    const road = a.road || ''
-    return (
-      details.includes('rab') ||
+    const road = (a.road || '').toUpperCase()
+    const lat = parseFloat(a.lat)
+    const lng = parseFloat(a.lng)
+
+    // Regex for island specific mentions
+    const rabRegex = /\b(rab|rapsk)[a-z]{0,3}\b/i
+    const hasRabKeyword = rabRegex.test(details)
+    const hasFerryKeyword =
       details.includes('stinica') ||
       details.includes('mišnjak') ||
-      details.includes('trajekt') || // Ferry keyword
-      details.includes('jadrolinija') || // Ferry keyword
-      details.includes('prekid plovidbe') || // Ferry keyword
-      road.includes('D105') ||
-      road.includes('D8') ||
-      (road.includes('A1') && (details.includes('bura') || details.includes('vjetar')))
-    )
+      details.includes('trajekt') ||
+      details.includes('jadrolinija')
+
+    // 1. Mandatory Include: Island Road or Keywords
+    if (hasRabKeyword || hasFerryKeyword || road.includes('D105')) return true
+
+    // 2. Geographic Filtering (High precision)
+    if (!isNaN(lat) && !isNaN(lng) && lat !== 0 && lng !== 0) {
+      const dist = getDistanceFromLatLonInKm(44.7554, 14.761, lat, lng)
+
+      // Automatic include if very close (< 35km - local island access)
+      if (dist < 35) return true
+
+      // Secondary include for major access roads only if nearby (< 70km)
+      // BUT: strictly only for high-impact events (accidents, closures, wind)
+      const isAccessRoad = road.includes('D8') || road.includes('A1') || road.includes('A6') || road.includes('A7') || road.includes('D23')
+      if (isAccessRoad && dist < 70) {
+        const text = details.toLowerCase()
+        const isUrgent =
+          text.includes('nesreć') ||
+          text.includes('sudar') ||
+          text.includes('zatvoren') ||
+          text.includes('prekid') ||
+          text.includes('bura') ||
+          text.includes('vjetar')
+
+        return isUrgent
+      }
+    }
+
+    return false // If it reached here, it's not relevant
   })
 
   if (relevant.length === 0) {
@@ -356,9 +385,8 @@ function updateTrafficAlerts(alerts, updatedAt) {
       : ''
 
     return `
-            <div class="alert-card alert-${type}${
-      isHidden ? ' alert-hidden' : ''
-    }" title="Klikni za više">
+            <div class="alert-card alert-${type}${isHidden ? ' alert-hidden' : ''
+      }" title="Klikni za više">
                 <div class="alert-icon">${icon}</div>
                 <div class="alert-info-wrapper">
                     <span class="alert-road">${escapeHtml(a.road || 'Obavijest')}</span>
@@ -653,12 +681,12 @@ function initMarketplace() {
         </div>
         <div class="market-grid">
             ${(typeof MARKET_ITEMS !== 'undefined' ? MARKET_ITEMS : getMockMarketItems())
-              .map(
-                (item) => `
+      .map(
+        (item) => `
                 <div class="market-card card-animate">
                     <div class="market-img" style="background-image: url('${escapeHtml(
-                      item.image
-                    )}')">
+          item.image
+        )}')">
                         <span class="price-tag">${escapeHtml(item.price)}</span>
                     </div>
                     <div class="market-info">
@@ -668,8 +696,8 @@ function initMarketplace() {
                     </div>
                 </div>
             `
-              )
-              .join('')}
+      )
+      .join('')}
         </div>
     `
 }
@@ -730,12 +758,12 @@ function initVideos() {
         </div>
         <div class="video-grid">
              ${(typeof VIDEO_ITEMS !== 'undefined' ? VIDEO_ITEMS : getMockVideos())
-               .map(
-                 (video) => `
+      .map(
+        (video) => `
                 <div class="video-card card-animate">
                     <div class="video-thumb" style="background-image: url('${escapeHtml(
-                      video.image
-                    )}')">
+          video.image
+        )}')">
                         <div class="play-overlay">▶</div>
                         <span class="video-duration">${escapeHtml(video.duration)}</span>
                     </div>
@@ -745,8 +773,8 @@ function initVideos() {
                     </div>
                 </div>
             `
-               )
-               .join('')}
+      )
+      .join('')}
         </div>
     `
 }
@@ -804,8 +832,8 @@ function renderHero(article) {
         <article class="main-feature card-animate" style="--delay: 1">
             <div class="feature-img-container">
                 <div class="feature-img" style="background-image: url('${escapeHtml(
-                  article.image
-                )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
+    article.image
+  )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
             </div>
             <div class="feature-content">
                 <div class="flex-between">
@@ -820,8 +848,8 @@ function renderHero(article) {
                 <div class="editorial-ai">
                     <p class="ai-label">AI SAŽETAK</p>
                     <p>${escapeHtml(
-                      article.aiSummary || 'Automatski sažetak članka trenutno nije dostupan.'
-                    )}</p>
+    article.aiSummary || 'Automatski sažetak članka trenutno nije dostupan.'
+  )}</p>
                 </div>
 
                 <div class="meta-info">Piše: ${escapeHtml(article.author)}</div>
@@ -892,13 +920,13 @@ function createNewsCard(article, index) {
   card.innerHTML = `
         <div class="feature-img-container small-img-container">
             <div class="feature-img" style="background-image: url('${escapeHtml(
-              article.image
-            )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
+    article.image
+  )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
         </div>
         <div class="feature-content">
             <span class="category-pill" style="font-size: 0.6rem; padding: 0.2rem 0.8rem; margin-bottom: 0.8rem;">${escapeHtml(
-              article.category
-            )}</span>
+    article.category
+  )}</span>
             <h3>${escapeHtml(article.title)}</h3>
             <p>${escapeHtml(article.snippet)}</p>
             <div class="meta-info flex-between">
@@ -1451,13 +1479,12 @@ function startFerrySimulation(marker, startPos, endPos) {
     if (statusEl) {
       statusEl.innerHTML = `
                 <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                    <div class="pulse-dot" style="background: ${
-                      aisOffsetMins >= 5
-                        ? 'var(--error)'
-                        : aisOffsetMins >= 1
-                        ? 'var(--warning)'
-                        : 'var(--success)'
-                    }"></div>
+                    <div class="pulse-dot" style="background: ${aisOffsetMins >= 5
+          ? 'var(--error)'
+          : aisOffsetMins >= 1
+            ? 'var(--warning)'
+            : 'var(--success)'
+        }"></div>
                     <div style="font-weight:bold; color: var(--text-main); font-size: 1rem;">
                         AIS: ${escapeHtml(aisStatusMsg)}
                     </div>
@@ -1466,22 +1493,18 @@ function startFerrySimulation(marker, startPos, endPos) {
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.85rem;">
                     <div>
                         <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">MIŠNJAK →</div>
-                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${
-                          depMisnjak.last
-                        }</div>
-                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${
-                          depMisnjak.next
-                        }</div>
+                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depMisnjak.last
+        }</div>
+                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depMisnjak.next
+        }</div>
                         <div style="opacity: 0.8;">Nakon toga: ${depMisnjak.after}</div>
                     </div>
                     <div>
                         <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">STINICA →</div>
-                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${
-                          depStinica.last
-                        }</div>
-                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${
-                          depStinica.next
-                        }</div>
+                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depStinica.last
+        }</div>
+                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depStinica.next
+        }</div>
                         <div style="opacity: 0.8;">Nakon toga: ${depStinica.after}</div>
                     </div>
                 </div>
@@ -1898,7 +1921,7 @@ function initRadioPlayer() {
   async function fetchHistory(proxyBase, timestamp) {
     const response = await fetch(
       proxyBase +
-        encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`)
+      encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`)
     )
     if (!response.ok) return
     const str = await response.text()
@@ -2139,34 +2162,32 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                 <div style="min-width: 250px; font-family: var(--font-main); color: #f1f5f9;">
                     <h4 style="margin: 0 0 5px 0; color: ${color}; font-size: 1rem;">${iconChar} ${displayType}</h4>
                     <div style="font-weight: bold; margin-bottom: 5px; color: #f8fafc; font-size: 1rem;">${escapeHtml(
-                      alert.road
-                    )}</div>
+          alert.road
+        )}</div>
                     <div style="font-size: 0.9em; line-height: 1.4; color: #e2e8f0; white-space: pre-wrap;">${escapeHtml(
-                      alert.details
-                    )}</div>
+          alert.details
+        )}</div>
                     
-                    ${
-                      alert.validFrom
-                        ? `
+                    ${alert.validFrom
+          ? `
                         <div style="font-size: 0.85em; color: #cbd5e1; margin-top: 8px; border-top: 1px solid #334155; padding-top: 5px;">
                             📅 <strong>Trajanje:</strong><br>
                             ${new Date(alert.validFrom).toLocaleDateString('hr-HR')} - ${new Date(
-                            alert.validUntil
-                          ).toLocaleDateString('hr-HR')}
+            alert.validUntil
+          ).toLocaleDateString('hr-HR')}
                         </div>
                     `
-                        : ''
-                    }
+          : ''
+        }
 
                     <div style="font-size: 0.8em; color: #94a3b8; margin-top: 5px;">
-                        Ažurirano: ${
-                          alert.timestamp
-                            ? new Date(alert.timestamp).toLocaleTimeString('hr-HR', {
-                                hour: '2-digit',
-                                minute: '2-digit',
-                              })
-                            : ''
-                        }
+                        Ažurirano: ${alert.timestamp
+          ? new Date(alert.timestamp).toLocaleTimeString('hr-HR', {
+            hour: '2-digit',
+            minute: '2-digit',
+          })
+          : ''
+        }
                     </div>
                 </div>
             `
@@ -2214,24 +2235,19 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
         .bindPopup(
           `
                     <div style="text-align: center; color: #f1f5f9; min-width: 150px;">
-                        <strong style="color: #60a5fa;">${
-                          CONFIG.stationNames[station.id] || station.id
-                        }</strong><br>
-                        <div style="font-size: 1.2rem; margin: 5px 0; font-weight: bold;">${
-                          station.temp ? Math.round(parseFloat(station.temp)) + '°C' : '--'
-                        }</div>
+                        <strong style="color: #60a5fa;">${CONFIG.stationNames[station.id] || station.id
+          }</strong><br>
+                        <div style="font-size: 1.2rem; margin: 5px 0; font-weight: bold;">${station.temp ? Math.round(parseFloat(station.temp)) + '°C' : '--'
+          }</div>
                         Vjetar: <strong>${station.windSpeed || 0} km/h</strong><br>
-                        Udari: <strong style="color: ${
-                          windGust > 80 ? '#f87171' : '#f1f5f9'
-                        }">${Math.round(windGust)} km/h</strong><br>
+                        Udari: <strong style="color: ${windGust > 80 ? '#f87171' : '#f1f5f9'
+          }">${Math.round(windGust)} km/h</strong><br>
                         Smjer: ${getWindArrow(station.windDir)} (${station.windDir || '--'}°)<br>
-                        ${
-                          station.roadTemp
-                            ? `<span style="color: ${
-                                parseFloat(station.roadTemp) < 0 ? '#f87171' : '#94a3b8'
-                              }">Cesta: ${station.roadTemp}°C</span>`
-                            : ''
-                        }
+                        ${station.roadTemp
+            ? `<span style="color: ${parseFloat(station.roadTemp) < 0 ? '#f87171' : '#94a3b8'
+            }">Cesta: ${station.roadTemp}°C</span>`
+            : ''
+          }
                     </div>
                 `
         )
@@ -2272,14 +2288,13 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
           `
                     <div style="text-align: center; color: #f1f5f9; font-size: 0.9rem; min-width: 150px;">
                         <strong style="color: #a78bfa;">📡 ${escapeHtml(counter.name)}</strong><br>
-                        ${
-                          hasData
-                            ? `
+                        ${hasData
+            ? `
                             Brzina: <strong style="color: ${color}; font-size: 1.1em;">${speed} km/h</strong><br>
                             Promet: <strong>${flow} voz/h</strong>
                         `
-                            : `<span style="color: #94a3b8; font-style: italic;">Nema podataka</span>`
-                        }
+            : `<span style="color: #94a3b8; font-style: italic;">Nema podataka</span>`
+          }
                     </div>
                 `
         )
@@ -2335,70 +2350,61 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
         .bindPopup(
           `
                     <div style="text-align: center; color: #f1f5f9; min-width: 180px;">
-                        <strong style="color: #0ea5e9; font-size: 1.1rem;">🏝️ ${
-                          CONFIG.stationNames[station.id] || station.id
-                        }</strong>
-                         ${
-                           distance < 5
-                             ? '<span style="color:#fbbf24; font-size:0.8em"> (Lokalno)</span>'
-                             : ''
-                         }<br>
+                        <strong style="color: #0ea5e9; font-size: 1.1rem;">🏝️ ${CONFIG.stationNames[station.id] || station.id
+          }</strong>
+                         ${distance < 5
+            ? '<span style="color:#fbbf24; font-size:0.8em"> (Lokalno)</span>'
+            : ''
+          }<br>
 
                          <div style="display:flex; justify-content:center; align-items:center; gap: 10px; margin: 10px 0;">
                             <div style="text-align:center;">
                                 <div style="font-size: 1.4rem; font-weight: bold;">${Math.round(
-                                  windGust
-                                )}</div>
+            windGust
+          )}</div>
                                 <div style="font-size: 0.7rem; color: #94a3b8;">UDARI km/h</div>
                             </div>
-                            ${
-                              temp !== null
-                                ? `
+                            ${temp !== null
+            ? `
                             <div style="text-align:center; border-left: 1px solid #475569; padding-left: 10px;">
                                 <div style="font-size: 1.4rem; font-weight: bold;">${Math.round(
-                                  temp
-                                )}°</div>
+              temp
+            )}°</div>
                                 <div style="font-size: 0.7rem; color: #94a3b8;">ZRAK</div>
                             </div>`
-                                : ''
-                            }
+            : ''
+          }
                         </div>
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem; text-align: left; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 6px;">
                             <div>💨 Vjetar:</div>
                             <div style="text-align: right;"><strong>${Math.round(
-                              windSpeed
-                            )} km/h</strong></div>
+            windSpeed
+          )} km/h</strong></div>
                             <div>🌬️ Udari:</div>
-                            <div style="text-align: right; color: ${
-                              windGust > 80 ? '#f87171' : windGust > 50 ? '#fbbf24' : '#f1f5f9'
-                            };">
+                            <div style="text-align: right; color: ${windGust > 80 ? '#f87171' : windGust > 50 ? '#fbbf24' : '#f1f5f9'
+          };">
                                 <strong>${Math.round(windGust)} km/h</strong>
                             </div>
                             <div>🧭 Smjer:</div>
-                            <div style="text-align: right;">${getWindArrow(station.windDir)} ${
-            station.windDir || '--'
+                            <div style="text-align: right;">${getWindArrow(station.windDir)} ${station.windDir || '--'
           }°</div>
-                            ${
-                              station.humidity != null
-                                ? `
+                            ${station.humidity != null
+            ? `
                                 <div>💧 Vlaga:</div>
                                 <div style="text-align: right;">${station.humidity}%</div>
                             `
-                                : ''
-                            }
-                            ${
-                              station.roadTemp
-                                ? `
+            : ''
+          }
+                            ${station.roadTemp
+            ? `
                                 <div>🛣️ Cesta:</div>
-                                <div style="text-align: right; color: ${
-                                  parseFloat(station.roadTemp) < 0 ? '#ef4444' : '#f1f5f9'
-                                };">${station.roadTemp}°C ${
-                                    parseFloat(station.roadTemp) < 0 ? '❄️' : ''
-                                  }</div>
+                                <div style="text-align: right; color: ${parseFloat(station.roadTemp) < 0 ? '#ef4444' : '#f1f5f9'
+            };">${station.roadTemp}°C ${parseFloat(station.roadTemp) < 0 ? '❄️' : ''
+            }</div>
                             `
-                                : ''
-                            }
+            : ''
+          }
                         </div>
                     </div>
                 `
@@ -2412,9 +2418,8 @@ function getWindArrow(azimuth) {
   if (azimuth === null || azimuth === undefined) return '•'
   const val = parseInt(azimuth)
   if (isNaN(val)) return '•'
-  return `<span style="display:inline-block; transform: rotate(${
-    val + 180
-  }deg); font-weight:bold;">↑</span>`
+  return `<span style="display:inline-block; transform: rotate(${val + 180
+    }deg); font-weight:bold;">↑</span>`
 }
 
 /**
