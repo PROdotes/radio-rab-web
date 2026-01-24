@@ -1081,10 +1081,22 @@ function initMap() {
     iconAnchor: [15, 15],
   })
 
-  const ferryMarker = L.marker(misnjak, { icon: ferryIcon }).addTo(state.layers.ferry)
+  const ferryMarker = L.marker(misnjak, { icon: ferryIcon })
+    .bindPopup('<div id="ferry-status" style="min-width: 200px;">Učitavanje AIS podataka...</div>')
+    .addTo(state.layers.ferry)
+
+  // Ghost AIS Ferry (Semi-transparent)
+  const aisIcon = L.divIcon({
+    className: 'ferry-icon-marker ais-ghost',
+    html: '<div style="font-size: 24px; opacity: 0.5; filter: grayscale(1);">⛴️</div>',
+    iconSize: [30, 30],
+    iconAnchor: [15, 15],
+  })
+
+  const aisMarker = L.marker(misnjak, { icon: aisIcon }).addTo(state.layers.ferry)
 
   // Start Simulation Loop
-  startFerrySimulation(ferryMarker, misnjak, stinica)
+  startFerrySimulation(ferryMarker, misnjak, stinica, aisMarker)
 
   // Add Centre/Locate Controls
   addMapControls()
@@ -1360,7 +1372,7 @@ function renderLazyLayer(data, layerGroup) {
   // Deprecated by granular logic above
 }
 
-function startFerrySimulation(marker, startPos, endPos) {
+function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
   // Clear any existing interval to prevent memory leaks
   if (state.ferryInterval) {
     clearInterval(state.ferryInterval)
@@ -1380,18 +1392,25 @@ function startFerrySimulation(marker, startPos, endPos) {
     // --- MANUAL OVERRIDE CHECK ---
     if (state.manualOverrides.ferrySuspended) {
       statusText = 'LINIJA U PREKIDU (Bura)'
-      const statusEl = document.getElementById('ferry-status')
-      if (statusEl) {
-        statusEl.innerHTML = `
-                    <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <div class="pulse-dot" style="background: var(--error)"></div>
-                        <div style="font-weight:bold; color: var(--error); font-size: 1.1rem;">
-                            ⚠️ LINIJA U PREKIDU
-                        </div>
-                    </div>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Zbog nepovoljnih vremenskih uvjeta (bura), trajektna linija Mišnjak-Stinica je privremeno obustavljena.</p>
-                `
-      }
+      const statusElements = [
+        document.getElementById('ferry-status'),
+        document.getElementById('ferry-status-v2'),
+      ]
+
+      statusElements.forEach((statusEl) => {
+        if (statusEl) {
+          statusEl.innerHTML = `
+                      <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                          <div class="pulse-dot" style="background: var(--error)"></div>
+                          <div style="font-weight:bold; color: var(--error); font-size: 1.1rem;">
+                              ⚠️ LINIJA U PREKIDU
+                          </div>
+                      </div>
+                      <p style="color: var(--text-dim); font-size: 0.9rem;">Zbog nepovoljnih vremenskih uvjeta (bura), trajektna linija Mišnjak-Stinica je privremeno obustavljena.</p>
+                  `
+        }
+      })
+
       const sidebarFerryRow = document.querySelector('.live-row:nth-child(1) .value')
       if (sidebarFerryRow) {
         sidebarFerryRow.innerHTML = 'U PREKIDU'
@@ -1424,11 +1443,33 @@ function startFerrySimulation(marker, startPos, endPos) {
       statusText = 'Luka Mišnjak (Ukrcaj/Iskrcaj)'
     }
 
-    // LERP Position
+    // LERP Position (Scheduled)
     const lat = startPos[0] + (endPos[0] - startPos[0]) * progress
     const lng = startPos[1] + (endPos[1] - startPos[1]) * progress
 
     marker.setLatLng([lat, lng])
+
+    // --- AIS "GHOST" POSITION ---
+    if (aisMarker) {
+      const aisOffsetMins = 2 // Mock delay
+      const aisTime = new Date(now.getTime() - aisOffsetMins * 60000)
+      const aisMinutes = aisTime.getMinutes() + aisTime.getSeconds() / 60
+      let aisProgress = 0
+
+      if (aisMinutes >= 0 && aisMinutes < durationMins) {
+        aisProgress = aisMinutes / durationMins
+      } else if (aisMinutes >= 30 && aisMinutes < 30 + durationMins) {
+        aisProgress = 1 - (aisMinutes - 30) / durationMins
+      } else if (aisMinutes >= durationMins && aisMinutes < 30) {
+        aisProgress = 1
+      } else {
+        aisProgress = 0
+      }
+
+      const aisLat = startPos[0] + (endPos[0] - startPos[0]) * aisProgress
+      const aisLng = startPos[1] + (endPos[1] - startPos[1]) * aisProgress
+      aisMarker.setLatLng([aisLat, aisLng])
+    }
 
     // Helper to get times
     const getDepartures = () => {
@@ -1475,16 +1516,17 @@ function startFerrySimulation(marker, startPos, endPos) {
       aisStatusMsg = `Moguć prekid linije! (AIS)`
     }
 
-    const statusEl = document.getElementById('ferry-status')
-    if (statusEl) {
-      statusEl.innerHTML = `
+    const statusElements = [
+      document.getElementById('ferry-status'),
+      document.getElementById('ferry-status-v2'),
+    ]
+
+    statusElements.forEach((statusEl) => {
+      if (statusEl) {
+        statusEl.innerHTML = `
                 <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                    <div class="pulse-dot" style="background: ${aisOffsetMins >= 5
-          ? 'var(--error)'
-          : aisOffsetMins >= 1
-            ? 'var(--warning)'
-            : 'var(--success)'
-        }"></div>
+                    <div class="pulse-dot" style="background: ${aisOffsetMins >= 5 ? 'var(--error)' : aisOffsetMins >= 1 ? 'var(--warning)' : 'var(--success)'
+          }"></div>
                     <div style="font-weight:bold; color: var(--text-main); font-size: 1rem;">
                         AIS: ${escapeHtml(aisStatusMsg)}
                     </div>
@@ -1493,18 +1535,14 @@ function startFerrySimulation(marker, startPos, endPos) {
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.85rem;">
                     <div>
                         <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">MIŠNJAK →</div>
-                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depMisnjak.last
-        }</div>
-                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depMisnjak.next
-        }</div>
+                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depMisnjak.last}</div>
+                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depMisnjak.next}</div>
                         <div style="opacity: 0.8;">Nakon toga: ${depMisnjak.after}</div>
                     </div>
                     <div>
                         <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">STINICA →</div>
-                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depStinica.last
-        }</div>
-                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depStinica.next
-        }</div>
+                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depStinica.last}</div>
+                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depStinica.next}</div>
                         <div style="opacity: 0.8;">Nakon toga: ${depStinica.after}</div>
                     </div>
                 </div>
@@ -1513,14 +1551,20 @@ function startFerrySimulation(marker, startPos, endPos) {
                     * AIS podaci uživo s radio antene. Osvježeno: ${now.toLocaleTimeString('hr-HR')}
                 </div>
             `
-    }
+      }
+    })
 
     // --- SIDEBAR SYNC ---
     // Update the sidebar widget if it exists on the page
     const sidebarFerryRow = document.querySelector('.live-row:nth-child(1) .value')
     if (sidebarFerryRow) {
-      sidebarFerryRow.innerHTML = `Sljedeći: <span style="color: #fff">${depStinica.next}</span>`
-      sidebarFerryRow.className = 'value val-green'
+      if (aisOffsetMins >= 1) {
+        sidebarFerryRow.innerHTML = `Kasni ~${aisOffsetMins} min`
+        sidebarFerryRow.className = 'value val-yellow'
+      } else {
+        sidebarFerryRow.innerHTML = `Sljedeći: <span style="color: #fff">${depStinica.next}</span>`
+        sidebarFerryRow.className = 'value val-green'
+      }
     }
 
     const sidebarLoparRow = document.querySelector('.live-row:nth-child(2) .value')
