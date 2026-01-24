@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://corsproxy.io/?url=https%3A%2F%2Fradio-rab.hr%2FNowOnAir.xml\")",
+      "Bash(node --check:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File scripts/sync-raw-data.ps1:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File scripts/process-data.ps1)",
+      "Bash(unzip:*)",
+      "Bash(pwsh -File scripts/sync-raw-data.ps1)"
+    ]
+  }
+}
