@@ -5,8 +5,8 @@
 /* --- DESIGN TOKENS --- */
 :root {
   /* Colors - Premium Dark Edition */
-  --bg-dark: #020617;
-  --bg-card: rgba(15, 23, 42, 0.6);
+  --bg-dark: #000927;
+  --bg-card: #000715;
   --primary: #3b82f6;
   --primary-glow: rgba(59, 130, 246, 0.4);
   --accent: #0ea5e9;
@@ -36,6 +36,16 @@
   /* Transitions */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-bounce: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Category Colors */
+  --cat-local: var(--primary);
+  --cat-sport: var(--success);
+  --cat-sea: #0284c7;
+  --cat-culture: #9333ea;
+  --cat-tourism: #ea580c;
+  --cat-gastro: #db2777;
 }
 
 /* --- RESET & BASE --- */
@@ -57,7 +67,6 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
-  background-image: radial-gradient(circle at 50% -20%, #1e293b 0%, var(--bg-dark) 80%);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -96,7 +105,8 @@ ul {
 
 /* --- NEWS TICKER (TOP BAR) --- */
 .news-ticker {
-  background: var(--bg-deep);
+  background: #020617;
+  /* Solid dark background */
   border-bottom: 1px solid var(--border);
   padding: 0 1rem;
   display: flex;
@@ -248,7 +258,7 @@ ul {
 }
 
 .glass {
-  background: var(--card-bg);
+  background: var(--bg-card);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--border);
@@ -359,7 +369,7 @@ ul {
 .editorial-grid {
   display: grid;
   grid-template-columns: 1fr 340px;
-  gap: 2.5rem;
+  gap: 1.5rem;
   margin: 2rem auto;
 }
 
@@ -422,29 +432,65 @@ ul {
 
 .feature-content {
   padding: 2rem;
-  background: linear-gradient(to bottom, #1e293b, var(--bg-card));
+  background: var(--bg-card);
 }
 
 .category-pill {
-  background: var(--grad-blue);
-  padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.65rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: var(--text-muted);
+  /* Fallback */
   color: #fff;
+  padding: 0.15rem 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px -2px 20px rgba(0, 0, 0, 0.9);
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* Category Colors */
+/* Category Colors (Unified) */
+[data-category="LOKALNO"] .category-pill {
+  background: var(--cat-local);
+}
+
+[data-category="SPORT"] .category-pill {
+  background: var(--cat-sport);
+}
+
+[data-category="MORE"] .category-pill {
+  background: var(--cat-sea);
+}
+
+[data-category="KULTURA"] .category-pill {
+  background: var(--cat-culture);
+}
+
+[data-category="TURIZAM"] .category-pill {
+  background: var(--cat-tourism);
+}
+
+[data-category="GASTRONOMIJA"] .category-pill {
+  background: var(--cat-gastro);
 }
 
 .main-feature h2 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   margin-bottom: 1rem;
   color: #fff;
 }
 
 .main-feature p {
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, sans-serif;
   color: var(--text-dim);
   font-size: 1.05rem;
   margin-bottom: 1.5rem;
@@ -493,23 +539,74 @@ ul {
 /* --- FILTER BAR --- */
 .filter-bar {
   display: flex;
-  gap: 0.75rem;
-  margin: 2.5rem 0;
+  gap: 0.2rem;
+  margin: 0.5rem 0;
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border);
+  /* Better contrast for unselected pills */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-dim);
   padding: 0.5rem 1rem;
   border-radius: var(--radius-pill);
-  font-weight: 600;
-  font-size: 0.8rem;
+  font-weight: 700;
+  font-size: 0.75rem;
   cursor: pointer;
   transition: all 0.3s var(--ease-out);
   text-transform: uppercase;
   letter-spacing: 0.03em;
+}
+
+/* Colored Filter Pills */
+.filter-btn[data-cat="all"].active {
+  background: var(--text-muted);
+  border-color: var(--text-muted);
+}
+
+.filter-btn[data-cat="LOKALNO"] {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.filter-btn[data-cat="LOKALNO"]:hover,
+.filter-btn[data-cat="LOKALNO"].active {
+  background: var(--cat-local);
+  border-color: var(--cat-local);
+  color: white;
+}
+
+.filter-btn[data-cat="SPORT"] {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.filter-btn[data-cat="SPORT"]:hover,
+.filter-btn[data-cat="SPORT"].active {
+  background: var(--cat-sport);
+  border-color: var(--cat-sport);
+  color: white;
+}
+
+.filter-btn[data-cat="KULTURA"] {
+  border-color: rgba(147, 51, 234, 0.3);
+}
+
+.filter-btn[data-cat="KULTURA"]:hover,
+.filter-btn[data-cat="KULTURA"].active {
+  background: var(--cat-culture);
+  border-color: var(--cat-culture);
+  color: white;
+}
+
+.filter-btn[data-cat="TURIZAM"] {
+  border-color: rgba(234, 88, 12, 0.3);
+}
+
+.filter-btn[data-cat="TURIZAM"]:hover,
+.filter-btn[data-cat="TURIZAM"].active {
+  background: var(--cat-tourism);
+  border-color: var(--cat-tourism);
+  color: white;
 }
 
 .filter-btn:hover {
@@ -548,7 +645,7 @@ ul {
   position: absolute;
   inset: 0;
   border-radius: var(--radius-sm);
-  background: radial-gradient(circle at 50% 0%, var(--primary-glow), transparent 70%);
+  background: radial-gradient(circle at center, var(--primary-glow), transparent 70%);
   opacity: 0;
   transition: opacity 0.3s var(--ease-out);
   pointer-events: none;
@@ -558,16 +655,32 @@ ul {
 .small-news-card:hover {
   transform: translateY(-6px);
   border-color: var(--primary);
-  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 40px -10px rgba(59, 130, 246, 0.4);
 }
 
 .small-news-card:hover::before {
   opacity: 0.15;
 }
 
-.small-img-container {
+.small-news-card .feature-img-container {
   height: 160px;
+  position: relative;
+  overflow: hidden;
 }
+
+.small-news-card .feature-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.small-news-card:hover .feature-img {
+  transform: scale(1.05);
+}
+
+
 
 .small-news-card .feature-content {
   padding: 1.25rem;
@@ -577,14 +690,19 @@ ul {
 }
 
 .small-news-card h3 {
-  font-size: 1.1rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, sans-serif;*/
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
   line-height: 1.35;
+  text-shadow: 0 0px 5px rgba(0, 0, 255, 0.4);
   color: var(--text-main);
 }
 
 .small-news-card p {
-  font-size: 0.875rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI', Roboto, sans-serif;
+  /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+  font-size: 0.95rem;
   margin-bottom: 1rem;
   line-height: 1.5;
   color: var(--text-dim);
@@ -1810,9 +1928,7 @@ input:checked+.slider::before {
     padding: 0 1rem;
   }
 
-  .news-ticker {
-    display: none;
-  }
+
 
   .site-header {
     top: 0;
@@ -2163,53 +2279,6 @@ body.reader-mode-active .reader-exit-btn {
   margin-bottom: 4rem;
 }
 
-.small-news-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform 0.4s var(--ease-out), border-color 0.4s, box-shadow 0.4s;
-  display: flex;
-  flex-direction: column;
-}
-
-.small-news-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary-glow);
-  box-shadow: var(--shadow-lg);
-}
-
-.small-news-card .feature-img-container {
-  height: 180px;
-  position: relative;
-  overflow: hidden;
-}
-
-.small-news-card .feature-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.6s var(--ease-out);
-}
-
-.small-news-card:hover .feature-img {
-  transform: scale(1.1);
-}
-
-.category-pill {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.6rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .market-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -2345,7 +2414,7 @@ body.reader-mode-active .reader-exit-btn {
   font-size: 0.95rem;
   margin-bottom: 0.25rem;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .video-views {

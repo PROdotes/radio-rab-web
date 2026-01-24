@@ -829,33 +829,31 @@ function renderHero(article) {
   if (!container || !article) return
 
   container.innerHTML = `
-        <article class="main-feature card-animate" style="--delay: 1; display: flex; flex-direction: column; height: 100%; border-radius: var(--radius); overflow: hidden;">
-            <div class="feature-img-container" style="flex-grow: 1; min-height: 440px; position: relative; overflow: hidden;">
-                <span class="category-pill" style="position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; margin: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">${escapeHtml(article.category)}</span>
+        <article class="main-feature card-animate" style="--delay: 1;" data-category="${escapeHtml(article.category)}">
+            <div class="feature-img-container">
+                <span class="category-pill">${escapeHtml(article.category)}</span>
                 <div class="feature-img" style="background-image: url('${escapeHtml(
     article.image
-  )}'); height: 100%; width: 100%; background-size: cover; background-position: center; transition: transform 0.8s var(--ease-out);" role="img" aria-label="${escapeHtml(article.title)}"></div>
+  )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
             </div>
-            <div class="feature-content" style="padding: 2.5rem; background: var(--bg-card); border-top: 1px solid var(--border);">
-                <div class="flex-between" style="margin-bottom: 0.5rem;">
-                    <span class="meta-info" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">${escapeHtml(article.date)} · ${escapeHtml(article.readTime)} čit.</span>
-                </div>
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 900; line-height: 1.1; color: #fff;">${escapeHtml(article.title)}</h2>
-                <p style="color: var(--text-dim); margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.1rem;">${escapeHtml(article.snippet)}</p>
-                
-                <div class="editorial-ai" style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.2); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
-                    <p class="ai-label" style="font-size: 0.65rem; font-weight: 800; color: var(--primary); letter-spacing: 0.1em; margin-bottom: 0.5rem;">AI SAŽETAK</p>
-                    <p style="font-size: 0.95rem; color: #cbd5e1; margin-bottom: 0; line-height: 1.6;">${escapeHtml(article.aiSummary || 'Automatski sažetak članka trenutno nije dostupan.')}</p>
+            <div class="feature-content">
+                <span class="meta-info">${escapeHtml(article.date)} · ${escapeHtml(article.readTime)} čit.</span>
+                <h2>${escapeHtml(article.title)}</h2>
+                <p>${escapeHtml(article.snippet)}</p>
+
+                <div class="editorial-ai">
+                    <p class="ai-label">AI SAŽETAK</p>
+                    <p>${escapeHtml(article.aiSummary || 'Automatski sažetak članka trenutno nije dostupan.')}</p>
                 </div>
 
-                <div class="article-actions" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-                    <button class="action-btn" id="reader-mode-btn" style="background: var(--primary); color: #fff; border: none; padding: 0.6rem 1.25rem; border-radius: var(--radius-pill); font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;">
+                <div class="article-actions">
+                    <button class="action-btn" id="reader-mode-btn">
                         <span class="icon">📖</span> <span class="label">Pročitaj članak</span>
                     </button>
-                    <div class="share-group" style="display: flex; gap: 0.5rem;">
-                        <button class="action-btn icon-only" data-share="copy" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.5rem; border-radius: 50%; color: var(--text-dim);">🔗</button>
-                        <button class="action-btn icon-only" data-share="twitter" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.5rem; border-radius: 50%; color: var(--text-dim);">𝕏</button>
-                        <button class="action-btn icon-only" data-share="facebook" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.5rem; border-radius: 50%; color: var(--text-dim);">f</button>
+                    <div class="share-group">
+                        <button class="action-btn icon-only" data-share="copy">🔗</button>
+                        <button class="action-btn icon-only" data-share="twitter">𝕏</button>
+                        <button class="action-btn icon-only" data-share="facebook">f</button>
                     </div>
                 </div>
             </div>
@@ -913,16 +911,16 @@ function createNewsCard(article, index) {
   card.setAttribute('data-category', article.category)
 
   card.innerHTML = `
-        <div class="feature-img-container small-img-container">
-            <span class="category-pill" style="position: absolute; top: 1rem; left: 1rem; z-index: 2; margin: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.3); font-size: 0.6rem;">${escapeHtml(article.category)}</span>
+        <div class="feature-img-container">
+            <span class="category-pill">${escapeHtml(article.category)}</span>
             <div class="feature-img" style="background-image: url('${escapeHtml(
     article.image
   )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
         </div>
-        <div class="feature-content" style="padding: 1.25rem;">
-            <h3 style="font-size: 1.15rem; line-height: 1.3; font-weight: 800; margin-bottom: 0.75rem; color: #fff;">${escapeHtml(article.title)}</h3>
-            <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1.5rem; line-clamp: 3; -webkit-line-clamp: 3; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;">${escapeHtml(article.snippet)}</p>
-            <div class="meta-info flex-between" style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">
+        <div class="feature-content">
+            <h3>${escapeHtml(article.title)}</h3>
+            <p>${escapeHtml(article.snippet)}</p>
+            <div class="meta-info flex-between">
                 <span>${escapeHtml(article.author)}</span>
                 <span>${escapeHtml(article.date)}</span>
             </div>
