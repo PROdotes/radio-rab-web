@@ -50,18 +50,32 @@
   <a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
 
   <!-- Breaking News Ticker -->
+  <!-- Breaking News Ticker -->
   <div class="news-ticker" role="marquee" aria-live="off">
     <span class="ticker-label">NAJNOVIJE</span>
-    <div class="ticker-content">
-      <span class="ticker-item">⚓ Trajekt Jablanac-Mišnjak: redoviti promet</span>
-      <span class="ticker-separator">•</span>
-      <span class="ticker-item">🌊 Plima danas u 14:32, oseka u 20:45</span>
-      <span class="ticker-separator">•</span>
-      <span class="ticker-item">🎭 Rapska fjera: prijave otvorene do 1. ožujka</span>
-      <span class="ticker-separator">•</span>
-      <span class="ticker-item">🌡️ UV indeks: 3 (umjeren)</span>
-      <span class="ticker-separator">•</span>
-      <span class="ticker-item">💨 Bura: udari do 45 km/h</span>
+    <div class="ticker-mask">
+      <div class="ticker-content">
+        <span class="ticker-item">⚓ Trajekt Jablanac-Mišnjak: redoviti promet</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌊 Plima danas u 14:32, oseka u 20:45</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🎭 Rapska fjera: prijave otvorene do 1. ožujka</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌡️ UV indeks: 3 (umjeren)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">💨 Bura: udari do 45 km/h</span>
+        <!-- Duplicated items for seamless scrolling -->
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">⚓ Trajekt Jablanac-Mišnjak: redoviti promet</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌊 Plima danas u 14:32, oseka u 20:45</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🎭 Rapska fjera: prijave otvorene do 1. ožujka</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌡️ UV indeks: 3 (umjeren)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">💨 Bura: udari do 45 km/h</span>
+      </div>
     </div>
   </div>
 
@@ -78,8 +92,12 @@
           <li><a href="#shorts" class="nav-link nav-trigger" data-tab="shorts">Sport</a></li>
           <li><a href="#map" class="nav-link nav-trigger" data-tab="map">Kultura</a></li>
           <li><a href="#market" class="nav-link nav-trigger" data-tab="market">Otok</a></li>
-          <li><a href="#contact" class="nav-trigger btn-highlight" id="reporter-btn"
-              style="margin-left: 1rem; padding: 0.4rem 1rem; border-radius: var(--radius-sm); font-size: 0.7rem; font-weight: 700; text-transform: uppercase;">Kontakt</a>
+          <li><a href="#contact" class="nav-link nav-trigger">Kontakt</a></li>
+          <li>
+            <button type="button" class="btn-highlight" id="reporter-btn"
+              style="margin-left: 1rem; padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-size: 0.7rem; font-weight: 800; text-transform: uppercase;">
+              Prijavi Vijest
+            </button>
           </li>
         </ul>
       </nav>
@@ -101,7 +119,7 @@
 
         <div class="main-feed-column">
           <!-- FEATURED STORY -->
-          <div id="primary-feature-container" aria-live="polite" style="display: contents;">
+          <div id="primary-feature-container" aria-live="polite">
             <!-- Hero article injected by JS -->
           </div>
 

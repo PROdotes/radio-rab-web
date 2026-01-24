@@ -829,14 +829,14 @@ function renderHero(article) {
   if (!container || !article) return
 
   container.innerHTML = `
-        <article class="main-feature card-animate" style="--delay: 1; grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; height: 100%;">
-            <div class="feature-img-container" style="flex-grow: 1; min-height: 400px; position: relative;">
+        <article class="main-feature card-animate" style="--delay: 1; display: flex; flex-direction: column; height: 100%; border-radius: var(--radius); overflow: hidden;">
+            <div class="feature-img-container" style="flex-grow: 1; min-height: 440px; position: relative; overflow: hidden;">
                 <span class="category-pill" style="position: absolute; top: 1.5rem; left: 1.5rem; z-index: 10; margin: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">${escapeHtml(article.category)}</span>
                 <div class="feature-img" style="background-image: url('${escapeHtml(
     article.image
-  )}'); height: 100%; width: 100%; background-size: cover; background-position: center;" role="img" aria-label="${escapeHtml(article.title)}"></div>
+  )}'); height: 100%; width: 100%; background-size: cover; background-position: center; transition: transform 0.8s var(--ease-out);" role="img" aria-label="${escapeHtml(article.title)}"></div>
             </div>
-            <div class="feature-content" style="padding: 2rem; background: var(--bg-card);">
+            <div class="feature-content" style="padding: 2.5rem; background: var(--bg-card); border-top: 1px solid var(--border);">
                 <div class="flex-between" style="margin-bottom: 0.5rem;">
                     <span class="meta-info" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">${escapeHtml(article.date)} · ${escapeHtml(article.readTime)} čit.</span>
                 </div>
