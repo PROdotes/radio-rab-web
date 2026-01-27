@@ -117,15 +117,15 @@ ul {
 
 /* --- NEWS TICKER (TOP BAR) --- */
 .news-ticker {
-  background: #020617;
-  /* Solid dark background */
-  border-bottom: 1px solid var(--border);
+  background: #0b1220;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  font-size: 0.75rem;
+  gap: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
   height: var(--ticker-height);
   position: fixed;
   top: 0;
@@ -146,25 +146,36 @@ ul {
 }
 
 .ticker-label {
-  color: #fff;
-  letter-spacing: 0.05em;
+  color: #f8fafc;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   flex-shrink: 0;
-  padding-right: 1.5rem;
-  border-right: 1px solid var(--border);
+  padding: 0 1.2rem 0 1rem;
+  border-right: 1px solid rgba(148, 163, 184, 0.25);
   height: 100%;
   display: flex;
   align-items: center;
   position: relative;
   z-index: 10;
-  background: #020617;
-  box-shadow: 5px 0 15px var(--bg-deep);
+  background: #0b1220;
+}
+
+.ticker-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--error);
 }
 
 .ticker-label::after {
   content: ' PRIJELOMNO';
   color: var(--error);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   margin-left: 0.5rem;
+  letter-spacing: 0.08em;
   animation: pulse-label 2s infinite;
 }
 
@@ -181,12 +192,12 @@ ul {
 }
 
 .ticker-item {
-  color: var(--text-dim);
+  color: #f1f5f9;
 }
 
 .ticker-separator {
-  color: var(--border);
-  font-weight: 400;
+  color: rgba(148, 163, 184, 0.35);
+  font-weight: 500;
 }
 
 .ticker-content {
@@ -281,7 +292,7 @@ ul {
 /* --- MASTHEAD --- */
 /* --- PORTAL HEADER --- */
 .site-header {
-  background: rgba(15, 23, 42, 0.9);
+  background: #0f172a;
   backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -290,6 +301,20 @@ ul {
   height: var(--header-height);
   display: flex;
   align-items: center;
+}
+
+.btn-highlight {
+  background: #f8fafc;
+  color: #0b1220;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-highlight:hover {
+  background: #e2e8f0;
+  color: #0b1220;
 }
 
 .header-content {
@@ -306,12 +331,12 @@ ul {
 
 .brand h1 {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   color: #fff;
-  line-height: 0.85;
+  line-height: 0.88;
 }
 
 .brand h1 span {
@@ -322,28 +347,26 @@ ul {
 
 .brand .tagline {
   font-family: 'Inter', sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  color: var(--text-muted);
+  letter-spacing: 0.22em;
+  color: rgba(148, 163, 184, 0.9);
   font-weight: 600;
   margin-top: 6px;
-  border-top: 1px solid var(--border);
-  padding-top: 4px;
 }
 
 .header-nav .nav-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   align-items: center;
 }
 
 .nav-link {
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-dim);
+  letter-spacing: 0.03em;
+  color: #e5e7eb;
   transition: all 0.2s;
   padding: 0.5rem 0;
   position: relative;
@@ -586,10 +609,11 @@ ul {
   position: sticky;
   top: calc(var(--ticker-height) + var(--header-height));
   z-index: 900;
-  background: rgba(6, 13, 24, 0.8);
+  background: #0b1220;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid rgba(148, 163, 184, 0.1);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -598,8 +622,9 @@ ul {
 
 .filter-bar {
   display: flex;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
+  gap: 1rem;
+  padding: 0.8rem 2rem;
+  align-items: center;
   flex-wrap: wrap;
   max-width: var(--container-max);
   margin: 0 auto;
@@ -608,88 +633,126 @@ ul {
 .filter-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--text-dim);
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm);
+  gap: 0.6rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #f1f5f9;
+  padding: 0.3rem 0.45rem 0.55rem;
+  border-radius: 0;
+  font-family: 'Rajdhani', 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 1.05rem;
+  line-height: 1;
   cursor: pointer;
   transition: all 0.2s var(--ease-out);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
 }
 
 .filter-icon {
-  width: 16px;
-  height: 16px;
-  stroke-width: 2.5;
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.3;
 }
 
 /* Colored Filter Pills */
 .filter-btn[data-cat="all"].active {
-  background: var(--text-muted);
-  border-color: var(--text-muted);
+  color: #fff;
+  border-bottom-color: #f8fafc;
 }
 
 .filter-btn[data-cat="LOKALNO"] {
-  border-color: rgba(59, 130, 246, 0.3);
+  border-bottom-color: rgba(59, 130, 246, 0.5);
+}
+
+.filter-btn[data-cat="LOKALNO"] .filter-icon {
+  color: var(--cat-local);
 }
 
 .filter-btn[data-cat="LOKALNO"]:hover,
 .filter-btn[data-cat="LOKALNO"].active {
-  background: var(--cat-local);
-  border-color: var(--cat-local);
-  color: white;
+  border-bottom-color: var(--cat-local);
+  color: #fff;
 }
 
 .filter-btn[data-cat="SPORT"] {
-  border-color: rgba(16, 185, 129, 0.3);
+  border-bottom-color: rgba(16, 185, 129, 0.5);
+}
+
+.filter-btn[data-cat="SPORT"] .filter-icon {
+  color: var(--cat-sport);
 }
 
 .filter-btn[data-cat="SPORT"]:hover,
 .filter-btn[data-cat="SPORT"].active {
-  background: var(--cat-sport);
-  border-color: var(--cat-sport);
-  color: white;
+  border-bottom-color: var(--cat-sport);
+  color: #fff;
 }
 
 .filter-btn[data-cat="KULTURA"] {
-  border-color: rgba(147, 51, 234, 0.3);
+  border-bottom-color: rgba(147, 51, 234, 0.5);
+}
+
+.filter-btn[data-cat="KULTURA"] .filter-icon {
+  color: var(--cat-culture);
 }
 
 .filter-btn[data-cat="KULTURA"]:hover,
 .filter-btn[data-cat="KULTURA"].active {
-  background: var(--cat-culture);
-  border-color: var(--cat-culture);
-  color: white;
+  border-bottom-color: var(--cat-culture);
+  color: #fff;
 }
 
 .filter-btn[data-cat="TURIZAM"] {
-  border-color: rgba(234, 88, 12, 0.3);
+  border-bottom-color: rgba(234, 88, 12, 0.5);
+}
+
+.filter-btn[data-cat="TURIZAM"] .filter-icon {
+  color: var(--cat-tourism);
 }
 
 .filter-btn[data-cat="TURIZAM"]:hover,
 .filter-btn[data-cat="TURIZAM"].active {
-  background: var(--cat-tourism);
-  border-color: var(--cat-tourism);
-  color: white;
+  border-bottom-color: var(--cat-tourism);
+  color: #fff;
+}
+
+.filter-btn[data-cat="MORE"] {
+  border-bottom-color: rgba(2, 132, 199, 0.5);
+}
+
+.filter-btn[data-cat="MORE"] .filter-icon {
+  color: var(--cat-sea);
+}
+
+.filter-btn[data-cat="MORE"]:hover,
+.filter-btn[data-cat="MORE"].active {
+  border-bottom-color: var(--cat-sea);
+  color: #fff;
+}
+
+.filter-btn[data-cat="GASTRONOMIJA"] {
+  border-bottom-color: rgba(219, 39, 119, 0.5);
+}
+
+.filter-btn[data-cat="GASTRONOMIJA"] .filter-icon {
+  color: var(--cat-gastro);
+}
+
+.filter-btn[data-cat="GASTRONOMIJA"]:hover,
+.filter-btn[data-cat="GASTRONOMIJA"].active {
+  border-bottom-color: var(--cat-gastro);
+  color: #fff;
 }
 
 .filter-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
   color: #fff;
-  border-color: var(--border-hover);
 }
 
 .filter-btn.active {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-  box-shadow: 0 0 15px var(--primary-glow);
+  color: #fff;
 }
 
 /* --- NEWS GRID --- */
@@ -2737,3 +2800,12 @@ body.reader-mode-active .reader-exit-btn {
   line-height: 1.4;
   margin: 0;
 }
+
+/* --- CAMERA MARKERS --- */
+.custom-camera-marker { background: transparent !important; border: none !important; }
+.camera-pin { width: 30px; height: 30px; background: #4f46e5; border: 2px solid white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4); cursor: pointer; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.camera-pin:hover { transform: scale(1.2); background: #4338ca; }
+.camera-popup { user-select: none; }
+.camera-popup img { box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: transform 0.3s ease; }
+.camera-popup a { transition: opacity 0.2s; }
+.camera-popup a:hover { opacity: 1; text-decoration: underline !important; }

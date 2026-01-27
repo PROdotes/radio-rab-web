@@ -387,6 +387,97 @@ foreach ($CounterFile in $CounterFiles) {
 
 Write-Host "Found $( $AllCounters.Count ) traffic counters." -ForegroundColor Green
 
+# -----------------------------------------------------------------------------
+# 3b. Process Cameras
+# -----------------------------------------------------------------------------
+$AllCameras = @()
+$CameraFiles = @(
+    "b2b.hak.cameras.datex.xml",
+    "b2b.hac.cameras.xml",
+    "b2b.cameras.datex.xml"
+)
+
+foreach ($CamFile in $CameraFiles) {
+    if (!(Test-Path (Join-Path $RawDir $CamFile))) { continue }
+    
+    Write-Host "Processing Cameras: $CamFile..." -ForegroundColor Gray
+    $FileCamCount = 0
+
+    # Clean XML - strip ALL namespaces and prefixes for easy navigation
+    $RawXml = Get-Content (Join-Path $RawDir $CamFile) -Raw -Encoding UTF8
+    $CleanXml = $RawXml -replace 'xmlns(:\w+)?="[^"]+"', '' -replace '<\w+:', '<' -replace '</\w+:', '</' -replace ' xsi:type="[^"]+"', ''
+    
+    try {
+        [xml]$XmlClean = $CleanXml
+    } catch {
+        Write-Warning "Failed to parse cleaned XML $CamFile. Skipping."
+        continue
+    }
+
+    # HAK / Datex Structure: The data can be in 'predefinedLocationContainer' or 'predefinedLocation'
+    # We'll search for both types of blocks
+    $Containers = $XmlClean.SelectNodes("//predefinedLocationContainer | //predefinedLocation")
+
+    foreach ($Loc in $Containers) {
+        try {
+            # 1. Find the Camera Record (might be direct or in Extension)
+            $Cam = $Loc.predefinedLocationContainerExtension.trafficCameraRecord
+            if (!$Cam) { $Cam = $Loc.trafficCameraRecord }
+            if (!$Cam) { continue }
+
+            $Id = $Cam.cameraId
+            
+            # Title extraction
+            $Title = ""
+            if ($Cam.cameraTitle.values.value) {
+                $V = $Cam.cameraTitle.values.value
+                if ($V -is [array]) { $Title = $V[0].'#text' }
+                else { $Title = $V.'#text' }
+                if (!$Title) { $Title = $V.InnerText }
+                if (!$Title) { $Title = $V }
+            }
+
+            # URL extraction (stillImageUrl is the standard in your HAK sample)
+            $Url = $Cam.stillImageUrl
+            if (!$Url) { $Url = $Cam.imageUrl.urlLinkAddress }
+            if ($Url -is [System.Xml.XmlElement]) { $Url = $Url.InnerText }
+
+            # GPS extraction (Sibling 'location' block in HAK structure)
+            $Lat = $null
+            $Lng = $null
+            
+            # Case 1: Under sibling 'location' (HAK style)
+            if ($Loc.location.locationForDisplay) {
+                $Lat = $Loc.location.locationForDisplay.latitude
+                $Lng = $Loc.location.locationForDisplay.longitude
+            }
+            # Case 2: Under direct 'locationForDisplay' (HAC style)
+            elseif ($Loc.locationForDisplay) {
+                $Lat = $Loc.locationForDisplay.latitude
+                $Lng = $Loc.locationForDisplay.longitude
+            }
+
+            if ($Url -and $Lat -and $Lng) {
+                $AllCameras += [PSCustomObject]@{
+                    id    = $Id
+                    title = $Title
+                    lat   = $Lat
+                    lng   = $Lng
+                    url   = $Url
+                    source = $CamFile
+                }
+                $FileCamCount++
+            }
+        }
+        catch {
+            continue
+        }
+    }
+    Write-Host "  Added $FileCamCount cameras." -ForegroundColor Cyan
+}
+
+Write-Host "Found $( $AllCameras.Count ) cameras." -ForegroundColor Green
+
 
 # -----------------------------------------------------------------------------
 # 4. Bucketing Logic (Hierarchical)
@@ -396,9 +487,9 @@ Write-Host "Found $( $AllCounters.Count ) traffic counters." -ForegroundColor Gr
 # 3. Global: Everything else
 # -----------------------------------------------------------------------------
 
-$IslandData = @{ counters = @(); weather = @() }
-$CoastalData = @{ counters = @(); weather = @() }
-$GlobalData = @{ counters = @(); weather = @() }
+$IslandData = @{ counters = @(); weather = @(); cameras = @() }
+$CoastalData = @{ counters = @(); weather = @(); cameras = @() }
+$GlobalData = @{ counters = @(); weather = @(); cameras = @() }
 
 # Process Counters
 foreach ($C in $AllCounters) {
@@ -438,10 +529,29 @@ foreach ($W in $AllWeather) {
     }
 }
 
+# Process Cameras
+foreach ($Cam in $AllCameras) {
+    if (!$Cam.lat -or !$Cam.lng) { continue }
+    
+    $DistRab = Get-DistanceKm -Lat1 $RabLat -Lng1 $RabLng -Lat2 $Cam.lat -Lng2 $Cam.lng
+    $DistCoast = Get-DistFromLine -Lat $Cam.lat -Lng $Cam.lng
+    
+    if ($DistRab -le $IslandRadiusKm) {
+        $Cam | Add-Member -NotePropertyName "distanceFromRab" -NotePropertyValue ([math]::Round($DistRab, 1)) -Force
+        $IslandData.cameras += $Cam
+    }
+    elseif ($DistCoast -le 50) {
+        $CoastalData.cameras += $Cam
+    }
+    else {
+        $GlobalData.cameras += $Cam
+    }
+}
+
 Write-Host "Bucketing Stats:" -ForegroundColor Cyan
-Write-Host "  Island:  $( $IslandData.counters.Count ) counters, $( $IslandData.weather.Count ) weather"
-Write-Host "  Coastal: $( $CoastalData.counters.Count ) counters, $( $CoastalData.weather.Count ) weather"
-Write-Host "  Global:  $( $GlobalData.counters.Count ) counters, $( $GlobalData.weather.Count ) weather"
+Write-Host "  Island:  $( $IslandData.counters.Count ) counters, $( $IslandData.weather.Count ) weather, $( $IslandData.cameras.Count ) cameras"
+Write-Host "  Coastal: $( $CoastalData.counters.Count ) counters, $( $CoastalData.weather.Count ) weather, $( $CoastalData.cameras.Count ) cameras"
+Write-Host "  Global:  $( $GlobalData.counters.Count ) counters, $( $GlobalData.weather.Count ) weather, $( $GlobalData.cameras.Count ) cameras"
 
 # -----------------------------------------------------------------------------
 # 5. Export Files
@@ -454,6 +564,7 @@ $BaseOutput = @{
     events         = $AllEvents
     islandWeather  = $IslandData.weather
     islandCounters = $IslandData.counters
+    islandCameras  = $IslandData.cameras
 }
 
 # File 2: traffic-coastal.json
@@ -461,6 +572,7 @@ $CoastalOutput = @{
     updatedAt = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ssZ")
     weather   = $CoastalData.weather
     counters  = $CoastalData.counters
+    cameras   = $CoastalData.cameras
 }
 
 # File 3: traffic-global.json
@@ -468,13 +580,14 @@ $GlobalOutput = @{
     updatedAt = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ssZ")
     weather   = $GlobalData.weather
     counters  = $GlobalData.counters
+    cameras   = $GlobalData.cameras
 }
 
 function Export-JsonFile {
     param($Data, $Path)
     $Content = $Data | ConvertTo-Json -Depth 10 -Compress
     $Content | Set-Content -Path $Path -Encoding UTF8
-    Write-Host "Exported: $(Split-Path $Path -Leaf)" -ForegroundColor Green
+    #Write-Host "Exported: $(Split-Path $Path -Leaf)" -ForegroundColor Green
     return $Content
 }
 

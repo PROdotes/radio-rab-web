@@ -102,6 +102,9 @@ const state = {
     ferrySuspended: false,
     d8Restricted: false,
   },
+  nptIslandCameras: [],
+  coastalCameras: [],
+  globalCameras: [],
 }
 
 // ===========================================
@@ -194,6 +197,7 @@ async function initNPT() {
     state.nptAlerts = alerts
     state.nptWeather = weather
     state.nptIslandWeather = islandWeather
+    state.nptIslandCameras = Array.isArray(data) ? [] : data.islandCameras || []
     state.nptCounters = islandCounters // Prioritize filtered counters
     state.nptUpdatedAt = updatedAt
 
@@ -925,7 +929,7 @@ function renderHero(article) {
 
   // Initialize Lucide icons in hero
   if (window.lucide) {
-    lucide.createIcons({ nodes: [container] })
+    lucide.createIcons()
   }
 }
 
@@ -956,6 +960,9 @@ function loadMoreArticles() {
     })
 
     grid.appendChild(fragment)
+    if (window.lucide) {
+      lucide.createIcons()
+    }
     state.currentVisibleCount += nextBatch.length
     state.isLoading = false
 
@@ -988,11 +995,6 @@ function createNewsCard(article, index) {
             </div>
         </div>
     `
-
-  // Initialize Lucide icons in this card
-  if (window.lucide) {
-    lucide.createIcons({ nodes: [card] })
-  }
 
   return card
 }
@@ -1038,59 +1040,114 @@ function initMap() {
   const FilterControl = L.Control.extend({
     onAdd: function (map) {
       const div = L.DomUtil.create('div', 'map-filters glass')
-      div.style.padding = '1rem'
-      div.style.background = 'rgba(15, 23, 42, 0.8)'
+      div.style.padding = '0.75rem'
+      div.style.background = 'rgba(15, 23, 42, 0.9)'
       div.style.backdropFilter = 'blur(12px)'
       div.style.borderRadius = '12px'
       div.style.border = '1px solid rgba(255, 255, 255, 0.1)'
       div.style.color = 'white'
       div.style.minWidth = '200px'
+      div.style.transition = 'all 0.3s ease'
+
+      // Load Saved Settings or Default
+      const savedSettings = JSON.parse(localStorage.getItem('map_filter_settings') || '{}')
+      const layers = savedSettings.layers || { roadwork: true, weather: true, counters: true, cameras: true }
+      const scope = savedSettings.scope || 'regional'
 
       div.innerHTML = `
-                <h5 style="margin: 0 0 0.5rem 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent);">Slojevi</h5>
-                <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
-                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" name="layer-type" value="roadwork" checked> 
-                        <span>🚧 Radovi & Alerti</span>
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" name="layer-type" value="weather" checked> 
-                        <span>☀️ Vrijeme</span>
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="checkbox" name="layer-type" value="counters" checked> 
-                        <span>🚗 Brojači prometa</span>
-                    </label>
+                <div id="map-filter-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; cursor: pointer;">
+                    <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary); letter-spacing: 0.05em;">MAPA POSTAVKE</span>
+                    <button id="map-filter-toggle" style="background: rgba(255,255,255,0.1); border: none; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; cursor: pointer;">Skloni</button>
                 </div>
-                
-                <h5 style="margin: 0 0 0.5rem 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">Područje</h5>
-                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="radio" name="region-scope" value="local"> 
-                        <span>🏝️ Lokalno (Otok)</span>
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="radio" name="region-scope" value="regional" checked> 
-                        <span>📍 Regija (75km)</span>
-                    </label>
-                    <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <input type="radio" name="region-scope" value="full"> 
-                        <span>🇭🇷 Obala & RH</span>
-                    </label>
+                <div id="map-filter-content">
+                    <h5 style="margin: 0.5rem 0 0.5rem 0; font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Slojevi</h5>
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.8rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem;">
+                            <input type="checkbox" name="layer-type" value="roadwork" ${layers.roadwork ? 'checked' : ''}> 
+                            <span>🚧 Radovi & Alerti</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem;">
+                            <input type="checkbox" name="layer-type" value="weather" ${layers.weather ? 'checked' : ''}> 
+                            <span>☀️ Vrijeme</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem;">
+                            <input type="checkbox" name="layer-type" value="counters" ${layers.counters ? 'checked' : ''}> 
+                            <span>🚗 Brojači prometa</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem;">
+                            <input type="checkbox" name="layer-type" value="cameras" ${layers.cameras ? 'checked' : ''}> 
+                            <span>📸 Kamere uživo</span>
+                        </label>
+                    </div>
+                    
+                    <h5 style="margin: 0 0 0.5rem 0; font-size: 0.8rem; text-transform: uppercase; color: var(--accent); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">Područje</h5>
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem;">
+                            <input type="radio" name="region-scope" value="local" ${scope === 'local' ? 'checked' : ''}> 
+                            <span>🏝️ Lokalno (Otok)</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem;">
+                            <input type="radio" name="region-scope" value="regional" ${scope === 'regional' ? 'checked' : ''}> 
+                            <span>📍 Regija (75km)</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem;">
+                            <input type="radio" name="region-scope" value="full" ${scope === 'full' ? 'checked' : ''}> 
+                            <span>🇭🇷 Obala & RH</span>
+                        </label>
+                    </div>
                 </div>
             `
+
+      // Toggle functionality
+      const content = div.querySelector('#map-filter-content')
+      const toggleBtn = div.querySelector('#map-filter-toggle')
+      const header = div.querySelector('#map-filter-header')
+
+      const toggleFilter = () => {
+        const isHidden = content.style.display === 'none'
+        content.style.display = isHidden ? 'block' : 'none'
+        toggleBtn.textContent = isHidden ? 'Skloni' : 'Prikaži'
+        div.style.minWidth = isHidden ? '200px' : 'auto'
+        div.style.opacity = isHidden ? '1' : '0.8'
+      }
+
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation()
+        toggleFilter()
+      })
+      header.addEventListener('click', toggleFilter)
+
+      // Initial Lazy load check if scope was saved as 'full'
+      if (scope === 'full') {
+        setTimeout(() => {
+          loadCoastalData()
+          loadGlobalData()
+        }, 1000)
+      }
 
       // Prevent map clicks
       L.DomEvent.disableClickPropagation(div)
 
       // Add Listeners
-      div.querySelectorAll('input').forEach((input) => {
+      const inputs = div.querySelectorAll('input')
+      inputs.forEach((input) => {
         input.addEventListener('change', () => {
           updateMapVisualization()
 
+          // Save Settings
+          const settings = {
+            layers: {
+              roadwork: div.querySelector('input[value="roadwork"]').checked,
+              weather: div.querySelector('input[value="weather"]').checked,
+              counters: div.querySelector('input[value="counters"]').checked,
+              cameras: div.querySelector('input[value="cameras"]').checked,
+            },
+            scope: div.querySelector('input[name="region-scope"]:checked').value,
+          }
+          localStorage.setItem('map_filter_settings', JSON.stringify(settings))
+
           // Handle Lazy Loading
-          const scope = document.querySelector('input[name="region-scope"]:checked').value
-          if (scope === 'full') {
+          if (settings.scope === 'full') {
             loadCoastalData()
             loadGlobalData()
           }
@@ -1159,6 +1216,80 @@ function initMap() {
   // Add Centre/Locate Controls
   addMapControls()
 
+  // --- AIS OVERLAY TOGGLE ---
+  const aisOverlay = document.querySelector('.map-overlay-info')
+  if (aisOverlay) {
+    // Add Toggle Button
+    const toggleBtn = document.createElement('button')
+    toggleBtn.id = 'ais-overlay-toggle'
+    toggleBtn.style.cssText = `
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s;
+    `
+    aisOverlay.appendChild(toggleBtn)
+
+    // Helper to Apply State
+    const setAisState = (isHidden) => {
+      const children = Array.from(aisOverlay.children)
+      children.forEach((child) => {
+        if (child.id !== 'ais-overlay-toggle') {
+          child.style.display = isHidden ? 'none' : ''
+        }
+      })
+
+      if (isHidden) {
+        toggleBtn.textContent = 'AIS STATUS'
+        aisOverlay.style.background = 'rgba(15, 23, 42, 0.6)'
+        aisOverlay.style.minWidth = '100px'
+        aisOverlay.style.minHeight = '36px'
+        aisOverlay.style.padding = '0'
+        toggleBtn.style.bottom = '4px'
+        toggleBtn.style.right = '4px'
+        toggleBtn.style.width = 'calc(100% - 8px)'
+      } else {
+        toggleBtn.textContent = 'Skloni'
+        aisOverlay.style.background = 'rgba(15, 23, 42, 0.85)'
+        aisOverlay.style.minWidth = '250px'
+        aisOverlay.style.minHeight = ''
+        aisOverlay.style.padding = '1rem'
+        toggleBtn.style.bottom = '0.5rem'
+        toggleBtn.style.right = '0.5rem'
+        toggleBtn.style.width = 'auto'
+      }
+    }
+
+    // Load State
+    const isAisCollapsed = localStorage.getItem('ais_overlay_collapsed') === 'true'
+    setAisState(isAisCollapsed)
+
+    // Toggle and Save
+    const toggleAis = (e) => {
+      if (e) e.stopPropagation()
+      const newHiddenState = toggleBtn.textContent === 'Skloni'
+      setAisState(newHiddenState)
+      localStorage.setItem('ais_overlay_collapsed', newHiddenState)
+    }
+
+    toggleBtn.addEventListener('click', toggleAis)
+    aisOverlay.addEventListener('click', (e) => {
+      if (toggleBtn.textContent !== 'Skloni') toggleAis(e)
+    })
+
+    // Prevent Map Click
+    L.DomEvent.disableClickPropagation(aisOverlay)
+  }
+
   // Initial Render
   updateMapVisualization()
 } // end initMap
@@ -1173,6 +1304,7 @@ function updateMapVisualization() {
   const showRoadwork = document.querySelector('input[value="roadwork"]')?.checked ?? true
   const showWeather = document.querySelector('input[value="weather"]')?.checked ?? true
   const showCounters = document.querySelector('input[value="counters"]')?.checked ?? true
+  const showCameras = document.querySelector('input[value="cameras"]')?.checked ?? true
 
   const scope = document.querySelector('input[name="region-scope"]:checked')?.value || 'regional'
 
@@ -1308,6 +1440,45 @@ function updateMapVisualization() {
         .addTo(layerGroup)
     })
   }
+  // 4. RENDER CAMERAS
+  if (showCameras) {
+    let rawCameras = [...(state.nptIslandCameras || [])]
+    if (state.coastalLoaded && state.coastalCameras) rawCameras.push(...state.coastalCameras)
+    if (state.globalLoaded && state.globalCameras) rawCameras.push(...state.globalCameras)
+
+    const uniqueCamsMap = new Map()
+    rawCameras.forEach((c) => uniqueCamsMap.set(c.id, c))
+    const uniqueCams = Array.from(uniqueCamsMap.values())
+
+    uniqueCams.forEach((cam) => {
+      if (isWithinScope(cam.lat, cam.lng, cam.distanceFromRab)) {
+        const icon = L.divIcon({
+          className: 'custom-camera-marker',
+          html: `<div class="camera-pin">📸</div>`,
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
+        })
+
+        const popupContent = `
+          <div class="camera-popup" style="min-width: 280px; font-family: var(--font-main); color: #fff;">
+            <h4 style="margin: 0 0 10px 0; font-size: 0.95rem; font-weight: 700;">${escapeHtml(cam.title)}</h4>
+            <div style="width: 100%; aspect-ratio: 16/9; background: #000; overflow: hidden; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 8px;">
+              <img src="${cam.url}" alt="${escapeHtml(cam.title)}" style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+                   onerror="this.src='https://via.placeholder.com/640x360?text=Sliku+nije+moguće+učitati'; this.onerror=null;">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; opacity: 0.7; font-size: 0.75rem;">
+              <span>Sustav: NPT (Live)</span>
+              <a href="${cam.url}" target="_blank" style="color: var(--primary); text-decoration: none;">Uvećaj sliku</a>
+            </div>
+          </div>
+        `
+
+        L.marker([cam.lat, cam.lng], { icon: icon, zIndexOffset: 500 })
+          .bindPopup(popupContent, { maxWidth: 320 })
+          .addTo(layerGroup)
+      }
+    })
+  }
 }
 
 // Haversine Algo
@@ -1341,6 +1512,7 @@ async function loadCoastalData() {
       if (typeof NPT_COASTAL !== 'undefined') {
         state.coastalWeather = NPT_COASTAL.weather
         state.coastalCounters = NPT_COASTAL.counters
+        state.coastalCameras = NPT_COASTAL.cameras
         updateMapVisualization()
       }
     } catch (err) {
@@ -1355,6 +1527,7 @@ async function loadCoastalData() {
       const data = await response.json()
       state.coastalWeather = data.weather
       state.coastalCounters = data.counters
+      state.coastalCameras = data.cameras
       updateMapVisualization()
     }
   } catch (e) {
@@ -1364,6 +1537,7 @@ async function loadCoastalData() {
       if (typeof NPT_COASTAL !== 'undefined') {
         state.coastalWeather = NPT_COASTAL.weather
         state.coastalCounters = NPT_COASTAL.counters
+        state.coastalCameras = NPT_COASTAL.cameras
         updateMapVisualization()
       }
     } catch (err) {
@@ -1399,6 +1573,7 @@ async function loadGlobalData() {
       const data = await response.json()
       state.globalWeather = data.weather
       state.globalCounters = data.counters
+      state.globalCameras = data.cameras
       updateMapVisualization()
     }
   } catch (e) {
