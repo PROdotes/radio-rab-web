@@ -472,30 +472,30 @@ ul {
   bottom: 0;
   left: 0;
   z-index: 2;
-  background: var(--primary);
+  background: var(--text-muted);
+  /* Fallback */
   color: #fff;
-  padding: 0.35rem 0.85rem 0.3rem 0.65rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-family: 'Rajdhani', 'Outfit', sans-serif;
-  text-shadow: none;
-  transition: background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px -2px 20px rgba(0, 0, 0, 0.9);
+  transition: background-color 0.3s ease;
   border-radius: 0;
   margin: 0;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  line-height: 1;
+  gap: 0.35rem;
 }
 
 .category-pill .pill-icon {
   width: 0.9rem;
   height: 0.9rem;
-  stroke-width: 2.4;
+  stroke-width: 2.5;
   flex-shrink: 0;
-  opacity: 0.95;
 }
 
 /* Category Colors */
@@ -2051,17 +2051,6 @@ input:checked+.slider::before {
     font-size: 0.75rem;
   }
 
-  .category-pill {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.55rem 0.2rem 0.45rem;
-    letter-spacing: 0.04em;
-    gap: 0.3rem;
-  }
-
-  .category-pill .pill-icon {
-    width: 0.75rem;
-    height: 0.75rem;
-  }
 
   .main-feature h2 {
     font-size: 1.75rem;
