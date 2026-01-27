@@ -7,26 +7,260 @@
     </supplierIdentification>
   </exchange>
   <payloadPublication xsi:type="SituationPublication" lang="en">
-    <publicationTime>2026-01-27T10:54:30.6559426Z</publicationTime>
+    <publicationTime>2026-01-27T17:31:43.6916935Z</publicationTime>
     <publicationCreator>
       <country>hr</country>
       <nationalIdentifier>HC</nationalIdentifier>
     </publicationCreator>
-    <situation id="0c4f1a0a-bf2a-4d60-9729-88728f550ef3" version="327">
+    <situation id="d308bb6c-3b01-4ac9-aa5d-6c46c69665dc" version="343">
       <headerInformation>
         <confidentiality>noRestriction</confidentiality>
         <informationStatus>real</informationStatus>
         <urgency>urgent</urgency>
       </headerInformation>
-      <situationRecord xsi:type="EnvironmentalObstruction" id="0c4f1a0a-bf2a-4d60-9729-88728f550ef3" version="327">
+      <situationRecord xsi:type="PoorEnvironmentConditions" id="d308bb6c-3b01-4ac9-aa5d-6c46c69665dc" version="343">
         <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
-        <situationRecordVersionTime>2026-01-27T10:37:06.173Z</situationRecordVersionTime>
+        <situationRecordVersionTime>2026-01-27T17:22:05.857Z</situationRecordVersionTime>
+        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+        <validity>
+          <validityStatus>definedByValidityTimeSpec</validityStatus>
+          <validityTimeSpecification>
+            <overallStartTime>2025-11-15T06:46:00Z</overallStartTime>
+            <overallEndTime>2026-01-28T17:22:05.717Z</overallEndTime>
+          </validityTimeSpecification>
+        </validity>
+        <impact>
+          <trafficConstrictionType>roadBlocked</trafficConstrictionType>
+        </impact>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">zbog nanosa snijega zatvorena je cesta</value>
+              <value lang="en">road closed - due to snow drifts</value>
+            </values>
+          </comment>
+          <commentType>description</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">Preventivno zbog mogućnosti nastupanja zimskih uvjeta zabrana prometa za sva vozila na D547 od 15.11. 2025. do 15.4. 2026.</value>
+            </values>
+          </comment>
+          <commentType>other</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">DC547 [Ličko Cerje (DC50) - Sveti Rok (g.ž. ZD)]</value>
+            </values>
+          </comment>
+          <commentType>locationDescriptor</commentType>
+        </generalPublicComment>
+        <groupOfLocations xsi:type="Linear">
+          <locationForDisplay>
+            <latitude>44.361202</latitude>
+            <longitude>15.653595</longitude>
+          </locationForDisplay>
+          <linearWithinLinearElement>
+            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
+            <linearElement xsi:type="LinearElementByCode">
+              <linearElementIdentifier>D547-1;D547-1</linearElementIdentifier>
+            </linearElement>
+            <fromPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>1285</distanceAlong>
+            </fromPoint>
+            <toPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>15755</distanceAlong>
+            </toPoint>
+          </linearWithinLinearElement>
+        </groupOfLocations>
+        <poorEnvironmentType>heavySnowfall</poorEnvironmentType>
+      </situationRecord>
+    </situation>
+    <situation id="6a154a97-1daf-4e8f-94bc-4acc4c317437" version="338">
+      <headerInformation>
+        <confidentiality>noRestriction</confidentiality>
+        <informationStatus>real</informationStatus>
+        <urgency>urgent</urgency>
+      </headerInformation>
+      <situationRecord xsi:type="PoorEnvironmentConditions" id="6a154a97-1daf-4e8f-94bc-4acc4c317437" version="338">
+        <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
+        <situationRecordVersionTime>2026-01-27T17:22:05.857Z</situationRecordVersionTime>
+        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+        <validity>
+          <validityStatus>definedByValidityTimeSpec</validityStatus>
+          <validityTimeSpecification>
+            <overallStartTime>2025-11-16T08:00:34Z</overallStartTime>
+            <overallEndTime>2026-01-28T17:22:05.717Z</overallEndTime>
+          </validityTimeSpecification>
+        </validity>
+        <impact>
+          <trafficConstrictionType>roadBlocked</trafficConstrictionType>
+        </impact>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">zbog nanosa snijega zatvorena je cesta</value>
+              <value lang="en">road closed - due to snow drifts</value>
+            </values>
+          </comment>
+          <commentType>description</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">Preventivno zbog mogućnosti nastupanja zimskih uvjeta zabrana prometa za sva vozila na D547 od 15.11. 2025. do 15.4. 2026.</value>
+            </values>
+          </comment>
+          <commentType>other</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">DC547 [Sveti Rok (g.ž. LS) - Zaton Obrovački (DC54) - Obrovac (DC27)]</value>
+            </values>
+          </comment>
+          <commentType>locationDescriptor</commentType>
+        </generalPublicComment>
+        <groupOfLocations xsi:type="Linear">
+          <locationForDisplay>
+            <latitude>44.290024</latitude>
+            <longitude>15.652519</longitude>
+          </locationForDisplay>
+          <linearWithinLinearElement>
+            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
+            <linearElement xsi:type="LinearElementByCode">
+              <linearElementIdentifier>D547-1</linearElementIdentifier>
+            </linearElement>
+            <fromPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>2</distanceAlong>
+            </fromPoint>
+            <toPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>11961</distanceAlong>
+            </toPoint>
+          </linearWithinLinearElement>
+        </groupOfLocations>
+        <poorEnvironmentType>heavySnowfall</poorEnvironmentType>
+      </situationRecord>
+    </situation>
+    <situation id="0b23e311-faaf-456c-9c77-69b7b57d5cb4" version="36">
+      <headerInformation>
+        <confidentiality>noRestriction</confidentiality>
+        <informationStatus>real</informationStatus>
+        <urgency>urgent</urgency>
+      </headerInformation>
+      <situationRecord xsi:type="WeatherRelatedRoadConditions" id="0b23e311-faaf-456c-9c77-69b7b57d5cb4" version="36">
+        <situationRecordCreationTime>2026-01-26T07:56:07.057Z</situationRecordCreationTime>
+        <situationRecordVersionTime>2026-01-27T17:16:05.773Z</situationRecordVersionTime>
+        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+        <validity>
+          <validityStatus>definedByValidityTimeSpec</validityStatus>
+          <validityTimeSpecification>
+            <overallStartTime>2026-01-26T07:56:07.057Z</overallStartTime>
+            <overallEndTime>2026-01-28T17:16:05.59Z</overallEndTime>
+          </validityTimeSpecification>
+        </validity>
+        <impact>
+          <trafficConstrictionType>roadPartiallyObstructed</trafficConstrictionType>
+        </impact>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">zabrana za kamione s prikolicama i tegljače s poluprikolicama zbog zimskih uvjeta na državnim cestama</value>
+              <value lang="en">a traffic ban due to winter road conditions – applies to trailer trucks and semi-trailer trucks</value>
+            </values>
+          </comment>
+          <commentType>description</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">Zbog nastupanja zimskih uvjeta: snijeg na kolniku zabrana je prometa za vozila koja nemaju propisanu zimsku opremu i za priključna vozila za vrijeme zimskih uvjeta na cestama na državnoj cesti DC42 između mjesta Sertić Poljana i Poljanak .</value>
+            </values>
+          </comment>
+          <commentType>other</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">DC42 [Sertić Poljana (g.ž KA) - Korana (g.ž. KA)]</value>
+            </values>
+          </comment>
+          <commentType>locationDescriptor</commentType>
+        </generalPublicComment>
+        <groupOfLocations xsi:type="Linear">
+          <locationForDisplay>
+            <latitude>44.93507</latitude>
+            <longitude>15.547625</longitude>
+          </locationForDisplay>
+          <linearWithinLinearElement>
+            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
+            <linearElement xsi:type="LinearElementByCode">
+              <linearElementIdentifier>D42-2</linearElementIdentifier>
+            </linearElement>
+            <fromPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>43704</distanceAlong>
+            </fromPoint>
+            <toPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>50769</distanceAlong>
+            </toPoint>
+          </linearWithinLinearElement>
+          <linearExtension>
+            <openlrExtendedLinear>
+              <firstDirection>
+                <openlrLocationReferencePoint>
+                  <openlrCoordinate>
+                    <latitude>45.00272</latitude>
+                    <longitude>15.426715</longitude>
+                  </openlrCoordinate>
+                  <openlrLineAttributes>
+                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
+                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
+                    <openlrBearing>174</openlrBearing>
+                  </openlrLineAttributes>
+                  <openlrPathAttributes>
+                    <openlrLowestFRCToNextLRPoint>FRC1</openlrLowestFRCToNextLRPoint>
+                    <openlrDistanceToNextLRPoint>24067</openlrDistanceToNextLRPoint>
+                  </openlrPathAttributes>
+                </openlrLocationReferencePoint>
+                <openlrLastLocationReferencePoint>
+                  <openlrCoordinate>
+                    <latitude>44.937935</latitude>
+                    <longitude>15.628013</longitude>
+                  </openlrCoordinate>
+                  <openlrLineAttributes>
+                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
+                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
+                    <openlrBearing>249</openlrBearing>
+                  </openlrLineAttributes>
+                </openlrLastLocationReferencePoint>
+                <openlrOffsets>
+                  <openlrPositiveOffset>15051</openlrPositiveOffset>
+                  <openlrNegativeOffset>1949</openlrNegativeOffset>
+                </openlrOffsets>
+              </firstDirection>
+            </openlrExtendedLinear>
+          </linearExtension>
+        </groupOfLocations>
+        <weatherRelatedRoadConditionType>snowOnTheRoad</weatherRelatedRoadConditionType>
+      </situationRecord>
+    </situation>
+    <situation id="0c4f1a0a-bf2a-4d60-9729-88728f550ef3" version="333">
+      <headerInformation>
+        <confidentiality>noRestriction</confidentiality>
+        <informationStatus>real</informationStatus>
+        <urgency>urgent</urgency>
+      </headerInformation>
+      <situationRecord xsi:type="EnvironmentalObstruction" id="0c4f1a0a-bf2a-4d60-9729-88728f550ef3" version="333">
+        <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
+        <situationRecordVersionTime>2026-01-27T16:42:05.637Z</situationRecordVersionTime>
         <probabilityOfOccurrence>certain</probabilityOfOccurrence>
         <validity>
           <validityStatus>definedByValidityTimeSpec</validityStatus>
           <validityTimeSpecification>
             <overallStartTime>2026-01-12T17:25:17Z</overallStartTime>
-            <overallEndTime>2026-01-28T10:37:05.99Z</overallEndTime>
+            <overallEndTime>2026-01-28T16:42:05.477Z</overallEndTime>
           </validityTimeSpecification>
         </validity>
         <impact>
@@ -114,123 +348,21 @@
         <environmentalObstructionType>landslips</environmentalObstructionType>
       </situationRecord>
     </situation>
-    <situation id="ee2d1151-b17c-46cf-9a2b-2a931e6c9802" version="329">
+    <situation id="bcd15084-464c-41d0-89c7-be426851082b" version="329">
       <headerInformation>
         <confidentiality>noRestriction</confidentiality>
         <informationStatus>real</informationStatus>
         <urgency>urgent</urgency>
       </headerInformation>
-      <situationRecord xsi:type="EnvironmentalObstruction" id="ee2d1151-b17c-46cf-9a2b-2a931e6c9802" version="329">
+      <situationRecord xsi:type="EnvironmentalObstruction" id="bcd15084-464c-41d0-89c7-be426851082b" version="329">
         <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
-        <situationRecordVersionTime>2026-01-27T10:37:06.173Z</situationRecordVersionTime>
-        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
-        <validity>
-          <validityStatus>definedByValidityTimeSpec</validityStatus>
-          <validityTimeSpecification>
-            <overallStartTime>2025-11-11T09:04:30Z</overallStartTime>
-            <overallEndTime>2026-01-28T10:37:05.99Z</overallEndTime>
-          </validityTimeSpecification>
-        </validity>
-        <impact>
-          <trafficConstrictionType>roadPartiallyObstructed</trafficConstrictionType>
-        </impact>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">odroni zemlje i kamenja</value>
-              <value lang="en">slow traffic - due to a landslide</value>
-            </values>
-          </comment>
-          <commentType>description</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">Zbog odrona na državnoj cesti D205 u mjestu Mihanovićev Dol vozi se uz privremenu regulaciju prometa.</value>
-            </values>
-          </comment>
-          <commentType>other</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">DC205 [Razvor (granica RH/Slovenija) - Klanjec - Dubrovčan - Pavlovec Zabočki (DC1/ŽC2267)]</value>
-            </values>
-          </comment>
-          <commentType>locationDescriptor</commentType>
-        </generalPublicComment>
-        <groupOfLocations xsi:type="Linear">
-          <locationForDisplay>
-            <latitude>46.055992</latitude>
-            <longitude>15.71847</longitude>
-          </locationForDisplay>
-          <linearWithinLinearElement>
-            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
-            <linearElement xsi:type="LinearElementByCode">
-              <linearElementIdentifier>D205-1</linearElementIdentifier>
-            </linearElement>
-            <fromPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>6400</distanceAlong>
-            </fromPoint>
-            <toPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>6450</distanceAlong>
-            </toPoint>
-          </linearWithinLinearElement>
-          <linearExtension>
-            <openlrExtendedLinear>
-              <firstDirection>
-                <openlrLocationReferencePoint>
-                  <openlrCoordinate>
-                    <latitude>46.059826</latitude>
-                    <longitude>15.715063</longitude>
-                  </openlrCoordinate>
-                  <openlrLineAttributes>
-                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
-                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
-                    <openlrBearing>149</openlrBearing>
-                  </openlrLineAttributes>
-                  <openlrPathAttributes>
-                    <openlrLowestFRCToNextLRPoint>FRC1</openlrLowestFRCToNextLRPoint>
-                    <openlrDistanceToNextLRPoint>1229</openlrDistanceToNextLRPoint>
-                  </openlrPathAttributes>
-                </openlrLocationReferencePoint>
-                <openlrLastLocationReferencePoint>
-                  <openlrCoordinate>
-                    <latitude>46.05152</latitude>
-                    <longitude>15.724874</longitude>
-                  </openlrCoordinate>
-                  <openlrLineAttributes>
-                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
-                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
-                    <openlrBearing>310</openlrBearing>
-                  </openlrLineAttributes>
-                </openlrLastLocationReferencePoint>
-                <openlrOffsets>
-                  <openlrPositiveOffset>524</openlrPositiveOffset>
-                  <openlrNegativeOffset>654</openlrNegativeOffset>
-                </openlrOffsets>
-              </firstDirection>
-            </openlrExtendedLinear>
-          </linearExtension>
-        </groupOfLocations>
-        <environmentalObstructionType>landslips</environmentalObstructionType>
-      </situationRecord>
-    </situation>
-    <situation id="bcd15084-464c-41d0-89c7-be426851082b" version="323">
-      <headerInformation>
-        <confidentiality>noRestriction</confidentiality>
-        <informationStatus>real</informationStatus>
-        <urgency>urgent</urgency>
-      </headerInformation>
-      <situationRecord xsi:type="EnvironmentalObstruction" id="bcd15084-464c-41d0-89c7-be426851082b" version="323">
-        <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
-        <situationRecordVersionTime>2026-01-27T10:37:06.173Z</situationRecordVersionTime>
+        <situationRecordVersionTime>2026-01-27T16:42:05.637Z</situationRecordVersionTime>
         <probabilityOfOccurrence>certain</probabilityOfOccurrence>
         <validity>
           <validityStatus>definedByValidityTimeSpec</validityStatus>
           <validityTimeSpecification>
             <overallStartTime>2026-01-19T06:23:59Z</overallStartTime>
-            <overallEndTime>2026-01-28T10:37:05.99Z</overallEndTime>
+            <overallEndTime>2026-01-28T16:42:05.477Z</overallEndTime>
           </validityTimeSpecification>
         </validity>
         <impact>
@@ -318,21 +450,123 @@
         <environmentalObstructionType>landslips</environmentalObstructionType>
       </situationRecord>
     </situation>
-    <situation id="ea9ac2db-3e8d-483b-aef4-368b7be60335" version="336">
+    <situation id="ee2d1151-b17c-46cf-9a2b-2a931e6c9802" version="335">
       <headerInformation>
         <confidentiality>noRestriction</confidentiality>
         <informationStatus>real</informationStatus>
         <urgency>urgent</urgency>
       </headerInformation>
-      <situationRecord xsi:type="EnvironmentalObstruction" id="ea9ac2db-3e8d-483b-aef4-368b7be60335" version="336">
+      <situationRecord xsi:type="EnvironmentalObstruction" id="ee2d1151-b17c-46cf-9a2b-2a931e6c9802" version="335">
         <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
-        <situationRecordVersionTime>2026-01-27T10:37:06.173Z</situationRecordVersionTime>
+        <situationRecordVersionTime>2026-01-27T16:42:05.637Z</situationRecordVersionTime>
+        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+        <validity>
+          <validityStatus>definedByValidityTimeSpec</validityStatus>
+          <validityTimeSpecification>
+            <overallStartTime>2025-11-11T09:04:30Z</overallStartTime>
+            <overallEndTime>2026-01-28T16:42:05.477Z</overallEndTime>
+          </validityTimeSpecification>
+        </validity>
+        <impact>
+          <trafficConstrictionType>roadPartiallyObstructed</trafficConstrictionType>
+        </impact>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">odroni zemlje i kamenja</value>
+              <value lang="en">slow traffic - due to a landslide</value>
+            </values>
+          </comment>
+          <commentType>description</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">Zbog odrona na državnoj cesti D205 u mjestu Mihanovićev Dol vozi se uz privremenu regulaciju prometa.</value>
+            </values>
+          </comment>
+          <commentType>other</commentType>
+        </generalPublicComment>
+        <generalPublicComment>
+          <comment>
+            <values>
+              <value lang="hr">DC205 [Razvor (granica RH/Slovenija) - Klanjec - Dubrovčan - Pavlovec Zabočki (DC1/ŽC2267)]</value>
+            </values>
+          </comment>
+          <commentType>locationDescriptor</commentType>
+        </generalPublicComment>
+        <groupOfLocations xsi:type="Linear">
+          <locationForDisplay>
+            <latitude>46.055992</latitude>
+            <longitude>15.71847</longitude>
+          </locationForDisplay>
+          <linearWithinLinearElement>
+            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
+            <linearElement xsi:type="LinearElementByCode">
+              <linearElementIdentifier>D205-1</linearElementIdentifier>
+            </linearElement>
+            <fromPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>6400</distanceAlong>
+            </fromPoint>
+            <toPoint xsi:type="DistanceFromLinearElementStart">
+              <distanceAlong>6450</distanceAlong>
+            </toPoint>
+          </linearWithinLinearElement>
+          <linearExtension>
+            <openlrExtendedLinear>
+              <firstDirection>
+                <openlrLocationReferencePoint>
+                  <openlrCoordinate>
+                    <latitude>46.059826</latitude>
+                    <longitude>15.715063</longitude>
+                  </openlrCoordinate>
+                  <openlrLineAttributes>
+                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
+                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
+                    <openlrBearing>149</openlrBearing>
+                  </openlrLineAttributes>
+                  <openlrPathAttributes>
+                    <openlrLowestFRCToNextLRPoint>FRC1</openlrLowestFRCToNextLRPoint>
+                    <openlrDistanceToNextLRPoint>1229</openlrDistanceToNextLRPoint>
+                  </openlrPathAttributes>
+                </openlrLocationReferencePoint>
+                <openlrLastLocationReferencePoint>
+                  <openlrCoordinate>
+                    <latitude>46.05152</latitude>
+                    <longitude>15.724874</longitude>
+                  </openlrCoordinate>
+                  <openlrLineAttributes>
+                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
+                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
+                    <openlrBearing>310</openlrBearing>
+                  </openlrLineAttributes>
+                </openlrLastLocationReferencePoint>
+                <openlrOffsets>
+                  <openlrPositiveOffset>524</openlrPositiveOffset>
+                  <openlrNegativeOffset>654</openlrNegativeOffset>
+                </openlrOffsets>
+              </firstDirection>
+            </openlrExtendedLinear>
+          </linearExtension>
+        </groupOfLocations>
+        <environmentalObstructionType>landslips</environmentalObstructionType>
+      </situationRecord>
+    </situation>
+    <situation id="ea9ac2db-3e8d-483b-aef4-368b7be60335" version="342">
+      <headerInformation>
+        <confidentiality>noRestriction</confidentiality>
+        <informationStatus>real</informationStatus>
+        <urgency>urgent</urgency>
+      </headerInformation>
+      <situationRecord xsi:type="EnvironmentalObstruction" id="ea9ac2db-3e8d-483b-aef4-368b7be60335" version="342">
+        <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
+        <situationRecordVersionTime>2026-01-27T16:42:05.637Z</situationRecordVersionTime>
         <probabilityOfOccurrence>certain</probabilityOfOccurrence>
         <validity>
           <validityStatus>definedByValidityTimeSpec</validityStatus>
           <validityTimeSpecification>
             <overallStartTime>2025-11-14T12:50:39Z</overallStartTime>
-            <overallEndTime>2026-01-28T10:37:05.99Z</overallEndTime>
+            <overallEndTime>2026-01-28T16:42:05.477Z</overallEndTime>
           </validityTimeSpecification>
         </validity>
         <impact>
@@ -418,240 +652,6 @@
           </linearExtension>
         </groupOfLocations>
         <environmentalObstructionType>landslips</environmentalObstructionType>
-      </situationRecord>
-    </situation>
-    <situation id="d308bb6c-3b01-4ac9-aa5d-6c46c69665dc" version="336">
-      <headerInformation>
-        <confidentiality>noRestriction</confidentiality>
-        <informationStatus>real</informationStatus>
-        <urgency>urgent</urgency>
-      </headerInformation>
-      <situationRecord xsi:type="PoorEnvironmentConditions" id="d308bb6c-3b01-4ac9-aa5d-6c46c69665dc" version="336">
-        <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
-        <situationRecordVersionTime>2026-01-27T10:18:05.777Z</situationRecordVersionTime>
-        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
-        <validity>
-          <validityStatus>definedByValidityTimeSpec</validityStatus>
-          <validityTimeSpecification>
-            <overallStartTime>2025-11-15T06:46:00Z</overallStartTime>
-            <overallEndTime>2026-01-28T10:18:05.613Z</overallEndTime>
-          </validityTimeSpecification>
-        </validity>
-        <impact>
-          <trafficConstrictionType>roadBlocked</trafficConstrictionType>
-        </impact>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">zbog nanosa snijega zatvorena je cesta</value>
-              <value lang="en">road closed - due to snow drifts</value>
-            </values>
-          </comment>
-          <commentType>description</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">Preventivno zbog mogućnosti nastupanja zimskih uvjeta zabrana prometa za sva vozila na D547 od 15.11. 2025. do 15.4. 2026.</value>
-            </values>
-          </comment>
-          <commentType>other</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">DC547 [Ličko Cerje (DC50) - Sveti Rok (g.ž. ZD)]</value>
-            </values>
-          </comment>
-          <commentType>locationDescriptor</commentType>
-        </generalPublicComment>
-        <groupOfLocations xsi:type="Linear">
-          <locationForDisplay>
-            <latitude>44.361202</latitude>
-            <longitude>15.653595</longitude>
-          </locationForDisplay>
-          <linearWithinLinearElement>
-            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
-            <linearElement xsi:type="LinearElementByCode">
-              <linearElementIdentifier>D547-1;D547-1</linearElementIdentifier>
-            </linearElement>
-            <fromPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>1285</distanceAlong>
-            </fromPoint>
-            <toPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>15755</distanceAlong>
-            </toPoint>
-          </linearWithinLinearElement>
-        </groupOfLocations>
-        <poorEnvironmentType>heavySnowfall</poorEnvironmentType>
-      </situationRecord>
-    </situation>
-    <situation id="6a154a97-1daf-4e8f-94bc-4acc4c317437" version="331">
-      <headerInformation>
-        <confidentiality>noRestriction</confidentiality>
-        <informationStatus>real</informationStatus>
-        <urgency>urgent</urgency>
-      </headerInformation>
-      <situationRecord xsi:type="PoorEnvironmentConditions" id="6a154a97-1daf-4e8f-94bc-4acc4c317437" version="331">
-        <situationRecordCreationTime>2026-01-19T09:30:07.177Z</situationRecordCreationTime>
-        <situationRecordVersionTime>2026-01-27T10:18:05.777Z</situationRecordVersionTime>
-        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
-        <validity>
-          <validityStatus>definedByValidityTimeSpec</validityStatus>
-          <validityTimeSpecification>
-            <overallStartTime>2025-11-16T08:00:34Z</overallStartTime>
-            <overallEndTime>2026-01-28T10:18:05.613Z</overallEndTime>
-          </validityTimeSpecification>
-        </validity>
-        <impact>
-          <trafficConstrictionType>roadBlocked</trafficConstrictionType>
-        </impact>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">zbog nanosa snijega zatvorena je cesta</value>
-              <value lang="en">road closed - due to snow drifts</value>
-            </values>
-          </comment>
-          <commentType>description</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">Preventivno zbog mogućnosti nastupanja zimskih uvjeta zabrana prometa za sva vozila na D547 od 15.11. 2025. do 15.4. 2026.</value>
-            </values>
-          </comment>
-          <commentType>other</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">DC547 [Sveti Rok (g.ž. LS) - Zaton Obrovački (DC54) - Obrovac (DC27)]</value>
-            </values>
-          </comment>
-          <commentType>locationDescriptor</commentType>
-        </generalPublicComment>
-        <groupOfLocations xsi:type="Linear">
-          <locationForDisplay>
-            <latitude>44.290024</latitude>
-            <longitude>15.652519</longitude>
-          </locationForDisplay>
-          <linearWithinLinearElement>
-            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
-            <linearElement xsi:type="LinearElementByCode">
-              <linearElementIdentifier>D547-1</linearElementIdentifier>
-            </linearElement>
-            <fromPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>2</distanceAlong>
-            </fromPoint>
-            <toPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>11961</distanceAlong>
-            </toPoint>
-          </linearWithinLinearElement>
-        </groupOfLocations>
-        <poorEnvironmentType>heavySnowfall</poorEnvironmentType>
-      </situationRecord>
-    </situation>
-    <situation id="0b23e311-faaf-456c-9c77-69b7b57d5cb4" version="29">
-      <headerInformation>
-        <confidentiality>noRestriction</confidentiality>
-        <informationStatus>real</informationStatus>
-        <urgency>urgent</urgency>
-      </headerInformation>
-      <situationRecord xsi:type="WeatherRelatedRoadConditions" id="0b23e311-faaf-456c-9c77-69b7b57d5cb4" version="29">
-        <situationRecordCreationTime>2026-01-26T07:56:07.057Z</situationRecordCreationTime>
-        <situationRecordVersionTime>2026-01-27T10:10:05.823Z</situationRecordVersionTime>
-        <probabilityOfOccurrence>certain</probabilityOfOccurrence>
-        <validity>
-          <validityStatus>definedByValidityTimeSpec</validityStatus>
-          <validityTimeSpecification>
-            <overallStartTime>2026-01-26T07:56:07.057Z</overallStartTime>
-            <overallEndTime>2026-01-28T10:10:05.687Z</overallEndTime>
-          </validityTimeSpecification>
-        </validity>
-        <impact>
-          <trafficConstrictionType>roadPartiallyObstructed</trafficConstrictionType>
-        </impact>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">zabrana za kamione s prikolicama i tegljače s poluprikolicama zbog zimskih uvjeta na državnim cestama</value>
-              <value lang="en">a traffic ban due to winter road conditions – applies to trailer trucks and semi-trailer trucks</value>
-            </values>
-          </comment>
-          <commentType>description</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">Zbog nastupanja zimskih uvjeta: snijeg na kolniku zabrana je prometa za vozila koja nemaju propisanu zimsku opremu i za priključna vozila za vrijeme zimskih uvjeta na cestama na državnoj cesti DC42 između mjesta Sertić Poljana i Poljanak .</value>
-            </values>
-          </comment>
-          <commentType>other</commentType>
-        </generalPublicComment>
-        <generalPublicComment>
-          <comment>
-            <values>
-              <value lang="hr">DC42 [Sertić Poljana (g.ž KA) - Korana (g.ž. KA)]</value>
-            </values>
-          </comment>
-          <commentType>locationDescriptor</commentType>
-        </generalPublicComment>
-        <groupOfLocations xsi:type="Linear">
-          <locationForDisplay>
-            <latitude>44.93507</latitude>
-            <longitude>15.547625</longitude>
-          </locationForDisplay>
-          <linearWithinLinearElement>
-            <directionRelativeOnLinearSection>unknown</directionRelativeOnLinearSection>
-            <linearElement xsi:type="LinearElementByCode">
-              <linearElementIdentifier>D42-2</linearElementIdentifier>
-            </linearElement>
-            <fromPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>43704</distanceAlong>
-            </fromPoint>
-            <toPoint xsi:type="DistanceFromLinearElementStart">
-              <distanceAlong>50769</distanceAlong>
-            </toPoint>
-          </linearWithinLinearElement>
-          <linearExtension>
-            <openlrExtendedLinear>
-              <firstDirection>
-                <openlrLocationReferencePoint>
-                  <openlrCoordinate>
-                    <latitude>45.00272</latitude>
-                    <longitude>15.426715</longitude>
-                  </openlrCoordinate>
-                  <openlrLineAttributes>
-                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
-                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
-                    <openlrBearing>174</openlrBearing>
-                  </openlrLineAttributes>
-                  <openlrPathAttributes>
-                    <openlrLowestFRCToNextLRPoint>FRC1</openlrLowestFRCToNextLRPoint>
-                    <openlrDistanceToNextLRPoint>24067</openlrDistanceToNextLRPoint>
-                  </openlrPathAttributes>
-                </openlrLocationReferencePoint>
-                <openlrLastLocationReferencePoint>
-                  <openlrCoordinate>
-                    <latitude>44.937935</latitude>
-                    <longitude>15.628013</longitude>
-                  </openlrCoordinate>
-                  <openlrLineAttributes>
-                    <openlrFunctionalRoadClass>FRC1</openlrFunctionalRoadClass>
-                    <openlrFormOfWay>singleCarriageway</openlrFormOfWay>
-                    <openlrBearing>249</openlrBearing>
-                  </openlrLineAttributes>
-                </openlrLastLocationReferencePoint>
-                <openlrOffsets>
-                  <openlrPositiveOffset>15051</openlrPositiveOffset>
-                  <openlrNegativeOffset>1949</openlrNegativeOffset>
-                </openlrOffsets>
-              </firstDirection>
-            </openlrExtendedLinear>
-          </linearExtension>
-        </groupOfLocations>
-        <weatherRelatedRoadConditionType>snowOnTheRoad</weatherRelatedRoadConditionType>
       </situationRecord>
     </situation>
   </payloadPublication>
