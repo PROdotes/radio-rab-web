@@ -31,6 +31,32 @@ function ToMutable([object]$p, [string]$key) {
     return [PSCustomObject]$mutable
 }
 
+# Repair common UTF-8->Windows-1252 mojibake by reinterpreting as windows-1252 bytes
+function RepairEncoding([string]$s) {
+    if (-not $s) { return $s }
+    if ($s -notmatch '[ÅÃ]') { return $s }
+    try {
+        $bytes = [System.Text.Encoding]::GetEncoding(1252).GetBytes($s)
+        $fixed = [System.Text.Encoding]::UTF8.GetString($bytes)
+        return $fixed
+    } catch {
+        return $s
+    }
+}
+
+function SanitizeRecord($rec) {
+    $out = @{}
+    try {
+        foreach ($prop in $rec.psobject.Properties) {
+            $val = $prop.Value
+            if ($val -is [string]) { $out[$prop.Name] = RepairEncoding($val) } else { $out[$prop.Name] = $val }
+        }
+    } catch {
+        return $rec
+    }
+    return [PSCustomObject]$out
+}
+
 # Load existing data
 $existing = Get-Content $OutputFile -Raw | ConvertFrom-Json
 $markersMap = @{}
@@ -94,7 +120,10 @@ foreach ($LocId in $allKeys) {
             }
             if ($toAppend.Count -gt 0) {
                 if (-not $marker.history) { $marker.history = @() }
-                $marker.history += $toAppend
+                # Sanitize incoming records to avoid reintroducing mojibake
+                $sanitized = @()
+                foreach ($r in $toAppend) { $sanitized += SanitizeRecord($r) }
+                $marker.history += $sanitized
                 # Dedupe by timestamp
                 $seen = @{}
                 $unique = @()
