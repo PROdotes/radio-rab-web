@@ -381,8 +381,8 @@ function createStackedMarker(key, leaves, lat, lng, clusterId = null) {
         const cameraPopup = props.popup || props.popupContent || props.popupHtml || ''
         if (cameraPopup) {
           return `<div class="stacked-camera-item" style="${idx > 0
-              ? 'border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 12px;'
-              : ''
+            ? 'border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 12px;'
+            : ''
             }">${cameraPopup}</div>`
         }
         return ''
@@ -1918,7 +1918,7 @@ function initMap() {
   try {
     state.mapInstance.createPane('ferryPane')
     const ferryPane = state.mapInstance.getPane('ferryPane')
-    if (ferryPane) ferryPane.style.zIndex = 650
+    if (ferryPane) ferryPane.style.zIndex = 550
   } catch (e) { }
 
   L.tileLayer(CONFIG.urls.mapTiles, {
