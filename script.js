@@ -2,6 +2,7 @@
  * Radio Rab News Portal — Main Application
  * Version: 2.0.0
  */
+/* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
 /* global L */
 
 // ===========================================
@@ -3908,6 +3909,7 @@ function updateClustersForViewport() {
 }
 
 // Ensure clusters refresh when lazy-loaded datasets complete
+/* eslint-disable no-func-assign */
 const originalLoadCoastalData = loadCoastalData
 loadCoastalData = async function () {
   const res = await originalLoadCoastalData.apply(this, arguments)
@@ -3929,6 +3931,7 @@ loadGlobalData = async function () {
   }
   return res
 }
+/* eslint-enable no-func-assign */
 
 // Haversine Algo
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
