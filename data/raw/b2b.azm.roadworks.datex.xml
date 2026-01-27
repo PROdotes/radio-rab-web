@@ -7,7 +7,7 @@
     </supplierIdentification>
   </exchange>
   <payloadPublication xsi:type="SituationPublication" lang="en">
-    <publicationTime>2026-01-24T14:18:00.2350231Z</publicationTime>
+    <publicationTime>2026-01-27T11:00:00.2766503Z</publicationTime>
     <publicationCreator>
       <country>hr</country>
       <nationalIdentifier>AZM</nationalIdentifier>

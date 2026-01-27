@@ -4,20 +4,30 @@
 
 /* --- DESIGN TOKENS --- */
 :root {
-  /* Colors - Premium Dark Edition */
-  --bg-card: #001133;
-  --bg-dark: #000915;
+  /* Colors - Premium Midnight Sapphire */
+  --bg-dark: #020617;
+  /* Deep Midnight */
+  --bg-card: #051129;
+  /* Balanced Midnight Sapphire */
+  --bg-accent: #0f1c3a;
+  /* Slightly more saturated accent */
   --primary: #3b82f6;
-  --primary-glow: rgba(59, 130, 246, 0.4);
+  /* Royal Blue */
+  --primary-glow: rgba(59, 130, 246, 0.25);
   --accent: #0ea5e9;
+  /* Sky Action */
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
   --text-main: #f8fafc;
+  /* Ghost White */
   --text-dim: #aad5ff;
+  /* Slate Dim */
   --text-muted: #498cff;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(59, 130, 246, 0.3);
+  /* Deep Muted */
+  --border: rgba(59, 130, 246, 0.1);
+  /* Subtle Sapphire Border */
+  --border-hover: rgba(59, 130, 246, 0.4);
 
   /* Effects */
   --glass-blur: blur(20px);

@@ -63,8 +63,8 @@ $EventFiles = @(
     @{ Name = "b2b.hak.roadworks.datex.xml"; Type = "Roadwork" },
     @{ Name = "b2b.hc.events.datex.xml"; Type = "Event" },
     @{ Name = "b2b.hc.roadworks.datex.xml"; Type = "Roadwork" },
-    @{ Name = "b2b.azm.roadworks.datex.xml"; Type = "Roadwork" }
-    # Note: b2b.hac.situationData.datex requires separate HAC authorization (403 Forbidden)
+    @{ Name = "b2b.azm.roadworks.datex.xml"; Type = "Roadwork" },
+    @{ Name = "b2b.hac.situationData.xml"; Type = "Event" }
 )
 
 foreach ($FileDef in $EventFiles) {
@@ -166,7 +166,7 @@ $WeatherFiles = @(
     "b2b.weather.datex.xml",
     "b2b.azm.weather.datex.xml",
     "b2b.wind.datex.xml",
-    "b2b.hac.weatherStationsData.datex.xml"  # HAC motorway weather stations
+    "b2b.hac.weatherStationsData.xml"  # HAC motorway weather stations
 )
 
 foreach ($FileName in $WeatherFiles) {
@@ -174,6 +174,7 @@ foreach ($FileName in $WeatherFiles) {
     if ($null -eq $XmlWeather) { continue }
 
     Write-Host "Processing Weather: $FileName..." -ForegroundColor Gray
+    $FileWeatherCount = 0
     
     # Path: payloadPublication -> elaboratedData
     $DataItems = $XmlWeather.d2LogicalModel.payloadPublication.elaboratedData
@@ -249,8 +250,10 @@ foreach ($FileName in $WeatherFiles) {
                 roadTemp  = $RoadTemp
                 source    = $FileName # Track source for debugging
             }
+            $FileWeatherCount++
         }
     }
+    Write-Host "  Added $FileWeatherCount weather stations." -ForegroundColor Cyan
 }
 
 Write-Host "Found $( $AllWeather.Count ) weather stations." -ForegroundColor Green
@@ -317,11 +320,17 @@ function Get-DistFromLine {
 # 3. Process Traffic Counters
 # -----------------------------------------------------------------------------
 $AllCounters = @()
-$CounterFile = "b2b.counters.datex.xml"
+$CounterFiles = @(
+    "b2b.counters.datex.xml",
+    "b2b.hac.trafficData.xml"
+)
 
-$XmlCounters = Get-XmlContent -FileName $CounterFile
-if ($XmlCounters) {
+foreach ($CounterFile in $CounterFiles) {
+    $XmlCounters = Get-XmlContent -FileName $CounterFile
+    if ($null -eq $XmlCounters) { continue }
+    
     Write-Host "Processing Counters: $CounterFile..." -ForegroundColor Gray
+    $FileCounterCount = 0
     
     $DataItems = $XmlCounters.d2LogicalModel.payloadPublication.elaboratedData
     $GroupedData = $DataItems | Group-Object -Property { $_.source.sourceIdentification }
@@ -370,8 +379,10 @@ if ($XmlCounters) {
                 flow  = $Flow
                 speed = $Speed
             }
+            $FileCounterCount++
         }
     }
+    Write-Host "  Added $FileCounterCount traffic counters." -ForegroundColor Cyan
 }
 
 Write-Host "Found $( $AllCounters.Count ) traffic counters." -ForegroundColor Green

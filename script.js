@@ -248,12 +248,21 @@ function updateSyncStatus(timestamp, isError = false) {
  * Fetch weather from Open-Meteo (No API Key Required)
  */
 async function fetchExternalWeather(lat, lng, name) {
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m&timezone=auto`
+  const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,relative_humidity_2m,wind_speed_10m,wind_direction_10m,wind_gusts_10m&daily=sunrise,sunset&timezone=auto`
+  const marineUrl = `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lng}&current=sea_surface_temperature&daily=tide_height_max&timezone=auto`
+
   try {
-    const response = await fetch(url)
-    if (!response.ok) return null
-    const data = await response.json()
-    const current = data.current
+    const [wRes, mRes] = await Promise.all([fetch(weatherUrl), fetch(marineUrl)])
+    if (!wRes.ok) return null
+
+    const wData = await wRes.json()
+    const current = wData.current
+    const daily = wData.daily
+
+    let marineData = null
+    if (mRes.ok) {
+      marineData = await mRes.json()
+    }
 
     return {
       id: `EXT:${name.replace(/\s+/g, '_')}`,
@@ -265,8 +274,12 @@ async function fetchExternalWeather(lat, lng, name) {
       windSpeed: current.wind_speed_10m,
       windGust: current.wind_gusts_10m,
       windDir: current.wind_direction_10m,
+      sunrise: daily?.sunrise?.[0],
+      sunset: daily?.sunset?.[0],
+      seaTemp: marineData?.current?.sea_surface_temperature,
+      tideTime: marineData?.daily?.time?.[0], // Placeholder context
       source: 'Open-Meteo',
-      distanceFromRab: 0, // It IS Rab
+      distanceFromRab: 0,
     }
   } catch (e) {
     return null
@@ -508,6 +521,7 @@ function updateWeatherWithNPT(weather) {
   // Find Senj or Stinica if possible, otherwise max
   // 401 = Senj. If available, it's the gold standard for Ferry.
   // For the UI display, we prefer "Rab (Grad)" if available, otherwise strongest
+  const maxWind = sorted[0]
   const rabDisplay = weather.find((s) => s.id === 'EXT:Rab_(Grad)')
   const displayWind = rabDisplay || maxWind
 
@@ -532,6 +546,27 @@ function updateWeatherWithNPT(weather) {
 
     if (isHighWind) windValueEl.classList.add('val-red')
     else windValueEl.classList.remove('val-red')
+  }
+
+  // Update additional weather items from Rab EXT data
+  if (rabDisplay) {
+    const sunriseEl = document.querySelector('[data-weather="sunrise"] .weather-value')
+    if (sunriseEl && rabDisplay.sunrise) {
+      sunriseEl.textContent = new Date(rabDisplay.sunrise).toLocaleTimeString('hr-HR', {
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+    }
+
+    const seaTempEl = document.querySelector('[data-weather="sea-temp"] .weather-value')
+    if (seaTempEl && rabDisplay.seaTemp) {
+      seaTempEl.textContent = `${Math.round(rabDisplay.seaTemp)}°C`
+    }
+
+    const headerTempEl = document.getElementById('header-weather-temp')
+    if (headerTempEl && rabDisplay.temp) {
+      headerTempEl.textContent = `${Math.round(rabDisplay.temp)}°C`
+    }
   }
 
   // Sync with Sidebar Status

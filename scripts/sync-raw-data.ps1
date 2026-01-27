@@ -51,9 +51,9 @@ $services = @(
     "b2b.azm.roadworks.datex",
     "b2b.azm.weather.datex",
     "b2b.gtfs.jl",
-    "b2b.hac.situationData.datex",
-    "b2b.hac.weatherStationsData.datex",
-    "b2b.hac.trafficData.datex",
+    "b2b.hac.situationData",
+    "b2b.hac.weatherStationsData",
+    "b2b.hac.trafficData",
     "b2b.hak.events.datex",
     "b2b.hak.roadworks.datex",
     "b2b.hc.events.datex",
@@ -64,7 +64,10 @@ $services = @(
     "b2b.netex.timetable.jl"
 )
 
-$headers = @{ Authorization = "bearer $token" }
+$headers = @{ 
+    Authorization = "bearer $token"
+    "User-Agent"  = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+}
 $totalStartTime = Get-Date
 
 Write-Host "Starting Bulk Harvest..."
@@ -74,7 +77,7 @@ foreach ($service in $services) {
     $url = "https://b2b.promet-info.hr/dc/$service"
     $outputPath = "$rawDir/$service.xml"
     
-    Write-Host "Fetching: $service... " -NoNewline
+    Write-Host "Fetching: $service... "
     
     $startTime = Get-Date
     try {
