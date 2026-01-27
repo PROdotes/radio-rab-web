@@ -105,11 +105,33 @@ const state = {
 }
 
 // ===========================================
+// CATEGORY ICONS (Lucide)
+// ===========================================
+const CATEGORY_ICONS = {
+  'LOKALNO': 'map-pin',
+  'SPORT': 'trophy',
+  'KULTURA': 'palette',
+  'TURIZAM': 'plane',
+  'MORE': 'anchor',
+  'GASTRONOMIJA': 'utensils',
+}
+
+function getCategoryPillHTML(category) {
+  const icon = CATEGORY_ICONS[category] || 'tag'
+  return `<i data-lucide="${icon}" class="pill-icon"></i>${escapeHtml(category)}`
+}
+
+// ===========================================
 // INITIALIZATION
 // ===========================================
 document.addEventListener('DOMContentLoaded', init)
 
 function init() {
+  // Initialize Lucide icons
+  if (window.lucide) {
+    lucide.createIcons()
+  }
+
   // Initialize components based on page content
   if (document.getElementById('primary-feature-container')) {
     initNewsFeed()
@@ -866,7 +888,7 @@ function renderHero(article) {
   container.innerHTML = `
         <article class="main-feature card-animate" style="--delay: 1;" data-category="${escapeHtml(article.category)}">
             <div class="feature-img-container">
-                <span class="category-pill">${escapeHtml(article.category)}</span>
+                <span class="category-pill">${getCategoryPillHTML(article.category)}</span>
                 <div class="feature-img" style="background-image: url('${escapeHtml(
     article.image
   )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
@@ -900,6 +922,11 @@ function renderHero(article) {
   container.querySelectorAll('[data-share]').forEach((btn) => {
     btn.addEventListener('click', () => shareArticle(btn.dataset.share))
   })
+
+  // Initialize Lucide icons in hero
+  if (window.lucide) {
+    lucide.createIcons({ nodes: [container] })
+  }
 }
 
 function loadMoreArticles() {
@@ -947,7 +974,7 @@ function createNewsCard(article, index) {
 
   card.innerHTML = `
         <div class="feature-img-container">
-            <span class="category-pill">${escapeHtml(article.category)}</span>
+            <span class="category-pill">${getCategoryPillHTML(article.category)}</span>
             <div class="feature-img" style="background-image: url('${escapeHtml(
     article.image
   )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
@@ -961,6 +988,11 @@ function createNewsCard(article, index) {
             </div>
         </div>
     `
+
+  // Initialize Lucide icons in this card
+  if (window.lucide) {
+    lucide.createIcons({ nodes: [card] })
+  }
 
   return card
 }

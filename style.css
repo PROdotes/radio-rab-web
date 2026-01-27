@@ -4,13 +4,13 @@
 
 /* --- DESIGN TOKENS --- */
 :root {
-  /* Colors - Premium Midnight Sapphire */
-  --bg-dark: #020617;
-  /* Deep Midnight */
-  --bg-card: #051129;
-  /* Balanced Midnight Sapphire */
-  --bg-accent: #0f1c3a;
-  /* Slightly more saturated accent */
+  /* Colors - Midnight with subtle warmth */
+  --bg-dark: #030712;
+  /* Near black with hint of blue */
+  --bg-card: #0c1425;
+  /* Lifted card - more contrast from bg */
+  --bg-accent: #141d2e;
+  /* Interactive/hover zones */
   --primary: #3b82f6;
   /* Royal Blue */
   --primary-glow: rgba(59, 130, 246, 0.25);
@@ -19,12 +19,12 @@
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
-  --text-main: #f8fafc;
-  /* Ghost White */
-  --text-dim: #aad5ff;
-  /* Slate Dim */
-  --text-muted: #498cff;
-  /* Deep Muted */
+  --text-main: #f1f5f9;
+  /* Slate 100 - primary text */
+  --text-dim: #c8d5e3;
+  /* Light blue-gray - readable on dark blue */
+  --text-muted: #8b9bb3;
+  /* Mid blue-gray - visible but secondary */
   --border: rgba(59, 130, 246, 0.1);
   /* Subtle Sapphire Border */
   --border-hover: rgba(59, 130, 246, 0.4);
@@ -305,25 +305,31 @@ ul {
 }
 
 .brand h1 {
-  font-size: 2.25rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   color: #fff;
-  line-height: 0.9;
+  line-height: 0.85;
 }
 
 .brand h1 span {
   color: var(--primary);
+  display: block;
+  font-size: 1.1em;
 }
 
 .brand .tagline {
-  font-size: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.3em;
   color: var(--text-muted);
-  font-weight: 800;
-  margin-top: 4px;
+  font-weight: 600;
+  margin-top: 6px;
+  border-top: 1px solid var(--border);
+  padding-top: 4px;
 }
 
 .header-nav .nav-links {
@@ -466,18 +472,30 @@ ul {
   bottom: 0;
   left: 0;
   z-index: 2;
-  background: var(--text-muted);
+  background: var(--primary);
   color: #fff;
-  padding: 0.25rem 0.6rem;
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem 0.3rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  transition: background-color 0.3s ease;
+  font-family: 'Rajdhani', 'Outfit', sans-serif;
+  text-shadow: none;
+  transition: background-color 0.2s ease;
   border-radius: 0;
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1;
+}
+
+.category-pill .pill-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+  stroke-width: 2.4;
+  flex-shrink: 0;
+  opacity: 0.95;
 }
 
 /* Category Colors */
@@ -508,9 +526,10 @@ ul {
 
 .main-feature h2 {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
+  line-height: 1.1;
   margin-bottom: 1rem;
   color: #fff;
 }
@@ -587,18 +606,27 @@ ul {
 }
 
 .filter-btn {
-  /* Better contrast for unselected pills */
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-dim);
   padding: 0.5rem 1rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-sm);
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.3s var(--ease-out);
+  transition: all 0.2s var(--ease-out);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.filter-icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5;
 }
 
 /* Colored Filter Pills */
@@ -682,26 +710,10 @@ ul {
   position: relative;
 }
 
-.small-news-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-sm);
-  background: radial-gradient(circle at center, var(--primary-glow), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s var(--ease-out);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .small-news-card:hover {
   transform: translateY(-3px);
   border-color: var(--primary);
   box-shadow: var(--shadow-md);
-}
-
-.small-news-card:hover::before {
-  opacity: 0.15;
 }
 
 .small-news-card .feature-img-container {
@@ -733,12 +745,12 @@ ul {
 
 .small-news-card h3 {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 0.015em;
   margin-bottom: 0.5rem;
-  line-height: 1.35;
-  color: var(--text-main);
+  line-height: 1.2;
+  color: #fff;
 }
 
 .small-news-card p {
@@ -777,10 +789,10 @@ ul {
 .widget-card h3 {
   font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.08em;
   margin-bottom: 1rem;
   color: var(--text-dim);
-  font-weight: 800;
+  font-weight: 700;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -2022,8 +2034,8 @@ input:checked+.slider::before {
   }
 
   .small-news-card h3 {
-    font-size: 1.1rem;
-    line-height: 1.3;
+    font-size: 1.05rem;
+    line-height: 1.25;
     margin-bottom: 0.4rem;
   }
 
@@ -2040,8 +2052,15 @@ input:checked+.slider::before {
   }
 
   .category-pill {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.55rem 0.2rem 0.45rem;
+    letter-spacing: 0.04em;
+    gap: 0.3rem;
+  }
+
+  .category-pill .pill-icon {
+    width: 0.75rem;
+    height: 0.75rem;
   }
 
   .main-feature h2 {
@@ -2081,7 +2100,14 @@ input:checked+.slider::before {
 
   .filter-bar {
     padding: 0.5rem 1rem;
-    /* tighter padding on mobile */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none;
   }
 
   .secondary-grid {

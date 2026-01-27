@@ -36,6 +36,9 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=Rajdhani:wght@600;700&display=swap"
     rel="stylesheet" />
 
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
   <!-- Leaflet Map -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -110,11 +113,21 @@
       <!-- CATEGORY FILTER BAR -->
       <div class="filter-sticky-wrapper">
         <div class="filter-bar card-animate" role="group" aria-label="Filtriraj vijesti po kategoriji">
-          <button class="filter-btn active" data-cat="all" aria-pressed="true">Sve</button>
-          <button class="filter-btn" data-cat="LOKALNO" aria-pressed="false">Lokalno</button>
-          <button class="filter-btn" data-cat="SPORT" aria-pressed="false">Sport</button>
-          <button class="filter-btn" data-cat="KULTURA" aria-pressed="false">Kultura</button>
-          <button class="filter-btn" data-cat="TURIZAM" aria-pressed="false">Turizam</button>
+          <button class="filter-btn active" data-cat="all" aria-pressed="true">
+            <i data-lucide="layout-grid" class="filter-icon"></i> Sve
+          </button>
+          <button class="filter-btn" data-cat="LOKALNO" aria-pressed="false">
+            <i data-lucide="map-pin" class="filter-icon"></i> Lokalno
+          </button>
+          <button class="filter-btn" data-cat="SPORT" aria-pressed="false">
+            <i data-lucide="trophy" class="filter-icon"></i> Sport
+          </button>
+          <button class="filter-btn" data-cat="KULTURA" aria-pressed="false">
+            <i data-lucide="palette" class="filter-icon"></i> Kultura
+          </button>
+          <button class="filter-btn" data-cat="TURIZAM" aria-pressed="false">
+            <i data-lucide="plane" class="filter-icon"></i> Turizam
+          </button>
         </div>
       </div>
 
