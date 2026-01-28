@@ -2179,7 +2179,9 @@ function initMap() {
             </svg>
             Slojevi karte
           </span>
-          <button class="map-filter-toggle-btn" id="map-filter-toggle">Skloni</button>
+          <svg class="map-control-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
         </div>
         <div class="map-filter-content" id="map-filter-content">
           <div class="map-filter-section">
@@ -2319,7 +2321,6 @@ function initMap() {
 
       const setFilterState = (collapsed) => {
         content.style.display = collapsed ? 'none' : ''
-        toggleBtn.textContent = collapsed ? 'Prikaži' : 'Skloni'
         div.classList.toggle('collapsed', collapsed)
       }
 
@@ -2329,14 +2330,10 @@ function initMap() {
         localStorage.setItem('map_filter_collapsed', willCollapse)
       }
 
-      // Load collapsed state
-      const isFilterCollapsed = localStorage.getItem('map_filter_collapsed') === 'true'
+      // Load collapsed state - default to true if never set
+      const isFilterCollapsed = localStorage.getItem('map_filter_collapsed') !== 'false'
       setFilterState(isFilterCollapsed)
 
-      toggleBtn.addEventListener('click', (e) => {
-        e.stopPropagation()
-        toggleFilter()
-      })
       header.addEventListener('click', toggleFilter)
 
       // Initial Lazy load check if scope was saved as 'full'
@@ -2490,66 +2487,59 @@ function initMap() {
   // --- AIS OVERLAY TOGGLE ---
   const aisOverlay = document.querySelector('.map-overlay-info')
   if (aisOverlay) {
-    // Add Toggle Button
-    const toggleBtn = document.createElement('button')
-    toggleBtn.id = 'ais-overlay-toggle'
-    toggleBtn.className = 'map-overlay-toggle-btn'
-    toggleBtn.style.cssText = `
-      position: absolute;
-      bottom: 0.5rem;
-      right: 0.5rem;
-      z-index: 10;
+    const h4 = aisOverlay.querySelector('h4')
+    const p = aisOverlay.querySelector('p')
+    const contentv2 = aisOverlay.querySelector('#ferry-status-v2')
+
+    const bodyDiv = document.createElement('div')
+    bodyDiv.id = 'ais-overlay-body'
+    // Padding handled by CSS #ais-overlay-body { padding: 1rem; }
+    if (h4) bodyDiv.appendChild(h4)
+    if (p) bodyDiv.appendChild(p)
+    if (contentv2) bodyDiv.appendChild(contentv2)
+
+    const headerDiv = document.createElement('div')
+    headerDiv.className = 'map-filter-header ais-overlay-header'
+    headerDiv.style.padding = '10px 16px'
+    headerDiv.innerHTML = `
+      <span class="map-filter-title">
+        <span class="pulse-dot" style="width: 8px; height: 8px"></span>
+        AIS LIVE
+      </span>
+      <svg class="map-control-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
     `
-    aisOverlay.appendChild(toggleBtn)
 
-    // Helper to Apply State
+    aisOverlay.innerHTML = ''
+    aisOverlay.appendChild(headerDiv)
+    aisOverlay.appendChild(bodyDiv)
+
     const setAisState = (isHidden) => {
-      const children = Array.from(aisOverlay.children)
-      children.forEach((child) => {
-        if (child.id !== 'ais-overlay-toggle') {
-          child.style.display = isHidden ? 'none' : ''
-        }
-      })
-
+      bodyDiv.style.display = isHidden ? 'none' : ''
+      aisOverlay.classList.toggle('collapsed', isHidden)
       if (isHidden) {
-        toggleBtn.textContent = 'AIS Status'
-        aisOverlay.style.background = 'rgba(15, 23, 42, 0.6)'
-        aisOverlay.style.minWidth = '80px'
-        aisOverlay.style.minHeight = '28px'
-        aisOverlay.style.padding = '0'
-        toggleBtn.style.bottom = '4px'
-        toggleBtn.style.right = '4px'
-        toggleBtn.style.width = 'calc(100% - 8px)'
+        aisOverlay.style.background = 'rgba(15, 23, 42, 0.7)'
       } else {
-        toggleBtn.textContent = 'Skloni'
-        aisOverlay.style.background = 'rgba(15, 23, 42, 0.85)'
-        aisOverlay.style.minWidth = '250px'
-        aisOverlay.style.minHeight = ''
-        aisOverlay.style.padding = '1rem'
-        toggleBtn.style.bottom = '0.5rem'
-        toggleBtn.style.right = '0.5rem'
-        toggleBtn.style.width = 'auto'
+        aisOverlay.style.background = 'rgba(15, 23, 42, 0.95)'
       }
     }
 
-    // Load State
-    const isAisCollapsed = localStorage.getItem('ais_overlay_collapsed') === 'true'
+    // Load state - default to true if never set
+    const isAisCollapsed = localStorage.getItem('ais_overlay_collapsed') !== 'false'
     setAisState(isAisCollapsed)
 
-    // Toggle and Save
     const toggleAis = (e) => {
       if (e) e.stopPropagation()
-      const newHiddenState = toggleBtn.textContent === 'Skloni'
-      setAisState(newHiddenState)
-      localStorage.setItem('ais_overlay_collapsed', newHiddenState)
+      const isNowCollapsed = !aisOverlay.classList.contains('collapsed')
+      setAisState(isNowCollapsed)
+      localStorage.setItem('ais_overlay_collapsed', isNowCollapsed)
     }
 
-    toggleBtn.addEventListener('click', toggleAis)
+    headerDiv.addEventListener('click', toggleAis)
     aisOverlay.addEventListener('click', (e) => {
-      if (toggleBtn.textContent !== 'Skloni') toggleAis(e)
+      if (aisOverlay.classList.contains('collapsed')) toggleAis(e)
     })
-
-    // Prevent Map Click
     L.DomEvent.disableClickPropagation(aisOverlay)
   }
 

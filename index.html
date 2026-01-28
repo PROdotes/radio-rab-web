@@ -1,295 +1,236 @@
 <!DOCTYPE html>
 <html lang="hr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radio Rab | Vijesti s otoka Raba</title>
-    <meta
-      name="description"
-      content="Radio Rab - vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba. Trajekti, vrijeme, kultura, sport i više."
-    />
-    <meta
-      name="keywords"
-      content="Radio Rab, otok Rab, vijesti, Hrvatska, Kvarner, trajekt, turizam"
-    />
-    <meta name="author" content="Radio Rab" />
 
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://radiorab.hr/" />
-    <meta property="og:title" content="Radio Rab | Vijesti s otoka Raba" />
-    <meta
-      property="og:description"
-      content="Vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba."
-    />
-    <meta property="og:image" content="https://picsum.photos/seed/radiorab/1200/630" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radio Rab | Vijesti s otoka Raba</title>
+  <meta name="description"
+    content="Radio Rab - vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba. Trajekti, vrijeme, kultura, sport i više." />
+  <meta name="keywords" content="Radio Rab, otok Rab, vijesti, Hrvatska, Kvarner, trajekt, turizam" />
+  <meta name="author" content="Radio Rab" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Radio Rab | Vijesti s otoka Raba" />
-    <meta
-      name="twitter:description"
-      content="Vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba."
-    />
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://radiorab.hr/" />
+  <meta property="og:title" content="Radio Rab | Vijesti s otoka Raba" />
+  <meta property="og:description" content="Vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba." />
+  <meta property="og:image" content="https://picsum.photos/seed/radiorab/1200/630" />
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>"
-    />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Radio Rab | Vijesti s otoka Raba" />
+  <meta name="twitter:description" content="Vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba." />
 
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#020617" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📻</text></svg>" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=Rajdhani:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#020617" />
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=Rajdhani:wght@600;700&display=swap"
+    rel="stylesheet" />
 
-    <!-- Leaflet Map -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-    <!-- Supercluster (fast client-side clustering) -->
-    <script src="https://unpkg.com/supercluster@7.1.5/dist/supercluster.min.js"></script>
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <!-- Supercluster (fast client-side clustering) -->
+  <script src="https://unpkg.com/supercluster@7.1.5/dist/supercluster.min.js"></script>
 
-  <body>
-    <!-- Skip Link for Accessibility -->
-    <a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- Breaking News Ticker -->
-    <!-- Breaking News Ticker -->
-    <div class="news-ticker" role="marquee" aria-live="off">
-      <span class="ticker-label"></span>
-      <div class="ticker-mask">
-        <div class="ticker-content">
-          <span class="ticker-item">⚓ Trajekt Jablanac-Mišnjak: redoviti promet</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">🌊 Plima danas u 14:32, oseka u 20:45</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">🎭 Rapska fjera: prijave otvorene do 1. ožujka</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">🌡️ UV indeks: 3 (umjeren)</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">💨 Bura: udari do 45 km/h</span>
-          <!-- Duplicated items for seamless scrolling -->
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">⚓ Trajekt Jablanac-Mišnjak: redoviti promet</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">🌊 Plima danas u 14:32, oseka u 20:45</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">🎭 Rapska fjera: prijave otvorene do 1. ožujka</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">🌡️ UV indeks: 3 (umjeren)</span>
-          <span class="ticker-separator">•</span>
-          <span class="ticker-item">💨 Bura: udari do 45 km/h</span>
-        </div>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
+
+  <!-- Breaking News Ticker -->
+  <!-- Breaking News Ticker -->
+  <div class="news-ticker" role="marquee" aria-live="off">
+    <span class="ticker-label"></span>
+    <div class="ticker-mask">
+      <div class="ticker-content">
+        <span class="ticker-item">⚓ Trajekt Jablanac-Mišnjak: redoviti promet</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌊 Plima danas u 14:32, oseka u 20:45</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🎭 Rapska fjera: prijave otvorene do 1. ožujka</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌡️ UV indeks: 3 (umjeren)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">💨 Bura: udari do 45 km/h</span>
+        <!-- Duplicated items for seamless scrolling -->
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">⚓ Trajekt Jablanac-Mišnjak: redoviti promet</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌊 Plima danas u 14:32, oseka u 20:45</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🎭 Rapska fjera: prijave otvorene do 1. ožujka</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">🌡️ UV indeks: 3 (umjeren)</span>
+        <span class="ticker-separator">•</span>
+        <span class="ticker-item">💨 Bura: udari do 45 km/h</span>
       </div>
     </div>
+  </div>
 
-    <!-- Portal Header -->
-    <header class="site-header">
-      <div class="container header-content">
-        <div class="brand">
-          <h1>RADIO<span>RAB</span></h1>
-        </div>
-        <nav class="header-nav" aria-label="Glavna navigacija">
-          <ul class="nav-links">
-            <li>
-              <a href="#feed" class="nav-link nav-trigger active" data-tab="feed"
-                ><i data-lucide="file-text" class="nav-icon"></i>Vijesti</a
-              >
-            </li>
-            <li>
-              <a href="#shorts" class="nav-link nav-trigger" data-tab="shorts"
-                ><i data-lucide="video" class="nav-icon"></i>Video</a
-              >
-            </li>
-            <li>
-              <a href="#map" class="nav-link nav-trigger" data-tab="map"
-                ><i data-lucide="map-pin" class="nav-icon"></i>Karta</a
-              >
-            </li>
-            <li>
-              <a href="#market" class="nav-link nav-trigger" data-tab="market"
-                ><i data-lucide="shopping-cart" class="nav-icon"></i>Tržnica</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="nav-link"
-                id="reporter-link"
-                aria-haspopup="dialog"
-                aria-controls="reporter-modal"
-                ><i data-lucide="phone" class="nav-icon"></i>Kontakt</a
-              >
-            </li>
-            <li class="hamburger-li">
-              <button
-                id="header-menu-btn"
-                class="hamburger-btn"
-                aria-label="Otvori izbornik"
-                title="Izbornik"
-              >
-                <i data-lucide="menu"></i>
-              </button>
-            </li>
-          </ul>
-        </nav>
+  <!-- Portal Header -->
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="brand">
+        <h1>R<span>R</span></h1>
       </div>
-    </header>
-    <!-- Off-canvas Hamburger Menu (Demo) -->
-    <div id="offcanvas-backdrop" class="offcanvas-backdrop" hidden></div>
-    <aside
-      id="offcanvas-menu"
-      class="offcanvas"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Glavni izbornik"
-      aria-hidden="true"
-    >
-      <div class="offcanvas-header">
-        <h3>Izbornik</h3>
-        <button id="offcanvas-close" class="offcanvas-close" aria-label="Zatvori izbornik">
-          &times;
-        </button>
-      </div>
-      <nav class="offcanvas-nav" aria-label="Primarna navigacija">
-        <ul>
+      <nav class="header-nav" aria-label="Glavna navigacija">
+        <ul class="nav-links">
           <li>
-            <a href="#feed" data-tab="feed" class="nav-trigger"
-              ><i data-lucide="home"></i> Naslovnica</a
-            >
+            <a href="#feed" class="nav-link nav-trigger active" data-tab="feed"><i data-lucide="file-text"
+                class="nav-icon"></i>Vijesti</a>
           </li>
           <li>
-            <a href="#feed" data-tab="feed" class="nav-trigger"
-              ><i data-lucide="file-text"></i> Vijesti</a
-            >
+            <a href="#shorts" class="nav-link nav-trigger" data-tab="shorts"><i data-lucide="video"
+                class="nav-icon"></i>Video</a>
           </li>
           <li>
-            <a href="#shorts" data-tab="shorts" class="nav-trigger"
-              ><i data-lucide="video"></i> Video</a
-            >
+            <a href="#map" class="nav-link nav-trigger" data-tab="map"><i data-lucide="map-pin"
+                class="nav-icon"></i>Karta</a>
           </li>
           <li>
-            <a href="#map" data-tab="map" class="nav-trigger"
-              ><i data-lucide="map-pin"></i> Karta</a
-            >
+            <a href="#market" class="nav-link nav-trigger" data-tab="market"><i data-lucide="shopping-cart"
+                class="nav-icon"></i>Tržnica</a>
           </li>
           <li>
-            <a href="#market" data-tab="market" class="nav-trigger"
-              ><i data-lucide="shopping-cart"></i> Tržnica</a
-            >
-          </li>
-          <li>
-            <a href="#" id="offcanvas-reporter" class="report-link"
-              ><i data-lucide="phone"></i> Kontakt / Prijavi</a
-            >
-          </li>
-          <li>
-            <a href="#" class="nav-link"><i data-lucide="info"></i> O nama</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link"><i data-lucide="calendar"></i> Događanja</a>
+            <a href="#" class="nav-link" id="reporter-link" aria-haspopup="dialog" aria-controls="reporter-modal"><i
+                data-lucide="phone" class="nav-icon"></i>Kontakt</a>
           </li>
         </ul>
       </nav>
-    </aside>
+      <div class="hamburger-li">
+        <button id="header-menu-btn" class="hamburger-btn" aria-label="Otvori izbornik" title="Izbornik">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- Off-canvas Hamburger Menu (Demo) -->
+  <div id="offcanvas-backdrop" class="offcanvas-backdrop" hidden></div>
+  <aside id="offcanvas-menu" class="offcanvas" role="dialog" aria-modal="true" aria-label="Glavni izbornik"
+    aria-hidden="true">
+    <div class="offcanvas-header">
+      <h3>Izbornik</h3>
+      <button id="offcanvas-close" class="offcanvas-close" aria-label="Zatvori izbornik">
+        &times;
+      </button>
+    </div>
+    <nav class="offcanvas-nav" aria-label="Primarna navigacija">
+      <ul>
+        <li>
+          <a href="#feed" data-tab="feed" class="nav-trigger"><i data-lucide="home"></i> Naslovnica</a>
+        </li>
+        <li>
+          <a href="#feed" data-tab="feed" class="nav-trigger"><i data-lucide="file-text"></i> Vijesti</a>
+        </li>
+        <li>
+          <a href="#shorts" data-tab="shorts" class="nav-trigger"><i data-lucide="video"></i> Video</a>
+        </li>
+        <li>
+          <a href="#map" data-tab="map" class="nav-trigger"><i data-lucide="map-pin"></i> Karta</a>
+        </li>
+        <li>
+          <a href="#market" data-tab="market" class="nav-trigger"><i data-lucide="shopping-cart"></i> Tržnica</a>
+        </li>
+        <li>
+          <a href="#" id="offcanvas-reporter" class="report-link"><i data-lucide="phone"></i> Kontakt / Prijavi</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link"><i data-lucide="info"></i> O nama</a>
+        </li>
+        <li>
+          <a href="#" class="nav-link"><i data-lucide="calendar"></i> Događanja</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
 
-    <main id="main-content" class="container">
-      <!-- MAIN NEWS FEED -->
-      <section id="feed" class="tab-content active" aria-label="Naslovnica">
-        <!-- CATEGORY FILTER BAR -->
-        <div class="filter-sticky-wrapper">
-          <div class="filter-scroll-hint left" aria-hidden="true"></div>
-          <div class="filter-scroll-hint right" aria-hidden="true"></div>
-          <div
-            class="filter-bar card-animate"
-            role="group"
-            aria-label="Filtriraj vijesti po kategoriji"
-          >
-            <button class="filter-btn active" data-cat="all" aria-pressed="true">
-              <i data-lucide="layout-grid" class="filter-icon"></i> Sve
-            </button>
-            <button class="filter-btn" data-cat="LOKALNO" aria-pressed="false">
-              <i data-lucide="map-pin" class="filter-icon"></i> Lokalno
-            </button>
-            <button class="filter-btn" data-cat="SPORT" aria-pressed="false">
-              <i data-lucide="trophy" class="filter-icon"></i> Sport
-            </button>
-            <button class="filter-btn" data-cat="KULTURA" aria-pressed="false">
-              <i data-lucide="palette" class="filter-icon"></i> Kultura
-            </button>
-            <button class="filter-btn" data-cat="TURIZAM" aria-pressed="false">
-              <i data-lucide="plane" class="filter-icon"></i> Turizam
-            </button>
-            <button class="filter-btn" data-cat="MORE" aria-pressed="false">
-              <i data-lucide="anchor" class="filter-icon"></i> More
-            </button>
-            <button class="filter-btn" data-cat="GASTRONOMIJA" aria-pressed="false">
-              <i data-lucide="utensils" class="filter-icon"></i> Gastronomija
-            </button>
+  <main id="main-content" class="container">
+    <!-- MAIN NEWS FEED -->
+    <section id="feed" class="tab-content active" aria-label="Naslovnica">
+      <!-- CATEGORY FILTER BAR -->
+      <div class="filter-sticky-wrapper">
+        <div class="filter-scroll-hint left" aria-hidden="true"></div>
+        <div class="filter-scroll-hint right" aria-hidden="true"></div>
+        <div class="filter-bar card-animate" role="group" aria-label="Filtriraj vijesti po kategoriji">
+          <button class="filter-btn active" data-cat="all" aria-pressed="true">
+            <i data-lucide="layout-grid" class="filter-icon"></i> Sve
+          </button>
+          <button class="filter-btn" data-cat="LOKALNO" aria-pressed="false">
+            <i data-lucide="map-pin" class="filter-icon"></i> Lokalno
+          </button>
+          <button class="filter-btn" data-cat="SPORT" aria-pressed="false">
+            <i data-lucide="trophy" class="filter-icon"></i> Sport
+          </button>
+          <button class="filter-btn" data-cat="KULTURA" aria-pressed="false">
+            <i data-lucide="palette" class="filter-icon"></i> Kultura
+          </button>
+          <button class="filter-btn" data-cat="TURIZAM" aria-pressed="false">
+            <i data-lucide="plane" class="filter-icon"></i> Turizam
+          </button>
+          <button class="filter-btn" data-cat="MORE" aria-pressed="false">
+            <i data-lucide="anchor" class="filter-icon"></i> More
+          </button>
+          <button class="filter-btn" data-cat="GASTRONOMIJA" aria-pressed="false">
+            <i data-lucide="utensils" class="filter-icon"></i> Gastronomija
+          </button>
+        </div>
+      </div>
+
+      <div class="editorial-grid">
+        <div class="main-feed-column">
+          <!-- FEATURED STORY -->
+          <div id="primary-feature-container" aria-live="polite">
+            <!-- Hero article injected by JS -->
+          </div>
+
+          <!-- NEWS GRID -->
+          <div id="news-grid" style="display: contents">
+            <!-- News cards injected by JS -->
           </div>
         </div>
 
-        <div class="editorial-grid">
-          <div class="main-feed-column">
-            <!-- FEATURED STORY -->
-            <div id="primary-feature-container" aria-live="polite">
-              <!-- Hero article injected by JS -->
-            </div>
-
-            <!-- NEWS GRID -->
-            <div id="news-grid" style="display: contents">
-              <!-- News cards injected by JS -->
-            </div>
-          </div>
-
-          <!-- SIDEBAR (ISLAND TOOLBELT) -->
-          <aside class="sidebar-stack" aria-label="Island Toolbelt">
-            <!-- Weather & Marine Widget (TOP) -->
-            <div class="glass widget-card weather-widget card-animate" style="--delay: 1">
-              <h3><span class="icon">🌊</span> MORE I VRIJEME</h3>
-              <div class="weather-grid">
-                <div class="weather-item" data-weather="sea-temp">
-                  <span class="weather-label">Temp. mora</span>
-                  <span class="weather-value">14°C</span>
-                </div>
-                <div class="weather-item" data-weather="wind">
-                  <span class="weather-label">Vjetar</span>
-                  <span class="weather-value">Bura 25 km/h</span>
-                </div>
-                <div class="weather-item" data-weather="tide">
-                  <span class="weather-label">Plima</span>
-                  <span class="weather-value">14:32</span>
-                </div>
-                <div class="weather-item" data-weather="sunrise">
-                  <span class="weather-label">Izlazak sunca</span>
-                  <span class="weather-value">07:12</span>
-                </div>
+        <!-- SIDEBAR (ISLAND TOOLBELT) -->
+        <aside class="sidebar-stack" aria-label="Island Toolbelt">
+          <!-- Weather & Marine Widget (TOP) -->
+          <div class="glass widget-card weather-widget card-animate" style="--delay: 1">
+            <h3><span class="icon">🌊</span> MORE I VRIJEME</h3>
+            <div class="weather-grid">
+              <div class="weather-item" data-weather="sea-temp">
+                <span class="weather-label">Temp. mora</span>
+                <span class="weather-value">14°C</span>
               </div>
-              <div
-                style="
+              <div class="weather-item" data-weather="wind">
+                <span class="weather-label">Vjetar</span>
+                <span class="weather-value">Bura 25 km/h</span>
+              </div>
+              <div class="weather-item" data-weather="tide">
+                <span class="weather-label">Plima</span>
+                <span class="weather-value">14:32</span>
+              </div>
+              <div class="weather-item" data-weather="sunrise">
+                <span class="weather-label">Izlazak sunca</span>
+                <span class="weather-value">07:12</span>
+              </div>
+            </div>
+            <div style="
                   margin-top: 1rem;
                   padding-top: 1rem;
                   border-top: 1px solid var(--border);
@@ -298,397 +239,328 @@
                   display: flex;
                   align-items: center;
                   gap: 1rem;
-                "
-              >
-                <span id="header-weather-icon">☀️</span>
-                <span id="header-weather-temp">12°C</span>
+                ">
+              <span id="header-weather-icon">☀️</span>
+              <span id="header-weather-temp">12°C</span>
+            </div>
+          </div>
+
+          <!-- Traffic Alerts Widget -->
+          <div id="traffic-alerts-widget" class="glass widget-card card-animate" style="--delay: 1.5; display: none">
+            <h3><span class="alert-pulse"></span> ALERTS</h3>
+            <div id="alert-items-container" class="alert-stack">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+
+          <!-- Live Island Status -->
+          <div class="glass widget-card card-animate" style="--delay: 2">
+            <div class="flex-between" style="margin-bottom: 1.25rem">
+              <h3><span class="pulse-dot"></span> TRAJEKTI I PROMET</h3>
+              <div class="sync-status">
+                <span class="sync-dot" id="npt-sync-dot"></span>
+                <span id="npt-sync-text">Live</span>
               </div>
             </div>
-
-            <!-- Traffic Alerts Widget -->
-            <div
-              id="traffic-alerts-widget"
-              class="glass widget-card card-animate"
-              style="--delay: 1.5; display: none"
-            >
-              <h3><span class="alert-pulse"></span> ALERTS</h3>
-              <div id="alert-items-container" class="alert-stack">
-                <!-- Injected by JS -->
+            <div class="live-indicator">
+              <div class="live-row" data-live="ferry-misnjak">
+                <span class="label">Stinica–Mišnjak</span>
+                <span class="value val-green">Na vrijeme</span>
+              </div>
+              <div class="live-row">
+                <span class="label">Valbiska–Lopar</span>
+                <span class="value val-yellow">15 min kašnjenja</span>
+              </div>
+              <div class="live-row">
+                <span class="label">Magistrala (D8)</span>
+                <span class="value val-green" id="d8-status">Otvoreno</span>
               </div>
             </div>
-
-            <!-- Live Island Status -->
-            <div class="glass widget-card card-animate" style="--delay: 2">
-              <div class="flex-between" style="margin-bottom: 1.25rem">
-                <h3><span class="pulse-dot"></span> TRAJEKTI I PROMET</h3>
-                <div class="sync-status">
-                  <span class="sync-dot" id="npt-sync-dot"></span>
-                  <span id="npt-sync-text">Live</span>
-                </div>
-              </div>
-              <div class="live-indicator">
-                <div class="live-row" data-live="ferry-misnjak">
-                  <span class="label">Stinica–Mišnjak</span>
-                  <span class="value val-green">Na vrijeme</span>
-                </div>
-                <div class="live-row">
-                  <span class="label">Valbiska–Lopar</span>
-                  <span class="value val-yellow">15 min kašnjenja</span>
-                </div>
-                <div class="live-row">
-                  <span class="label">Magistrala (D8)</span>
-                  <span class="value val-green" id="d8-status">Otvoreno</span>
-                </div>
-              </div>
-              <a
-                href="#map"
-                class="widget-link"
-                data-tab="map"
-                style="
+            <a href="#map" class="widget-link" data-tab="map" style="
                   font-size: 0.65rem;
                   display: block;
                   margin-top: 1rem;
                   text-align: right;
                   opacity: 0.5;
-                "
-                >Prikaži kartu AIS →</a
-              >
+                ">Prikaži kartu AIS →</a>
+          </div>
+
+          <!-- Events Widget -->
+          <div class="glass widget-card events-widget card-animate" style="--delay: 5">
+            <h3>📅 DOGAĐANJA</h3>
+            <div class="event-item">
+              <div class="event-date">
+                <span class="event-day">25</span>
+                <span class="event-month">SIJ</span>
+              </div>
+              <div class="event-info">
+                <h4>Jazz večer u Loži</h4>
+                <p>20:00 • Ulaz slobodan</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <span class="event-day">28</span>
+                <span class="event-month">SIJ</span>
+              </div>
+              <div class="event-info">
+                <h4>Sajam domaćih proizvoda</h4>
+                <p>09:00–14:00 • Trg</p>
+              </div>
+            </div>
+            <div class="event-item">
+              <div class="event-date">
+                <span class="event-day">02</span>
+                <span class="event-month">VEL</span>
+              </div>
+              <div class="event-info">
+                <h4>Rapski karneval</h4>
+                <p>Cijeli dan • Stara jezgra</p>
+              </div>
+            </div>
+            <a href="#" class="widget-link">Sva događanja →</a>
+          </div>
+
+          <!-- Radio Stream Widget -->
+          <div class="glass widget-card radio-widget card-animate" style="--delay: 6">
+            <h3>📻 RADIO UŽIVO</h3>
+            <div class="radio-player" id="radio-player">
+              <button type="button" class="play-btn" id="radio-play" aria-label="Pokreni radio stream">
+                <span class="play-icon">▶</span>
+              </button>
+              <div class="radio-info">
+                <span class="now-playing">Sada svira</span>
+                <span class="song-title">Radio Rab - 24/7</span>
+              </div>
+              <div class="equalizer" aria-hidden="true">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+              </div>
             </div>
 
-            <!-- Events Widget -->
-            <div class="glass widget-card events-widget card-animate" style="--delay: 5">
-              <h3>📅 DOGAĐANJA</h3>
-              <div class="event-item">
-                <div class="event-date">
-                  <span class="event-day">25</span>
-                  <span class="event-month">SIJ</span>
-                </div>
-                <div class="event-info">
-                  <h4>Jazz večer u Loži</h4>
-                  <p>20:00 • Ulaz slobodan</p>
-                </div>
-              </div>
-              <div class="event-item">
-                <div class="event-date">
-                  <span class="event-day">28</span>
-                  <span class="event-month">SIJ</span>
-                </div>
-                <div class="event-info">
-                  <h4>Sajam domaćih proizvoda</h4>
-                  <p>09:00–14:00 • Trg</p>
-                </div>
-              </div>
-              <div class="event-item">
-                <div class="event-date">
-                  <span class="event-day">02</span>
-                  <span class="event-month">VEL</span>
-                </div>
-                <div class="event-info">
-                  <h4>Rapski karneval</h4>
-                  <p>Cijeli dan • Stara jezgra</p>
-                </div>
-              </div>
-              <a href="#" class="widget-link">Sva događanja →</a>
-            </div>
-
-            <!-- Radio Stream Widget -->
-            <div class="glass widget-card radio-widget card-animate" style="--delay: 6">
-              <h3>📻 RADIO UŽIVO</h3>
-              <div class="radio-player" id="radio-player">
-                <button
-                  type="button"
-                  class="play-btn"
-                  id="radio-play"
-                  aria-label="Pokreni radio stream"
-                >
-                  <span class="play-icon">▶</span>
-                </button>
-                <div class="radio-info">
-                  <span class="now-playing">Sada svira</span>
-                  <span class="song-title">Radio Rab - 24/7</span>
-                </div>
-                <div class="equalizer" aria-hidden="true">
-                  <div class="eq-bar"></div>
-                  <div class="eq-bar"></div>
-                  <div class="eq-bar"></div>
-                  <div class="eq-bar"></div>
-                  <div class="eq-bar"></div>
-                </div>
-              </div>
-
-              <!-- Playlist Container -->
-              <div class="recently-played" id="playlist-container" hidden>
-                <div id="next-up-container" hidden>
-                  <h4 style="color: var(--accent)">SLIJEDI USKORO</h4>
-                  <div class="next-up-item">
-                    <span class="pulse-dot" style="background: var(--accent)"></span>
-                    <div class="playlist-meta">
-                      <span class="playlist-artist" id="next-artist">...</span>
-                      <span class="playlist-song" id="next-song">SLIJEDI</span>
-                    </div>
+            <!-- Playlist Container -->
+            <div class="recently-played" id="playlist-container" hidden>
+              <div id="next-up-container" hidden>
+                <h4 style="color: var(--accent)">SLIJEDI USKORO</h4>
+                <div class="next-up-item">
+                  <span class="pulse-dot" style="background: var(--accent)"></span>
+                  <div class="playlist-meta">
+                    <span class="playlist-artist" id="next-artist">...</span>
+                    <span class="playlist-song" id="next-song">SLIJEDI</span>
                   </div>
                 </div>
+              </div>
 
-                <h4 style="margin-top: 1.5rem">UPRAVO SVIRALO</h4>
-                <div class="playlist-items" id="playlist-items">
-                  <!-- JS Injected Items -->
-                </div>
+              <h4 style="margin-top: 1.5rem">UPRAVO SVIRALO</h4>
+              <div class="playlist-items" id="playlist-items">
+                <!-- JS Injected Items -->
               </div>
             </div>
+          </div>
 
-            <!-- Newsletter Widget -->
-            <div class="glass widget-card newsletter-widget card-animate" style="--delay: 7">
-              <h3>📧 NEWSLETTER</h3>
-              <p>Primajte najvažnije vijesti s otoka direktno u inbox.</p>
-              <form class="newsletter-form" id="newsletter-form">
-                <input
-                  type="email"
-                  placeholder="Vaš email"
-                  aria-label="Email za newsletter"
-                  required
-                />
-                <button type="submit">Pretplati se</button>
-              </form>
-              <span class="newsletter-note">Bez spama. Odjava u bilo kojem trenutku.</span>
-            </div>
-          </aside>
+          <!-- Newsletter Widget -->
+          <div class="glass widget-card newsletter-widget card-animate" style="--delay: 7">
+            <h3>📧 NEWSLETTER</h3>
+            <p>Primajte najvažnije vijesti s otoka direktno u inbox.</p>
+            <form class="newsletter-form" id="newsletter-form">
+              <input type="email" placeholder="Vaš email" aria-label="Email za newsletter" required />
+              <button type="submit">Pretplati se</button>
+            </form>
+            <span class="newsletter-note">Bez spama. Odjava u bilo kojem trenutku.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- VIDEO TAB -->
+    <section id="shorts" class="tab-content" aria-label="Video sadržaj">
+      <div class="demo-placeholder glass">
+        <div class="placeholder-content">
+          <span class="placeholder-icon">🎬</span>
+          <h2>Video Vijesti</h2>
+          <p>Kratki video formati i live prijenosi uskoro dolaze.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- VIDEO TAB -->
-      <section id="shorts" class="tab-content" aria-label="Video sadržaj">
-        <div class="demo-placeholder glass">
-          <div class="placeholder-content">
-            <span class="placeholder-icon">🎬</span>
-            <h2>Video Vijesti</h2>
-            <p>Kratki video formati i live prijenosi uskoro dolaze.</p>
-          </div>
-        </div>
-      </section>
+    <!-- MAP TAB -->
+    <section id="map" class="tab-content" aria-label="Interaktivna karta">
+      <div class="map-container-wrapper glass card-animate">
+        <div id="leaflet-map"></div>
 
-      <!-- MAP TAB -->
-      <section id="map" class="tab-content" aria-label="Interaktivna karta">
-        <div class="map-container-wrapper glass card-animate">
-          <div id="leaflet-map"></div>
-
-          <div class="map-overlay-info glass">
-            <h4><span class="pulse-dot"></span> NPT LIVE DATA</h4>
-            <p>Izvor: Ministarstvo mora, prometa i infrastrukture (DATEX II)</p>
-            <div
-              id="ferry-status-v2"
-              style="margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem"
-            >
-              <!-- This will be mirrored by script.js -->
-              <p style="font-size: 0.75rem; color: var(--text-dim)">Učitavanje AIS podataka...</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- MARKET TAB -->
-      <section id="market" class="tab-content" aria-label="Lokalna tržnica">
-        <div class="demo-placeholder glass">
-          <div class="placeholder-content">
-            <span class="placeholder-icon">🛒</span>
-            <h2>Rapska Tržnica</h2>
-            <p>Lokalni proizvodi, usluge i oglasi. Uskoro dostupno.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <h4>RADIO<span>RAB</span></h4>
-          </div>
-          <div class="footer-links">
-            <h5>Rubrike</h5>
-            <ul>
-              <li><a href="#feed">Lokalno</a></li>
-              <li><a href="#feed">Sport</a></li>
-              <li><a href="#feed">Kultura</a></li>
-              <li><a href="#feed">Turizam</a></li>
-            </ul>
-          </div>
-          <div class="footer-links">
-            <h5>Servisi</h5>
-            <ul>
-              <li><a href="#map">Trajekti</a></li>
-              <li><a href="#map">Vrijeme</a></li>
-              <li><a href="#market">Oglasi</a></li>
-              <li><a href="#market">Poslovi</a></li>
-            </ul>
-          </div>
-          <div class="footer-links">
-            <h5>O Nama</h5>
-            <ul>
-              <li><a href="#">Kontakt</a></li>
-              <li><a href="#">Redakcija</a></li>
-              <li><a href="#">Oglašavanje</a></li>
-              <li><a href="#">Privatnost</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2026 Radio Rab. Sva prava pridržana.</p>
-          <div class="footer-meta-links">
-            <span class="demo-badge">Demo verzija</span>
-            <button type="button" id="staff-portal-btn" class="staff-link">Staff Portal</button>
+        <div class="map-overlay-info glass">
+          <h4><span class="pulse-dot"></span> NPT LIVE DATA</h4>
+          <p>Izvor: Ministarstvo mora, prometa i infrastrukture (DATEX II)</p>
+          <div id="ferry-status-v2" style="margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem">
+            <!-- This will be mirrored by script.js -->
+            <p style="font-size: 0.75rem; color: var(--text-dim)">Učitavanje AIS podataka...</p>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <!-- Back to Top Button -->
-    <button
-      id="back-to-top"
-      class="back-to-top-btn"
-      aria-label="Povratak na vrh"
-      title="Povratak na vrh"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="m18 15-6-6-6 6" />
-      </svg>
-    </button>
-
-    <!-- Reporter Modal -->
-    <div
-      id="reporter-modal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-      hidden
-    >
-      <div class="modal-content glass">
-        <button type="button" class="modal-close" aria-label="Zatvori">&times;</button>
-        <h2 id="modal-title">Prijavi Vijest</h2>
-        <p>Imate zanimljivu vijest ili fotografiju? Postanite dio Radio Rab zajednice!</p>
-        <form class="reporter-form">
-          <input type="text" placeholder="Vaše ime" aria-label="Vaše ime" required />
-          <input type="email" placeholder="Email" aria-label="Email adresa" required />
-          <textarea
-            placeholder="Opišite vijest..."
-            aria-label="Opis vijesti"
-            rows="4"
-            required
-          ></textarea>
-
-          <div class="file-upload-group">
-            <label for="media-upload" class="upload-label">
-              <span class="upload-icon">📎</span> Priloži sliku ili video
-            </label>
-            <input type="file" id="media-upload" accept="image/*,video/*" class="file-input" />
-          </div>
-          <button type="submit" class="submit-btn">Pošalji</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Staff Admin Modal (NEW) -->
-    <div
-      id="admin-modal"
-      class="modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="admin-title"
-      hidden
-    >
-      <div class="modal-content glass admin-panel">
-        <button type="button" class="modal-close" id="admin-close" aria-label="Zatvori">
-          &times;
-        </button>
-        <h2 id="admin-title">Staff Control Center</h2>
-        <p>Ručno upravljanje statusom otoka u izvanrednim situacijama.</p>
-
-        <div class="admin-grid">
-          <div class="admin-control-card">
-            <div class="control-header">
-              <span class="icon">⚓</span>
-              <h4>Ferry Override</h4>
-            </div>
-            <p>Zaustavi prikaz plovidbe (Bura/Stoj)</p>
-            <label class="switch">
-              <input type="checkbox" id="ferry-override-toggle" />
-              <span class="slider round"></span>
-            </label>
-          </div>
-
-          <div class="admin-control-card">
-            <div class="control-header">
-              <span class="icon">🚗</span>
-              <h4>D8 Magistrala</h4>
-            </div>
-            <p>Postavi ograničenje za I. skupinu</p>
-            <label class="switch">
-              <input type="checkbox" id="d8-override-toggle" />
-              <span class="slider round"></span>
-            </label>
-          </div>
+    <!-- MARKET TAB -->
+    <section id="market" class="tab-content" aria-label="Lokalna tržnica">
+      <div class="demo-placeholder glass">
+        <div class="placeholder-content">
+          <span class="placeholder-icon">🛒</span>
+          <h2>Rapska Tržnica</h2>
+          <p>Lokalni proizvodi, usluge i oglasi. Uskoro dostupno.</p>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="admin-footer">
-          <p>Status: <span id="admin-sync-status">Sinkronizirano s NPT</span></p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>RADIO<span>RAB</span></h4>
+        </div>
+        <div class="footer-links">
+          <h5>Rubrike</h5>
+          <ul>
+            <li><a href="#feed">Lokalno</a></li>
+            <li><a href="#feed">Sport</a></li>
+            <li><a href="#feed">Kultura</a></li>
+            <li><a href="#feed">Turizam</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Servisi</h5>
+          <ul>
+            <li><a href="#map">Trajekti</a></li>
+            <li><a href="#map">Vrijeme</a></li>
+            <li><a href="#market">Oglasi</a></li>
+            <li><a href="#market">Poslovi</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>O Nama</h5>
+          <ul>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Redakcija</a></li>
+            <li><a href="#">Oglašavanje</a></li>
+            <li><a href="#">Privatnost</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Radio Rab. Sva prava pridržana.</p>
+        <div class="footer-meta-links">
+          <span class="demo-badge">Demo verzija</span>
+          <button type="button" id="staff-portal-btn" class="staff-link">Staff Portal</button>
         </div>
       </div>
     </div>
+  </footer>
 
-    <!-- Sea Quality History Modal -->
-    <div
-      id="sea-history-modal"
-      class="modal sea-history-modal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="sea-history-title"
-      hidden
-    >
-      <div class="modal-content glass sea-history-content">
-        <button type="button" class="modal-close" data-sea-history-close aria-label="Zatvori">
-          &times;
-        </button>
-        <h2 id="sea-history-title">Povijest kakvoće mora</h2>
-        <p class="sea-history-subtitle" id="sea-history-subtitle">Povijest mjerenja</p>
-        <div class="sea-history-body">
-          <div class="sea-history-meta" id="sea-history-meta"></div>
-          <div class="sea-history-years" id="sea-history-years"></div>
-          <div class="sea-history-empty" id="sea-history-empty" hidden>
-            Nema podataka za odabrane godine.
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Povratak na vrh" title="Povratak na vrh">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  </button>
+
+  <!-- Reporter Modal -->
+  <div id="reporter-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-content glass">
+      <button type="button" class="modal-close" aria-label="Zatvori">&times;</button>
+      <h2 id="modal-title">Prijavi Vijest</h2>
+      <p>Imate zanimljivu vijest ili fotografiju? Postanite dio Radio Rab zajednice!</p>
+      <form class="reporter-form">
+        <input type="text" placeholder="Vaše ime" aria-label="Vaše ime" required />
+        <input type="email" placeholder="Email" aria-label="Email adresa" required />
+        <textarea placeholder="Opišite vijest..." aria-label="Opis vijesti" rows="4" required></textarea>
+
+        <div class="file-upload-group">
+          <label for="media-upload" class="upload-label">
+            <span class="upload-icon">📎</span> Priloži sliku ili video
+          </label>
+          <input type="file" id="media-upload" accept="image/*,video/*" class="file-input" />
+        </div>
+        <button type="submit" class="submit-btn">Pošalji</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Staff Admin Modal (NEW) -->
+  <div id="admin-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" hidden>
+    <div class="modal-content glass admin-panel">
+      <button type="button" class="modal-close" id="admin-close" aria-label="Zatvori">
+        &times;
+      </button>
+      <h2 id="admin-title">Staff Control Center</h2>
+      <p>Ručno upravljanje statusom otoka u izvanrednim situacijama.</p>
+
+      <div class="admin-grid">
+        <div class="admin-control-card">
+          <div class="control-header">
+            <span class="icon">⚓</span>
+            <h4>Ferry Override</h4>
           </div>
+          <p>Zaustavi prikaz plovidbe (Bura/Stoj)</p>
+          <label class="switch">
+            <input type="checkbox" id="ferry-override-toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="admin-control-card">
+          <div class="control-header">
+            <span class="icon">🚗</span>
+            <h4>D8 Magistrala</h4>
+          </div>
+          <p>Postavi ograničenje za I. skupinu</p>
+          <label class="switch">
+            <input type="checkbox" id="d8-override-toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="admin-footer">
+        <p>Status: <span id="admin-sync-status">Sinkronizirano s NPT</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sea Quality History Modal -->
+  <div id="sea-history-modal" class="modal sea-history-modal" role="dialog" aria-modal="true"
+    aria-labelledby="sea-history-title" hidden>
+    <div class="modal-content glass sea-history-content">
+      <button type="button" class="modal-close" data-sea-history-close aria-label="Zatvori">
+        &times;
+      </button>
+      <h2 id="sea-history-title">Povijest kakvoće mora</h2>
+      <p class="sea-history-subtitle" id="sea-history-subtitle">Povijest mjerenja</p>
+      <div class="sea-history-body">
+        <div class="sea-history-meta" id="sea-history-meta"></div>
+        <div class="sea-history-years" id="sea-history-years"></div>
+        <div class="sea-history-empty" id="sea-history-empty" hidden>
+          Nema podataka za odabrane godine.
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Reader Mode Exit Button -->
-    <button class="reader-exit-btn" id="reader-exit-btn" aria-label="Izađi iz načina čitanja">
-      Izađi iz načina čitanja
-    </button>
+  <!-- Reader Mode Exit Button -->
+  <button class="reader-exit-btn" id="reader-exit-btn" aria-label="Izađi iz načina čitanja">
+    Izađi iz načina čitanja
+  </button>
 
-    <script
-      src="config.local.js"
-      onerror="console.info('config.local.js not found - skipping local config')"
-    ></script>
-    <script src="data.js"></script>
-    <script
-      src="data/traffic-data.js"
-      onerror="console.info('traffic-data.js not found - NPT data will be fetched via JSON')"
-    ></script>
-    <script
-      src="data/sea-quality.js"
-      onerror="console.info('sea-quality.js not found - Sea quality data will be fetched via JSON')"
-    ></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="config.local.js" onerror="console.info('config.local.js not found - skipping local config')"></script>
+  <script src="data.js"></script>
+  <script src="data/traffic-data.js"
+    onerror="console.info('traffic-data.js not found - NPT data will be fetched via JSON')"></script>
+  <script src="data/sea-quality.js"
+    onerror="console.info('sea-quality.js not found - Sea quality data will be fetched via JSON')"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
