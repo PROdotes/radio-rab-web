@@ -81,6 +81,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   margin-top: var(--ticker-height);
   /* Compensate for fixed ticker */
+
+  /* TESTING LOCK: Remove these lines to revert to full width */
+  max-width: 375px;
+  margin-inline: auto !important;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  border-inline: 1px solid var(--border);
 }
 
 h1,
@@ -130,7 +136,10 @@ ul {
   top: 0;
   width: 100%;
   z-index: 9999;
-  /* Overflow removed from parent so mask handles it */
+  /* TESTING LOCK: Constrain fixed ticker */
+  max-width: 375px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .ticker-mask {
@@ -2259,7 +2268,8 @@ ul {
 .back-to-top-btn {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  /* TESTING LOCK: right-aligned within 375px frame */
+  right: calc(50% - 187.5px + 1rem);
   z-index: 9000;
   width: 44px;
   height: 44px;
@@ -2911,7 +2921,8 @@ body.reader-mode-active p {
   display: none;
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  /* TESTING LOCK: right-aligned within 375px frame */
+  right: calc(50% - 187.5px + 1rem);
   background: var(--primary);
   color: white;
   padding: 1rem 2rem;
@@ -4305,7 +4316,9 @@ body.reader-mode-active .reader-exit-btn {
   top: calc(var(--ticker-height) + 0);
   height: calc(100vh - var(--ticker-height));
   width: 320px;
-  max-width: 90vw;
+  /* TESTING LOCK: Align offcanvas with 375px frame */
+  right: calc(50% - 187.5px);
+  max-width: 320px;
   background: var(--bg-card);
   border-left: 1px solid var(--border);
   z-index: 1100;
