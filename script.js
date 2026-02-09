@@ -577,7 +577,14 @@ async function showVesselAISModal(imo) {
  * @returns {Promise<Object>} Vessel data
  */
 async function fetchVesselAISData(imo) {
-  // Try to fetch from local proxy server first (if running)
+  // Try to get data from AISStream WebSocket if available
+  if (window.aisStreamClient && window.aisStreamClient.getLatestData()) {
+    const data = window.aisStreamClient.getLatestData();
+    console.log('Using live AISStream data:', data);
+    return data;
+  }
+
+  // Try to fetch from local proxy server (fallback)
   const proxyUrl = `http://localhost:3001/api/vessel/${imo}`;
 
   try {
@@ -811,6 +818,25 @@ function displayVesselAISData(container, data) {
 document.addEventListener('DOMContentLoaded', init)
 
 function init() {
+  // Initialize AISStream WebSocket if enabled
+  if (window.LOCAL_CONFIG && window.LOCAL_CONFIG.ENABLE_REAL_AIS && window.AISStreamClient) {
+    const apiKey = window.LOCAL_CONFIG.AISSTREAM_API_KEY;
+    const mmsi = window.LOCAL_CONFIG.FERRY_MMSI;
+
+    if (apiKey && mmsi) {
+      console.log('🚢 Initializing AISStream.io real-time tracking...');
+      window.aisStreamClient = new window.AISStreamClient(apiKey, mmsi);
+      window.aisStreamClient.connect();
+
+      // Optional: Update ferry position on map when we get real AIS data
+      window.aisStreamClient.onData((data) => {
+        console.log('✓ Live AIS update received:', data);
+        // You could update the ferry marker position here if you want real-time position updates
+        // state.ferryMarker.setLatLng([data.latitude, data.longitude]);
+      });
+    }
+  }
+
   // Initialize Lucide icons
   if (window.lucide) {
     // Recreate icons to pick up updated sizes/attrs (ensure hamburger svg updates)

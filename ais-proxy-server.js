@@ -3,8 +3,43 @@
 
 const http = require('http');
 const https = require('https');
+const fs = require('fs');
+const path = require('path');
 
-const PORT = 3001;
+// Load environment variables from .env file
+function loadEnv() {
+  const envPath = path.join(__dirname, '.env');
+  const config = {};
+
+  try {
+    const envFile = fs.readFileSync(envPath, 'utf8');
+    envFile.split('\n').forEach(line => {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.startsWith('#')) {
+        const [key, ...valueParts] = trimmed.split('=');
+        if (key) {
+          config[key.trim()] = valueParts.join('=').trim();
+        }
+      }
+    });
+  } catch (err) {
+    console.error('Error loading .env file:', err.message);
+    console.error('Please create a .env file with your API keys (see .env.example)');
+    process.exit(1);
+  }
+
+  return config;
+}
+
+const env = loadEnv();
+const PORT = env.PROXY_PORT || 3001;
+const AISSTREAM_API_KEY = env.AISSTREAM_API_KEY;
+
+if (!AISSTREAM_API_KEY) {
+  console.error('ERROR: AISSTREAM_API_KEY not found in .env file');
+  console.error('Please add your AISStream.io API key to the .env file');
+  process.exit(1);
+}
 
 const server = http.createServer((req, res) => {
   // Enable CORS
@@ -28,8 +63,12 @@ const server = http.createServer((req, res) => {
 
   const imo = match[1];
 
-  // Try MyShipTracking API
-  const apiUrl = `https://api.myshiptracking.com/vessels/imo-${imo}.json`;
+  // For IMO 9822621, use BarentsWatch API (free, no auth for open data)
+  // Note: BarentsWatch mainly covers Norwegian waters, so this may not work for all vessels
+  const mmsi = '238690000'; // MMSI for IMO 9822621 (Rapska Plovidba)
+
+  // Try BarentsWatch API (free, open access)
+  const apiUrl = `https://www.barentswatch.no/bwapi/v1/ais/openpositions?mmsi=${mmsi}`;
 
   https.get(apiUrl, (apiRes) => {
     let data = '';
