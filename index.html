@@ -94,24 +94,24 @@
       <nav class="header-nav" aria-label="Glavna navigacija">
         <ul class="nav-links">
           <li>
-            <a href="#feed" class="nav-link nav-trigger active" data-tab="feed"><i data-lucide="file-text"
-                class="nav-icon"></i>Vijesti</a>
+            <a href="#feed" class="nav-link nav-trigger active" data-tab="feed"><i data-lucide="home"
+                class="nav-icon"></i><span class="nav-label">Naslovnica</span></a>
           </li>
           <li>
             <a href="#shorts" class="nav-link nav-trigger" data-tab="shorts"><i data-lucide="video"
-                class="nav-icon"></i>Video</a>
+                class="nav-icon"></i><span class="nav-label">Video</span></a>
           </li>
           <li>
             <a href="#map" class="nav-link nav-trigger" data-tab="map"><i data-lucide="map-pin"
-                class="nav-icon"></i>Karta</a>
+                class="nav-icon"></i><span class="nav-label">Karta</span></a>
           </li>
           <li>
             <a href="#market" class="nav-link nav-trigger" data-tab="market"><i data-lucide="shopping-cart"
-                class="nav-icon"></i>Tržnica</a>
+                class="nav-icon"></i><span class="nav-label">Tržnica</span></a>
           </li>
           <li>
             <a href="#" class="nav-link" id="reporter-link" aria-haspopup="dialog" aria-controls="reporter-modal"><i
-                data-lucide="phone" class="nav-icon"></i>Kontakt</a>
+                data-lucide="phone" class="nav-icon"></i><span class="nav-label">Kontakt</span></a>
           </li>
         </ul>
       </nav>
@@ -202,8 +202,19 @@
           </div>
 
           <!-- NEWS GRID -->
-          <div id="news-grid" style="display: contents">
+          <div id="news-grid">
             <!-- News cards injected by JS -->
+          </div>
+
+          <!-- HIDDEN SCROLL SENTINEL (kept for logic compatibility if needed) -->
+          <div id="scroll-sentinel" style="height: 1px; width: 100%; pointer-events: none;"></div>
+
+          <!-- LOAD MORE BUTTON -->
+          <div id="load-more-container" class="load-more-container">
+            <button id="load-more-btn" class="load-more-btn">
+              <span>Učitaj više</span>
+              <div class="loader" id="grid-loader" hidden></div>
+            </button>
           </div>
         </div>
 
@@ -373,6 +384,7 @@
           </div>
         </aside>
       </div>
+
     </section>
 
     <!-- VIDEO TAB -->
@@ -545,6 +557,25 @@
         <div class="sea-history-empty" id="sea-history-empty" hidden>
           Nema podataka za odabrane godine.
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vessel AIS Data Modal -->
+  <div id="vessel-ais-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="vessel-ais-title" hidden>
+    <div class="modal-content glass">
+      <button type="button" class="modal-close" id="vessel-ais-close" aria-label="Zatvori">
+        &times;
+      </button>
+      <h2 id="vessel-ais-title">
+        <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          <span class="pulse-dot"></span>
+          AIS Podaci Trajekta
+        </span>
+      </h2>
+      <div id="vessel-ais-content">
+        <div class="loader" style="margin: 2rem auto;"></div>
+        <p style="text-align: center; color: var(--text-dim);">Učitavanje AIS podataka...</p>
       </div>
     </div>
   </div>
