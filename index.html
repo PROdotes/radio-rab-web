@@ -762,14 +762,7 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <script id="ais-config">
-    window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
-    console.log('🔍 AIS Diagnostic:', {
-      hasLocalConfig: !!window.LOCAL_CONFIG,
-      enableRealAis: window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
-      libraryLoaded: !!window.AISStreamClient
-    });
-  </script>
+  <script id="ais-config">window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>
   <script src="script.js"></script>
   <!-- News Reader Modal (Full Story View) -->
   <div id="news-reader-modal" class="modal" role="dialog" aria-modal="true" hidden>

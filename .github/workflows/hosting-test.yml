@@ -34,18 +34,32 @@ jobs:
           AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
         run: |
           python3 -c "
-          import os, re
-          content = open('index.html').read()
-          real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
+          import os
+          print('--- Starting Secret Injection ---')
+          filename = 'index.html'
+          with open(filename, 'r') as f:
+              lines = f.readlines()
           
-          # Match the diagnostic block (multiline)
-          pattern = r'<script id=\"ais-config\">(\s|.)*?</script>'
-          if re.search(pattern, content):
-              new_content = re.sub(pattern, real_config, content)
-              with open('index.html', 'w') as f: f.write(new_content)
-              print('✓ Injected secrets into index.html')
+          found = False
+          new_lines = []
+          real_config = f'  <script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>\n'
+          
+          for line in lines:
+              if 'id=\"ais-config\"' in line:
+                  print(f'Match found on line: {line.strip()}')
+                  new_lines.append(real_config)
+                  found = True
+              else:
+                  new_lines.append(line)
+          
+          if found:
+              with open(filename, 'w') as f:
+                  f.writelines(new_lines)
+              print('✓ Successfully injected secrets into index.html')
           else:
-              print('ERROR: Could not find ais-config diagnostic tag!')
+              print('FATAL ERROR: Could not find any line containing id=\"ais-config\"')
+              print('First 10 lines of index.html for debug:')
+              print(''.join(lines[:10]))
               exit(1)
           "
           touch .nojekyll
