@@ -29,29 +29,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - run: npm install
-      - name: Disable Jekyll
-        run: touch .nojekyll
-      - name: Prepare Deployment Folder
+      - name: Create Production Config
         run: |
-          mkdir public
-          # Copy everything except excluded dirs to public
-          rsync -av --exclude='.git/' --exclude='.github/' --exclude='node_modules/' --exclude='scripts/' --exclude='.agent/' --exclude='.claude/' --exclude='tools/' --exclude='docs/' --exclude='public/' ./ public/
-          
-          # Create the injection script
-          CONFIG_SCRIPT="<script>window.LOCAL_CONFIG = { AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}', FERRY_MMSI: '238690000', ENABLE_REAL_AIS: true, urls: { npt: 'https://b2b.promet-info.hr' } };</script>"
-          
-          # Inject into index.html
-          # We use a temp file to avoid sed escaping issues with the large string
-          sed -i "s|<!-- AIS_CONFIG_INJECT -->|$CONFIG_SCRIPT|g" public/index.html
-          
-          # Ensure .nojekyll is in the deployment folder
-          touch public/.nojekyll
-          
-          echo "Public directory ready for deployment."
-          ls -la public/index.html
+          cat > config.prod.js << 'EOF'
+          window.LOCAL_CONFIG = {
+            AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
+            FERRY_MMSI: '238690000',
+            ENABLE_REAL_AIS: true,
+            urls: {
+              npt: "https://b2b.promet-info.hr"
+            }
+          };
+          EOF
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
+          publish_dir: .
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          force_orphan: true # This makes sure the gh-pages branch only has exactly what we send it

@@ -751,7 +751,14 @@
     </div>
   </div>
 
-  <!-- AIS_CONFIG_INJECT -->
+  <script src="config.local.js"></script>
+  <script src="config.prod.js"></script>
+  <script>
+    if (!window.LOCAL_CONFIG) {
+      window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
+      console.info('No config file found - defaulting to simulation mode');
+    }
+  </script>
   <script src="aisstream-websocket.js"></script>
   <script src="data.js"></script>
   <script src="config.js"></script>
