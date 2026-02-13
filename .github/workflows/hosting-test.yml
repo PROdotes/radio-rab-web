@@ -48,8 +48,7 @@ jobs:
               print('!! FATAL: AIS Key missing !!')
               exit(1)
           
-          # 1. Create a UNIQUE config file
-          config_filename = f'config.prod.{run_id}.js'
+          # 1. Prepare the JSON config
           config_payload = {
               'AISSTREAM_API_KEY': ais_key,
               'nptUser': os.environ.get('NPT_USER', ''),
@@ -59,22 +58,19 @@ jobs:
               'urls': { 'npt': 'https://b2b.promet-info.hr' }
           }
           
-          with open(f'dist/{config_filename}', 'w') as f:
-              f.write(f'window.LOCAL_CONFIG = {json.dumps(config_payload)};')
-              f.write(f'\nconsole.info(\"🚢 Global Config loaded from {config_filename}\");')
-          
-          # 2. Update index.html to load THIS SPECIFIC FILE
+          # 2. Update index.html INLINE (Synchronous)
           with open('dist/index.html', 'r') as f:
               content = f.read()
           
-          marker = '/* PROD_CONFIG_LOADER */'
-          loader_code = f'const s=document.createElement(\"script\");s.src=\"{config_filename}\";document.head.appendChild(s);'
+          marker = '/* INJECT_PROD_CONFIG_SYNC */'
+          # We inject the actual JS code directly into the tag
+          sync_code = f'window.LOCAL_CONFIG = {json.dumps(config_payload)}; console.info(\"🚢 Synchronous Config Injected (Run {run_id})\");'
           
           if marker in content:
-              content = content.replace(marker, loader_code)
+              content = content.replace(marker, sync_code)
               with open('dist/index.html', 'w') as f:
                   f.write(content)
-              print(f'✓ Linked index.html to {config_filename}')
+              print(f'✓ Synchronously injected config into index.html')
           else:
               print('!! FATAL: Marker not found !!')
               exit(1)

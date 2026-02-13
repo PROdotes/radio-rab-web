@@ -762,13 +762,17 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <script id="ais-config-loader">/* PROD_CONFIG_LOADER */</script>
+  <script id="prod-config">/* INJECT_PROD_CONFIG_SYNC */</script>
   <script>
-    window.LOCAL_CONFIG = window.LOCAL_CONFIG || { ENABLE_REAL_AIS: false };
-    console.log('🔍 System Config Diagnostic (v2.4.0):', {
+    // Only set fallback if the production injection failed to run or hasn't run yet
+    if (typeof window.LOCAL_CONFIG === 'undefined') {
+      window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
+    }
+
+    console.log('🔍 System Config Diagnostic (v2.5.0):', {
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
       hasAisKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
-      libraryLoaded: !!window.AISStreamClient
+      isSync: true
     });
   </script>
   <script src="script.js"></script>
