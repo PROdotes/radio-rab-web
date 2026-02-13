@@ -31,7 +31,7 @@ jobs:
           node-version: '18'
       - name: Create Production Config
         run: |
-          cat > config.prod.js << 'EOF'
+          cat > ais-config.js << 'EOF'
           window.LOCAL_CONFIG = {
             AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
             FERRY_MMSI: '238690000',
@@ -41,11 +41,14 @@ jobs:
             }
           };
           EOF
+          touch .nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
+          publish_navigation: true
+          dotfiles: true # CRITICAL: This is likely why files were missing
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          force_orphan: true # This makes sure the gh-pages branch only has exactly what we send it
+          force_orphan: true

@@ -752,11 +752,11 @@
   </div>
 
   <script src="config.local.js"></script>
-  <script src="config.prod.js"></script>
+  <script src="ais-config.js"></script>
   <script>
     if (!window.LOCAL_CONFIG) {
       window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
-      console.info('No config file found - defaulting to simulation mode');
+      console.info('No config found - using simulation');
     }
   </script>
   <script src="aisstream-websocket.js"></script>
