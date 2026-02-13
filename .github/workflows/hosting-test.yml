@@ -41,21 +41,30 @@ jobs:
           filename = 'index.html'
           marker = '/* PRODUCTION_CONFIG_REPLACE_ME */'
           
+          print('--- Step 1: Reading File ---')
           with open(filename, 'r') as f:
               content = f.read()
+          
+          print(f'File size: {len(content)} bytes')
+          print(f'Marker found in content strings: {marker in content}')
           
           if marker in content:
               # Decode the b64 key back to a safe JS string
               encoded_val = '$ENCODED_KEY'
               real_key = base64.b64decode(encoded_val).decode('utf-8')
               
+              # Log key length (don't log the key!)
+              print(f'API Key decoded, length: {len(real_key)}')
+              
               real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{real_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
               
               lines = content.splitlines()
               new_lines = []
               found = False
-              for line in lines:
+              print('--- Step 2: Line Search ---')
+              for i, line in enumerate(lines):
                   if marker in line:
+                      print(f'Line {i+1} MATCH: {line.strip()[:100]}...')
                       new_lines.append(real_config)
                       found = True
                   else:
@@ -66,16 +75,24 @@ jobs:
                       f.write('\n'.join(new_lines))
                   print('✓ Injection successful (B64 Secure)')
               else:
-                  print('Error: Marker found in search but failed line loop')
+                  print('!! Error: Marker found in block but failed line match !!')
                   exit(1)
           else:
-              print('Error: Marker not found in file!')
+              print('!! Error: Marker not found in index.html !!')
+              # Find where 'ais-config' is
+              idx = content.find('id=\"ais-config\"')
+              if idx != -1:
+                  print('Context around id=\"ais-config\":')
+                  print(content[max(0, idx-50):idx+150])
               exit(1)
           "
           touch .nojekyll
-      - name: Verify After-Write
+      - name: Verify and Print Debug
         run: |
-          grep "Production Config Injected" index.html || (echo "FAILED: Injection string not found after write!" && exit 1)
+          echo "--- FINAL VERIFICATION ---"
+          grep "Production Config Injected" index.html
+          echo "--- CONTEXT AROUND TAG ---"
+          grep -C 5 "ais-config" index.html
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
