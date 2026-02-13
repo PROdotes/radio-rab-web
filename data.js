@@ -40,18 +40,20 @@ const NEWS_TEMPLATES = {
   LOKALNO: [
     {
       title: 'Započeli radovi na novom kružnom toku kod Malog Palita',
-      snippet: 'Velika infrastrukturna investicija smanjit će gužve prema gradu. Radovi traju do svibnja.',
+      snippet:
+        'Velika infrastrukturna investicija smanjit će gužve prema gradu. Radovi traju do svibnja.',
       body: '<p><b>GRAD RAB</b> — Jutros su službeno započeli radovi na izgradnji novog kružnog toka na raskrižju kod Malog Palita. Ovo je jedna od najznačajnijih investicija u prometnu infrastrukturu otoka u posljednjih deset godina.</p><p>Gradonačelnik je istaknuo kako će se ovim rješenjem trajno riješiti usko grlo koje nastaje tijekom turističke sezone.</p><ul><li>Trajanje radova: 120 dana</li><li>Izvođač: Građevinar d.o.o.</li><li>Regulacija prometa: Semafori</li></ul>',
       image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&h=600&fit=crop',
-      tags: ['infrastruktura', 'promet', 'palit']
+      tags: ['infrastruktura', 'promet', 'palit'],
     },
     {
       title: 'Najava prekida opskrbe električnom energijom u Mundanijama',
-      snippet: 'Zbog radova na trafostanici, Mundanije će u utorak biti bez struje od 8 do 12 sati.',
+      snippet:
+        'Zbog radova na trafostanici, Mundanije će u utorak biti bez struje od 8 do 12 sati.',
       body: '<p><b>HEP OBAVIJEST</b> — Obavještavamo mještane naselja Mundanije da će zbog planiranih radova na reviziji trafostanice doći do prekida opskrbe električnom energijom.</p><div class="alert-box"><strong>Vrijeme:</strong> Utorak, 8:00 - 12:00h<br><strong>Lokacija:</strong> Srednje Mundanije i zaseok Krstini.</div><p>U slučaju nepovoljnih vremenskih prilika radovi se odgađaju.</p>',
       image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&h=600&fit=crop',
-      tags: ['struja', 'hep', 'obavijest', 'brownout']
-    }
+      tags: ['struja', 'hep', 'obavijest', 'brownout'],
+    },
   ],
   SPORT: [
     {
@@ -59,8 +61,8 @@ const NEWS_TEMPLATES = {
       snippet: 'Povijesni uspjeh rapskog sporta. Pobjedom nad Senjom osiguran plasman u elitu.',
       body: '<p>Nevjerojatna atmosfera u dvorani na Rabu! Naša ženska ekipa <b>RK Rab</b> ostvarila je san generacija. U odlučujućoj utakmici sezone pobijedile su vječnog rivala ekipu Senja rezultatom 28:24.</p><p>Ovo je prvi put u povijesti da jedan rapski dvoranski sport ulazi u najviši nacionalni rang natjecanja.</p>',
       image: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&h=600&fit=crop',
-      tags: ['rukomet', 'rk rab', 'uspjeh']
-    }
+      tags: ['rukomet', 'rk rab', 'uspjeh'],
+    },
   ],
   KULTURA: [
     {
@@ -68,8 +70,8 @@ const NEWS_TEMPLATES = {
       snippet: 'Svečano otvorena retrospektiva rapskih umjetnika kroz dva desetljeća.',
       body: '<p>Kulturno srce grada Raba sinoć je kucalo u ritmu povijesti. Jubilarna izložba "Dvadeset godina stvaralaštva" okupila je rekordan broj posjetitelja.</p><p>Izložba ostaje otvorena do kraja ožujka, a ulaz je besplatan za sve stanovnike otoka.</p>',
       image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=600&fit=crop',
-      tags: ['kultura', 'izložba', 'rab']
-    }
+      tags: ['kultura', 'izložba', 'rab'],
+    },
   ],
   TURIZAM: [
     {
@@ -77,8 +79,8 @@ const NEWS_TEMPLATES = {
       snippet: 'Moderni brod povećat će kapacitet linije Mišnjak-Stinica za 30%.',
       body: '<p>Dugo najavljivano pojačanje flote <b>Rapske plovidbe</b> konačno stiže. Novi trajekt, simbolično nazvan "Četiri zvonika", trenutno je na završnom opremanju.</p><p>Brod može primiti 110 automobila i opremljen je najmodernijim salonima za putnike u potpunosti digitaliziranim sustavom upravljanja.</p>',
       image: 'https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?w=800&h=600&fit=crop',
-      tags: ['trajekt', 'promet', 'turizam']
-    }
+      tags: ['trajekt', 'promet', 'turizam'],
+    },
   ],
   MORE: [
     {
@@ -86,27 +88,28 @@ const NEWS_TEMPLATES = {
       snippet: 'Znanstvenici iz Instituta Plavi svijet mole nautičare za oprez i smanjenu brzinu.',
       body: '<p>Tijekom posljednjih tjedan dana zabilježena je povećana aktivnost skupine dobrih dupina u kanalu između Raba i Dolina. Vjeruje se da se radi o majkama s mladunčadi.</p><p><b>VAŽNO OBAVIJEST:</b> Molimo nautičare da ne prilaze životinjama i da u kanalu drže minimalnu brzinu kretanja.</p>',
       image: 'https://images.unsplash.com/photo-1570481662006-a3a1374699e8?w=800&h=600&fit=crop',
-      tags: ['priroda', 'dupini', 'more']
-    }
+      tags: ['priroda', 'dupini', 'more'],
+    },
   ],
   GASTRONOMIJA: [
     {
       title: 'Rapska torta dospjela na listu "Zaboravljeni okusi Europe"',
-      snippet: 'Prestižno priznanje za našu najpoznatiju slasticu i očuvanje recepture iz 1177. godine.',
+      snippet:
+        'Prestižno priznanje za našu najpoznatiju slasticu i očuvanje recepture iz 1177. godine.',
       body: '<p>Tradicija koja traje stoljećima dobila je još jedno veliko međunarodno priznanje. Europsko udruženje za očuvanje gastro-baštine uvrstilo je <b>Rapsku tortu</b> u sam vrh autentičnih slastica.</p><p>Ovo nije samo priznanje slastici, već i svim rapskim obiteljima koje čuvaju originalni recept već 850 godina.</p>',
       image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=600&fit=crop',
-      tags: ['gastro', 'recept', 'tradicija']
-    }
+      tags: ['gastro', 'recept', 'tradicija'],
+    },
   ],
   OSMRTNICE: [
     {
       title: 'Posljednji ispraćaj — Ivan Ivić',
       snippet: 'Preminuo u 85. godini života. Ispraćaj u srijedu na gradskom groblju.',
-      body: '<div class="osmrtnica-content"><img src="https://via.placeholder.com/400x600/020617/ffffff?text=Osmrtnica+Primjer" alt="Osmrtnica"><p>S tugom u srcu javljamo rodbini i prijateljima da nas je napustio naš dragi otac i djed.</p></div>',
-      image: 'https://via.placeholder.com/400x600/020617/ffffff?text=Osmrtnica+Primjer',
-      tags: ['osmrtnice']
-    }
-  ]
+      body: '<div class="osmrtnica-content"><img src="https://picsum.photos/seed/obituary/400/600" alt="Osmrtnica"><p>S tugom u srcu javljamo rodbini i prijateljima da nas je napustio naš dragi otac i djed.</p></div>',
+      image: 'https://picsum.photos/seed/obituary/400/600',
+      tags: ['osmrtnice'],
+    },
+  ],
 }
 
 // ===========================================

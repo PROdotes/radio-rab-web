@@ -48,7 +48,24 @@
   <!-- Supercluster (fast client-side clustering) -->
   <script src="https://unpkg.com/supercluster@7.1.5/dist/supercluster.min.js"></script>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Core CSS (render-blocking — needed for above-the-fold) -->
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="layout.css" />
+  <link rel="stylesheet" href="components.css" />
+
+  <!-- Deferred CSS (not needed for initial paint) -->
+  <link rel="stylesheet" href="widgets.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="map.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="admin.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="pages.css" media="print" onload="this.media='all'" />
+
+  <!-- Fallback for no-JS -->
+  <noscript>
+    <link rel="stylesheet" href="widgets.css" />
+    <link rel="stylesheet" href="map.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="pages.css" />
+  </noscript>
 </head>
 
 <body>
@@ -196,7 +213,6 @@
 
       <div class="editorial-grid">
         <div class="main-feed-column">
-
           <!-- FEATURED STORY -->
           <div id="primary-feature-container" aria-live="polite">
             <!-- Hero article injected by JS -->
@@ -208,7 +224,7 @@
           </div>
 
           <!-- HIDDEN SCROLL SENTINEL (kept for logic compatibility if needed) -->
-          <div id="scroll-sentinel" style="height: 1px; width: 100%; pointer-events: none;"></div>
+          <div id="scroll-sentinel" style="height: 1px; width: 100%; pointer-events: none"></div>
 
           <!-- LOAD MORE BUTTON -->
           <div id="load-more-container" class="load-more-container">
@@ -385,7 +401,6 @@
           </div>
         </aside>
       </div>
-
     </section>
 
     <!-- VIDEO TAB -->
@@ -576,7 +591,7 @@
         <div class="gallery-manager-header">
           <h3>Galerija Foto/Video</h3>
           <div class="gallery-search">
-            <input type="text" id="gallery-search-input" placeholder="Pretraži po tagovima (npr. school, bura)...">
+            <input type="text" id="gallery-search-input" placeholder="Pretraži po tagovima (npr. school, bura)..." />
           </div>
         </div>
         <div class="admin-gallery-grid" id="admin-gallery-grid">
@@ -585,7 +600,9 @@
       </div>
 
       <div class="admin-footer">
-        <p>Sustav: <span id="admin-sync-status">Spreman</span> | <span id="admin-timestamp"></span></p>
+        <p>
+          Sustav: <span id="admin-sync-status">Spreman</span> | <span id="admin-timestamp"></span>
+        </p>
       </div>
     </div>
   </div>
@@ -593,22 +610,30 @@
   <!-- News Editor Modal (NEW) -->
   <div id="news-editor-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="editor-title" hidden>
     <div class="modal-content glass editor-panel">
-      <button type="button" class="modal-close" id="editor-close" aria-label="Zatvori">&times;</button>
+      <button type="button" class="modal-close" id="editor-close" aria-label="Zatvori">
+        &times;
+      </button>
       <h2 id="editor-title">Uređivanje Vijesti</h2>
 
       <form id="news-editor-form" class="editor-grid">
         <div class="editor-main">
           <div class="form-group">
             <label for="edit-title">Naslov</label>
-            <input type="text" id="edit-title" required>
+            <input type="text" id="edit-title" required />
           </div>
 
           <div class="editor-toolbar">
             <button type="button" class="tool-btn" data-cmd="bold" title="Bold"><b>B</b></button>
-            <button type="button" class="tool-btn" data-cmd="italic" title="Italic"><i>I</i></button>
-            <button type="button" class="tool-btn" data-cmd="insertUnorderedList" title="List">UL</button>
+            <button type="button" class="tool-btn" data-cmd="italic" title="Italic">
+              <i>I</i>
+            </button>
+            <button type="button" class="tool-btn" data-cmd="insertUnorderedList" title="List">
+              UL
+            </button>
             <button type="button" class="tool-btn" data-cmd="createLink" title="Link">🔗</button>
-            <button type="button" class="tool-btn" data-cmd="formatBlock" data-value="H3" title="Heading">H3</button>
+            <button type="button" class="tool-btn" data-cmd="formatBlock" data-value="H3" title="Heading">
+              H3
+            </button>
             <div class="separator"></div>
             <select id="edit-template" class="template-select">
               <option value="">-- Koristi Predložak --</option>
@@ -650,17 +675,19 @@
 
           <div class="form-group">
             <label for="edit-image">URL Slike</label>
-            <input type="text" id="edit-image" required>
+            <input type="text" id="edit-image" required />
             <div id="image-preview" class="image-preview"></div>
           </div>
 
           <div class="form-group">
             <label for="edit-tags">Tagovi (odvojiti zarezom)</label>
-            <input type="text" id="edit-tags" placeholder="npr. škola, more, bura">
+            <input type="text" id="edit-tags" placeholder="npr. škola, more, bura" />
           </div>
 
           <div class="editor-actions">
-            <button type="button" id="editor-ai-summarize" class="btn-secondary">AI Sažetak</button>
+            <button type="button" id="editor-ai-summarize" class="btn-secondary">
+              AI Sažetak
+            </button>
             <button type="submit" class="btn-primary">Spremi Vijest</button>
           </div>
         </div>
@@ -694,31 +721,37 @@
         &times;
       </button>
       <h2 id="vessel-ais-title">
-        <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <span style="display: inline-flex; align-items: center; gap: 0.5rem">
           <span class="pulse-dot"></span>
           AIS Podaci Trajekta
         </span>
       </h2>
       <div id="vessel-ais-content">
-        <div class="loader" style="margin: 2rem auto;"></div>
-        <p style="text-align: center; color: var(--text-dim);">Učitavanje AIS podataka...</p>
+        <div class="loader" style="margin: 2rem auto"></div>
+        <p style="text-align: center; color: var(--text-dim)">Učitavanje AIS podataka...</p>
       </div>
     </div>
   </div>
 
-
   <script src="config.local.js" onerror="console.info('config.local.js not found - skipping local config')"></script>
   <script src="aisstream-websocket.js"></script>
   <script src="data.js"></script>
-  <script src="data/traffic-data.js"
-    onerror="console.info('traffic-data.js not found - NPT data will be fetched via JSON')"></script>
-  <script src="data/sea-quality.js"
-    onerror="console.info('sea-quality.js not found - Sea quality data will be fetched via JSON')"></script>
+  <script src="config.js"></script>
+  <script src="utils.js"></script>
+  <script src="weather.js"></script>
+  <script src="ais.js"></script>
+  <script src="admin.js"></script>
+  <script src="news.js"></script>
+  <script src="npt.js"></script>
+  <script src="map.js"></script>
+  <script src="ui.js"></script>
   <script src="script.js"></script>
   <!-- News Reader Modal (Full Story View) -->
   <div id="news-reader-modal" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-content news-reader-panel">
-      <button type="button" class="modal-close reader-close" id="reader-close" aria-label="Zatvori">&times;</button>
+      <button type="button" class="modal-close reader-close" id="reader-close" aria-label="Zatvori">
+        &times;
+      </button>
 
       <div id="reader-breadcrumbs" class="breadcrumbs"></div>
 
@@ -747,8 +780,12 @@
         <div class="share-group">
           <span>Podijeli:</span>
           <button class="action-btn icon-only" data-share="copy" title="Kopiraj link">🔗</button>
-          <button class="action-btn icon-only" data-share="twitter" title="Podijeli na X">𝕏</button>
-          <button class="action-btn icon-only" data-share="facebook" title="Podijeli na Facebooku">f</button>
+          <button class="action-btn icon-only" data-share="twitter" title="Podijeli na X">
+            𝕏
+          </button>
+          <button class="action-btn icon-only" data-share="facebook" title="Podijeli na Facebooku">
+            f
+          </button>
         </div>
       </div>
     </div>

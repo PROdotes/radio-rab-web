@@ -9,8 +9,8 @@ if (!(Test-Path $rawDir)) { New-Item -ItemType Directory -Path $rawDir | Out-Nul
 # 1. Extract credentials
 if (!(Test-Path $configPath)) { Write-Error "config.local.js not found"; exit }
 $configContent = [System.IO.File]::ReadAllText($configPath)
-$usernameMatch = [regex]::Match($configContent, "user:\s*'([^']*)'")
-$passwordMatch = [regex]::Match($configContent, "pass:\s*'([^']*)'")
+$usernameMatch = [regex]::Match($configContent, '(?:user|NPT_USER):\s*[''"]?([^''"\s,}]+)[''"]?')
+$passwordMatch = [regex]::Match($configContent, '(?:pass|NPT_PASS):\s*[''"]?([^''"\s,}]+)[''"]?')
 if (!$usernameMatch.Success -or !$passwordMatch.Success) { Write-Error "Credentials missing"; exit }
 $username = $usernameMatch.Groups[1].Value
 $password = $passwordMatch.Groups[1].Value

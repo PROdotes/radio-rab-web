@@ -1,183 +1,226 @@
-# Radio Rab News Portal — Agent Guidelines
+# AGENTS.md - Radio Rab Web Development Guide
+
+This document provides guidelines and instructions for AI agents working on the Radio Rab News Portal codebase.
 
 ## Project Overview
-This is a modern, static HTML/CSS/JavaScript news portal for Radio Rab, serving the island of Rab community. The project focuses on performance, accessibility, and user experience with a dark theme aesthetic.
 
-## Build & Development Commands
+- **Project name**: Radio Rab Web
+- **Type**: Static website/news portal
+- **Tech stack**: Vanilla JavaScript, HTML, CSS, Leaflet.js (maps)
+- **Deployment**: GitHub Pages (gh-pages)
 
-**Note:** This is a static site with no build process. Files are served directly.
+---
 
-### Development
-- **Start local server:** `python -m http.server 8000` or `npx serve .`
-- **Open in browser:** Navigate to `http://localhost:8000`
+## Commands
 
-### Testing
-- **Manual testing:** Open in browser and test functionality
-- **Accessibility testing:** Use browser dev tools Lighthouse audit
-- **Responsive testing:** Test at mobile (375px), tablet (768px), desktop (1400px+)
+### Linting & Validation
 
-### Validation
-- **HTML validation:** W3C Validator on index.html
-- **CSS validation:** W3C CSS Validation Service
-- **JavaScript:** Check browser console for errors
+```bash
+# Run all linters (ESLint + HTMLHint + StyleLint)
+npm run validate
+
+# Run individual linters
+npm run lint              # ESLint (JS files)
+npm run lint-html        # HTMLHint (HTML files)
+npm run lint-css         # StyleLint (style.css)
+```
+
+### Formatting
+
+```bash
+# Format all files (JS, CSS, HTML)
+npm run format
+```
+
+### Deployment
+
+```bash
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+### Local Development
+
+This is a static site. Open `index.html` directly in a browser or use a local server:
+
+```bash
+# Using Python
+python -m http.server 8000
+
+# Using Node http-server
+npx http-server -p 8000
+```
+
+**Note**: No test framework is currently configured.
+
+---
 
 ## Code Style Guidelines
 
-### JavaScript Architecture
-```javascript
-// Use functional programming with clear separation of concerns
-const CONFIG = {
-    // Centralized configuration object
-    debug: false,
-    itemsPerBatch: 9,
-    urls: { /* external URLs */ }
-};
+### General Principles
 
+- Keep code simple and readable
+- Use defensive programming with try/catch blocks
+- Log errors gracefully using debug utilities
+- Prefer explicit over implicit
+
+### JavaScript Conventions
+
+#### Naming
+
+```javascript
+// Variables and functions: camelCase
+const currentCount = 0
+function initMap() {}
+
+// Constants: UPPER_SNAKE_CASE
+const CONFIG = { itemsPerBatch: 9 }
+const FERRY_COORDS = [44.7086, 14.8647]
+
+// Global state object
 const state = {
-    // Global state management
-    currentVisibleCount: 0,
-    activeCategory: 'all',
-    isLoading: false
-};
-
-// Initialization pattern
-document.addEventListener('DOMContentLoaded', init);
-
-function init() {
-    // Initialize all components
-    initNewsFeed();
-    initNavigation();
-    initRadioPlayer();
+  mapInstance: null,
+  isLoading: false,
 }
 ```
 
-### Naming Conventions
-- **Constants:** `UPPER_SNAKE_CASE` for CONFIG, state objects
-- **Functions:** `camelCase` with descriptive names (`initNewsFeed`, `createNewsCard`)
-- **Variables:** `camelCase` (`currentVisibleCount`, `activeCategory`)
-- **DOM elements:** Use descriptive selectors (`#primary-feature-container`, `.news-card`)
-- **CSS classes:** `kebab-case` for styles (`card-animate`, `feature-img-container`)
+#### Functions
 
-### Import/Export Patterns
-- **No modules:** This is a static site using vanilla JavaScript
-- **Single script:** All code in `script.js` loaded via `<script defer>` tag
-- **External libraries:** Loaded via CDN in HTML head (Leaflet, Google Fonts)
-
-### Error Handling
 ```javascript
-// Use optional chaining for safe DOM queries
-document.getElementById('newsletter-form')?.addEventListener('submit', handler);
+// Use JSDoc for public/exported functions
+/**
+ * Initialize the map component
+ * @param {HTMLElement} container - DOM element for map
+ * @returns {L.Map} Leaflet map instance
+ */
+function initMap(container) {}
 
-// Debug logging utility
+// Use function declarations for top-level, arrow functions for callbacks
+function handleClick(event) {}
+items.forEach((item) => {})
+```
+
+#### Error Handling
+
+```javascript
+// Wrap risky operations in try/catch
+try {
+  const data = await fetch(url)
+  return await data.json()
+} catch (e) {
+  debugWarn('Failed to fetch:', e)
+  return null
+}
+
+// Allow empty catch for non-critical errors (eslint rule)
+/* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
+try {
+  layer.remove()
+} catch (e) {
+  /* ignore */
+}
+```
+
+#### Debug Logging
+
+```javascript
+// Use debug utilities gated by CONFIG.debug
 function debugLog(...args) {
-    if (CONFIG.debug) {
-        console.log(...args);
-    }
+  if (CONFIG.debug) {
+    console.log(...args)
+  }
 }
 
-// Graceful fallbacks for missing features
-function initComponent() {
-    const container = document.querySelector('#component .demo-placeholder');
-    if (!container) return; // Already initialized or missing
-    // ... initialization code
-}
+// Always check for null/undefined
+if (!mapInstance || !mapInstance.getCenter()) return
 ```
 
-### HTML Structure
-- **Semantic HTML5:** Use `<article>`, `<section>`, `<nav>`, `<main>` appropriately
-- **Accessibility:** Include ARIA labels, skip links, alt text
-- **Performance:** Load critical CSS inline, defer non-critical JS
-- **Language:** Set `lang="hr"` for Croatian content
+### CSS Conventions
 
-### CSS Architecture
-```css
-/* Design tokens in :root */
-:root {
-    --bg-dark: #020617;
-    --primary: #3b82f6;
-    --radius: 20px;
-    --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
-}
+- Use CSS custom properties (variables) for theming
+- Follow the existing style.css structure
+- Use meaningful class names
 
-/* Component-based structure */
-.component-name {
-    /* Layout */
-    /* Typography */
-    /* Visuals */
-}
+### HTML Conventions
 
-/* Responsive with mobile-first */
-@media (min-width: 768px) {
-    /* Tablet styles */
-}
-```
+- Use semantic HTML elements
+- Include proper alt attributes for images
+- Use data-\* attributes for JavaScript hooks
 
-### Data Patterns
-- **Mock data:** Stored in `data.js` with realistic Croatian content
-- **Categories:** Use predefined array `['LOKALNO', 'SPORT', 'KULTURA', 'TURIZAM', 'MORE', 'GASTRONOMIJA']`
-- **Authors:** Use predefined Croatian names array
-- **Images:** Use Unsplash URLs with descriptive seeds
+---
 
-### Performance Guidelines
-- **Lazy loading:** Implement infinite scroll with Intersection Observer
-- **Optimizations:** Use `document.createDocumentFragment()` for batch DOM updates
-- **Animations:** CSS transitions with GPU acceleration (`transform3d`)
-- **Images:** Use responsive images with proper sizing
+## Configuration
 
-### Security Best Practices
-- **XSS prevention:** Use `escapeHtml()` for dynamic content
-- **CSP:** Consider implementing Content Security Policy
-- **External resources:** Use CDN with integrity hashes where possible
+### CONFIG Object
 
-## File Structure
-```
-/
-├── index.html          # Main HTML file
-├── style.css           # All styles (design tokens, components, responsive)
-├── script.js           # All JavaScript (config, state, components)
-├── data.js             # Mock data and content
-├── img/                # Image assets
-├── docs/               # Project documentation
-│   ├── blueprint_2026.md
-│   └── funkcionalni_zahtjevi.md
-└── .gitignore          # Git ignore rules
-```
+All application settings live in the `CONFIG` object at the top of `script.js`:
 
-## Development Workflow
-1. **Make changes** to relevant files
-2. **Test locally** by refreshing browser
-3. **Check console** for JavaScript errors
-4. **Validate HTML/CSS** if structural changes made
-5. **Test responsive** at different viewport sizes
-6. **Test accessibility** with screen reader tools
-
-## Component Initialization Pattern
 ```javascript
-function initComponent() {
-    const container = document.querySelector('#component .demo-placeholder');
-    if (!container) return; // Skip if already initialized
-    
-    // Replace placeholder with actual content
-    container.parentElement.innerHTML = `/* dynamic content */`;
+const CONFIG = {
+  itemsPerBatch: 9,
+  scrollThreshold: 200,
+  debug: false,
+  urls: {
+    /* ... */
+  },
+  map: {
+    /* ... */
+  },
+  ferry: {
+    /* ... */
+  },
 }
 ```
 
-## Event Handling
-- Use event delegation for dynamic content
-- Clean up intervals/timeouts in state management
-- Use passive listeners for scroll events
-- Implement proper focus management for modals
+### Local Configuration
+
+For local development, copy `config.local.example.js` to `config.local.js`:
+
+```bash
+cp config.local.example.js config.local.js
+```
+
+---
+
+## Workflow Requirements
+
+This project uses the GSD (Get Stuff Done) workflow. Before writing code:
+
+1. **Provide a Technical Brief**: Explain the objective, logic, scope, and verification steps
+2. **Wait for Approval**: Do not write code until user says "Proceed" or "Go"
+3. **Execute Surgically**: Make small, focused changes
+4. **Verify**: Provide testing steps after implementation
+
+---
+
+## Important Files
+
+| File              | Purpose                         |
+| ----------------- | ------------------------------- |
+| `script.js`       | Main application logic          |
+| `data.js`         | Data loading utilities          |
+| `style.css`       | Main stylesheet                 |
+| `index.html`      | Main HTML page                  |
+| `data/`           | JSON data files                 |
+| `config.local.js` | Local overrides (not committed) |
+
+---
+
+## ESLint & StyleLint
+
+The project has lenient linting rules. Key configurations:
+
+- **ESLint**: Browser + ES2021 environment, ES modules
+- **StyleLint**: Based on standard config, many rules disabled
+
+Run `npm run validate` before committing to catch issues.
+
+---
 
 ## Browser Compatibility
-- **Target:** Modern browsers (ES6+)
-- **Features:** Use optional chaining, template literals, arrow functions
-- **Fallbacks:** Provide graceful degradation for older browsers
-- **Testing:** Test in Chrome, Firefox, Safari, Edge
- 
-## GitHub Pages Test Hosting Alignment
-- Deploy target: Use GitHub Pages (gh-pages) to host a test environment from the repo for quick validation.
-- CI integration: A GitHub Actions workflow will validate, then deploy to gh-pages on main.
-- Local guidance: How to run validations locally with npm (if available) or via the manual path if npm isn’t used.
-- Data-driven MVP: Data-driven sections (hero, news, market, video) wired to mocks in data.js; no server needed for test hosting; static files served by GH Pages.
-- What to ship to test hosting: MVP core plus small data bridges MARKET_ITEMS, VIDEO_ITEMS; keep placeholders for live data.
-- Rollout plan: 1) CI validation, 2) GH Pages deployment, 3) UI polish, 4) blueprint features in future sprint.
+
+Target modern browsers (Chrome, Firefox, Safari, Edge). The code uses:
+
+- ES2021 features (optional chaining, nullish coalescing)
+- Leaflet.js for maps
+- Fetch API for network requests

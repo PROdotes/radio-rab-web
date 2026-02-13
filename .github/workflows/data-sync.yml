@@ -1,0 +1,82 @@
+name: Data Sync
+on:
+  schedule:
+    - cron: '*/10 * * * *' # Every 10 minutes for traffic/weather
+    - cron: '0 6 * * *' # Daily at 6am for sea quality
+  workflow_dispatch: # Manual trigger
+  push:
+    paths:
+      - 'scripts/*.ps1' # Run when scripts change
+
+permissions:
+  contents: write
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup PowerShell
+        uses: PowerShell/PowerShell@v1
+        with:
+          version: '7.4'
+
+      - name: Create Config
+        run: |
+          cat > config.local.js << 'EOF'
+          const CONFIG = {
+            urls: {
+              npt: "https://b2b.promet-info.hr"
+            },
+            user: '${{ secrets.NPT_USER }}',
+            pass: '${{ secrets.NPT_PASS }}'
+          };
+          EOF
+
+      - name: Fetch Traffic Data (NPT)
+        run: |
+          pwsh -File ./scripts/sync-raw-data.ps1
+        continue-on-error: true
+
+      - name: Fetch Cameras (once)
+        run: |
+          pwsh -File ./scripts/sync-cameras.ps1
+        continue-on-error: true
+
+      - name: Process Data
+        run: |
+          pwsh -File ./scripts/process-data.ps1
+        continue-on-error: true
+
+      - name: Commit Traffic Data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: sync traffic/weather data'
+          file_pattern: 'data/traffic*.json data/traffic*.js'
+
+  sync-sea-quality:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' && github.event.schedule == '0 6 * * *'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup PowerShell
+        uses: PowerShell/PowerShell@v1
+        with:
+          version: '7.4'
+
+      - name: Fetch Sea Quality (IZOR)
+        run: |
+          pwsh -File ./scripts/sync-izor.ps1
+        continue-on-error: true
+
+      - name: Commit Sea Quality Data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: sync sea quality data'
+          file_pattern: 'data/sea-quality*'
