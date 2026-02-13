@@ -762,9 +762,9 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <script id="ais-config">window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>
+  <script id="ais-config">/* PRODUCTION_CONFIG_REPLACE_ME */ window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>
   <script>
-    console.log('🔍 AIS System Diagnostic:', {
+    console.log('🔍 AIS System Diagnostic (v1.0.1):', {
       env: window.LOCAL_CONFIG?.AISSTREAM_API_KEY ? 'PRODUCTION' : 'LOCAL/SIMULATION',
       realAisEnabled: window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
       hasApiKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
