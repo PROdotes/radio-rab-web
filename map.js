@@ -337,7 +337,7 @@ function initMap() {
                   </svg>
                 </div>
                 <div>
-                  <div class="map-filter-option-text">BrojaÄi prometa</div>
+                  <div class="map-filter-option-text">Brojači prometa</div>
                 </div>
               </label>
               <label class="map-filter-option">
@@ -350,7 +350,7 @@ function initMap() {
                   </svg>
                 </div>
                 <div>
-                  <div class="map-filter-option-text">Kamere uÅ¾ivo</div>
+                  <div class="map-filter-option-text">Kamere uživo</div>
                 </div>
               </label>
               <label class="map-filter-option">
@@ -362,7 +362,7 @@ function initMap() {
                   </svg>
                 </div>
                 <div>
-                  <div class="map-filter-option-text">KakvoÄ‡a mora</div>
+                  <div class="map-filter-option-text">Kakvoća mora</div>
                 </div>
               </label>
             </div>
@@ -373,7 +373,7 @@ function initMap() {
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8Z"/>
               </svg>
-              PodruÄje prikaza
+              Područje prikaza
             </div>
             <div class="map-filter-options">
               <label class="map-filter-option">
@@ -413,7 +413,7 @@ function initMap() {
                 </div>
                 <div>
                   <div class="map-filter-option-text">Cijela Hrvatska</div>
-                  <div class="map-filter-option-desc">Obala i unutraÅ¡njost</div>
+                  <div class="map-filter-option-desc">Obala i unutrašnjost</div>
                 </div>
               </label>
             </div>
@@ -507,7 +507,7 @@ function initMap() {
       iconAnchor: [10, 10],
     })
 
-  // Port markers removed per request (MiÅ¡njak / Stinica)
+  // Port markers removed per request (Mišnjak / Stinica)
 
   // Route Line
   L.polyline([misnjak, stinica], {
@@ -924,9 +924,9 @@ function updateMapVisualization() {
                   </svg>
                 </div>
                 <div class="popup-header-text">
-                  <h3 class="popup-title">${group.length > 1 ? 'ViÅ¡esmjerno brojanje' : escapeHtml(first.name)
+                  <h3 class="popup-title">${group.length > 1 ? 'Višesmjerno brojanje' : escapeHtml(first.name)
               }</h3>
-                  <span class="popup-subtitle">BrojaÄ prometa</span>
+                  <span class="popup-subtitle">Brojač prometa</span>
                 </div>
               </div>
               <div class="popup-body">
@@ -1094,7 +1094,7 @@ function updateMapVisualization() {
                     </svg>
                   </div>
                   <div>
-                    <div class="popup-quality-label">KakvoÄ‡a mora</div>
+                    <div class="popup-quality-label">Kakvoća mora</div>
                     <div class="popup-quality-value">${qualityTxt.toUpperCase()}</div>
                   </div>
                 </div>
@@ -1102,7 +1102,7 @@ function updateMapVisualization() {
               </div>
               <div class="popup-footer">
                 <span class="popup-source">IZOR ${p.god || ''}</span>
-                <span class="popup-live">SluÅ¾beni podaci</span>
+                <span class="popup-live">Službeni podaci</span>
               </div>
             `,
           },
@@ -2127,10 +2127,10 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                       <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                           <div class="pulse-dot" style="background: var(--error)"></div>
                           <div style="font-weight:bold; color: var(--error); font-size: 1.1rem;">
-                              âš ï¸ LINIJA U PREKIDU
+                              ⚠️ LINIJA U PREKIDU
                           </div>
                       </div>
-                      <p style="color: var(--text-dim); font-size: 0.9rem;">Zbog nepovoljnih vremenskih uvjeta (bura), trajektna linija MiÅ¡njak-Stinica je privremeno obustavljena.</p>
+                      <p style="color: var(--text-dim); font-size: 0.9rem;">Zbog nepovoljnih vremenskih uvjeta (bura), trajektna linija Mišnjak-Stinica je privremeno obustavljena.</p>
                   `
         }
       })
@@ -2150,7 +2150,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
     if (minutes >= 0 && minutes < durationMins) {
       // Outbound (Rab -> Kopno)
       progress = minutes / durationMins
-      statusText = `Isplovio iz MiÅ¡njaka (${Math.round(progress * 100)}%)`
+      statusText = `Isplovio iz Mišnjaka (${Math.round(progress * 100)}%)`
       isMoving = true
     } else if (minutes >= 30 && minutes < 30 + durationMins) {
       // Inbound (Kopno -> Rab)
@@ -2164,7 +2164,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
     } else {
       // Waiting at Misnjak
       progress = 0
-      statusText = 'Luka MiÅ¡njak (Ukrcaj/Iskrcaj)'
+      statusText = 'Luka Mišnjak (Ukrcaj/Iskrcaj)'
     }
 
     // LERP Position (Scheduled)
@@ -2498,7 +2498,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.85rem;">
                     <div>
-                        <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">MIÅ NJAK â†’</div>
+                        <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">MIŠNJAK â†’</div>
                         <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depMisnjak.last
       }</div>
                         <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">SljedeÄ‡i: ${depMisnjak.next
@@ -2516,7 +2516,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                 </div>
                 
                 <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); font-style: italic;">
-                    * AIS podaci uÅ¾ivo s radio antene. OsvjeÅ¾eno: ${now.toLocaleTimeString('hr-HR')}
+                    * AIS podaci uživo s radio antene. Osvježeno: ${now.toLocaleTimeString('hr-HR')}
                 </div>
             `
 
@@ -2541,7 +2541,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
          </div>
          <div class="popup-header-text">
            <h3 class="popup-title">Trajekt Rapska Plovidba</h3>
-           <span class="popup-subtitle">Linija Stinica - MiÅ¡njak</span>
+           <span class="popup-subtitle">Linija Stinica - Mišnjak</span>
          </div>
        </div>
        <div class="popup-body">
@@ -2551,7 +2551,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
        </div>
        <div class="popup-footer">
          <span class="popup-source">AIS podaci</span>
-         <span class="popup-live">PraÄ‡enje uÅ¾ivo</span>
+         <span class="popup-live">PraÄ‡enje uživo</span>
        </div>
       `
 
@@ -2588,10 +2588,10 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
     const d8StatusEl = document.getElementById('d8-status')
     if (d8StatusEl) {
       if (state.manualOverrides.d8Restricted) {
-        d8StatusEl.innerHTML = `âš ï¸ Zatvoreno za I. skupinu`
+        d8StatusEl.innerHTML = `⚠️ Zatvoreno za I. skupinu`
         d8StatusEl.className = 'value val-yellow'
       } else if (aisOffsetMins >= 5) {
-        d8StatusEl.innerHTML = `âš ï¸ Zatvoreno za I. skupinu`
+        d8StatusEl.innerHTML = `⚠️ Zatvoreno za I. skupinu`
         d8StatusEl.className = 'value val-yellow'
       } else {
         d8StatusEl.innerHTML = `Otvoreno za sve`
@@ -2629,7 +2629,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
 
     const type = getAlertType(alert)
     let color = '#3b82f6' // Default Blue
-    let iconChar = 'âš ï¸'
+    let iconChar = '⚠️'
 
     if (type === 'accident') {
       color = '#ef4444'
@@ -2653,13 +2653,13 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
       accident: 'PROMETNA NESREÄ†A',
       roadworks: 'RADOVI NA CESTI',
       roadwork: 'RADOVI NA CESTI',
-      maintenance: 'ODRÅ½AVANJE',
+      maintenance: 'ODRŽAVANJE',
       hazard: 'OPASNOST NA CESTI',
       wind: 'JAK VJETAR',
       fog: 'MAGLA',
       closure: 'ZATVORENA CESTA',
       info: 'INFORMACIJA',
-      congestion: 'GUÅ½VA',
+      congestion: 'GUŽVA',
       other: 'OBAVIJEST',
     }
 
@@ -2703,7 +2703,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
             }
 
                     <div style="font-size: 0.8em; color: #94a3b8; margin-top: 5px;">
-                        AÅ¾urirano: ${alert.timestamp
+                        Ažurirano: ${alert.timestamp
               ? new Date(alert.timestamp).toLocaleTimeString('hr-HR', {
                 hour: '2-digit',
                 minute: '2-digit',
@@ -3013,3 +3013,4 @@ function addMapControls() {
     state.mapInstance.homeControlAdded = true
   }
 }
+

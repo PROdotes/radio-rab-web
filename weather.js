@@ -732,6 +732,7 @@ function updateTrafficAlerts(alerts, updatedAt) {
     const time = new Date(updatedAt).toLocaleTimeString('hr-HR', {
       hour: '2-digit',
       minute: '2-digit',
+      timeZone: 'Europe/Zagreb',
     })
     footer.innerText = `Ažurirano: ${time}`
   }

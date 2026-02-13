@@ -359,7 +359,7 @@ function initModal() {
       id: `submission-${Date.now()}`,
       title: `Prijava: ${body.substring(0, 30)}...`,
       snippet: body.substring(0, 100) + '...',
-      body: `<p>${body}</p><p><strong>PoÅ¡iljatelj:</strong> ${name} (${email})</p>`,
+      body: `<p>${body}</p><p><strong>Pošiljatelj:</strong> ${name} (${email})</p>`,
       category: 'LOKALNO',
       image: 'https://images.unsplash.com/photo-1495020689067-958852a7765e?w=800&h=600&fit=crop', // Placeholder for submitted
       author: name,
@@ -476,7 +476,7 @@ function initRadioPlayer() {
           // Help user with HTTPS/Mixed content block
           if (window.location.protocol === 'https:') {
             alert(
-              'Problem s pokretanjem: Preglednik blokira ovaj stream na HTTPS stranici. PokuÅ¡ajte kliknuti na direktni link ispod playera.'
+              'Problem s pokretanjem: Preglednik blokira ovaj stream na HTTPS stranici. Pokušajte kliknuti na direktni link ispod playera.'
             )
             showDirectLink()
           }
@@ -499,7 +499,7 @@ function initRadioPlayer() {
 
     if (nowPlayingLabel) {
       // Reset label if we are just showing station name
-      if (text === 'Radio Rab - 24/7' || text === 'Radio Rab - UÅ¾ivo (92.6FM)') {
+      if (text === 'Radio Rab - 24/7' || text === 'Radio Rab - Uživo (92.6FM)') {
         nowPlayingLabel.textContent = 'Sada svira'
         nowPlayingLabel.style.color = ''
       }
@@ -525,7 +525,7 @@ function initRadioPlayer() {
     linkBox.id = 'direct-stream-link'
     linkBox.style.cssText =
       'font-size: 0.7rem; margin-top: 1rem; text-align: center; color: var(--text-muted);'
-    linkBox.innerHTML = `âš ï¸ Blokiran HTTPS od strane preglednika.<br><a href="${CONFIG.urls.radioStreamDirect}" target="_blank" style="color: var(--primary); text-decoration: underline;">Kliknite ovdje za sluÅ¡anje u novom TAB-u</a>`
+    linkBox.innerHTML = `⚠️ Blokiran HTTPS od strane preglednika.<br><a href="${CONFIG.urls.radioStreamDirect}" target="_blank" style="color: var(--primary); text-decoration: underline;">Kliknite ovdje za slušanje u novom TAB-u</a>`
     container.appendChild(linkBox)
   }
 
@@ -595,7 +595,7 @@ function initRadioPlayer() {
       const nowPlayingLabel = document.querySelector('.now-playing')
       if (nowPlayingLabel) {
         // Visual feedback for live status
-        nowPlayingLabel.textContent = 'ðŸŽµ UÅ½IVO'
+        nowPlayingLabel.textContent = '🎵 UŽIVO'
         nowPlayingLabel.style.color = 'var(--primary)'
         nowPlayingLabel.style.fontWeight = 'bold'
       }
@@ -755,7 +755,7 @@ function openReaderMode(id) {
     })
   }
 
-  if (meta) meta.textContent = `${article.date} Â· ${article.readTime || '4 min'} Äitanja`
+  if (meta) meta.textContent = `${article.date} · ${article.readTime || '4 min'} čitanja`
   if (title) title.textContent = article.title
   if (heroImg) heroImg.style.backgroundImage = `url('${article.image}')`
 
@@ -766,7 +766,7 @@ function openReaderMode(id) {
       aiSummaryBox.removeAttribute('hidden')
       if (aiText)
         aiText.textContent =
-          article.aiSummary || 'Automatski saÅ¾etak Älanka trenutno nije dostupan.'
+          article.aiSummary || 'Automatski sažetak članka trenutno nije dostupan.'
     }
   }
 
@@ -927,3 +927,4 @@ function getMockVideos() {
     { title: 'Rabski Korzo u proljece', duration: '4:15', views: '15K', thumbnail: 'https://picsum.photos/seed/korzo/400/225' },
   ]
 }
+
