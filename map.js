@@ -24,7 +24,7 @@ function initMap() {
     state.mapInstance.createPane('ferryPane')
     const ferryPane = state.mapInstance.getPane('ferryPane')
     if (ferryPane) ferryPane.style.zIndex = 550
-  } catch (e) {}
+  } catch (e) { }
 
   L.tileLayer(CONFIG.urls.mapTiles, {
     attribution:
@@ -82,7 +82,7 @@ function initMap() {
                     latlng,
                   })
                 debugWarn && debugWarn(new Error('LAYERGROUP.ADD stack').stack)
-              } catch (err) {}
+              } catch (err) { }
               return this
             }
           }
@@ -114,11 +114,11 @@ function initMap() {
             if (!keepFlags(lay)) {
               try {
                 state.clusterLayer.removeLayer(lay)
-              } catch (e) {}
+              } catch (e) { }
             }
-          } catch (e) {}
+          } catch (e) { }
         })
-      } catch (e) {}
+      } catch (e) { }
 
       // Inspect named layers
       try {
@@ -132,13 +132,13 @@ function initMap() {
                 if (!keepFlags(lay)) {
                   try {
                     lg.removeLayer(lay)
-                  } catch (e) {}
+                  } catch (e) { }
                 }
-              } catch (e) {}
+              } catch (e) { }
             })
-          } catch (e) {}
+          } catch (e) { }
         })
-      } catch (e) {}
+      } catch (e) { }
 
       // Clean clusterMarkers registry entries that point to removed/unflagged markers
       try {
@@ -149,9 +149,9 @@ function initMap() {
               return
             }
             if (!keepFlags(m)) state.clusterMarkers.delete(id)
-          } catch (e) {}
+          } catch (e) { }
         })
-      } catch (e) {}
+      } catch (e) { }
     } catch (e) {
       debugWarn && debugWarn('purgeLegacyMarkers failed', e)
     }
@@ -191,10 +191,10 @@ function initMap() {
                   latlng,
                 })
               debugWarn && debugWarn(new Error('LAYERADD stack').stack)
-            } catch (err) {}
+            } catch (err) { }
             try {
               lay.remove()
-            } catch (err) {}
+            } catch (err) { }
           }
         }
       } catch (err) {
@@ -211,19 +211,19 @@ function initMap() {
     if (state.clusterLayer) {
       try {
         stray.push(...state.clusterLayer.getLayers())
-      } catch (e) {}
+      } catch (e) { }
     }
     if (state.layers && state.layers.markers) {
       try {
         stray.push(...state.layers.markers.getLayers())
-      } catch (e) {}
+      } catch (e) { }
     }
     // Also inspect all top-level map layers for accidental ferry markers
     try {
       state.mapInstance.eachLayer((lay) => {
         if (lay && lay._isFerry) stray.push(lay)
       })
-    } catch (e) {}
+    } catch (e) { }
 
     stray.forEach((cand) => {
       if (!cand || !cand._isFerry) return
@@ -239,9 +239,9 @@ function initMap() {
         ) {
           try {
             cand.remove()
-          } catch (e) {}
+          } catch (e) { }
         }
-      } catch (e) {}
+      } catch (e) { }
     })
   } catch (e) {
     /* defensive cleanup failed - ignore */
@@ -258,7 +258,7 @@ function initMap() {
   if (state._ferryIntegrityInterval) {
     try {
       clearInterval(state._ferryIntegrityInterval)
-    } catch (e) {}
+    } catch (e) { }
     state._ferryIntegrityInterval = null
   }
 
@@ -300,9 +300,8 @@ function initMap() {
             </div>
             <div class="map-filter-options">
               <label class="map-filter-option">
-                <input type="checkbox" name="layer-type" value="roadwork" ${
-                  layers.roadwork ? 'checked' : ''
-                }>
+                <input type="checkbox" name="layer-type" value="roadwork" ${layers.roadwork ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--alert">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
@@ -314,9 +313,8 @@ function initMap() {
                 </div>
               </label>
               <label class="map-filter-option">
-                <input type="checkbox" name="layer-type" value="weather" ${
-                  layers.weather ? 'checked' : ''
-                }>
+                <input type="checkbox" name="layer-type" value="weather" ${layers.weather ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--weather">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="4"/>
@@ -330,9 +328,8 @@ function initMap() {
                 </div>
               </label>
               <label class="map-filter-option">
-                <input type="checkbox" name="layer-type" value="counters" ${
-                  layers.counters ? 'checked' : ''
-                }>
+                <input type="checkbox" name="layer-type" value="counters" ${layers.counters ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--counter">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
@@ -344,9 +341,8 @@ function initMap() {
                 </div>
               </label>
               <label class="map-filter-option">
-                <input type="checkbox" name="layer-type" value="cameras" ${
-                  layers.cameras ? 'checked' : ''
-                }>
+                <input type="checkbox" name="layer-type" value="cameras" ${layers.cameras ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--camera">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
@@ -358,9 +354,8 @@ function initMap() {
                 </div>
               </label>
               <label class="map-filter-option">
-                <input type="checkbox" name="layer-type" value="seaQuality" ${
-                  layers.seaQuality ? 'checked' : ''
-                }>
+                <input type="checkbox" name="layer-type" value="seaQuality" ${layers.seaQuality ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--sea">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>
@@ -382,9 +377,8 @@ function initMap() {
             </div>
             <div class="map-filter-options">
               <label class="map-filter-option">
-                <input type="radio" name="region-scope" value="local" ${
-                  scope === 'local' ? 'checked' : ''
-                }>
+                <input type="radio" name="region-scope" value="local" ${scope === 'local' ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--local">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/>
@@ -396,9 +390,8 @@ function initMap() {
                 </div>
               </label>
               <label class="map-filter-option">
-                <input type="radio" name="region-scope" value="regional" ${
-                  scope === 'regional' ? 'checked' : ''
-                }>
+                <input type="radio" name="region-scope" value="regional" ${scope === 'regional' ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--regional">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
@@ -410,9 +403,8 @@ function initMap() {
                 </div>
               </label>
               <label class="map-filter-option">
-                <input type="radio" name="region-scope" value="full" ${
-                  scope === 'full' ? 'checked' : ''
-                }>
+                <input type="radio" name="region-scope" value="full" ${scope === 'full' ? 'checked' : ''
+        }>
                 <div class="map-filter-option-icon map-filter-option-icon--full">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
@@ -711,7 +703,7 @@ function updateMapVisualization() {
       if (state.clusterLayer) {
         try {
           state.clusterLayer.clearLayers()
-        } catch (e) {}
+        } catch (e) { }
       }
       // Remove all tracked cluster markers (except ferry) and reset the map
       try {
@@ -720,11 +712,11 @@ function updateMapVisualization() {
             if (m && !m._isFerry) {
               try {
                 state.clusterLayer.removeLayer(m)
-              } catch (e) {}
+              } catch (e) { }
             }
-          } catch (e) {}
+          } catch (e) { }
         })
-      } catch (e) {}
+      } catch (e) { }
       try {
         state.clusterMarkers.clear()
       } catch (e) {
@@ -735,7 +727,7 @@ function updateMapVisualization() {
       // clustering is enabled (we index seaQuality via Supercluster now).
       try {
         if (state.layers && state.layers.seaQuality) state.layers.seaQuality.clearLayers()
-      } catch (e) {}
+      } catch (e) { }
     } catch (e) {
       /* ignore cleanup errors */
     }
@@ -757,9 +749,8 @@ function updateMapVisualization() {
             layer: 'alert',
             iconClass: 'custom-map-marker marker-' + type,
             iconSize: [36, 36],
-            iconHtml: `<div class="map-marker map-marker--alert"${
-              isHighSeverity ? ' data-severity="high"' : ''
-            }>
+            iconHtml: `<div class="map-marker map-marker--alert"${isHighSeverity ? ' data-severity="high"' : ''
+              }>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
                 <path d="M12 9v4"/><path d="M12 17h.01"/>
@@ -775,8 +766,8 @@ function updateMapVisualization() {
                 </div>
                 <div class="popup-header-text">
                   <h3 class="popup-title">${escapeHtml(
-                    type.charAt(0).toUpperCase() + type.slice(1)
-                  )}</h3>
+              type.charAt(0).toUpperCase() + type.slice(1)
+            )}</h3>
                   <span class="popup-subtitle">Prometno upozorenje</span>
                 </div>
               </div>
@@ -881,10 +872,9 @@ function updateMapVisualization() {
         if (group.length > 1) {
           group.forEach((c, idx) => {
             popupRows += `
-              ${
-                idx > 0
-                  ? '<div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 8px 0;"></div>'
-                  : ''
+              ${idx > 0
+                ? '<div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 8px 0;"></div>'
+                : ''
               }
               <div style="font-weight: 600; color: var(--text-main); margin-bottom: 4px;">${escapeHtml(
                 c.name
@@ -934,9 +924,8 @@ function updateMapVisualization() {
                   </svg>
                 </div>
                 <div class="popup-header-text">
-                  <h3 class="popup-title">${
-                    group.length > 1 ? 'Višesmjerno brojanje' : escapeHtml(first.name)
-                  }</h3>
+                  <h3 class="popup-title">${group.length > 1 ? 'Višesmjerno brojanje' : escapeHtml(first.name)
+              }</h3>
                   <span class="popup-subtitle">Brojač prometa</span>
                 </div>
               </div>
@@ -996,8 +985,8 @@ function updateMapVisualization() {
               </div>
               <div class="popup-camera-controls">
                 <button class="popup-camera-btn" data-camera-url="${escapeHtml(
-                  cam.url
-                )}" data-camera-title="${escapeHtml(cam.title)}">Otvori sliku</button>
+              cam.url
+            )}" data-camera-title="${escapeHtml(cam.title)}">Otvori sliku</button>
               </div>
               <div class="popup-footer">
                 <span class="popup-source">NPT Live</span>
@@ -1019,32 +1008,32 @@ function updateMapVisualization() {
           qualityVal === 1
             ? 'Izvrsna'
             : qualityVal === 2
-            ? 'Dobra'
-            : qualityVal === 3
-            ? 'ZadovoljavajuÄ‡a'
-            : 'NezadovoljavajuÄ‡a'
+              ? 'Dobra'
+              : qualityVal === 3
+                ? 'Zadovoljavajuća'
+                : 'Nezadovoljavajuća'
         const qualityClass =
           qualityVal === 1
             ? 'excellent'
             : qualityVal === 2
-            ? 'good'
-            : qualityVal === 3
-            ? 'moderate'
-            : 'poor'
+              ? 'good'
+              : qualityVal === 3
+                ? 'moderate'
+                : 'poor'
         const markerClass =
           qualityVal === 1
             ? 'sea-excellent'
             : qualityVal === 2
-            ? 'sea-good'
-            : qualityVal === 3
-            ? 'sea-moderate'
-            : 'sea-poor'
+              ? 'sea-good'
+              : qualityVal === 3
+                ? 'sea-moderate'
+                : 'sea-poor'
 
         const historyHtml =
           p.history && p.history.length > 0
             ? `<button class="popup-history-btn" data-sea-id="${escapeHtml(
-                String(p.lsta || p.id)
-              )}">Povijest mjerenja</button>`
+              String(p.lsta || p.id)
+            )}">Povijest mjerenja</button>`
             : `<div class="popup-history-note">Nema dostupne povijesti mjerenja.</div>`
 
         // Choose a friendly place name for popups: prefer specific spot/bay names
@@ -1138,11 +1127,11 @@ function updateMapVisualization() {
             const [lng, lat] = f.geometry.coordinates
             if (Math.max(Math.abs(lat - ferryLatLng.lat), Math.abs(lng - ferryLatLng.lng)) <= eps)
               return false
-          } catch (e) {}
+          } catch (e) { }
           return true
         })
       }
-    } catch (e) {}
+    } catch (e) { }
 
     // If clustering is disabled, render raw features as points (no Supercluster)
     if (CONFIG.map && CONFIG.map.enableClustering === false) {
@@ -1163,7 +1152,7 @@ function updateMapVisualization() {
           const arr = cameraGroups.get(key) || []
           arr.push(f)
           cameraGroups.set(key, arr)
-        } catch (e) {}
+        } catch (e) { }
       })
 
       const newIds = new Set()
@@ -1227,7 +1216,7 @@ function updateMapVisualization() {
                 logProximitySkip({ reason: 'raw-point', id, lat, lng })
                 return
               }
-            } catch (e) {}
+            } catch (e) { }
 
             const marker = createMarkerSafe(lat, lng, { icon, title: props.layer || 'lokacija' })
             if (marker) {
@@ -1256,7 +1245,7 @@ function updateMapVisualization() {
           if (marker._isClusterized && !marker._isFerry) {
             try {
               state.clusterLayer.removeLayer(marker)
-            } catch (e) {}
+            } catch (e) { }
             state.clusterMarkers.delete(id)
           }
         }
@@ -1346,7 +1335,7 @@ function updateMapVisualization() {
         if (!marker._isClusterized) {
           try {
             state.clusterLayer.removeLayer(marker)
-          } catch (e) {}
+          } catch (e) { }
           state.clusterMarkers.delete(mid)
         }
       } catch (e) {
@@ -1383,7 +1372,7 @@ function updateMapVisualization() {
                 existing.on('click', () => {
                   try {
                     clearSpiderfiedClusters()
-                  } catch (e) {}
+                  } catch (e) { }
                   const leaves = state.superIndex.getLeaves(clusterId, 200) || []
                   if (leaves.length > 60) {
                     const expansion = state.superIndex.getClusterExpansionZoom(clusterId)
@@ -1394,7 +1383,7 @@ function updateMapVisualization() {
                 })
               existing._clusterClickBound = clusterId
             }
-          } catch (e) {}
+          } catch (e) { }
         }
       } else {
         const marker = createMarkerSafe(lat, lng, {
@@ -1409,7 +1398,7 @@ function updateMapVisualization() {
               // If cluster is very large, fall back to zoom expansion.
               try {
                 clearSpiderfiedClusters()
-              } catch (e) {}
+              } catch (e) { }
               const leaves = state.superIndex.getLeaves(clusterId, 200) || []
               if (leaves.length > 60) {
                 const expansion = state.superIndex.getClusterExpansionZoom(clusterId)
@@ -1489,7 +1478,7 @@ function updateMapVisualization() {
                 if (existingIndividual) {
                   try {
                     state.clusterLayer.removeLayer(existingIndividual)
-                  } catch (e) {}
+                  } catch (e) { }
                   state.clusterMarkers.delete(lid)
                 }
               })
@@ -1593,7 +1582,7 @@ function updateMapVisualization() {
             ) {
               try {
                 state.clusterLayer.removeLayer(other)
-              } catch (e) {}
+              } catch (e) { }
               state.clusterMarkers.delete(oid)
             }
           } catch (e) {
@@ -1669,7 +1658,7 @@ function attachClusterUpdateHandlers() {
     state._mapInteracting = true
     try {
       clearSpiderfiedClusters()
-    } catch (e) {}
+    } catch (e) { }
   })
   // Also mark interacting on zoomstart so we don't update marker positions while
   // Leaflet is performing zoom animations. Without this, setLatLng calls during
@@ -1678,7 +1667,7 @@ function attachClusterUpdateHandlers() {
     state._mapInteracting = true
     try {
       clearSpiderfiedClusters()
-    } catch (e) {}
+    } catch (e) { }
   })
   // Hide the ferry marker during zoom so it doesn't visibly interpolate across the map.
   // We will force-snap it into place on zoomend.
@@ -1701,14 +1690,14 @@ function attachClusterUpdateHandlers() {
       finalHandler()
       // Force a ferry tick to snap to the latest position after interaction
       if (state._ferryUpdateFn) state._ferryUpdateFn()
-    } catch (e) {}
+    } catch (e) { }
   })
   state.mapInstance.on('zoomend', () => {
     state._mapInteracting = false
     try {
       finalHandler()
       if (state._ferryUpdateFn) state._ferryUpdateFn()
-    } catch (e) {}
+    } catch (e) { }
   })
 
   // On zoomend, ensure ferry is visible and snapped to its correct position.
@@ -1776,7 +1765,7 @@ function updateClustersForViewport() {
                 existing.on('click', () => {
                   try {
                     clearSpiderfiedClusters()
-                  } catch (e) {}
+                  } catch (e) { }
                   const leaves = state.superIndex.getLeaves(clusterId, 200) || []
                   if (leaves.length > 60) {
                     const expansion = state.superIndex.getClusterExpansionZoom(clusterId)
@@ -1787,7 +1776,7 @@ function updateClustersForViewport() {
                 })
               existing._clusterClickBound = clusterId
             }
-          } catch (e) {}
+          } catch (e) { }
         }
       } else {
         // Prevent creation of cluster marker that would overlap the ferry
@@ -1811,7 +1800,7 @@ function updateClustersForViewport() {
             logProximitySkip({ reason: 'cluster-cluster', id, lat, lng })
             return
           }
-        } catch (e) {}
+        } catch (e) { }
 
         const marker = createMarkerSafe(lat, lng, {
           icon,
@@ -1826,7 +1815,7 @@ function updateClustersForViewport() {
               // any previously spiderfied markers.
               try {
                 clearSpiderfiedClusters()
-              } catch (e) {}
+              } catch (e) { }
               const leaves = state.superIndex.getLeaves(clusterId, 200) || []
               if (leaves.length > 60) {
                 const expansion = state.superIndex.getClusterExpansionZoom(clusterId)
@@ -1899,7 +1888,7 @@ function updateClustersForViewport() {
                 if (existingIndividual) {
                   try {
                     state.clusterLayer.removeLayer(existingIndividual)
-                  } catch (e) {}
+                  } catch (e) { }
                   state.clusterMarkers.delete(lid)
                 }
               })
@@ -1950,7 +1939,7 @@ function updateClustersForViewport() {
             logProximitySkip({ reason: 'cluster-point', id, lat, lng })
             return
           }
-        } catch (e) {}
+        } catch (e) { }
 
         const marker = createMarkerSafe(lat, lng, { icon, title: props.layer || 'lokacija' })
         if (marker) {
@@ -1970,7 +1959,7 @@ function updateClustersForViewport() {
       if (marker._isClusterized && !marker._isFerry) {
         try {
           state.clusterLayer.removeLayer(marker)
-        } catch (e) {}
+        } catch (e) { }
         state.clusterMarkers.delete(id)
       }
     }
@@ -2208,10 +2197,10 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
         const candidates = []
         try {
           if (state.layers && state.layers.ferry) candidates.push(...state.layers.ferry.getLayers())
-        } catch (e) {}
+        } catch (e) { }
         try {
           if (state.clusterLayer) candidates.push(...state.clusterLayer.getLayers())
-        } catch (e) {}
+        } catch (e) { }
 
         // Aggressive runtime diagnostic: if multiple markers exist within eps of
         // the active ferry, emit an unconditional console warning (throttled)
@@ -2324,7 +2313,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
               approxEq(
                 cand._latlng || (cand.getLatLng && cand.getLatLng && cand.getLatLng()),
                 activeFerry._latlng ||
-                  (activeFerry.getLatLng && activeFerry.getLatLng && activeFerry.getLatLng())
+                (activeFerry.getLatLng && activeFerry.getLatLng && activeFerry.getLatLng())
               )
             ) {
               try {
@@ -2490,19 +2479,18 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
     if (aisOffsetMins >= 1 && aisOffsetMins < 5) {
       aisStatusMsg = `Kasni ~${aisOffsetMins} min`
     } else if (aisOffsetMins >= 5) {
-      aisStatusMsg = `MoguÄ‡ prekid linije! (AIS)`
+      aisStatusMsg = `Moguć prekid linije! (AIS)`
     }
 
     // Build the status HTML
     const statusHtml = `
                 <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                    <div class="pulse-dot" style="background: ${
-                      aisOffsetMins >= 5
-                        ? 'var(--error)'
-                        : aisOffsetMins >= 1
-                        ? 'var(--warning)'
-                        : 'var(--success)'
-                    }"></div>
+                    <div class="pulse-dot" style="background: ${aisOffsetMins >= 5
+        ? 'var(--error)'
+        : aisOffsetMins >= 1
+          ? 'var(--warning)'
+          : 'var(--success)'
+      }"></div>
                     <div style="font-weight:bold; color: var(--text-main); font-size: 1rem;">
                         AIS: ${escapeHtml(aisStatusMsg)}
                     </div>
@@ -2511,22 +2499,18 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.85rem;">
                     <div>
                         <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">MIŠNJAK â†’</div>
-                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${
-                          depMisnjak.last
-                        }</div>
-                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">SljedeÄ‡i: ${
-                          depMisnjak.next
-                        }</div>
+                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depMisnjak.last
+      }</div>
+                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depMisnjak.next
+      }</div>
                         <div style="opacity: 0.8;">Nakon toga: ${depMisnjak.after}</div>
                     </div>
                     <div>
                         <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">STINICA â†’</div>
-                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${
-                          depStinica.last
-                        }</div>
-                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">SljedeÄ‡i: ${
-                          depStinica.next
-                        }</div>
+                        <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depStinica.last
+      }</div>
+                        <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depStinica.next
+      }</div>
                         <div style="opacity: 0.8;">Nakon toga: ${depStinica.after}</div>
                     </div>
                 </div>
@@ -2567,7 +2551,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
        </div>
        <div class="popup-footer">
          <span class="popup-source">AIS podaci</span>
-         <span class="popup-live">PraÄ‡enje uživo</span>
+         <span class="popup-live">Praćenje uživo</span>
        </div>
       `
 
@@ -2584,7 +2568,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
         sidebarFerryRow.innerHTML = `Kasni ~${aisOffsetMins} min`
         sidebarFerryRow.className = 'value val-yellow'
       } else {
-        sidebarFerryRow.innerHTML = `SljedeÄ‡i: <span style="color: #fff">${depStinica.next}</span>`
+        sidebarFerryRow.innerHTML = `Sljedeći: <span style="color: #fff">${depStinica.next}</span>`
         sidebarFerryRow.className = 'value val-green'
       }
     }
@@ -2597,7 +2581,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
           const [h, m] = t.split(':').map(Number)
           return h * 60 + m > nowTime
         }) || '06:00'
-      sidebarLoparRow.innerHTML = `SljedeÄ‡i: <span style="color: #fff">${loparNext}</span>`
+      sidebarLoparRow.innerHTML = `Sljedeći: <span style="color: #fff">${loparNext}</span>`
     }
 
     // --- D8 (MAGISTRALA) SYNC ---
@@ -2621,7 +2605,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
   // Expose the update function so map handlers can force a snap-to position after interactions
   try {
     state._ferryUpdateFn = update
-  } catch (e) {}
+  } catch (e) { }
 }
 /**
  * Updates the Leaflet map with NPT data
@@ -2700,34 +2684,32 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                 <div style="min-width: 250px; font-family: var(--font-main); color: #f1f5f9;">
                     <h4 style="margin: 0 0 5px 0; color: ${color}; font-size: 1rem;">${iconChar} ${displayType}</h4>
                     <div style="font-weight: bold; margin-bottom: 5px; color: #f8fafc; font-size: 1rem;">${escapeHtml(
-                      alert.road
-                    )}</div>
+              alert.road
+            )}</div>
                     <div style="font-size: 0.9em; line-height: 1.4; color: #e2e8f0; white-space: pre-wrap;">${escapeHtml(
-                      alert.details
-                    )}</div>
+              alert.details
+            )}</div>
                     
-                    ${
-                      alert.validFrom
-                        ? `
+                    ${alert.validFrom
+              ? `
                         <div style="font-size: 0.85em; color: #cbd5e1; margin-top: 8px; border-top: 1px solid #334155; padding-top: 5px;">
                             ðŸ“… <strong>Trajanje:</strong><br>
                             ${new Date(alert.validFrom).toLocaleDateString('hr-HR')} - ${new Date(
-                            alert.validUntil
-                          ).toLocaleDateString('hr-HR')}
+                alert.validUntil
+              ).toLocaleDateString('hr-HR')}
                         </div>
                     `
-                        : ''
-                    }
+              : ''
+            }
 
                     <div style="font-size: 0.8em; color: #94a3b8; margin-top: 5px;">
-                        Ažurirano: ${
-                          alert.timestamp
-                            ? new Date(alert.timestamp).toLocaleTimeString('hr-HR', {
-                                hour: '2-digit',
-                                minute: '2-digit',
-                              })
-                            : ''
-                        }
+                        Ažurirano: ${alert.timestamp
+              ? new Date(alert.timestamp).toLocaleTimeString('hr-HR', {
+                hour: '2-digit',
+                minute: '2-digit',
+              })
+              : ''
+            }
                     </div>
                 </div>
             `
@@ -2780,24 +2762,19 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
             .bindPopup(
               `
                     <div style="text-align: center; color: #f1f5f9; min-width: 150px;">
-                        <strong style="color: #60a5fa;">${
-                          CONFIG.stationNames[station.id] || station.id
-                        }</strong><br>
-                        <div style="font-size: 1.2rem; margin: 5px 0; font-weight: bold;">${
-                          station.temp ? Math.round(parseFloat(station.temp)) + '°C' : '--'
-                        }</div>
+                        <strong style="color: #60a5fa;">${CONFIG.stationNames[station.id] || station.id
+              }</strong><br>
+                        <div style="font-size: 1.2rem; margin: 5px 0; font-weight: bold;">${station.temp ? Math.round(parseFloat(station.temp)) + '°C' : '--'
+              }</div>
                         Vjetar: <strong>${station.windSpeed || 0} km/h</strong><br>
-                        Udari: <strong style="color: ${
-                          windGust > 80 ? '#f87171' : '#f1f5f9'
-                        }">${Math.round(windGust)} km/h</strong><br>
+                        Udari: <strong style="color: ${windGust > 80 ? '#f87171' : '#f1f5f9'
+              }">${Math.round(windGust)} km/h</strong><br>
                         Smjer: ${getWindArrow(station.windDir)} (${station.windDir || '--'}°)<br>
-                        ${
-                          station.roadTemp
-                            ? `<span style="color: ${
-                                parseFloat(station.roadTemp) < 0 ? '#f87171' : '#94a3b8'
-                              }">Cesta: ${station.roadTemp}°C</span>`
-                            : ''
-                        }
+                        ${station.roadTemp
+                ? `<span style="color: ${parseFloat(station.roadTemp) < 0 ? '#f87171' : '#94a3b8'
+                }">Cesta: ${station.roadTemp}°C</span>`
+                : ''
+              }
                     </div>
                 `
             )
@@ -2846,16 +2823,15 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
               `
                     <div style="text-align: center; color: #f1f5f9; font-size: 0.9rem; min-width: 150px;">
                         <strong style="color: #a78bfa;">ðŸ“¡ ${escapeHtml(
-                          counter.name
-                        )}</strong><br>
-                        ${
-                          hasData
-                            ? `
+                counter.name
+              )}</strong><br>
+                        ${hasData
+                ? `
                             Brzina: <strong style="color: ${color}; font-size: 1.1em;">${speed} km/h</strong><br>
                             Promet: <strong>${flow} voz/h</strong>
                         `
-                            : `<span style="color: #94a3b8; font-style: italic;">Nema podataka</span>`
-                        }
+                : `<span style="color: #94a3b8; font-style: italic;">Nema podataka</span>`
+              }
                     </div>
                 `
             )
@@ -2901,8 +2877,8 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                         gap: 6px;
                         align-items: center;
                     ">
-                        ${temp != null ? `<span>ðŸŒ¡ï¸${Math.round(temp)}°</span>` : ''}
-                        ${windGust > 0 ? `<span>ðŸ’¨${Math.round(windGust)}</span>` : ''}
+                        ${temp != null ? `<span>🌡️ ${Math.round(temp)}°</span>` : ''}
+                        ${windGust > 0 ? `<span>💨 ${Math.round(windGust)}</span>` : ''}
                     </div>
                 `,
         iconSize: [80, 28],
@@ -2916,70 +2892,61 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
             .bindPopup(
               `
                     <div style="text-align: center; color: #f1f5f9; min-width: 180px;">
-                        <strong style="color: #0ea5e9; font-size: 1.1rem;">ðŸï¸ ${
-                          CONFIG.stationNames[station.id] || station.id
-                        }</strong>
-                         ${
-                           distance < 5
-                             ? '<span style="color:#fbbf24; font-size:0.8em"> (Lokalno)</span>'
-                             : ''
-                         }<br>
+                        <strong style="color: #0ea5e9; font-size: 1.1rem;">🏘️ ${CONFIG.stationNames[station.id] || station.id
+              }</strong>
+                         ${distance < 5
+                ? '<span style="color:#fbbf24; font-size:0.8em"> (Lokalno)</span>'
+                : ''
+              }<br>
 
                          <div style="display:flex; justify-content:center; align-items:center; gap: 10px; margin: 10px 0;">
                             <div style="text-align:center;">
                                 <div style="font-size: 1.4rem; font-weight: bold;">${Math.round(
-                                  windGust
-                                )}</div>
+                windGust
+              )}</div>
                                 <div style="font-size: 0.7rem; color: #94a3b8;">UDARI km/h</div>
                             </div>
-                            ${
-                              temp !== null
-                                ? `
+                            ${temp !== null
+                ? `
                             <div style="text-align:center; border-left: 1px solid #475569; padding-left: 10px;">
                                 <div style="font-size: 1.4rem; font-weight: bold;">${Math.round(
-                                  temp
-                                )}°</div>
+                  temp
+                )}°</div>
                                 <div style="font-size: 0.7rem; color: #94a3b8;">ZRAK</div>
                             </div>`
-                                : ''
-                            }
+                : ''
+              }
                         </div>
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.9rem; text-align: left; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 6px;">
-                            <div>ðŸ’¨ Vjetar:</div>
+                            <div>💨 Vjetar:</div>
                             <div style="text-align: right;"><strong>${Math.round(
-                              windSpeed
-                            )} km/h</strong></div>
-                            <div>ðŸŒ¬ï¸ Udari:</div>
-                            <div style="text-align: right; color: ${
-                              windGust > 80 ? '#f87171' : windGust > 50 ? '#fbbf24' : '#f1f5f9'
-                            };">
+                windSpeed
+              )} km/h</strong></div>
+                            <div>🌬️ Udari:</div>
+                            <div style="text-align: right; color: ${windGust > 80 ? '#f87171' : windGust > 50 ? '#fbbf24' : '#f1f5f9'
+              };">
                                 <strong>${Math.round(windGust)} km/h</strong>
                             </div>
-                            <div>ðŸ§­ Smjer:</div>
-                            <div style="text-align: right;">${getWindArrow(station.windDir)} ${
-                station.windDir || '--'
+                            <div>🧭 Smjer:</div>
+                            <div style="text-align: right;">${getWindArrow(station.windDir)} ${station.windDir || '--'
               }°</div>
-                            ${
-                              station.humidity != null
-                                ? `
+                            ${station.humidity != null
+                ? `
                                 <div>ðŸ’§ Vlaga:</div>
                                 <div style="text-align: right;">${station.humidity}%</div>
                             `
-                                : ''
-                            }
-                            ${
-                              station.roadTemp
-                                ? `
+                : ''
+              }
+                            ${station.roadTemp
+                ? `
                                 <div>ðŸ›£ï¸ Cesta:</div>
-                                <div style="text-align: right; color: ${
-                                  parseFloat(station.roadTemp) < 0 ? '#ef4444' : '#f1f5f9'
-                                };">${station.roadTemp}°C ${
-                                    parseFloat(station.roadTemp) < 0 ? 'â„ï¸' : ''
-                                  }</div>
+                                <div style="text-align: right; color: ${parseFloat(station.roadTemp) < 0 ? '#ef4444' : '#f1f5f9'
+                };">${station.roadTemp}°C ${parseFloat(station.roadTemp) < 0 ? 'â„ï¸' : ''
+                }</div>
                             `
-                                : ''
-                            }
+                : ''
+              }
                         </div>
                     </div>
                 `
@@ -2995,9 +2962,8 @@ function getWindArrow(azimuth) {
   if (azimuth === null || azimuth === undefined) return 'â€¢'
   const val = parseInt(azimuth)
   if (isNaN(val)) return 'â€¢'
-  return `<span style="display:inline-block; transform: rotate(${
-    val + 180
-  }deg); font-weight:bold;">â†‘</span>`
+  return `<span style="display:inline-block; transform: rotate(${val + 180
+    }deg); font-weight:bold;">â†‘</span>`
 }
 
 /**
