@@ -19,10 +19,8 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Setup PowerShell
-        uses: PowerShell/PowerShell@v1
-        with:
-          version: '7.4'
+      - name: Check PowerShell version
+        run: pwsh -v
 
       - name: Create Config
         run: |
@@ -65,10 +63,8 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Setup PowerShell
-        uses: PowerShell/PowerShell@v1
-        with:
-          version: '7.4'
+      - name: Check PowerShell version
+        run: pwsh -v
 
       - name: Fetch Sea Quality (IZOR)
         run: |
