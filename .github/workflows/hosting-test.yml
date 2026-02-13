@@ -30,9 +30,16 @@ jobs:
         with:
           node-version: '18'
       - name: Inject Production Secrets
+        env:
+          AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
         run: |
-          REAL_CONFIG="<script id=\"ais-config\">window.LOCAL_CONFIG = { AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}', FERRY_MMSI: '238690000', ENABLE_REAL_AIS: true, urls: { npt: 'https://b2b.promet-info.hr' } }; console.info('🚢 Production Config Injected');</script>"
-          sed -i "s|<script id=\"ais-config\">.*</script>|$REAL_CONFIG|g" index.html
+          python3 -c "
+          import os
+          content = open('index.html').read()
+          real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
+          new_content = content.replace('<script id=\"ais-config\">window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>', real_config)
+          with open('index.html', 'w') as f: f.write(new_content)
+          "
           touch .nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
