@@ -25,12 +25,15 @@ jobs:
       - name: Create Config
         run: |
           cat > config.local.js << 'EOF'
-          const CONFIG = {
+          window.LOCAL_CONFIG = {
             urls: {
               npt: "https://b2b.promet-info.hr"
             },
-            user: '${{ secrets.NPT_USER }}',
-            pass: '${{ secrets.NPT_PASS }}'
+            nptUser: '${{ secrets.NPT_USER }}',
+            nptPass: '${{ secrets.NPT_PASS }}',
+            AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
+            FERRY_MMSI: '238690000',
+            ENABLE_REAL_AIS: true
           };
           EOF
 
