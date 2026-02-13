@@ -29,26 +29,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Create Production Config
+      - name: Append Production Secrets to config.js
         run: |
-          cat > ais-config.js << 'EOF'
-          window.LOCAL_CONFIG = {
-            AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
-            FERRY_MMSI: '238690000',
-            ENABLE_REAL_AIS: true,
-            urls: {
-              npt: "https://b2b.promet-info.hr"
-            }
-          };
-          EOF
+          echo "" >> config.js
+          echo "// Production Secrets (Appended by GitHub Action)" >> config.js
+          echo "window.LOCAL_CONFIG = {" >> config.js
+          echo "  AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}'," >> config.js
+          echo "  FERRY_MMSI: '238690000'," >> config.js
+          echo "  ENABLE_REAL_AIS: true," >> config.js
+          echo "  urls: { npt: 'https://b2b.promet-info.hr' }" >> config.js
+          echo "};" >> config.js
           touch .nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
-          publish_navigation: true
-          dotfiles: true # CRITICAL: This is likely why files were missing
+          dotfiles: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           force_orphan: true

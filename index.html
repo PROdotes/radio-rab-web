@@ -751,17 +751,16 @@
     </div>
   </div>
 
-  <script src="config.local.js"></script>
-  <script src="ais-config.js"></script>
-  <script>
-    if (!window.LOCAL_CONFIG) {
-      window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
-      console.info('No config found - using simulation');
-    }
-  </script>
+  <script src="config.local.js" onerror="this.remove()"></script>
+  <script src="config.js"></script>
   <script src="aisstream-websocket.js"></script>
   <script src="data.js"></script>
-  <script src="config.js"></script>
+  <script>
+    if (typeof window.LOCAL_CONFIG === 'undefined') {
+      window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
+      console.info('🚢 Using Simulation (no local config found)');
+    }
+  </script>
   <script src="utils.js"></script>
   <script src="weather.js"></script>
   <script src="ais.js"></script>
