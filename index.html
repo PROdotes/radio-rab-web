@@ -762,18 +762,14 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <!-- AIS_CONFIG_INJECTION_POINT_DO_NOT_REMOVE -->
+  <!-- INJECT_AIS_CONFIG -->
   <script>
-    window.REAL_TIME_AIS_DATA = window.REAL_TIME_AIS_DATA || { ENABLE_REAL_AIS: false };
-    console.log('🔍 AIS System Diagnostic (v1.0.9):', {
-      buildTime: '${new Date().toISOString()}',
-      runId: 'BUILD_ID_PLACEHOLDER',
-      hasApiKey: !!window.REAL_TIME_AIS_DATA?.AISSTREAM_API_KEY,
-      isRealAis: !!window.REAL_TIME_AIS_DATA?.ENABLE_REAL_AIS,
+    window.LOCAL_CONFIG = window.LOCAL_CONFIG || { ENABLE_REAL_AIS: false };
+    console.log('🔍 AIS System Diagnostic (v2.0.0):', {
+      hasApiKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
+      isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
       libraryLoaded: !!window.AISStreamClient
     });
-    // Link to the old variable for script.js compatibility
-    window.LOCAL_CONFIG = window.REAL_TIME_AIS_DATA;
   </script>
   <script src="script.js"></script>
   <!-- News Reader Modal (Full Story View) -->
