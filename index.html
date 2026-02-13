@@ -765,11 +765,9 @@
   <!--INJECT_AIS_CONFIG_SURGICAL-->
   <script>
     window.LOCAL_CONFIG = window.LOCAL_CONFIG || { ENABLE_REAL_AIS: false };
-    console.log('🔍 System Config Diagnostic (v2.3.0):', {
+    console.log('🔍 System Config Diagnostic (v2.3.1):', {
       token: 'TOKEN_PLACEHOLDER',
       hasAisKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
-      hasNptUser: !!window.LOCAL_CONFIG?.nptUser,
-      hasNptPass: !!window.LOCAL_CONFIG?.nptPass,
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
       libraryLoaded: !!window.AISStreamClient
     });
