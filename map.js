@@ -830,7 +830,7 @@ function updateMapVisualization() {
               <div class="popup-body">
                 <div class="popup-row">
                   <span class="popup-label">Temperatura</span>
-                  <span class="popup-value">${escapeHtml(String(w.temp))}Â°C</span>
+                  <span class="popup-value">${escapeHtml(String(w.temp))}°C</span>
                 </div>
                 <div class="popup-row">
                   <span class="popup-label">Vjetar</span>
@@ -2737,7 +2737,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
       const lng = parseFloat(station.lng)
 
       const windText = `${Math.round(windGust)}`
-      const tempText = station.temp ? `${Math.round(parseFloat(station.temp))}Â°` : ''
+      const tempText = station.temp ? `${Math.round(parseFloat(station.temp))}°` : ''
       const isDanger = windGust > 80
 
       // Orange for strong wind, Red for dangerous
@@ -2764,15 +2764,15 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                     <div style="text-align: center; color: #f1f5f9; min-width: 150px;">
                         <strong style="color: #60a5fa;">${CONFIG.stationNames[station.id] || station.id
               }</strong><br>
-                        <div style="font-size: 1.2rem; margin: 5px 0; font-weight: bold;">${station.temp ? Math.round(parseFloat(station.temp)) + 'Â°C' : '--'
+                        <div style="font-size: 1.2rem; margin: 5px 0; font-weight: bold;">${station.temp ? Math.round(parseFloat(station.temp)) + '°C' : '--'
               }</div>
                         Vjetar: <strong>${station.windSpeed || 0} km/h</strong><br>
                         Udari: <strong style="color: ${windGust > 80 ? '#f87171' : '#f1f5f9'
               }">${Math.round(windGust)} km/h</strong><br>
-                        Smjer: ${getWindArrow(station.windDir)} (${station.windDir || '--'}Â°)<br>
+                        Smjer: ${getWindArrow(station.windDir)} (${station.windDir || '--'}°)<br>
                         ${station.roadTemp
                 ? `<span style="color: ${parseFloat(station.roadTemp) < 0 ? '#f87171' : '#94a3b8'
-                }">Cesta: ${station.roadTemp}Â°C</span>`
+                }">Cesta: ${station.roadTemp}°C</span>`
                 : ''
               }
                     </div>
@@ -2875,7 +2875,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                         gap: 6px;
                         align-items: center;
                     ">
-                        ${temp != null ? `<span>ðŸŒ¡ï¸${Math.round(temp)}Â°</span>` : ''}
+                        ${temp != null ? `<span>ðŸŒ¡ï¸${Math.round(temp)}°</span>` : ''}
                         ${windGust > 0 ? `<span>ðŸ’¨${Math.round(windGust)}</span>` : ''}
                     </div>
                 `,
@@ -2909,7 +2909,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                             <div style="text-align:center; border-left: 1px solid #475569; padding-left: 10px;">
                                 <div style="font-size: 1.4rem; font-weight: bold;">${Math.round(
                   temp
-                )}Â°</div>
+                )}°</div>
                                 <div style="font-size: 0.7rem; color: #94a3b8;">ZRAK</div>
                             </div>`
                 : ''
@@ -2928,7 +2928,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                             </div>
                             <div>ðŸ§­ Smjer:</div>
                             <div style="text-align: right;">${getWindArrow(station.windDir)} ${station.windDir || '--'
-              }Â°</div>
+              }°</div>
                             ${station.humidity != null
                 ? `
                                 <div>ðŸ’§ Vlaga:</div>
@@ -2940,7 +2940,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                 ? `
                                 <div>ðŸ›£ï¸ Cesta:</div>
                                 <div style="text-align: right; color: ${parseFloat(station.roadTemp) < 0 ? '#ef4444' : '#f1f5f9'
-                };">${station.roadTemp}Â°C ${parseFloat(station.roadTemp) < 0 ? 'â„ï¸' : ''
+                };">${station.roadTemp}°C ${parseFloat(station.roadTemp) < 0 ? 'â„ï¸' : ''
                 }</div>
                             `
                 : ''
