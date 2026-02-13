@@ -35,27 +35,21 @@ jobs:
       - name: Prepare Deployment Folder
         run: |
           mkdir public
-          # Copy everything to public folder (recursive)
-          # We use rsync to easily exclude the dev/meta folders
+          # Copy everything except excluded dirs to public
           rsync -av --exclude='.git/' --exclude='.github/' --exclude='node_modules/' --exclude='scripts/' --exclude='.agent/' --exclude='.claude/' --exclude='tools/' --exclude='docs/' --exclude='public/' ./ public/
           
-          # Create the real config inside the deployment folder
-          cat > public/config.local.js << 'EOF'
-          window.LOCAL_CONFIG = {
-            AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
-            FERRY_MMSI: '238690000',
-            ENABLE_REAL_AIS: true,
-            urls: {
-              npt: "https://b2b.promet-info.hr"
-            }
-          };
-          EOF
+          # Create the injection script
+          CONFIG_SCRIPT="<script>window.LOCAL_CONFIG = { AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}', FERRY_MMSI: '238690000', ENABLE_REAL_AIS: true, urls: { npt: 'https://b2b.promet-info.hr' } };</script>"
+          
+          # Inject into index.html
+          # We use a temp file to avoid sed escaping issues with the large string
+          sed -i "s|<!-- AIS_CONFIG_INJECT -->|$CONFIG_SCRIPT|g" public/index.html
           
           # Ensure .nojekyll is in the deployment folder
           touch public/.nojekyll
           
-          echo "Final check of public directory:"
-          ls -la public/
+          echo "Public directory ready for deployment."
+          ls -la public/index.html
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
