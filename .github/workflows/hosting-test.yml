@@ -44,33 +44,33 @@ jobs:
           with open(filename, 'r') as f:
               content = f.read()
           
-          # 1. Inject the Local Variable
-          # Search for the marker with or without leading whitespace
+          # 1. Check for Secret
+          api_key = os.environ.get(\"AIS_KEY\", \"\").strip()
+          if not api_key:
+              print('!! WARNING: AIS_KEY secret is empty or missing from environment !!')
+              api_key = \"SECRET_MISSING_FROM_GITHUB\"
+          
+          # 2. Inject the Variable
           marker = '<!-- INJECT_AIS_CONFIG -->'
-          import re
-          # Regex to find the marker line and replace it
-          pattern = r'^\s*<!-- INJECT_AIS_CONFIG -->\s*$'
-          real_config = f'<script>window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Real-Time AIS Config Injected (Run: {os.environ[\"RUN_ID\"]})\");</script>'
+          real_config = f'<script>window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{api_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Real-Time AIS Config Injected\");</script>'
           
           print(f'Looking for marker: {marker}')
-          # Using regex to replace the entire line including the marker
-          new_content = re.sub(pattern, real_config, content, flags=re.MULTILINE)
-          
-          if new_content != content:
-              print('✓ Marker found via regex. Replacing...')
+          # Simple string replace is safer than regex for line anchors in different environments
+          if marker in content:
+              print('✓ Marker found. Replacing...')
+              new_content = content.replace(marker, real_config)
               with open(filename, 'w') as f:
                   f.write(new_content)
-                  f.flush()
-              print(f'✓ Injection successful (Run ID: {os.environ[\"RUN_ID\"]})')
+              print('✓ Replacement successful.')
           else:
-              print('!! FATAL ERROR: Marker NOT found in dist/index.html via regex !!')
-              print('--- CONTENT SNIPPET NEAR MARKER ---')
-              idx = content.find('INJECT_AIS_CONFIG')
+              print('!! FATAL ERROR: Marker NOT found in dist/index.html !!')
+              # Show snippet of where it should be
+              idx = content.find('ui.js')
               if idx != -1:
-                  print(content[max(0, idx-50):idx+50])
-              else:
-                  print('Marker string not found at all!')
+                  print('Content after ui.js:')
+                  print(content[idx:idx+200])
               exit(1)
+          print('--- GITHUB ACTION DEBUG END ---')
           
           # 2. Final verification of the written file
           with open(filename, 'r') as f:
