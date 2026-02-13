@@ -1,7 +1,7 @@
 /** Radio Rab - Map Module */
-/* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
 
 function initMap() {
+
   const mapEl = document.getElementById('leaflet-map')
   if (!mapEl || state.mapInstance) return // Don't re-init if already exists
 

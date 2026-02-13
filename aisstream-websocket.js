@@ -3,48 +3,53 @@
 
 class AISStreamClient {
   constructor(apiKey, mmsi) {
-    this.apiKey = apiKey;
-    this.mmsi = mmsi;
-    this.ws = null;
-    this.latestData = null;
-    this.onDataCallback = null;
+    this.apiKey = apiKey
+    this.mmsi = mmsi
+    this.ws = null
+    this.latestData = null
+    this.onDataCallback = null
   }
 
   connect() {
-    console.log('Connecting to AISStream.io...');
-    console.log('Using API key:', this.apiKey.substring(0, 10) + '...');
+    console.log('Connecting to AISStream.io...')
+    console.log('Using API key:', this.apiKey.substring(0, 10) + '...')
 
     try {
-      this.ws = new WebSocket('wss://stream.aisstream.io/v0/stream');
+      this.ws = new WebSocket('wss://stream.aisstream.io/v0/stream')
     } catch (err) {
-      console.error('Failed to create WebSocket:', err);
-      return;
+      console.error('Failed to create WebSocket:', err)
+      return
     }
 
     this.ws.onopen = () => {
-      console.log('✓ Connected to AISStream.io');
+      console.log('✓ Connected to AISStream.io')
 
       // Subscribe to specific vessel by MMSI
       const subscription = {
         APIKey: this.apiKey,
         BoundingBoxes: [
           // Croatian Adriatic region
-          [[44.5, 14.5], [45.0, 15.0]]
+          [
+            [44.5, 14.5],
+            [45.0, 15.0],
+          ],
         ],
-        FilterMessageTypes: ['PositionReport']
-      };
+        FiltersShipMMSI: [this.mmsi],
+        FilterMessageTypes: ['PositionReport'],
+      }
 
-      this.ws.send(JSON.stringify(subscription));
-      console.log(`Subscribed to MMSI: ${this.mmsi} in Croatian waters`);
-    };
+      this.ws.send(JSON.stringify(subscription))
+      console.log(`Subscribed to MMSI: ${this.mmsi} in Croatian waters`)
+    }
 
     this.ws.onmessage = (event) => {
       try {
-        const message = JSON.parse(event.data);
+        const message = JSON.parse(event.data)
 
-        // Check if this is our vessel
-        if (message.MetaData?.MMSI === parseInt(this.mmsi)) {
-          const posReport = message.Message?.PositionReport;
+        // Check if this is our vessel (compare as strings to handle both types)
+        const msgMmsi = String(message.MetaData?.MMSI || '')
+        if (msgMmsi === String(this.mmsi)) {
+          const posReport = message.Message?.PositionReport
 
           if (posReport) {
             this.latestData = {
@@ -62,50 +67,50 @@ class AISStreamClient {
               eta: message.MetaData.Eta || 'N/A',
               status: this.getNavStatus(posReport.NavigationalStatus),
               timestamp: message.MetaData.time_utc,
-              source: 'AISStream.io (Live)'
-            };
+              source: 'AISStream.io (Live)',
+            }
 
-            console.log('✓ Received AIS update:', this.latestData);
+            console.log('✓ Received AIS update:', this.latestData)
 
             if (this.onDataCallback) {
-              this.onDataCallback(this.latestData);
+              this.onDataCallback(this.latestData)
             }
           }
         }
       } catch (err) {
-        console.error('Error parsing AIS message:', err);
+        console.error('Error parsing AIS message:', err)
       }
-    };
+    }
 
     this.ws.onerror = (error) => {
-      console.error('AISStream WebSocket error:', error);
-    };
+      console.error('AISStream WebSocket error:', error)
+    }
 
     this.ws.onclose = () => {
-      console.log('AISStream connection closed. Reconnecting in 5s...');
-      setTimeout(() => this.connect(), 5000);
-    };
+      console.log('AISStream connection closed. Reconnecting in 5s...')
+      setTimeout(() => this.connect(), 5000)
+    }
   }
 
   onData(callback) {
-    this.onDataCallback = callback;
+    this.onDataCallback = callback
   }
 
   getLatestData() {
-    return this.latestData;
+    return this.latestData
   }
 
   disconnect() {
     if (this.ws) {
-      this.ws.close();
+      this.ws.close()
     }
   }
 
   getShipType(typeCode) {
     // AIS ship type codes
-    if (typeCode >= 60 && typeCode <= 69) return 'Passenger Ship';
-    if (typeCode >= 70 && typeCode <= 79) return 'Cargo Ship';
-    return 'Passenger/Ro-Ro Cargo Ship';
+    if (typeCode >= 60 && typeCode <= 69) return 'Passenger Ship'
+    if (typeCode >= 70 && typeCode <= 79) return 'Cargo Ship'
+    return 'Passenger/Ro-Ro Cargo Ship'
   }
 
   getNavStatus(status) {
@@ -119,13 +124,13 @@ class AISStreamClient {
       6: 'Aground',
       7: 'Engaged in fishing',
       8: 'Under way sailing',
-      15: 'Not defined'
-    };
-    return statuses[status] || 'Unknown';
+      15: 'Not defined',
+    }
+    return statuses[status] || 'Unknown'
   }
 }
 
 // Export for use in main script
 if (typeof window !== 'undefined') {
-  window.AISStreamClient = AISStreamClient;
+  window.AISStreamClient = AISStreamClient
 }
