@@ -762,13 +762,12 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <!--INJECT_AIS_CONFIG_SURGICAL-->
+  <script id="ais-config-loader">/* PROD_CONFIG_LOADER */</script>
   <script>
     window.LOCAL_CONFIG = window.LOCAL_CONFIG || { ENABLE_REAL_AIS: false };
-    console.log('🔍 System Config Diagnostic (v2.3.1):', {
-      token: 'TOKEN_PLACEHOLDER',
-      hasAisKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
+    console.log('🔍 System Config Diagnostic (v2.4.0):', {
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
+      hasAisKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
       libraryLoaded: !!window.AISStreamClient
     });
   </script>

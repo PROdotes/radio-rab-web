@@ -40,58 +40,44 @@ jobs:
           cp -r *.html *.js *.css *.json data scripts dist/ || true
           
           python3 -c "
-          import os
-          print('--- GITHUB ACTION DEBUG START ---')
-          filename = 'dist/index.html'
-          with open(filename, 'r') as f:
-              content = f.read()
+          import os, json
+          run_id = os.environ.get('RUN_ID', 'UNK')
+          ais_key = os.environ.get('AIS_KEY', '').strip()
           
-          def get_secret(name):
-              val = os.environ.get(name, \"\").strip()
-              print(f\"DEBUG: {name} exists={bool(val)}, Length={len(val)}\")
-              return val
-          
-          ais_key = get_secret(\"AIS_KEY\")
           if not ais_key:
-              print('!! FATAL ERROR: AISSTREAM_API_KEY is missing !!')
+              print('!! FATAL: AIS Key missing !!')
               exit(1)
           
-          # 2. Inject the Variable
-          # We search for the marker AND the fallback line to replace them both in one block
-          marker = '<!--INJECT_AIS_CONFIG_SURGICAL-->'
-          fallback_line = 'window.LOCAL_CONFIG = window.LOCAL_CONFIG || { ENABLE_REAL_AIS: false };'
-          
+          # 1. Create a UNIQUE config file
+          config_filename = f'config.prod.{run_id}.js'
           config_payload = {
-              \"AISSTREAM_API_KEY\": ais_key,
-              \"nptUser\": get_secret(\"NPT_USER\"),
-              \"nptPass\": get_secret(\"NPT_PASS\"),
-              \"FERRY_MMSI\": \"238690000\",
-              \"ENABLE_REAL_AIS\": True,
-              \"urls\": { \"npt\": \"https://b2b.promet-info.hr\" }
+              'AISSTREAM_API_KEY': ais_key,
+              'nptUser': os.environ.get('NPT_USER', ''),
+              'nptPass': os.environ.get('NPT_PASS', ''),
+              'FERRY_MMSI': '238690000',
+              'ENABLE_REAL_AIS': True,
+              'urls': { 'npt': 'https://b2b.promet-info.hr' }
           }
           
-          import json
-          js_config = f'<script>window.LOCAL_CONFIG = {json.dumps(config_payload)}; console.info(\"🚢 System Config Injected (v2.3.1)\");</script>'
+          with open(f'dist/{config_filename}', 'w') as f:
+              f.write(f'window.LOCAL_CONFIG = {json.dumps(config_payload)};')
+              f.write(f'\nconsole.info(\"🚢 Global Config loaded from {config_filename}\");')
+          
+          # 2. Update index.html to load THIS SPECIFIC FILE
+          with open('dist/index.html', 'r') as f:
+              content = f.read()
+          
+          marker = '/* PROD_CONFIG_LOADER */'
+          loader_code = f'const s=document.createElement(\"script\");s.src=\"{config_filename}\";document.head.appendChild(s);'
           
           if marker in content:
-              print(f'✓ Marker found. Injecting...')
-              # Replace the marker and the fallback line with our real config
-              content = content.replace(marker, js_config)
-              # Remove the fallback line so it doesn't execute
-              content = content.replace(fallback_line, \"// Fallback overridden by production injection\")
-              
-              run_token = f'RUN_{os.environ.get(\"RUN_ID\", \"UNK\")[-5:]}'
-              content = content.replace('TOKEN_PLACEHOLDER', run_token)
-              
-              with open(filename, 'w') as f:
+              content = content.replace(marker, loader_code)
+              with open('dist/index.html', 'w') as f:
                   f.write(content)
-                  f.flush()
-                  os.fsync(f.fileno())
-              print(f'✓ Write successful. Token: {run_token}')
+              print(f'✓ Linked index.html to {config_filename}')
           else:
-              print(f'!! FATAL ERROR: Marker {marker} NOT found !!')
+              print('!! FATAL: Marker not found !!')
               exit(1)
-          print('--- GITHUB ACTION DEBUG END ---')
           "
           touch dist/.nojekyll
       - name: Deploy to GitHub Pages
