@@ -35,34 +35,47 @@ jobs:
         run: |
           python3 -c "
           import os
-          print('--- Starting Secret Injection ---')
+          print('--- GITHUB ACTION DIAGNOSTIC START ---')
           filename = 'index.html'
           with open(filename, 'r') as f:
-              lines = f.readlines()
+              content = f.read()
           
-          found = False
+          marker = 'id=\"ais-config\"'
+          print(f'Looking for marker: {marker}')
+          
+          if marker not in content:
+              print('!! ERROR: Marker NOT found in file content !!')
+              print('Last 20 lines of file for context:')
+              print(''.join(content.splitlines()[-20:]))
+              exit(1)
+              
+          real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
+          
+          lines = content.splitlines()
           new_lines = []
-          real_config = f'  <script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>\n'
-          
-          for line in lines:
-              if 'id=\"ais-config\"' in line:
-                  print(f'Match found on line: {line.strip()}')
+          found = False
+          for i, line in enumerate(lines):
+              if marker in line:
+                  print(f'MATCH on line {i+1}: {line.strip()}')
                   new_lines.append(real_config)
                   found = True
               else:
                   new_lines.append(line)
-          
+                  
           if found:
               with open(filename, 'w') as f:
-                  f.writelines(new_lines)
-              print('✓ Successfully injected secrets into index.html')
+                  f.write('\n'.join(new_lines))
+              print('✓ Replacement successful.')
           else:
-              print('FATAL ERROR: Could not find any line containing id=\"ais-config\"')
-              print('First 10 lines of index.html for debug:')
-              print(''.join(lines[:10]))
+              print('!! ERROR: Marker found in string search but line-by-line loop failed !!')
               exit(1)
+          print('--- GITHUB ACTION DIAGNOSTIC END ---')
           "
           touch .nojekyll
+      - name: Verify index.html State
+        run: |
+          echo "Checking if injection stuck..."
+          grep "Production Config Injected" index.html || (echo "FAILED: Injection not found in file after write!" && exit 1)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

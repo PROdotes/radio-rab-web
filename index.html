@@ -763,6 +763,14 @@
   <script src="map.js"></script>
   <script src="ui.js"></script>
   <script id="ais-config">window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>
+  <script>
+    console.log('🔍 AIS System Diagnostic:', {
+      env: window.LOCAL_CONFIG?.AISSTREAM_API_KEY ? 'PRODUCTION' : 'LOCAL/SIMULATION',
+      realAisEnabled: window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
+      hasApiKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
+      libraryLoaded: !!window.AISStreamClient
+    });
+  </script>
   <script src="script.js"></script>
   <!-- News Reader Modal (Full Story View) -->
   <div id="news-reader-modal" class="modal" role="dialog" aria-modal="true" hidden>
