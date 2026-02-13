@@ -762,13 +762,26 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <script id="ais-config">/* PRODUCTION_CONFIG_REPLACE_ME */ window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>
   <script>
-    console.log('🔍 AIS System Diagnostic (v1.0.5):', {
-      env: window.LOCAL_CONFIG?.AISSTREAM_API_KEY ? 'PRODUCTION' : 'LOCAL/SIMULATION',
+    (function () {
+      const s = document.createElement('script');
+      s.src = 'prod-env.js?v=' + Date.now();
+      s.onerror = () => console.info('📡 No prod-env.js found (Expected in local dev)');
+      document.currentScript.parentNode.insertBefore(s, document.currentScript);
+    })();
+  </script>
+  <script id="ais-config">
+    // window.AIS_PROD_DATA will be defined in prod-env.js if it exists
+    window.LOCAL_CONFIG = window.AIS_PROD_DATA || { ENABLE_REAL_AIS: false };
+  </script>
+  <script>
+    console.log('🔍 AIS System Diagnostic (v1.0.7):', {
+      timestamp: new Date().toISOString(),
+      location: window.location.href,
+      hasAisProdData: !!window.AIS_PROD_DATA,
       hasApiKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
-      libraryLoaded: !!window.AISStreamClient,
-      rawTagContent: document.getElementById('ais-config')?.innerHTML?.trim()
+      apiKeySource: window.AIS_PROD_DATA ? 'FILE' : 'DEFAULT',
+      libraryLoaded: !!window.AISStreamClient
     });
   </script>
   <script src="script.js"></script>

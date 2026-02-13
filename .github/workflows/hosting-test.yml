@@ -29,74 +29,46 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Inject Production Secrets
+      - name: Prepare Clean Distribution
         env:
           AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
         run: |
-          # Encode the key in base64 to avoid all escaping hell
-          ENCODED_KEY=$(echo -n "$AIS_KEY" | base64 | tr -d '\n')
+          mkdir dist
+          echo "--- TRACKED FILES ---"
+          ls -R
           
-          python3 -c "
-          import os, base64
-          filename = 'index.html'
-          marker = '/* PRODUCTION_CONFIG_REPLACE_ME */'
+          # Copy every tracked file to dist
+          cp -r *.html *.js *.css *.json data scripts dist/ || true
           
-          print('--- Step 1: Reading File ---')
-          with open(filename, 'r') as f:
-              content = f.read()
+          echo "--- CREATING PROD-ENV.JS ---"
+          # Create the production secret file INSIDE dist
+          cat > dist/prod-env.js << 'EOF'
+          window.AIS_PROD_DATA = {
+            AISSTREAM_API_KEY: 'REPLACE_ME',
+            FERRY_MMSI: '238690000',
+            ENABLE_REAL_AIS: true,
+            urls: { npt: 'https://b2b.promet-info.hr' }
+          };
+          console.info('🚢 Production Secret File Loaded (v1.0.7)');
+          EOF
           
-          print(f'File size: {len(content)} bytes')
-          print(f'Marker found in content strings: {marker in content}')
+          # Use sed for the actual key to avoid shell escaping issues in cat
+          sed -i "s|REPLACE_ME|$AIS_KEY|g" dist/prod-env.js
           
-          if marker in content:
-              # Decode the b64 key back to a safe JS string
-              encoded_val = '$ENCODED_KEY'
-              real_key = base64.b64decode(encoded_val).decode('utf-8')
-              
-              # Log key length (don't log the key!)
-              print(f'API Key decoded, length: {len(real_key)}')
-              
-              real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{real_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
-              
-              lines = content.splitlines()
-              new_lines = []
-              found = False
-              print('--- Step 2: Line Search ---')
-              for i, line in enumerate(lines):
-                  if marker in line:
-                      print(f'Line {i+1} MATCH: {line.strip()[:100]}...')
-                      new_lines.append(real_config)
-                      found = True
-                  else:
-                      new_lines.append(line)
-              
-              if found:
-                  with open(filename, 'w') as f:
-                      f.write('\n'.join(new_lines))
-                  print('✓ Injection successful (B64 Secure)')
-              else:
-                  print('!! Error: Marker found in block but failed line match !!')
-                  exit(1)
-          else:
-              print('!! Error: Marker not found in index.html !!')
-              # Find where 'ais-config' is
-              idx = content.find('id=\"ais-config\"')
-              if idx != -1:
-                  print('Context around id=\"ais-config\":')
-                  print(content[max(0, idx-50):idx+150])
-              exit(1)
-          "
-          touch .nojekyll
-      - name: Verify and Print Debug
-        run: |
-          echo "--- FINAL VERIFICATION ---"
-          grep "Production Config Injected" index.html
-          echo "--- CONTEXT AROUND TAG ---"
-          grep -C 5 "ais-config" index.html
+          # Force nojekyll
+          touch dist/.nojekyll
+          
+          echo "--- VERIFICATION ---"
+          echo "File exists: $(ls dist/prod-env.js)"
+          echo "File size: $(stat -c%s dist/prod-env.js) bytes"
+          echo "Key length check: $(grep -o "AISSTREAM_API_KEY: '.*'" dist/prod-env.js | wc -c)"
+          
+          echo "Contents of dist/:"
+          ls -F dist/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./dist
           force_orphan: true
           dotfiles: true
