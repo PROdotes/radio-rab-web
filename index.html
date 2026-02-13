@@ -762,12 +762,11 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <!-- INJECT_AIS_CONFIG -->
+  <!--INJECT_AIS_CONFIG_SURGICAL-->
   <script>
     window.LOCAL_CONFIG = window.LOCAL_CONFIG || { ENABLE_REAL_AIS: false };
-    console.log('🔍 AIS System Diagnostic (v2.0.2):', {
-      buildId: 'BUILD_ID_PLACEHOLDER',
-      buildTime: 'BUILD_TIME_PLACEHOLDER',
+    console.log('🔍 AIS System Diagnostic (v2.2.0):', {
+      buildToken: 'TOKEN_PLACEHOLDER',
       hasApiKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
       keyLength: window.LOCAL_CONFIG?.AISSTREAM_API_KEY?.length || 0,
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,

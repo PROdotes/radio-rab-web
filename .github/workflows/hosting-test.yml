@@ -44,41 +44,33 @@ jobs:
           with open(filename, 'r') as f:
               content = f.read()
           
-          # 1. Check for Secret
+          # 1. Check for Secret (Strict Mode)
           api_key = os.environ.get(\"AIS_KEY\", \"\").strip()
-          if not api_key:
-              print('!! WARNING: AIS_KEY secret is empty or missing from environment !!')
-              api_key = \"SECRET_MISSING_FROM_GITHUB\"
+          if not api_key or len(api_key) < 10:
+              print('!! FATAL ERROR: AISSTREAM_API_KEY is missing or too short !!')
+              print('Please check your GitHub Repository Secrets.')
+              exit(1)
           
           # 2. Inject the Variable
-          marker = '<!-- INJECT_AIS_CONFIG -->'
-          # Inject the variables AND the cache busters
-          real_config = f'<script>window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{api_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Real-Time AIS Config Injected (v2.0.2)\");</script>'
+          marker = '<!--INJECT_AIS_CONFIG_SURGICAL-->'
+          real_config = f'<script>window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{api_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Real-Time AIS Config Injected (v2.2.0)\");</script>'
           
-          print(f'Looking for marker: {marker}')
           if marker in content:
-              print('✓ Marker found. Replacing...')
+              print(f'✓ Marker found. Injecting secret...')
               content = content.replace(marker, real_config)
-              # Also inject Build ID and Time for cache verification
-              content = content.replace('BUILD_ID_PLACEHOLDER', os.environ.get(\"RUN_ID\", \"Unknown\"))
-              content = content.replace('BUILD_TIME_PLACEHOLDER', \"NOW\") 
+              # Create a unique token for this specific run
+              run_token = f'RUN_{os.environ.get(\"RUN_ID\", \"UNK\")[0:5]}'
+              content = content.replace('TOKEN_PLACEHOLDER', run_token)
               
               with open(filename, 'w') as f:
                   f.write(content)
-              print('✓ Replacement successful.')
+                  f.flush()
+                  os.fsync(f.fileno())
+              print(f'✓ Injection successful (Token: {run_token})')
           else:
-              print('!! FATAL ERROR: Marker NOT found in dist/index.html !!')
+              print(f'!! FATAL ERROR: Marker {marker} NOT found !!')
               exit(1)
           print('--- GITHUB ACTION DEBUG END ---')
-          
-          # 3. Final verification of the written file
-          with open(filename, 'r') as f:
-              check_content = f.read()
-          if 'Real-Time AIS Config Injected' in check_content:
-              print('✓ Verified: Success string exists in file after write.')
-          else:
-              print('!! FATAL ERROR: Success string MISSING after write !!')
-              exit(1)
           print('--- GITHUB ACTION DEBUG END ---')
           "
           touch dist/.nojekyll
