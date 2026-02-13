@@ -191,7 +191,7 @@ function initStickyOffsets() {
     // Use header's bottom to place the sticky wrapper exactly below it
     const headerBottom = Math.ceil(header.getBoundingClientRect().bottom)
 
-    // Minimal gap (0) â€” visual nudge handled in CSS to keep JS math exact
+    // Minimal gap (0) — visual nudge handled in CSS to keep JS math exact
     const gap = 0
 
     if (window.innerWidth <= 768) {

@@ -249,7 +249,7 @@ function initMap() {
 
   // Monitor ferry layer changes for diagnostics
   try {
-    // (removed diagnostics) no-op â€” keep ferry layer listeners silent in normal runs
+    // (removed diagnostics) no-op — keep ferry layer listeners silent in normal runs
   } catch (e) {
     // ignore if events unsupported
   }
@@ -1283,7 +1283,7 @@ function updateMapVisualization() {
     debugLog('Map: reusing existing superIndex')
   }
 
-  // Render clusters for current viewport â€” do a marker diff to avoid DOM churn
+  // Render clusters for current viewport — do a marker diff to avoid DOM churn
   if (!state.clusterLayer) state.clusterLayer = L.layerGroup().addTo(state.mapInstance)
 
   const bounds = state.mapInstance.getBounds()
@@ -1599,7 +1599,7 @@ function updateMapVisualization() {
 
   const __mapTiming_end =
     typeof performance !== 'undefined' && performance.now ? performance.now() : Date.now()
-  // Emit timing log (always visible) â€” helpful for debugging in browsers with tricky consoles
+  // Emit timing log (always visible) — helpful for debugging in browsers with tricky consoles
   try {
     // Silent timing: send to debugLog so it only appears when debugging is enabled
     debugLog(
@@ -2283,7 +2283,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                 return
               }
             }
-            // No original remover available â€” skip and warn
+            // No original remover available — skip and warn
             debugWarn && debugWarn('Ferry: protected marker; skipping remove', cand._leaflet_id)
             return
           }
@@ -2629,28 +2629,28 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
 
     const type = getAlertType(alert)
     let color = '#3b82f6' // Default Blue
-    let iconChar = '⚠️'
+    let iconChar = '⚠️'
 
     if (type === 'accident') {
       color = '#ef4444'
-      iconChar = 'ðŸ’¥'
+      iconChar = '💥'
     } else if (type === 'roadworks') {
       color = '#f97316'
-      iconChar = 'ðŸš§'
+      iconChar = '🚧'
     } else if (type === 'wind') {
       color = '#06b6d4'
-      iconChar = 'ðŸ’¨'
+      iconChar = '💨'
     } else if (type === 'closure') {
       color = '#dc2626'
-      iconChar = 'â›”'
+      iconChar = '⛔'
     } else if (type === 'info') {
       color = '#3b82f6'
-      iconChar = 'â„¹ï¸'
+      iconChar = 'ℹ️'
     }
 
     // Type Translations
     const typeTranslations = {
-      accident: 'PROMETNA NESREÄ†A',
+      accident: 'PROMETNA NESREĆA',
       roadworks: 'RADOVI NA CESTI',
       roadwork: 'RADOVI NA CESTI',
       maintenance: 'ODRŽAVANJE',
@@ -2693,7 +2693,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
                     ${alert.validFrom
               ? `
                         <div style="font-size: 0.85em; color: #cbd5e1; margin-top: 8px; border-top: 1px solid #334155; padding-top: 5px;">
-                            ðŸ“… <strong>Trajanje:</strong><br>
+                            📅 <strong>Trajanje:</strong><br>
                             ${new Date(alert.validFrom).toLocaleDateString('hr-HR')} - ${new Date(
                 alert.validUntil
               ).toLocaleDateString('hr-HR')}
@@ -2747,8 +2747,8 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
         className: 'weather-station-icon',
         html: `
                     <div style="background-color: ${bgColor}; padding: 2px 6px; border-radius: 12px; color: white; font-weight: bold; font-size: 10px; border: 1px solid white; white-space: nowrap; box-shadow: 0 2px 4px rgba(0,0,0,0.2); display: flex; gap: 3px; align-items: center; opacity: 0.9;">
-                        ${windText ? `<span>ðŸ’¨ ${windText}</span>` : ''}
-                        ${tempText ? `<span>ðŸŒ¡ï¸ ${tempText}</span>` : ''}
+                        ${windText ? `<span>💨 ${windText}</span>` : ''}
+                        ${tempText ? `<span>🌡️ ${tempText}</span>` : ''}
                     </div>
                 `,
         iconSize: [50, 20],
@@ -2822,7 +2822,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
             .bindPopup(
               `
                     <div style="text-align: center; color: #f1f5f9; font-size: 0.9rem; min-width: 150px;">
-                        <strong style="color: #a78bfa;">ðŸ“¡ ${escapeHtml(
+                        <strong style="color: #a78bfa;">📡 ${escapeHtml(
                 counter.name
               )}</strong><br>
                         ${hasData
@@ -2933,16 +2933,16 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
               }°</div>
                             ${station.humidity != null
                 ? `
-                                <div>ðŸ’§ Vlaga:</div>
+                                <div>💧 Vlaga:</div>
                                 <div style="text-align: right;">${station.humidity}%</div>
                             `
                 : ''
               }
                             ${station.roadTemp
                 ? `
-                                <div>ðŸ›£ï¸ Cesta:</div>
+                                <div>🛣️ Cesta:</div>
                                 <div style="text-align: right; color: ${parseFloat(station.roadTemp) < 0 ? '#ef4444' : '#f1f5f9'
-                };">${station.roadTemp}°C ${parseFloat(station.roadTemp) < 0 ? 'â„ï¸' : ''
+                };">${station.roadTemp}°C ${parseFloat(station.roadTemp) < 0 ? '❄️' : ''
                 }</div>
                             `
                 : ''
@@ -2959,11 +2959,11 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
 }
 
 function getWindArrow(azimuth) {
-  if (azimuth === null || azimuth === undefined) return 'â€¢'
+  if (azimuth === null || azimuth === undefined) return '•'
   const val = parseInt(azimuth)
-  if (isNaN(val)) return 'â€¢'
+  if (isNaN(val)) return '•'
   return `<span style="display:inline-block; transform: rotate(${val + 180
-    }deg); font-weight:bold;">â†‘</span>`
+    }deg); font-weight:bold;">↑</span>`
 }
 
 /**
@@ -2977,7 +2977,7 @@ function addMapControls() {
     options: { position: 'topleft' },
     onAdd: function () {
       const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control custom-map-btn')
-      container.innerHTML = '<a href="#" title="Centriraj na otok Rab" role="button">ðŸ </a>'
+      container.innerHTML = '<a href="#" title="Centriraj na otok Rab" role="button">🏠</a>'
       container.style.backgroundColor = 'rgba(15, 23, 42, 0.9)'
       container.style.border = '1px solid var(--border)'
       container.style.borderRadius = '8px'
@@ -2996,7 +2996,7 @@ function addMapControls() {
     options: { position: 'topleft' },
     onAdd: function () {
       const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control custom-map-btn')
-      container.innerHTML = '<a href="#" title="Moja lokacija" role="button">ðŸ“</a>'
+      container.innerHTML = '<a href="#" title="Moja lokacija" role="button">📍</a>'
       container.style.backgroundColor = 'rgba(15, 23, 42, 0.9)'
       container.style.border = '1px solid var(--border)'
       container.style.borderRadius = '8px'
