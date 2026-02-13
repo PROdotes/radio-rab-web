@@ -34,11 +34,19 @@ jobs:
           AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
         run: |
           python3 -c "
-          import os
+          import os, re
           content = open('index.html').read()
           real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
-          new_content = content.replace('<script id=\"ais-config\">window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>', real_config)
-          with open('index.html', 'w') as f: f.write(new_content)
+          
+          # Use regex to find the tag regardless of leading whitespace
+          pattern = r'<script id=\"ais-config\">window\.LOCAL_CONFIG = \{ ENABLE_REAL_AIS: false \};</script>'
+          if re.search(pattern, content):
+              new_content = re.sub(pattern, real_config, content)
+              with open('index.html', 'w') as f: f.write(new_content)
+              print('✓ Injected secrets into index.html')
+          else:
+              print('Error: Could not find ais-config tag in index.html!')
+              exit(1)
           "
           touch .nojekyll
       - name: Deploy to GitHub Pages
