@@ -32,9 +32,15 @@ jobs:
       - run: npm install
       - name: Disable Jekyll
         run: touch .nojekyll
-      - name: Create Config
+      - name: Prepare Deployment Folder
         run: |
-          cat > config.local.js << 'EOF'
+          mkdir public
+          # Copy everything to public folder (recursive)
+          # We use rsync to easily exclude the dev/meta folders
+          rsync -av --exclude='.git/' --exclude='.github/' --exclude='node_modules/' --exclude='scripts/' --exclude='.agent/' --exclude='.claude/' --exclude='tools/' --exclude='docs/' --exclude='public/' ./ public/
+          
+          # Create the real config inside the deployment folder
+          cat > public/config.local.js << 'EOF'
           window.LOCAL_CONFIG = {
             AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
             FERRY_MMSI: '238690000',
@@ -44,10 +50,14 @@ jobs:
             }
           };
           EOF
-          # Remove it from .gitignore for the deployment step so it gets picked up
-          sed -i '/config.local.js/d' .gitignore || true
+          
+          # Ensure .nojekyll is in the deployment folder
+          touch public/.nojekyll
+          
+          echo "Final check of public directory:"
+          ls -la public/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: public
