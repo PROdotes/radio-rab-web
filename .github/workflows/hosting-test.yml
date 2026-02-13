@@ -30,15 +30,22 @@ jobs:
         with:
           node-version: '18'
       - run: npm install
+      - name: Disable Jekyll
+        run: touch .nojekyll
       - name: Create Config
         run: |
           cat > config.local.js << 'EOF'
           window.LOCAL_CONFIG = {
             AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
             FERRY_MMSI: '238690000',
-            ENABLE_REAL_AIS: true
+            ENABLE_REAL_AIS: true,
+            urls: {
+              npt: "https://b2b.promet-info.hr"
+            }
           };
           EOF
+          # Remove it from .gitignore for the deployment step so it gets picked up
+          sed -i '/config.local.js/d' .gitignore || true
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
