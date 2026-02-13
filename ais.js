@@ -83,18 +83,6 @@ async function showVesselAISModal(imo) {
  * @returns {Promise<Object>} Vessel data
  */
 async function fetchVesselAISData(imo) {
-  // Try to load from local data file first
-  try {
-    const response = await fetch('data/ferry-ais.json')
-    if (response.ok) {
-      const data = await response.json()
-      console.log('Using local AIS data:', data)
-      return data
-    }
-  } catch (err) {
-    console.warn('Local AIS data not available:', err)
-  }
-
   // Try to get data from AISStream WebSocket if available
   if (window.aisStreamClient && window.aisStreamClient.getLatestData()) {
     const data = window.aisStreamClient.getLatestData()
