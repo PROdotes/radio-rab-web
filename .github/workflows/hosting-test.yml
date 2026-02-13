@@ -34,36 +34,24 @@ jobs:
           AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
         run: |
           mkdir dist
-          echo "--- TRACKED FILES ---"
-          ls -R
-          
           # Copy every tracked file to dist
           cp -r *.html *.js *.css *.json data scripts dist/ || true
           
-          echo "--- CREATING PROD-ENV.JS ---"
-          # Create the production secret file INSIDE dist
-          cat > dist/prod-env.js << 'EOF'
-          window.AIS_PROD_DATA = {
-            AISSTREAM_API_KEY: 'REPLACE_ME',
-            FERRY_MMSI: '238690000',
-            ENABLE_REAL_AIS: true,
-            urls: { npt: 'https://b2b.promet-info.hr' }
-          };
-          console.info('🚢 Production Secret File Loaded (v1.0.7)');
-          EOF
+          echo "--- INJECTING SECRETS ---"
+          # Define the real config string (escaped for JS)
+          # We use a placeholder that matches exactly what is in index.html
+          REAL_KEY_DATA="window.LOCAL_CONFIG = { AISSTREAM_API_KEY: '$AIS_KEY', FERRY_MMSI: '238690000', ENABLE_REAL_AIS: true, urls: { npt: 'https://b2b.promet-info.hr' } }; console.info('🚢 Production Config Injected (v1.0.8)');"
           
-          # Use sed for the actual key to avoid shell escaping issues in cat
-          sed -i "s|REPLACE_ME|$AIS_KEY|g" dist/prod-env.js
+          # Replace the specific marker line inside the script tag
+          # This replaces EVERYTHING between the /* */ comments
+          sed -i "s|/\* INJECT_PROD_CONFIG \*/ .*|/\* INJECT_PROD_CONFIG \*/ $REAL_KEY_DATA</script>|g" dist/index.html
           
           # Force nojekyll
           touch dist/.nojekyll
           
           echo "--- VERIFICATION ---"
-          echo "File exists: $(ls dist/prod-env.js)"
-          echo "File size: $(stat -c%s dist/prod-env.js) bytes"
-          echo "Key length check: $(grep -o "AISSTREAM_API_KEY: '.*'" dist/prod-env.js | wc -c)"
-          
-          echo "Contents of dist/:"
+          grep "Production Config Injected" dist/index.html || (echo "FATAL: Injection failed!" && exit 1)
+          echo "Success: Secrets injected into dist/index.html"
           ls -F dist/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

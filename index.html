@@ -762,25 +762,12 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
+  <script id="ais-config">/* INJECT_PROD_CONFIG */ window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>
   <script>
-    (function () {
-      const s = document.createElement('script');
-      s.src = 'prod-env.js?v=' + Date.now();
-      s.onerror = () => console.info('📡 No prod-env.js found (Expected in local dev)');
-      document.currentScript.parentNode.insertBefore(s, document.currentScript);
-    })();
-  </script>
-  <script id="ais-config">
-    // window.AIS_PROD_DATA will be defined in prod-env.js if it exists
-    window.LOCAL_CONFIG = window.AIS_PROD_DATA || { ENABLE_REAL_AIS: false };
-  </script>
-  <script>
-    console.log('🔍 AIS System Diagnostic (v1.0.7):', {
+    console.log('🔍 AIS System Diagnostic (v1.0.8):', {
       timestamp: new Date().toISOString(),
-      location: window.location.href,
-      hasAisProdData: !!window.AIS_PROD_DATA,
       hasApiKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
-      apiKeySource: window.AIS_PROD_DATA ? 'FILE' : 'DEFAULT',
+      isRealAisEnabled: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
       libraryLoaded: !!window.AISStreamClient
     });
   </script>
