@@ -196,6 +196,7 @@
 
       <div class="editorial-grid">
         <div class="main-feed-column">
+
           <!-- FEATURED STORY -->
           <div id="primary-feature-container" aria-live="polite">
             <!-- Hero article injected by JS -->
@@ -501,44 +502,169 @@
     </div>
   </div>
 
-  <!-- Staff Admin Modal (NEW) -->
+  <!-- Staff Admin Modal (UPDATED) -->
   <div id="admin-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="admin-title" hidden>
-    <div class="modal-content glass admin-panel">
+    <div class="modal-content glass admin-panel admin-large">
       <button type="button" class="modal-close" id="admin-close" aria-label="Zatvori">
         &times;
       </button>
-      <h2 id="admin-title">Staff Control Center</h2>
-      <p>Ručno upravljanje statusom otoka u izvanrednim situacijama.</p>
+      <div class="admin-header-area">
+        <h2 id="admin-title">Staff Control Center</h2>
+        <nav class="admin-tabs" aria-label="Admin tabs">
+          <button class="admin-tab-btn active" data-admin-tab="status">Status Otoka</button>
+          <button class="admin-tab-btn" data-admin-tab="news">Upravljanje Vijestima</button>
+          <button class="admin-tab-btn" data-admin-tab="gallery">Galerija Medija</button>
+        </nav>
+      </div>
 
-      <div class="admin-grid">
-        <div class="admin-control-card">
-          <div class="control-header">
-            <span class="icon">⚓</span>
-            <h4>Ferry Override</h4>
+      <!-- Tab: Status -->
+      <div class="admin-tab-content active" id="admin-tab-status">
+        <p>Ručno upravljanje statusom otoka u izvanrednim situacijama.</p>
+        <div class="admin-grid">
+          <div class="admin-control-card">
+            <div class="control-header">
+              <span class="icon">⚓</span>
+              <h4>Ferry Override</h4>
+            </div>
+            <p>Zaustavi prikaz plovidbe (Bura/Stoj)</p>
+            <label class="switch">
+              <input type="checkbox" id="ferry-override-toggle" />
+              <span class="slider round"></span>
+            </label>
           </div>
-          <p>Zaustavi prikaz plovidbe (Bura/Stoj)</p>
-          <label class="switch">
-            <input type="checkbox" id="ferry-override-toggle" />
-            <span class="slider round"></span>
-          </label>
+
+          <div class="admin-control-card">
+            <div class="control-header">
+              <span class="icon">🚗</span>
+              <h4>D8 Magistrala</h4>
+            </div>
+            <p>Postavi ograničenje za I. skupinu</p>
+            <label class="switch">
+              <input type="checkbox" id="d8-override-toggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
+      </div>
 
-        <div class="admin-control-card">
-          <div class="control-header">
-            <span class="icon">🚗</span>
-            <h4>D8 Magistrala</h4>
+      <!-- Tab: News Manager -->
+      <div class="admin-tab-content" id="admin-tab-news">
+        <div class="news-manager-header">
+          <h3>Sve Vijesti</h3>
+          <button class="btn-primary" id="add-news-btn">+ Nova Vijest</button>
+        </div>
+        <div class="admin-table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Naslov</th>
+                <th>Kategorija</th>
+                <th>Datum</th>
+                <th>Status</th>
+                <th>Akcije</th>
+              </tr>
+            </thead>
+            <tbody id="admin-news-list">
+              <!-- Injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab: Gallery -->
+      <div class="admin-tab-content" id="admin-tab-gallery">
+        <div class="gallery-manager-header">
+          <h3>Galerija Foto/Video</h3>
+          <div class="gallery-search">
+            <input type="text" id="gallery-search-input" placeholder="Pretraži po tagovima (npr. school, bura)...">
           </div>
-          <p>Postavi ograničenje za I. skupinu</p>
-          <label class="switch">
-            <input type="checkbox" id="d8-override-toggle" />
-            <span class="slider round"></span>
-          </label>
+        </div>
+        <div class="admin-gallery-grid" id="admin-gallery-grid">
+          <!-- Injected by JS -->
         </div>
       </div>
 
       <div class="admin-footer">
-        <p>Status: <span id="admin-sync-status">Sinkronizirano s NPT</span></p>
+        <p>Sustav: <span id="admin-sync-status">Spreman</span> | <span id="admin-timestamp"></span></p>
       </div>
+    </div>
+  </div>
+
+  <!-- News Editor Modal (NEW) -->
+  <div id="news-editor-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="editor-title" hidden>
+    <div class="modal-content glass editor-panel">
+      <button type="button" class="modal-close" id="editor-close" aria-label="Zatvori">&times;</button>
+      <h2 id="editor-title">Uređivanje Vijesti</h2>
+
+      <form id="news-editor-form" class="editor-grid">
+        <div class="editor-main">
+          <div class="form-group">
+            <label for="edit-title">Naslov</label>
+            <input type="text" id="edit-title" required>
+          </div>
+
+          <div class="editor-toolbar">
+            <button type="button" class="tool-btn" data-cmd="bold" title="Bold"><b>B</b></button>
+            <button type="button" class="tool-btn" data-cmd="italic" title="Italic"><i>I</i></button>
+            <button type="button" class="tool-btn" data-cmd="insertUnorderedList" title="List">UL</button>
+            <button type="button" class="tool-btn" data-cmd="createLink" title="Link">🔗</button>
+            <button type="button" class="tool-btn" data-cmd="formatBlock" data-value="H3" title="Heading">H3</button>
+            <div class="separator"></div>
+            <select id="edit-template" class="template-select">
+              <option value="">-- Koristi Predložak --</option>
+              <option value="brownout">Prekid Struje</option>
+              <option value="traffic">Prometni Alert</option>
+              <option value="event">Najava Događanja</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Sadržaj</label>
+            <div id="edit-body" class="editor-body" contenteditable="true" role="textbox" aria-multiline="true"
+              aria-label="Sadržaj članka"></div>
+          </div>
+        </div>
+
+        <div class="editor-sidebar">
+          <div class="form-group">
+            <label for="edit-category">Kategorija</label>
+            <select id="edit-category" required>
+              <option value="LOKALNO">Lokalno</option>
+              <option value="SPORT">Sport</option>
+              <option value="KULTURA">Kultura</option>
+              <option value="TURIZAM">Turizam</option>
+              <option value="MORE">More</option>
+              <option value="GASTRONOMIJA">Gastronomija</option>
+              <option value="OSMRTNICE">Osmrtnice</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-status">Status</label>
+            <select id="edit-status">
+              <option value="draft">Skica (Draft)</option>
+              <option value="published" selected>Objavljeno</option>
+              <option value="archived">Arhivirano</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-image">URL Slike</label>
+            <input type="text" id="edit-image" required>
+            <div id="image-preview" class="image-preview"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="edit-tags">Tagovi (odvojiti zarezom)</label>
+            <input type="text" id="edit-tags" placeholder="npr. škola, more, bura">
+          </div>
+
+          <div class="editor-actions">
+            <button type="button" id="editor-ai-summarize" class="btn-secondary">AI Sažetak</button>
+            <button type="submit" class="btn-primary">Spremi Vijest</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -580,10 +706,6 @@
     </div>
   </div>
 
-  <!-- Reader Mode Exit Button -->
-  <button class="reader-exit-btn" id="reader-exit-btn" aria-label="Izađi iz načina čitanja">
-    Izađi iz načina čitanja
-  </button>
 
   <script src="config.local.js" onerror="console.info('config.local.js not found - skipping local config')"></script>
   <script src="aisstream-websocket.js"></script>
@@ -593,6 +715,44 @@
   <script src="data/sea-quality.js"
     onerror="console.info('sea-quality.js not found - Sea quality data will be fetched via JSON')"></script>
   <script src="script.js"></script>
+  <!-- News Reader Modal (Full Story View) -->
+  <div id="news-reader-modal" class="modal" role="dialog" aria-modal="true" hidden>
+    <div class="modal-content news-reader-panel">
+      <button type="button" class="modal-close reader-close" id="reader-close" aria-label="Zatvori">&times;</button>
+
+      <div id="reader-breadcrumbs" class="breadcrumbs"></div>
+
+      <div class="reader-header">
+        <div class="meta-row">
+          <span id="reader-meta" class="meta-info"></span>
+          <button class="translate-btn" title="Prevedi na Engleski">
+            <span class="icon">🌐</span> EN
+          </button>
+        </div>
+        <h1 id="reader-title"></h1>
+      </div>
+
+      <div class="reader-hero-img" id="reader-hero-img"></div>
+
+      <div class="reader-body-container">
+        <div id="reader-ai-summary" class="editorial-ai">
+          <p class="ai-label">AI SAŽETAK</p>
+          <p id="reader-ai-text"></p>
+        </div>
+
+        <div id="reader-body" class="article-body"></div>
+      </div>
+
+      <div class="reader-footer">
+        <div class="share-group">
+          <span>Podijeli:</span>
+          <button class="action-btn icon-only" data-share="copy" title="Kopiraj link">🔗</button>
+          <button class="action-btn icon-only" data-share="twitter" title="Podijeli na X">𝕏</button>
+          <button class="action-btn icon-only" data-share="facebook" title="Podijeli na Facebooku">f</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

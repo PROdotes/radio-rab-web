@@ -331,6 +331,7 @@ const state = {
   meteoAlerts: [], // Store parsed weather warnings from meteo.hr
   seaTemp: null, // Store official sea temperature from DHMZ
   seaQualityPoints: [], // Store IZOR sea quality points
+  allArticles: [], // Store managed news items (from localStorage or templates)
 
   tickerBaseline: null, // Store original ticker items
   // Map of current cluster/marker id -> Leaflet marker (used for fast diffs)
@@ -851,6 +852,7 @@ function init() {
   initNavigation()
   initHamburger()
   initModal()
+  initNewsReaderModal()
   initStickyOffsets()
   initFilterScrollHints()
   syncFilterHintPositions()
@@ -1831,7 +1833,7 @@ function updateWeatherWithNPT(weather) {
 }
 
 /**
- * Admin Portal Logic
+ * Admin Portal Logic (UPDATED)
  */
 function initAdminPortal() {
   const modal = document.getElementById('admin-modal')
@@ -1840,19 +1842,36 @@ function initAdminPortal() {
   const ferryToggle = document.getElementById('ferry-override-toggle')
   const d8Toggle = document.getElementById('d8-override-toggle')
 
+  // Tab buttons
+  const tabBtns = document.querySelectorAll('.admin-tab-btn')
+  const tabContents = document.querySelectorAll('.admin-tab-content')
+
   if (!modal) return
 
   const toggleModal = () => {
     const isHidden = modal.hasAttribute('hidden')
     if (isHidden) {
       modal.removeAttribute('hidden')
-      // Sync toggles with current state
+      // Sync toggles
       if (ferryToggle) ferryToggle.checked = state.manualOverrides.ferrySuspended
       if (d8Toggle) d8Toggle.checked = state.manualOverrides.d8Restricted
+      renderAdminNewsList()
+      renderAdminGallery()
     } else {
       modal.setAttribute('hidden', '')
     }
   }
+
+  // Tab switching logic
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.adminTab
+      tabBtns.forEach(b => b.classList.toggle('active', b === btn))
+      tabContents.forEach(content => {
+        content.classList.toggle('active', content.id === `admin-tab-${target}`)
+      })
+    })
+  })
 
   // Hidden Shortcut: Alt + Shift + A
   window.addEventListener('keydown', (e) => {
@@ -1862,7 +1881,6 @@ function initAdminPortal() {
     }
   })
 
-  // Footer Link
   btn?.addEventListener('click', (e) => {
     e.preventDefault()
     toggleModal()
@@ -1873,49 +1891,288 @@ function initAdminPortal() {
     if (e.target === modal) toggleModal()
   })
 
-  // Handle Manual Overrides
+  // Island Status Overrides
   ferryToggle?.addEventListener('change', (e) => {
     state.manualOverrides.ferrySuspended = e.target.checked
-    debugLog('Admin: Ferry suspension set to', e.target.checked)
-    // Force UI update
     if (state.nptIslandWeather) updateWeatherWithNPT(state.nptIslandWeather)
-
-    // Manual override feedback in sidebar
-    const ferryStatusEl = document.querySelector('[data-live="ferry-misnjak"] .value')
-    if (ferryStatusEl) {
-      if (e.target.checked) {
-        ferryStatusEl.textContent = '🚫 PREKID (Admin)'
-        ferryStatusEl.className = 'value val-red'
-      } else {
-        initNPT() // Refresh from data
-      }
-    }
+    initNPT() // Refresh UI
   })
 
   d8Toggle?.addEventListener('change', (e) => {
     state.manualOverrides.d8Restricted = e.target.checked
-    debugLog('Admin: D8 restriction set to', e.target.checked)
     if (state.nptIslandWeather) updateWeatherWithNPT(state.nptIslandWeather)
+    initNPT()
+  })
 
-    const d8StatusEl = document.getElementById('d8-status')
-    if (d8StatusEl) {
-      if (e.target.checked) {
-        d8StatusEl.innerHTML = '⚠️ Zabrana I. skupina (Admin)'
-        d8StatusEl.className = 'value val-yellow'
-      } else {
-        initNPT()
-      }
+  // Initialize Editor Modal
+  initNewsEditor()
+}
+
+function renderAdminNewsList(filter = '') {
+  const list = document.getElementById('admin-news-list')
+  if (!list) return
+
+  const q = filter.toLowerCase()
+  const filtered = q
+    ? state.allArticles.filter(a =>
+      a.title.toLowerCase().includes(q) ||
+      a.category.toLowerCase().includes(q) ||
+      (a.tags || []).some(t => t.toLowerCase().includes(q))
+    )
+    : state.allArticles
+
+  list.innerHTML = filtered.map(article => {
+    const dateStr = article.timestamp
+      ? new Date(article.timestamp).toLocaleDateString('hr-HR')
+      : article.date || '—'
+    return `
+    <tr>
+      <td>${escapeHtml(article.title)}</td>
+      <td><span class="status-badge">${escapeHtml(article.category)}</span></td>
+      <td>${dateStr}</td>
+      <td><span class="status-badge ${article.status || 'published'}">${article.status || 'published'}</span></td>
+      <td>
+        <div class="action-btns">
+          <button class="btn-icon" onclick="editArticle('${article.id}')" title="Uredi">✏️</button>
+          <button class="btn-icon delete" onclick="deleteArticle('${article.id}')" title="Obriši">🗑️</button>
+        </div>
+      </td>
+    </tr>
+  `}).join('')
+}
+
+function renderAdminGallery(filter = '') {
+  const grid = document.getElementById('admin-gallery-grid')
+  if (!grid) return
+
+  // Deduplicate images by URL using a Map (Set doesn't work on objects)
+  const imageMap = new Map()
+  state.allArticles.forEach(a => {
+    if (a.image && !imageMap.has(a.image)) {
+      imageMap.set(a.image, a.tags || [])
     }
   })
+
+  const q = filter.toLowerCase()
+  let entries = [...imageMap.entries()]
+  if (q) {
+    entries = entries.filter(([, tags]) =>
+      tags.some(t => t.toLowerCase().includes(q))
+    )
+  }
+
+  grid.innerHTML = entries.map(([url, tags]) => `
+    <div class="gallery-item" onclick="selectGalleryImage('${url}')">
+      <img src="${url}" loading="lazy">
+      <div class="tags">${tags.join(', ')}</div>
+    </div>
+  `).join('')
+}
+
+function initNewsEditor() {
+  const editorModal = document.getElementById('news-editor-modal')
+  const editorForm = document.getElementById('news-editor-form')
+  const closeBtn = document.getElementById('editor-close')
+  const addBtn = document.getElementById('add-news-btn')
+  const templateSelect = document.getElementById('edit-template')
+  const aiBtn = document.getElementById('editor-ai-summarize')
+  const imageInput = document.getElementById('edit-image')
+  const preview = document.getElementById('image-preview')
+  const bodyEl = document.getElementById('edit-body')
+  const gallerySearch = document.getElementById('gallery-search-input')
+
+  if (!editorModal) return
+
+  // --- Toolbar: wire up execCommand buttons ---
+  editorModal.querySelectorAll('.tool-btn[data-cmd]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      bodyEl.focus()
+      const cmd = btn.dataset.cmd
+      if (cmd === 'createLink') {
+        const url = prompt('Unesite URL:')
+        if (url) document.execCommand('createLink', false, url)
+      } else if (cmd === 'formatBlock') {
+        document.execCommand('formatBlock', false, btn.dataset.value || 'H3')
+      } else {
+        document.execCommand(cmd, false, null)
+      }
+      // Update button active states
+      updateToolbarState()
+    })
+  })
+
+  // Track active formatting state
+  function updateToolbarState() {
+    editorModal.querySelectorAll('.tool-btn[data-cmd]').forEach(btn => {
+      const cmd = btn.dataset.cmd
+      if (cmd === 'bold' || cmd === 'italic' || cmd === 'insertUnorderedList') {
+        btn.classList.toggle('active', document.queryCommandState(cmd))
+      }
+    })
+  }
+
+  bodyEl?.addEventListener('keyup', updateToolbarState)
+  bodyEl?.addEventListener('mouseup', updateToolbarState)
+
+  // --- "New Article" button ---
+  addBtn?.addEventListener('click', () => {
+    editorForm.reset()
+    if (bodyEl) bodyEl.innerHTML = ''
+    editorForm.dataset.editId = ''
+    if (preview) preview.style.backgroundImage = ''
+    document.getElementById('edit-status').value = 'published'
+    editorModal.removeAttribute('hidden')
+  })
+
+  closeBtn?.addEventListener('click', () => editorModal.setAttribute('hidden', ''))
+
+  // --- Image preview ---
+  imageInput?.addEventListener('input', () => {
+    if (preview) preview.style.backgroundImage = `url(${imageInput.value})`
+  })
+
+  // --- Templates (all three) ---
+  templateSelect?.addEventListener('change', (e) => {
+    const tpl = e.target.value
+    if (!bodyEl) return
+
+    if (tpl === 'brownout') {
+      bodyEl.innerHTML = '<h3>Prekid opskrbe strujom</h3><p>Zbog radova na mreži... Area: [Insert Area]</p><p>Vrijeme: [Insert Time]</p>'
+      document.getElementById('edit-title').value = 'Najava prekida struje'
+      document.getElementById('edit-category').value = 'LOKALNO'
+    } else if (tpl === 'traffic') {
+      bodyEl.innerHTML = '<h3>Izvanredna regulacija prometa</h3><p>Zbog [Razlog] promet se odvija [Opis].</p>'
+      document.getElementById('edit-title').value = 'Otežan promet'
+      document.getElementById('edit-category').value = 'LOKALNO'
+    } else if (tpl === 'event') {
+      bodyEl.innerHTML = '<h3>Najava događanja</h3><p><b>Što:</b> [Naziv]</p><p><b>Kada:</b> [Datum i vrijeme]</p><p><b>Gdje:</b> [Lokacija]</p><p>Opis…</p>'
+      document.getElementById('edit-title').value = 'Najava: '
+      document.getElementById('edit-category').value = 'KULTURA'
+    }
+
+    // Reset after applying
+    templateSelect.value = ''
+  })
+
+  // --- AI Summary ---
+  aiBtn?.addEventListener('click', () => {
+    const bodyContent = bodyEl?.innerText || ''
+    if (!bodyContent.trim()) return
+    aiBtn.textContent = '✨ Generiranje...'
+    setTimeout(() => {
+      const summary = bodyContent.substring(0, 120).trim() + '...'
+      alert('AI Sažetak Generiran: ' + summary)
+      aiBtn.textContent = 'AI Sažetak'
+    }, 1000)
+  })
+
+  // --- Gallery search ---
+  gallerySearch?.addEventListener('input', () => {
+    renderAdminGallery(gallerySearch.value)
+  })
+
+  // --- Form submit ---
+  editorForm?.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const editId = editorForm.dataset.editId
+    const bodyHtml = bodyEl?.innerHTML || ''
+    const plainText = bodyEl?.innerText || ''
+
+    // Build base article object
+    const article = {
+      id: editId || `news-${Date.now()}`,
+      title: document.getElementById('edit-title').value,
+      body: bodyHtml,
+      category: document.getElementById('edit-category').value,
+      image: document.getElementById('edit-image').value,
+      tags: document.getElementById('edit-tags').value.split(',').map(t => t.trim()).filter(Boolean),
+      snippet: plainText.substring(0, 150).trim() + (plainText.length > 150 ? '...' : ''),
+      status: document.getElementById('edit-status').value,
+      timestamp: new Date().toISOString(),
+      author: AUTHORS[0],
+      date: 'Danas',
+      readTime: `${Math.max(2, Math.ceil(plainText.split(/\s+/).length / 200))} min`,
+    }
+
+    if (editId) {
+      // Preserve fields that aren't in the form
+      const idx = state.allArticles.findIndex(a => a.id === editId)
+      if (idx !== -1) {
+        const existing = state.allArticles[idx]
+        article.isHero = existing.isHero
+        article.aiSummary = existing.aiSummary
+        state.allArticles[idx] = article
+      }
+    } else {
+      state.allArticles.unshift(article)
+    }
+
+    saveArticles()
+    renderAdminNewsList()
+    editorModal.setAttribute('hidden', '')
+
+    // Refresh the main feed
+    const grid = document.getElementById('news-grid')
+    if (grid) {
+      grid.innerHTML = ''
+      state.currentVisibleCount = 0
+      loadMoreArticles()
+    }
+  })
+}
+
+// Global functions for inline usage
+window.editArticle = function (id) {
+  const article = state.allArticles.find(a => a.id === id)
+  if (!article) return
+
+  const modal = document.getElementById('news-editor-modal')
+  const form = document.getElementById('news-editor-form')
+  const bodyEl = document.getElementById('edit-body')
+
+  document.getElementById('edit-title').value = article.title
+  if (bodyEl) bodyEl.innerHTML = article.body || ''
+  document.getElementById('edit-category').value = article.category
+  document.getElementById('edit-status').value = article.status || 'published'
+  document.getElementById('edit-image').value = article.image
+  document.getElementById('edit-tags').value = (article.tags || []).join(', ')
+
+  form.dataset.editId = id
+  const preview = document.getElementById('image-preview')
+  if (preview) preview.style.backgroundImage = `url(${article.image})`
+
+  modal.removeAttribute('hidden')
+}
+
+window.deleteArticle = function (id) {
+  if (confirm('Jeste li sigurni da želite obrisati ovu vijest?')) {
+    state.allArticles = state.allArticles.filter(a => a.id !== id)
+    saveArticles()
+    renderAdminNewsList()
+
+    const grid = document.getElementById('news-grid')
+    if (grid) {
+      grid.innerHTML = ''
+      state.currentVisibleCount = 0
+      loadMoreArticles()
+    }
+  }
+}
+
+window.selectGalleryImage = function (url) {
+  const imageInput = document.getElementById('edit-image')
+  if (imageInput) {
+    imageInput.value = url
+    document.getElementById('image-preview').style.backgroundImage = `url(${url})`
+    // Switch to news tab
+    document.querySelector('[data-admin-tab="news"]')?.click()
+  }
 }
 
 // ===========================================
 // GLOBAL EVENT LISTENERS
 // ===========================================
 function initGlobalEventListeners() {
-  // Reader mode exit button
-  document.getElementById('reader-exit-btn')?.addEventListener('click', toggleReaderMode)
-
   // Newsletter form
   const newsletterForm = document.getElementById('newsletter-form')
   newsletterForm?.addEventListener('submit', (e) => {
@@ -1934,6 +2191,14 @@ function initGlobalEventListeners() {
       input.disabled = false
       input.value = ''
     }, 2000)
+  })
+
+  // Global Escape Close for all modals
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const activeModals = document.querySelectorAll('.modal:not([hidden])')
+      activeModals.forEach(m => closeModal(m))
+    }
   })
 }
 
@@ -2090,18 +2355,61 @@ function getMockVideos() {
 // NEWS FEED
 // ===========================================
 function initNewsFeed() {
-  renderHero(HERO_ARTICLE)
+  // Initialize managed articles from localStorage or templates
+  const saved = localStorage.getItem('radio_rab_articles')
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved)
+      state.allArticles = Array.isArray(parsed) ? parsed : flattenTemplates()
+    } catch (e) {
+      state.allArticles = flattenTemplates()
+    }
+  } else {
+    state.allArticles = flattenTemplates()
+    saveArticles()
+  }
+
+  const hero = state.allArticles.find(a => a.isHero) || state.allArticles[0]
+  renderHero(hero)
   loadMoreArticles()
   initLoadMore()
   initFilters()
+}
+
+function flattenTemplates() {
+  const flattened = []
+  Object.keys(NEWS_TEMPLATES).forEach((cat) => {
+    NEWS_TEMPLATES[cat].forEach((item, idx) => {
+      flattened.push({
+        id: `${cat.toLowerCase()}-${idx}-${Date.now()}`,
+        ...item,
+        category: cat,
+        author: AUTHORS[Math.floor(Math.random() * AUTHORS.length)],
+        date: 'Danas',
+        readTime: '4 min',
+        isHero: cat === 'LOKALNO' && idx === 0,
+        status: 'published',
+        tags: item.tags || [cat.toLowerCase()],
+        timestamp: new Date().toISOString()
+      })
+    })
+  })
+  return flattened
+}
+
+function saveArticles() {
+  localStorage.setItem('radio_rab_articles', JSON.stringify(state.allArticles))
+  window.dispatchEvent(new CustomEvent('news-updated'))
 }
 
 function renderHero(article) {
   const container = document.getElementById('primary-feature-container')
   if (!container || !article) return
 
+  const isObituary = article.category === 'OSMRTNICE'
+
   container.innerHTML = `
-        <article class="main-feature card-animate" style="--delay: 1;" data-category="${escapeHtml(
+        <article class="main-feature card-animate ${isObituary ? 'obituary-view' : ''}" style="--delay: 1;" data-category="${escapeHtml(
     article.category
   )}">
             <div class="feature-img-container">
@@ -2111,13 +2419,21 @@ function renderHero(article) {
   )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
             </div>
             <div class="feature-content">
-                <span class="meta-info">${escapeHtml(article.date)} · ${escapeHtml(
-    article.readTime
+                <div class="meta-row">
+                    <span class="meta-info">${escapeHtml(article.date)} · ${escapeHtml(
+    article.readTime || '4 min'
   )} čit.</span>
+                    <button class="translate-btn" title="Prevedi na Engleski">
+                      <span class="icon">🌐</span> EN
+                    </button>
+                </div>
                 <h2>${escapeHtml(article.title)}</h2>
-                <p>${escapeHtml(article.snippet)}</p>
+                <div class="article-body">
+                  ${isObituary ? `<img src="${article.image}" class="obituary-full-img" alt="Osmrtnica">` : ''}
+                  ${article.body || `<p>${escapeHtml(article.snippet)}</p>`}
+                </div>
 
-                <div class="editorial-ai">
+                <div class="editorial-ai" ${isObituary ? 'hidden' : ''}>
                     <p class="ai-label">AI SAŽETAK</p>
                     <p>${escapeHtml(
     article.aiSummary || 'Automatski sažetak članka trenutno nije dostupan.'
@@ -2129,25 +2445,24 @@ function renderHero(article) {
                         <span class="icon">📖</span> <span class="label">Pročitaj članak</span>
                     </button>
                     <div class="share-group">
-                        <button class="action-btn icon-only" data-share="copy">🔗</button>
-                        <button class="action-btn icon-only" data-share="twitter">𝕏</button>
-                        <button class="action-btn icon-only" data-share="facebook">f</button>
+                        <button class="action-btn icon-only" data-share="copy" title="Kopiraj link">🔗</button>
+                        <button class="action-btn icon-only" data-share="twitter" title="Podijeli na X">𝕏</button>
+                        <button class="action-btn icon-only" data-share="facebook" title="Podijeli na Facebooku">f</button>
                     </div>
                 </div>
             </div>
         </article>
     `
 
-  // Attach event listeners instead of inline onclick
-  container.querySelector('#reader-mode-btn')?.addEventListener('click', toggleReaderMode)
+  // Attach event listeners
+  container.querySelector('#reader-mode-btn')?.addEventListener('click', (e) => {
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    openReaderMode(article.id)
+  })
   container.querySelectorAll('[data-share]').forEach((btn) => {
     btn.addEventListener('click', () => shareArticle(btn.dataset.share))
   })
-
-  // Initialize Lucide icons in hero
-  if (window.lucide) {
-    lucide.createIcons()
-  }
 }
 
 function loadMoreArticles() {
@@ -2205,7 +2520,8 @@ function loadMoreArticles() {
 
 function createNewsCard(article, index) {
   const card = document.createElement('article')
-  card.className = 'small-news-card card-animate'
+  const isObituary = article.category === 'OSMRTNICE'
+  card.className = `small-news-card card-animate ${isObituary ? 'obituary-card' : ''}`
   card.style.setProperty('--delay', (index % 3) + 1)
   card.setAttribute('data-category', article.category)
 
@@ -2226,14 +2542,20 @@ function createNewsCard(article, index) {
         </div>
     `
 
+  card.addEventListener('click', (e) => {
+    e.preventDefault()
+    e.stopImmediatePropagation()
+    openReaderMode(article.id)
+  })
+
   return card
 }
 
 function getFilteredArticles() {
   if (state.activeCategory === 'all') {
-    return ALL_ARTICLES
+    return state.allArticles
   }
-  return ALL_ARTICLES.filter((a) => a.category === state.activeCategory)
+  return state.allArticles.filter((a) => a.category === state.activeCategory)
 }
 
 // ===========================================
@@ -5211,33 +5533,51 @@ function initModal() {
     }
   })
 
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hidden) {
-      closeModal(modal)
-    }
-  })
-
-  // Form Submission (Demo)
-  const form = modal.querySelector('form')
+  // Form Submission (Updated for MVP)
+  const form = modal.querySelector('.reporter-form')
   form?.addEventListener('submit', (e) => {
     e.preventDefault()
     const btn = form.querySelector('.submit-btn')
     const originalText = btn.textContent
 
+    // Get form data
+    const formData = new FormData(form)
+    const name = form.querySelector('input[type="text"]').value
+    const email = form.querySelector('input[type="email"]').value
+    const body = form.querySelector('textarea').value
+
+    // Create "Submitted" article entry
+    const newSubmission = {
+      id: `submission-${Date.now()}`,
+      title: `Prijava: ${body.substring(0, 30)}...`,
+      snippet: body.substring(0, 100) + '...',
+      body: `<p>${body}</p><p><strong>Pošiljatelj:</strong> ${name} (${email})</p>`,
+      category: 'LOKALNO',
+      image: 'https://images.unsplash.com/photo-1495020689067-958852a7765e?w=800&h=600&fit=crop', // Placeholder for submitted
+      author: name,
+      date: 'Upravo sada',
+      readTime: '1 min',
+      status: 'submitted', // Moderation status
+      timestamp: new Date().toISOString(),
+      tags: ['prijava', 'citizen-reporter']
+    }
+
     // Loading state
-    btn.textContent = 'Šaljem...'
+    btn.textContent = 'Slanje...'
     btn.disabled = true
 
     setTimeout(() => {
+      // Save to global state
+      state.allArticles.unshift(newSubmission)
+      saveArticles()
+
       // Success state
-      btn.textContent = 'Hvala! Poslano.'
+      btn.textContent = 'Hvala! Primljeno.'
       btn.style.background = 'var(--success)'
 
       setTimeout(() => {
         closeModal(modal)
         form.reset()
-        // Reset button after close
         setTimeout(() => {
           btn.textContent = originalText
           btn.disabled = false
@@ -5246,10 +5586,40 @@ function initModal() {
       }, 1000)
     }, 1500)
   })
+
 }
+
+function initNewsReaderModal() {
+  const nrModal = document.getElementById('news-reader-modal')
+  if (!nrModal) return
+
+  // Close with button
+  nrModal.querySelector('.modal-close')?.addEventListener('click', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    closeModal(nrModal)
+  })
+
+  // Prevent clicks inside the content from closing the backdrop
+  nrModal.querySelector('.modal-content')?.addEventListener('click', (e) => {
+    e.stopPropagation()
+  })
+
+  // Close on backdrop click (with protection against same-event-click)
+  nrModal.addEventListener('click', (e) => {
+    if (e.target === nrModal) {
+      // Only close if it wasn't JUST opened (prevents event race condition)
+      if (Date.now() - (nrModal._openedAt || 0) > 300) {
+        closeModal(nrModal)
+      }
+    }
+  })
+}
+
 
 function openModal(modal) {
   modal.hidden = false
+  modal.scrollTop = 0
   document.body.style.overflow = 'hidden'
   modal.querySelector('input')?.focus()
 }
@@ -5567,14 +5937,67 @@ function escapeHtml(text) {
 // ===========================================
 // READER MODE & SHARING
 // ===========================================
-function toggleReaderMode() {
-  document.body.classList.toggle('reader-mode-active')
+function openReaderMode(id) {
+  const article = state.allArticles.find(a => a.id === id)
+  if (!article) return
 
-  // Smooth scroll to top of article if we just entered reader mode
-  if (document.body.classList.contains('reader-mode-active')) {
-    const article = document.querySelector('.main-feature')
-    if (article) article.scrollIntoView({ behavior: 'smooth' })
+  const modal = document.getElementById('news-reader-modal')
+  if (!modal) return
+
+  // Populate Elements
+  const breadcrumbs = document.getElementById('reader-breadcrumbs')
+  const meta = document.getElementById('reader-meta')
+  const title = document.getElementById('reader-title')
+  const heroImg = document.getElementById('reader-hero-img')
+  const aiText = document.getElementById('reader-ai-text')
+  const body = document.getElementById('reader-body')
+  const aiSummaryBox = document.getElementById('reader-ai-summary')
+
+  if (breadcrumbs) {
+    breadcrumbs.innerHTML = `
+      <a href="#" class="breadcrumb-home">Naslovnica</a>
+      <span class="sep">/</span>
+      <span class="current">${article.category}</span>
+    `
+    breadcrumbs.querySelector('.breadcrumb-home')?.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      closeModal(modal)
+    })
   }
+
+  if (meta) meta.textContent = `${article.date} · ${article.readTime || '4 min'} čitanja`
+  if (title) title.textContent = article.title
+  if (heroImg) heroImg.style.backgroundImage = `url('${article.image}')`
+
+  if (aiSummaryBox) {
+    if (article.category === 'OSMRTNICE') {
+      aiSummaryBox.setAttribute('hidden', '')
+    } else {
+      aiSummaryBox.removeAttribute('hidden')
+      if (aiText) aiText.textContent = article.aiSummary || 'Automatski sažetak članka trenutno nije dostupan.'
+    }
+  }
+
+  if (body) {
+    const isObituary = article.category === 'OSMRTNICE'
+    body.innerHTML = `
+      ${isObituary ? `<img src="${article.image}" class="obituary-full-img" alt="Osmrtnica">` : ''}
+      ${article.body || `<p>${escapeHtml(article.snippet)}</p>`}
+    `
+  }
+
+  // Handle sharing in modal
+  modal.querySelectorAll('[data-share]').forEach(btn => {
+    btn.onclick = (e) => {
+      e.stopPropagation()
+      shareArticle(btn.dataset.share)
+    }
+  })
+
+  // Set opening timestamp to prevent accidental auto-close
+  modal._openedAt = Date.now()
+  openModal(modal)
 }
 
 function shareArticle(method) {
