@@ -36,22 +36,16 @@ jobs:
           python3 -c "
           import os, re
           content = open('index.html').read()
-          
-          # Target the specific ID and replace the entire tag
-          pattern = r'<script id=\"ais-config\">.*?</script>'
           real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
           
+          # Match the diagnostic block (multiline)
+          pattern = r'<script id=\"ais-config\">(\s|.)*?</script>'
           if re.search(pattern, content):
               new_content = re.sub(pattern, real_config, content)
               with open('index.html', 'w') as f: f.write(new_content)
               print('✓ Injected secrets into index.html')
           else:
-              print('ERROR: Could not find ais-config tag!')
-              # Show the lines around where we expect it to be
-              lines = content.splitlines()
-              for i, line in enumerate(lines):
-                  if 'ais-config' in line or 'script' in line:
-                      print(f'{i+1}: {line}')
+              print('ERROR: Could not find ais-config diagnostic tag!')
               exit(1)
           "
           touch .nojekyll
