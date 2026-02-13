@@ -33,26 +33,29 @@ jobs:
         env:
           AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
         run: |
+          # Encode the key in base64 to avoid all escaping hell
+          ENCODED_KEY=$(echo -n "$AIS_KEY" | base64 | tr -d '\n')
+          
           python3 -c "
-          import os
-          print('--- Secret Injection (Bulletproof Edition) ---')
+          import os, base64
           filename = 'index.html'
           marker = '/* PRODUCTION_CONFIG_REPLACE_ME */'
           
           with open(filename, 'r') as f:
               content = f.read()
           
-          print(f'Checking if marker exists in content: {marker in content}')
-          
           if marker in content:
-              real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
-              # Find the line containing the marker
+              # Decode the b64 key back to a safe JS string
+              encoded_val = '$ENCODED_KEY'
+              real_key = base64.b64decode(encoded_val).decode('utf-8')
+              
+              real_config = f'<script id=\"ais-config\">window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{real_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Production Config Injected\");</script>'
+              
               lines = content.splitlines()
               new_lines = []
               found = False
-              for i, line in enumerate(lines):
+              for line in lines:
                   if marker in line:
-                      print(f'Match found on line {i+1}')
                       new_lines.append(real_config)
                       found = True
                   else:
@@ -61,17 +64,12 @@ jobs:
               if found:
                   with open(filename, 'w') as f:
                       f.write('\n'.join(new_lines))
-                  print('✓ Injection successful')
+                  print('✓ Injection successful (B64 Secure)')
               else:
-                  print('Error: Found marker in block search but failed in line search')
+                  print('Error: Marker found in search but failed line loop')
                   exit(1)
           else:
-              print('FATAL ERROR: Marker not found. Here is the part of index.html where we expected it:')
-              idx = content.find('id=\"ais-config\"')
-              if idx != -1:
-                  print(content[max(0, idx-50):idx+150])
-              else:
-                  print('Even the id=\"ais-config\" tag is missing!')
+              print('Error: Marker not found in file!')
               exit(1)
           "
           touch .nojekyll
