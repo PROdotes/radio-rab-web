@@ -32,27 +32,34 @@ jobs:
       - name: Prepare Clean Distribution
         env:
           AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
+          RUN_ID: ${{ github.run_id }}
         run: |
           mkdir dist
-          # Copy every tracked file to dist
           cp -r *.html *.js *.css *.json data scripts dist/ || true
           
-          echo "--- INJECTING SECRETS ---"
-          # Define the real config string (escaped for JS)
-          # We use a placeholder that matches exactly what is in index.html
-          REAL_KEY_DATA="window.LOCAL_CONFIG = { AISSTREAM_API_KEY: '$AIS_KEY', FERRY_MMSI: '238690000', ENABLE_REAL_AIS: true, urls: { npt: 'https://b2b.promet-info.hr' } }; console.info('🚢 Production Config Injected (v1.0.8)');"
+          python3 -c "
+          import os
+          filename = 'dist/index.html'
+          with open(filename, 'r') as f:
+              content = f.read()
           
-          # Replace the specific marker line inside the script tag
-          # This replaces EVERYTHING between the /* */ comments
-          sed -i "s|/\* INJECT_PROD_CONFIG \*/ .*|/\* INJECT_PROD_CONFIG \*/ $REAL_KEY_DATA</script>|g" dist/index.html
+          # 1. Inject the Build ID
+          content = content.replace('BUILD_ID_PLACEHOLDER', os.environ['RUN_ID'])
           
-          # Force nojekyll
+          # 2. Inject the Real Config
+          marker = '<!-- AIS_CONFIG_INJECTION_POINT_DO_NOT_REMOVE -->'
+          real_config = f'<script>window.REAL_TIME_AIS_DATA = {{ AISSTREAM_API_KEY: \"{os.environ[\"AIS_KEY\"]}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Real-Time AIS Config Injected (Run: {os.environ[\"RUN_ID\"]})\");</script>'
+          
+          if marker in content:
+              content = content.replace(marker, real_config)
+              with open(filename, 'w') as f:
+                  f.write(content)
+              print(f'✓ Injection successful (Run ID: {os.environ[\"RUN_ID\"]})')
+          else:
+              print('FATAL ERROR: Injection marker not found!')
+              exit(1)
+          "
           touch dist/.nojekyll
-          
-          echo "--- VERIFICATION ---"
-          grep "Production Config Injected" dist/index.html || (echo "FATAL: Injection failed!" && exit 1)
-          echo "Success: Secrets injected into dist/index.html"
-          ls -F dist/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
