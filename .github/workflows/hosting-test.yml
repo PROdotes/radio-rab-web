@@ -52,27 +52,26 @@ jobs:
           
           # 2. Inject the Variable
           marker = '<!-- INJECT_AIS_CONFIG -->'
-          real_config = f'<script>window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{api_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Real-Time AIS Config Injected\");</script>'
+          # Inject the variables AND the cache busters
+          real_config = f'<script>window.LOCAL_CONFIG = {{ AISSTREAM_API_KEY: \"{api_key}\", FERRY_MMSI: \"238690000\", ENABLE_REAL_AIS: true, urls: {{ npt: \"https://b2b.promet-info.hr\" }} }}; console.info(\"🚢 Real-Time AIS Config Injected (v2.0.2)\");</script>'
           
           print(f'Looking for marker: {marker}')
-          # Simple string replace is safer than regex for line anchors in different environments
           if marker in content:
               print('✓ Marker found. Replacing...')
-              new_content = content.replace(marker, real_config)
+              content = content.replace(marker, real_config)
+              # Also inject Build ID and Time for cache verification
+              content = content.replace('BUILD_ID_PLACEHOLDER', os.environ.get(\"RUN_ID\", \"Unknown\"))
+              content = content.replace('BUILD_TIME_PLACEHOLDER', \"NOW\") 
+              
               with open(filename, 'w') as f:
-                  f.write(new_content)
+                  f.write(content)
               print('✓ Replacement successful.')
           else:
               print('!! FATAL ERROR: Marker NOT found in dist/index.html !!')
-              # Show snippet of where it should be
-              idx = content.find('ui.js')
-              if idx != -1:
-                  print('Content after ui.js:')
-                  print(content[idx:idx+200])
               exit(1)
           print('--- GITHUB ACTION DEBUG END ---')
           
-          # 2. Final verification of the written file
+          # 3. Final verification of the written file
           with open(filename, 'r') as f:
               check_content = f.read()
           if 'Real-Time AIS Config Injected' in check_content:

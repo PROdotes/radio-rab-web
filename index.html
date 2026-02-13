@@ -765,7 +765,9 @@
   <!-- INJECT_AIS_CONFIG -->
   <script>
     window.LOCAL_CONFIG = window.LOCAL_CONFIG || { ENABLE_REAL_AIS: false };
-    console.log('🔍 AIS System Diagnostic (v2.0.1):', {
+    console.log('🔍 AIS System Diagnostic (v2.0.2):', {
+      buildId: 'BUILD_ID_PLACEHOLDER',
+      buildTime: 'BUILD_TIME_PLACEHOLDER',
       hasApiKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
       keyLength: window.LOCAL_CONFIG?.AISSTREAM_API_KEY?.length || 0,
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
