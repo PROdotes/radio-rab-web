@@ -1,4 +1,6 @@
 /** Radio Rab - Map Module */
+/* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
+
 function initMap() {
   const mapEl = document.getElementById('leaflet-map')
   if (!mapEl || state.mapInstance) return // Don't re-init if already exists
@@ -2105,6 +2107,19 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
   const durationMins = CONFIG.ferry.tripDurationMins
 
   function update() {
+    // If real AIS data is available, use it instead of simulation
+    if (window.aisStreamClient && window.aisStreamClient.getLatestData()) {
+      const aisData = window.aisStreamClient.getLatestData()
+      if (aisData && aisData.latitude && aisData.longitude) {
+        try {
+          marker.setLatLng([aisData.latitude, aisData.longitude])
+        } catch (e) {
+          /* ignore */
+        }
+        return // Skip simulation update
+      }
+    }
+
     const now = new Date()
     const nowTime = now.getHours() * 60 + now.getMinutes()
     const minutes = now.getMinutes() + now.getSeconds() / 60
@@ -2483,6 +2498,24 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
     }
 
     // Build the status HTML
+    let aisDataHtml = ''
+    if (window.aisStreamClient && window.aisStreamClient.getLatestData()) {
+      const aisData = window.aisStreamClient.getLatestData()
+      if (aisData && aisData.latitude) {
+        aisDataHtml = `
+          <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--accent); border-radius: 0.5rem;">
+            <div style="font-weight: bold; color: var(--accent); margin-bottom: 0.5rem;">🟢 LIVE AIS</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem; font-size: 0.8rem;">
+              <div>Brzina: <strong>${aisData.speed?.toFixed(1) || '—'} kn</strong></div>
+              <div>Kurs: <strong>${aisData.course?.toFixed(0) || '—'}°</strong></div>
+              <div>Status: <strong>${aisData.status || '—'}</strong></div>
+              <div>Heading: <strong>${aisData.heading?.toFixed(0) || '—'}°</strong></div>
+            </div>
+          </div>
+        `
+      }
+    }
+
     const statusHtml = `
                 <div style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                     <div class="pulse-dot" style="background: ${aisOffsetMins >= 5
@@ -2498,7 +2531,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; font-size: 0.85rem;">
                     <div>
-                        <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">MIŠNJAK â†’</div>
+                        <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">MIŠNJAK →</div>
                         <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depMisnjak.last
       }</div>
                         <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depMisnjak.next
@@ -2506,7 +2539,7 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                         <div style="opacity: 0.8;">Nakon toga: ${depMisnjak.after}</div>
                     </div>
                     <div>
-                        <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">STINICA â†’</div>
+                        <div style="color: var(--primary); font-weight: 700; border-bottom: 1px solid var(--border); margin-bottom: 0.5rem; padding-bottom: 0.2rem;">STINICA →</div>
                         <div style="opacity: 0.6; text-decoration: line-through;">Zadnji: ${depStinica.last
       }</div>
                         <div style="font-weight: bold; margin: 0.2rem 0; font-size: 1rem;">Sljedeći: ${depStinica.next
@@ -2515,8 +2548,10 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
                     </div>
                 </div>
                 
+                ${aisDataHtml}
+                
                 <div style="margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); font-style: italic;">
-                    * AIS podaci uživo s radio antene. Osvježeno: ${now.toLocaleTimeString('hr-HR')}
+                    * AIS podaci uživo. Osvježeno: ${now.toLocaleTimeString('hr-HR')}
                 </div>
             `
 
@@ -2822,9 +2857,7 @@ function updateMapWithNPT(alerts, weather, counters, islandWeather) {
             .bindPopup(
               `
                     <div style="text-align: center; color: #f1f5f9; font-size: 0.9rem; min-width: 150px;">
-                        <strong style="color: #a78bfa;">📡 ${escapeHtml(
-                counter.name
-              )}</strong><br>
+                        <strong style="color: #a78bfa;">📡 ${escapeHtml(counter.name)}</strong><br>
                         ${hasData
                 ? `
                             Brzina: <strong style="color: ${color}; font-size: 1.1em;">${speed} km/h</strong><br>

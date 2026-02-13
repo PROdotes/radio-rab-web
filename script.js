@@ -30,6 +30,32 @@ function init() {
 
       window.aisStreamClient.onData((data) => {
         console.log('✓ Live AIS update received:', data)
+
+        // Update ferry marker position on map if available
+        if (state.ferryMarker && data.latitude && data.longitude) {
+          state.ferryMarker.setLatLng([data.latitude, data.longitude])
+
+          // Update status display
+          const statusEl = document.getElementById('ferry-status-v2')
+          if (statusEl) {
+            statusEl.innerHTML = `
+              <div style="margin-bottom: 0.5rem;">
+                <span style="color: var(--accent); font-weight: bold;">${data.name}</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.85rem;">
+                <div>Brzina: <strong>${data.speed?.toFixed(1) || '—'} kn</strong></div>
+                <div>Kurs: <strong>${data.course?.toFixed(0) || '—'}°</strong></div>
+                <div>Status: <strong>${data.status || '—'}</strong></div>
+                <div style="grid-column: span 2;">Destinacija: <strong>${
+                  data.destination || '—'
+                }</strong></div>
+              </div>
+              <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-dim);">
+                🟢 LIVE
+              </div>
+            `
+          }
+        }
       })
     }
   }
