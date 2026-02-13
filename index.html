@@ -751,18 +751,10 @@
     </div>
   </div>
 
-  <script src="config.local.js" onerror="this.remove()"></script>
-  <script src="config.js?v=1.1"></script>
-  <script src="vessel-config.js?t=${new Date().getTime()}" onerror="this.remove()"></script>
+  <script id="ais-config">window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };</script>
+  <script src="config.js"></script>
   <script src="aisstream-websocket.js"></script>
   <script src="data.js"></script>
-  <script>
-    // Critical Fallback for AIS Config
-    if (typeof window.LOCAL_CONFIG === 'undefined') {
-      window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
-      console.info('🚢 Using Simulation (no vessel-config.js found)');
-    }
-  </script>
   <script src="utils.js"></script>
   <script src="weather.js"></script>
   <script src="ais.js"></script>

@@ -29,31 +29,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Prepare Clean Deployment
+      - name: Inject Production Secrets
         run: |
-          mkdir deploy_me
-          # Copy everything to deploy_me EXCEPT git/node_modules/etc
-          cp -r ./*.html ./*.js ./*.css deploy_me/ || true
-          cp -r ./data deploy_me/ || true
-          cp -r ./scripts deploy_me/ || true
-          
-          # Create the production config INSIDE the clean folder
-          cat > deploy_me/vessel-config.js << 'EOF'
-          window.LOCAL_CONFIG = {
-            AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
-            FERRY_MMSI: '238690000',
-            ENABLE_REAL_AIS: true,
-            urls: { npt: 'https://b2b.promet-info.hr' }
-          };
-          console.info('🚢 Vessel-Config.js Loaded Successfully');
-          EOF
-          
-          # Force nojekyll
-          touch deploy_me/.nojekyll
+          REAL_CONFIG="<script id=\"ais-config\">window.LOCAL_CONFIG = { AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}', FERRY_MMSI: '238690000', ENABLE_REAL_AIS: true, urls: { npt: 'https://b2b.promet-info.hr' } }; console.info('🚢 Production Config Injected');</script>"
+          sed -i "s|<script id=\"ais-config\">.*</script>|$REAL_CONFIG|g" index.html
+          touch .nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: deploy_me
+          publish_dir: .
           force_orphan: true
           dotfiles: true
