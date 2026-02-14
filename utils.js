@@ -179,22 +179,6 @@ function enforceFerryIntegrity(eps = 0.001) {
         safeTryRemoveLayer(cand)
       }
     })
-
-    try {
-      try {
-        if (state.aisMarker) {
-          debugLog && debugLog('enforceFerryIntegrity: removing leftover state.aisMarker')
-          safeTryRemoveLayer(state.aisMarker)
-          try {
-            state.aisMarker = null
-          } catch (e) {}
-        }
-      } catch (e) {
-        /* ignore */
-      }
-    } catch (e) {
-      /* ignore */
-    }
   } catch (e) {
     debugWarn && debugWarn('enforceFerryIntegrity: failed', e)
   }

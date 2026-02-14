@@ -2387,7 +2387,6 @@ function startFerrySimulation(marker, startPos, endPos, aisMarker = null) {
 
       // Resolve live AIS marker each tick (may be recreated by map updates)
       const resolveLiveAis = () => {
-        if (state.aisMarker && state.aisMarker._map) return state.aisMarker
         if (aisMarker && aisMarker._map) return aisMarker
         if (state.layers && state.layers.ferry) {
           try {
