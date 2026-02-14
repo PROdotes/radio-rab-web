@@ -786,8 +786,6 @@ function getAlertIcon(type) {
 function updateWeatherWithNPT(weather) {
   if (!weather || weather.length === 0) return
 
-  if (!weather || weather.length === 0) return
-
   const sorted = [...weather].sort(
     (a, b) => (parseFloat(b.windGust) || 0) - (parseFloat(a.windGust) || 0)
   )

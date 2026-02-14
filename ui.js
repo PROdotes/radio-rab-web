@@ -1,4 +1,4 @@
-﻿/** Radio Rab - UI Module */
+/** Radio Rab - UI Module */
 function initLoadMore() {
   const btn = document.getElementById('load-more-btn')
   if (!btn) return
@@ -8,11 +8,6 @@ function initLoadMore() {
       loadMoreArticles()
     }
   })
-}
-
-function initInfiniteScroll() {
-  // Disabled in favor of Load More button
-  return
 }
 
 function hideLoader() {
@@ -183,7 +178,7 @@ function initStickyOffsets() {
     const tickerH = ticker
       ? Math.ceil(ticker.getBoundingClientRect().height)
       : parseInt(getComputedStyle(document.documentElement).getPropertyValue('--ticker-height')) ||
-      0
+        0
 
     // Ensure header anchors immediately below the ticker to avoid tiny overlap
     header.style.top = `${tickerH}px`
@@ -607,7 +602,7 @@ function initRadioPlayer() {
   async function fetchHistory(proxyBase, timestamp) {
     const response = await fetch(
       proxyBase +
-      encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`)
+        encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`)
     )
     if (!response.ok) return
     const str = await response.text()
@@ -855,12 +850,12 @@ function initMarketplace() {
         </div>
         <div class="market-grid">
             ${(typeof MARKET_ITEMS !== 'undefined' ? MARKET_ITEMS : getMockMarketItems())
-      .map(
-        (item) => `
+              .map(
+                (item) => `
                 <div class="market-card card-animate">
                     <div class="market-img" style="background-image: url('${escapeHtml(
-          item.image
-        )}')">
+                      item.image
+                    )}')">
                         <span class="price-tag">${escapeHtml(item.price)}</span>
                     </div>
                     <div class="market-info">
@@ -870,20 +865,50 @@ function initMarketplace() {
                     </div>
                 </div>
             `
-      )
-      .join('')}
+              )
+              .join('')}
         </div>
     `
 }
 
 function getMockMarketItems() {
   return [
-    { title: 'Domaće Maslinovo Ulje', seller: 'OPG Kaštelan', price: '18 €/l', image: 'https://picsum.photos/seed/oil/400/300' },
-    { title: 'Rapska Torta', seller: 'Vilma Slastice', price: '25 €', image: 'https://picsum.photos/seed/cake/400/300' },
-    { title: 'Med od Kadulje', seller: 'Pčelarstvo Krstić', price: '12 €', image: 'https://picsum.photos/seed/honey/400/300' },
-    { title: 'Ovčji Sir', seller: 'OPG Gvačić', price: '30 €/kg', image: 'https://picsum.photos/seed/cheese/400/300' },
-    { title: 'Domace Tjestenine', seller: 'Pasta Rab', price: '8 €', image: 'https://picsum.photos/seed/pasta/400/300' },
-    { title: 'Rapski Likeri', seller: 'Destilerija Rab', price: '22 €', image: 'https://picsum.photos/seed/liqueur/400/300' },
+    {
+      title: 'Domaće Maslinovo Ulje',
+      seller: 'OPG Kaštelan',
+      price: '18 €/l',
+      image: 'https://picsum.photos/seed/oil/400/300',
+    },
+    {
+      title: 'Rapska Torta',
+      seller: 'Vilma Slastice',
+      price: '25 €',
+      image: 'https://picsum.photos/seed/cake/400/300',
+    },
+    {
+      title: 'Med od Kadulje',
+      seller: 'Pčelarstvo Krstić',
+      price: '12 €',
+      image: 'https://picsum.photos/seed/honey/400/300',
+    },
+    {
+      title: 'Ovčji Sir',
+      seller: 'OPG Gvačić',
+      price: '30 €/kg',
+      image: 'https://picsum.photos/seed/cheese/400/300',
+    },
+    {
+      title: 'Domace Tjestenine',
+      seller: 'Pasta Rab',
+      price: '8 €',
+      image: 'https://picsum.photos/seed/pasta/400/300',
+    },
+    {
+      title: 'Rapski Likeri',
+      seller: 'Destilerija Rab',
+      price: '22 €',
+      image: 'https://picsum.photos/seed/liqueur/400/300',
+    },
   ]
 }
 
@@ -899,12 +924,12 @@ function initVideos() {
         </div>
         <div class="video-grid">
             ${getMockVideos()
-      .map(
-        (video) => `
+              .map(
+                (video) => `
                 <div class="video-card card-animate">
                     <div class="video-thumb" style="background-image: url('${escapeHtml(
-          video.thumbnail
-        )}')">
+                      video.thumbnail
+                    )}')">
                         <span class="video-duration">${escapeHtml(video.duration)}</span>
                         <div class="play-btn">▶</div>
                     </div>
@@ -914,17 +939,31 @@ function initVideos() {
                     </div>
                 </div>
             `
-      )
-      .join('')}
+              )
+              .join('')}
         </div>
     `
 }
 
 function getMockVideos() {
   return [
-    { title: 'Festival Rapske Fjere 2024', duration: '3:45', views: '12K', thumbnail: 'https://picsum.photos/seed/fjere/400/225' },
-    { title: 'Katedrala sv. Kristofora', duration: '2:30', views: '8.5K', thumbnail: 'https://picsum.photos/seed/katedrala/400/225' },
-    { title: 'Rabski Korzo u proljece', duration: '4:15', views: '15K', thumbnail: 'https://picsum.photos/seed/korzo/400/225' },
+    {
+      title: 'Festival Rapske Fjere 2024',
+      duration: '3:45',
+      views: '12K',
+      thumbnail: 'https://picsum.photos/seed/fjere/400/225',
+    },
+    {
+      title: 'Katedrala sv. Kristofora',
+      duration: '2:30',
+      views: '8.5K',
+      thumbnail: 'https://picsum.photos/seed/katedrala/400/225',
+    },
+    {
+      title: 'Rabski Korzo u proljece',
+      duration: '4:15',
+      views: '15K',
+      thumbnail: 'https://picsum.photos/seed/korzo/400/225',
+    },
   ]
 }
-
