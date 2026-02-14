@@ -92,10 +92,19 @@
 }
 
 .category-pill .pill-icon {
-  width: 0.83rem;
-  height: 0.83rem;
-  stroke-width: 2.8;
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.category-pill .pill-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 /* Category Colors */
