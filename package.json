@@ -9,7 +9,9 @@
     "lint-html": "htmlhint '**/*.html'",
     "lint-css": "stylelint *.css",
     "validate": "npm run lint && npm run lint-html && npm run lint-css",
-    "deploy": "gh-pages -d ."
+    "build:js": "node -e \"const fs=require('fs'); const files=['config.js','data.js','utils.js','ais.js','admin.js','news.js','npt.js','ui.js','script.js']; fs.writeFileSync('bundle.js', files.map(f=>fs.readFileSync(f,'utf8')).join('\\n\\n'))\"",
+    "build": "npm run build:js",
+    "deploy": "npm run build && gh-pages -d ."
   },
   "devDependencies": {
     "eslint": "^8.52.0",

@@ -897,69 +897,8 @@
       </div>
     </div>
 
-    <script src="config.js"></script>
-    <script src="data.js"></script>
-    <script src="utils.js"></script>
-    <script src="ais.js"></script>
-    <script src="admin.js"></script>
-    <script src="news.js"></script>
-    <script src="npt.js"></script>
-    <script src="map.js"></script>
-    <script src="ui.js"></script>
-    <script src="script.js"></script>
-    <!-- News Reader Modal (Full Story View) -->
-    <div id="news-reader-modal" class="modal" role="dialog" aria-modal="true" hidden>
-      <div class="modal-content news-reader-panel">
-        <button
-          type="button"
-          class="modal-close reader-close"
-          id="reader-close"
-          aria-label="Zatvori"
-        >
-          &times;
-        </button>
-
-        <div id="reader-breadcrumbs" class="breadcrumbs"></div>
-
-        <div class="reader-header">
-          <div class="meta-row">
-            <span id="reader-meta" class="meta-info"></span>
-            <button class="translate-btn" title="Prevedi na Engleski">
-              <span class="icon">🌐</span> EN
-            </button>
-          </div>
-          <h1 id="reader-title"></h1>
-        </div>
-
-        <div class="reader-hero-img" id="reader-hero-img"></div>
-
-        <div class="reader-body-container">
-          <div id="reader-ai-summary" class="editorial-ai">
-            <p class="ai-label">AI SAŽETAK</p>
-            <p id="reader-ai-text"></p>
-          </div>
-
-          <div id="reader-body" class="article-body"></div>
-        </div>
-
-        <div class="reader-footer">
-          <div class="share-group">
-            <span>Podijeli:</span>
-            <button class="action-btn icon-only" data-share="copy" title="Kopiraj link">🔗</button>
-            <button class="action-btn icon-only" data-share="twitter" title="Podijeli na X">
-              𝕏
-            </button>
-            <button
-              class="action-btn icon-only"
-              data-share="facebook"
-              title="Podijeli na Facebooku"
-            >
-              f
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Bundled JS (build:js combines all except map.js which is lazy-loaded) -->
+    <script src="bundle.js"></script>
 
     <!-- Lucide Icons - load after content renders -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
