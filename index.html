@@ -764,34 +764,12 @@
   <script src="map.js"></script>
   <script src="ui.js"></script>
   <script id="prod-config">/* INJECT_PROD_CONFIG_SYNC */</script>
-  <script>
-    // In v2.6.0, we have NO fallback. If the injection fails, window.LOCAL_CONFIG will be undefined.
-    console.log('🔍 System Config Diagnostic (v2.6.0):', {
-      configExists: typeof window.LOCAL_CONFIG !== 'undefined',
-      hasAisKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
-      isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS
-    });
-
-    // --- Cumulative Diagnostic v2.9.1 ---
-    (function () {
-      const tag = document.getElementById('prod-config');
-      const meta = document.querySelector('meta[name="deployment-source"]');
-      const isMain = meta?.content === "RAW_SOURCE_MAIN";
-
-      const diag = {
-        version: 'v2.9.1',
-        deploySource: meta ? meta.content : "MISSING",
-        configInjected: !isMain,
-        rawTagContent: tag ? tag.innerHTML.trim() : "TAG_MISSING"
-      };
-      console.log('🧪 SOURCE INSPECTOR (v2.9.1):', diag);
-
-      if (isMain) {
-        console.error("🚨 CONFIGURATION ERROR: You are serving the 'main' branch!");
-        console.warn("👉 Go to GitHub Settings > Pages > Build and deployment > Branch");
-        console.warn("👉 Change 'main' to 'gh-pages' to see the injected keys.");
-      }
-    })();
+  // --- Production Check ---
+  if (window.LOCAL_CONFIG?.isProduction) {
+  console.info("🚢 AIS Configuration Loaded (Source: Production Injection)");
+  } else {
+  console.warn("⚠️ AIS Configuration Missing or Local Fallback Active");
+  }
   </script>
   <script src="script.js"></script>
   <!-- News Reader Modal (Full Story View) -->

@@ -12,7 +12,9 @@ class AISStreamClient {
 
   connect() {
     console.log('Connecting to AISStream.io...')
-    console.log('Using API key:', this.apiKey.substring(0, 10) + '...')
+    // Mask the key for security in production logs
+    const maskedKey = this.apiKey ? `${this.apiKey.substring(0, 4)}...${this.apiKey.substring(this.apiKey.length - 4)}` : 'UNKNOWN';
+    console.log(`Using API key: ${maskedKey}`)
 
     try {
       this.ws = new WebSocket('wss://stream.aisstream.io/v0/stream')
@@ -24,21 +26,21 @@ class AISStreamClient {
     this.ws.onopen = () => {
       console.log('✓ Connected to AISStream.io')
 
-      // Subscribe to specific vessel by MMSI
-      const subscription = {
-        APIKey: this.apiKey,
+      // Subscribe logic per AISStream.io documentation
+      // The subscription message must be a JSON object with a specific structure.
+      const subscriptionMessage = {
+        APIKey: this.apiKey, // Case sensitive!
         BoundingBoxes: [
-          // Croatian Adriatic region
           [
-            [44.5, 14.5],
-            [45.0, 15.0],
-          ],
+            [44.5, 14.5], // South-West Lat/Lon
+            [45.0, 15.0]  // North-East Lat/Lon
+          ]
         ],
-        FiltersShipMMSI: [this.mmsi],
-        FilterMessageTypes: ['PositionReport'],
+        FiltersShipMMSI: [String(this.mmsi)], // Must be strings
+        FilterMessageTypes: ["PositionReport"] // We only need position
       }
 
-      this.ws.send(JSON.stringify(subscription))
+      this.ws.send(JSON.stringify(subscriptionMessage))
       console.log(`Subscribed to MMSI: ${this.mmsi} in Croatian waters`)
     }
 
@@ -60,9 +62,9 @@ class AISStreamClient {
               flag: message.MetaData.FLAG || 'Croatia',
               latitude: posReport.Latitude,
               longitude: posReport.Longitude,
-              speed: posReport.Sog, // Speed over ground
-              course: posReport.Cog, // Course over ground
-              heading: posReport.TrueHeading,
+              speed: Number(posReport.Sog) || 0, // Ensure number
+              course: Number(posReport.Cog) || 0, // Ensure number
+              heading: Number(posReport.TrueHeading) || 0, // Ensure number
               destination: message.MetaData.Destination || 'Stinica ⇄ Mišnjak',
               eta: message.MetaData.Eta || 'N/A',
               status: this.getNavStatus(posReport.NavigationalStatus),
@@ -70,7 +72,7 @@ class AISStreamClient {
               source: 'AISStream.io (Live)',
             }
 
-            console.log('✓ Received AIS update:', this.latestData)
+            console.debug('✓ AIS update:', { ...this.latestData, mmsi: '***' }) // Reduced noise
 
             if (this.onDataCallback) {
               this.onDataCallback(this.latestData)
