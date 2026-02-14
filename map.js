@@ -1137,24 +1137,20 @@ function updateMapVisualization() {
       // Ensure clusterLayer exists
       if (!state.clusterLayer) state.clusterLayer = L.layerGroup().addTo(state.mapInstance)
 
-      // Pre-group identical-coordinate camera features so we create a single
-      // stacked marker instead of many overlapping raw points.
-      const cameraGroups = new Map()
+      // Pre-group identical-coordinate features for offset calculation
+      const coordGroups = new Map()
       features.forEach((f) => {
         try {
           if (!f || !f.geometry || !f.geometry.coordinates) return
-          const props = f.properties || {}
-          if ((props.layer || '') !== 'camera') return
           const [lng, lat] = f.geometry.coordinates
           const key = `${parseFloat(lat).toFixed(6)}:${parseFloat(lng).toFixed(6)}`
-          const arr = cameraGroups.get(key) || []
+          const arr = coordGroups.get(key) || []
           arr.push(f)
-          cameraGroups.set(key, arr)
+          coordGroups.set(key, arr)
         } catch (e) {}
       })
 
       const newIds = new Set()
-      const createdCameraGroups = new Set()
 
       features.forEach((f) => {
         try {
@@ -1165,24 +1161,11 @@ function updateMapVisualization() {
           const id = `point:${props.layer || 'p'}:${pid}`
           newIds.add(id)
 
-          // If this is part of a camera-identical group, create a single stacked
-          // marker for the group and skip creating individual raw points.
-          try {
-            if ((props.layer || '') === 'camera') {
-              const key = `${parseFloat(lat).toFixed(6)}:${parseFloat(lng).toFixed(6)}`
-              const group = cameraGroups.get(key)
-              if (group && group.length > 1) {
-                if (!createdCameraGroups.has(key)) {
-                  createdCameraGroups.add(key)
-                  const m = createStackedMarker(key, group, lat, lng)
-                  if (m) newIds.add(`group:${key}`)
-                }
-                return
-              }
-            }
-          } catch (e) {
-            /* ignore grouping errors */
-          }
+          // Calculate offset for same-coord markers
+          const key = `${parseFloat(lat).toFixed(6)}:${parseFloat(lng).toFixed(6)}`
+          const group = coordGroups.get(key)
+          const indexInGroup = group ? group.indexOf(f) : -1
+          const offsetLat = indexInGroup > 0 ? indexInGroup * 0.00002 : 0
 
           const icon = L.divIcon({
             className: props.iconClass || '',
@@ -1191,7 +1174,7 @@ function updateMapVisualization() {
           })
           const existing = state.clusterMarkers.get(id)
           if (existing) {
-            if (existing._isClusterized) existing.setLatLng([lat, lng])
+            if (existing._isClusterized) existing.setLatLng([lat + offsetLat, lng])
           } else {
             // Skip creating markers that would overlap the ferry
             try {
@@ -1216,7 +1199,10 @@ function updateMapVisualization() {
               }
             } catch (e) {}
 
-            const marker = createMarkerSafe(lat, lng, { icon, title: props.layer || 'lokacija' })
+            const marker = createMarkerSafe(lat + offsetLat, lng, {
+              icon,
+              title: props.layer || 'lokacija',
+            })
             if (marker) {
               marker.bindPopup(props.popup || '').addTo(state.clusterLayer)
               const el = marker.getElement && marker.getElement()
@@ -1441,63 +1427,16 @@ function updateMapVisualization() {
         iconSize: props.iconSize || [30, 30],
       })
 
-      // Check for identical-coordinate groups FIRST, before checking existing markers
-      // This ensures stacked markers are created even if one camera already has a marker
-      try {
-        const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
-        const group = coordGroups.get(key)
-        if (group && group.length > 1) {
-          // If group consists solely of cameras, create a single stacked marker
-          const allCameras = group.every((leaf) => {
-            const p = leaf.properties || {}
-            return p.layer === 'camera' || p.layer === 'cameras' || p.layer === 'camera_feed'
-          })
-          if (allCameras) {
-            const groupId = `group:${key}`
-            // Check if stacked marker already exists
-            const existingStacked = state.clusterMarkers.get(groupId)
-            if (existingStacked) {
-              // Stacked marker exists, just mark it as still needed
-              newIds.add(groupId)
-              coordGroupIndexes.add(key)
-              return // Skip creating individual marker
-            }
-            // Only create one stacked marker per key
-            if (!coordGroupIndexes.has(key)) {
-              coordGroupIndexes.add(key)
-              // Remove any existing individual markers at this location
-              group.forEach((leaf) => {
-                const lp = leaf.properties || {}
-                const lpid =
-                  lp.id ||
-                  `${lp.layer}:${leaf.geometry.coordinates[0]}:${leaf.geometry.coordinates[1]}`
-                const lid = `point:${lp.layer || 'p'}:${lpid}`
-                const existingIndividual = state.clusterMarkers.get(lid)
-                if (existingIndividual) {
-                  try {
-                    state.clusterLayer.removeLayer(existingIndividual)
-                  } catch (e) {}
-                  state.clusterMarkers.delete(lid)
-                }
-              })
-              // Create stacked marker using centralized helper so popup buttons are wired
-              const m = createStackedMarker(key, group, lat, lng)
-              if (m) {
-                newIds.add(groupId)
-              }
-            }
-            // Skip creating the individual point marker
-            return
-          }
-        }
-      } catch (e) {
-        /* ignore grouping errors */
-      }
+      // Apply tiny offset for same-coord markers so they're all clickable when not clustered
+      const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
+      const group = coordGroups.get(key)
+      const indexInGroup = group ? group.indexOf(c) : -1
+      const offsetLat = indexInGroup > 0 ? indexInGroup * 0.00002 : 0 // ~2m per marker
 
       const existing = state.clusterMarkers.get(id)
       if (existing) {
         if (existing._isClusterized) {
-          existing.setLatLng([lat, lng])
+          existing.setLatLng([lat + offsetLat, lng])
           existing.setIcon(icon)
         }
       } else {
@@ -1553,47 +1492,6 @@ function updateMapVisualization() {
       }
     }
   })
-
-  // Final dedupe pass: if we've created grouped stacked markers, remove any
-  // stray individual markers that sit at the same coordinates (tiny epsilon).
-  try {
-    const EPS = 1e-6
-    Array.from(state.clusterMarkers.entries()).forEach(([gid, gm]) => {
-      try {
-        if (!gid || !gid.startsWith('group:')) return
-        if (!gm) return
-        const gLatLng = gm._latlng || (gm.getLatLng && gm.getLatLng && gm.getLatLng())
-        if (!gLatLng) return
-        state.clusterMarkers.forEach((other, oid) => {
-          try {
-            if (!other || !oid) return
-            if (oid === gid) return
-            if (other._isFerry || other._doNotRemove) return
-            // Keep other grouped markers
-            if (oid.startsWith('group:')) return
-            const oLatLng =
-              other._latlng || (other.getLatLng && other.getLatLng && other.getLatLng())
-            if (!oLatLng) return
-            if (
-              Math.max(Math.abs(oLatLng.lat - gLatLng.lat), Math.abs(oLatLng.lng - gLatLng.lng)) <=
-              EPS
-            ) {
-              try {
-                state.clusterLayer.removeLayer(other)
-              } catch (e) {}
-              state.clusterMarkers.delete(oid)
-            }
-          } catch (e) {
-            /* ignore inner */
-          }
-        })
-      } catch (e) {
-        /* ignore per-group */
-      }
-    })
-  } catch (e) {
-    /* ignore dedupe errors */
-  }
 
   const __mapTiming_end =
     typeof performance !== 'undefined' && performance.now ? performance.now() : Date.now()
@@ -1727,6 +1625,22 @@ function updateClustersForViewport() {
   const bbox = [bounds.getWest(), bounds.getSouth(), bounds.getEast(), bounds.getNorth()]
   const zoom = Math.round(state.mapInstance.getZoom())
   const clusters = state.superIndex.getClusters(bbox, zoom)
+
+  // Build coord groups for offset calculation
+  const coordGroups = new Map()
+  clusters.forEach((c) => {
+    try {
+      if (!c || !c.geometry || !c.geometry.coordinates) return
+      if (c.properties && c.properties.cluster) return // skip actual clusters
+      const [lng, lat] = c.geometry.coordinates
+      const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
+      const arr = coordGroups.get(key) || []
+      arr.push(c)
+      coordGroups.set(key, arr)
+    } catch (e) {
+      /* ignore */
+    }
+  })
 
   const newIds = new Set()
   const coordGroupIndexes = new Set() // Track which coord groups we've processed
@@ -1906,6 +1820,12 @@ function updateClustersForViewport() {
       // Not grouped -> create point marker and register id
       newIds.add(id)
 
+      // Apply tiny offset for same-coord markers
+      const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
+      const group = coordGroups.get(key)
+      const indexInGroup = group ? group.indexOf(c) : -1
+      const offsetLat = indexInGroup > 0 ? indexInGroup * 0.00002 : 0
+
       const icon = L.divIcon({
         className: props.iconClass || '',
         html: props.iconHtml || '',
@@ -1914,7 +1834,7 @@ function updateClustersForViewport() {
       const existing = state.clusterMarkers.get(id)
       if (existing) {
         if (existing._isFerry) return
-        if (existing._isClusterized) existing.setLatLng([lat, lng])
+        if (existing._isClusterized) existing.setLatLng([lat + offsetLat, lng])
       } else {
         // Prevent creation of point marker that would overlap the ferry
         try {
@@ -1939,7 +1859,10 @@ function updateClustersForViewport() {
           }
         } catch (e) {}
 
-        const marker = createMarkerSafe(lat, lng, { icon, title: props.layer || 'lokacija' })
+        const marker = createMarkerSafe(lat + offsetLat, lng, {
+          icon,
+          title: props.layer || 'lokacija',
+        })
         if (marker) {
           marker.bindPopup(props.popup || '').addTo(state.clusterLayer)
           // Flag point markers created from Supercluster as cluster-managed
