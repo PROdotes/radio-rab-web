@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 
 const API_KEY = process.env.AISSTREAM_API_KEY;
-const TARGET_MMSI = '238690000'; // Rapska Plovidba Ferry
-const TIMEOUT_MS = 15000; // 15 seconds max wait
+const TARGET_MMSI = '238118840'; // Rapska Plovidba Ferry (Active)
+const TIMEOUT_MS = 60000; // 60 seconds max wait
 
 if (!API_KEY) {
     console.error('!! AISSTREAM_API_KEY is missing');
@@ -15,8 +15,13 @@ const ws = new WebSocket('wss://stream.aisstream.io/v0/stream');
 
 const timeout = setTimeout(() => {
     console.log('!! Timeout waiting for ferry data');
+    // Ensure file exists (even if empty/stale) so git add doesn't fail
+    const fallbackPath = path.join(__dirname, '../data/ais-snapshot.json');
+    if (!fs.existsSync(fallbackPath)) {
+        fs.writeFileSync(fallbackPath, JSON.stringify({ status: "no_data", timestamp: new Date().toISOString() }));
+    }
     ws.terminate();
-    process.exit(0); // Exit successfully to not break the workflow, just no data this time
+    process.exit(0);
 }, TIMEOUT_MS);
 
 ws.on('open', () => {

@@ -36,7 +36,7 @@ jobs:
             nptUser: '${{ secrets.NPT_USER }}',
             nptPass: '${{ secrets.NPT_PASS }}',
             AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
-            FERRY_MMSI: '238690000',
+            FERRY_MMSI: '238118840',
             ENABLE_REAL_AIS: true
           };
           EOF
