@@ -764,16 +764,24 @@
   <script src="ui.js"></script>
   <script id="prod-config">/* INJECT_PROD_CONFIG_SYNC */</script>
   <script>
-    // Only set fallback if the production injection failed to run or hasn't run yet
-    if (typeof window.LOCAL_CONFIG === 'undefined') {
-      window.LOCAL_CONFIG = { ENABLE_REAL_AIS: false };
-    }
-
-    console.log('🔍 System Config Diagnostic (v2.5.0):', {
-      isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS,
+    // In v2.6.0, we have NO fallback. If the injection fails, window.LOCAL_CONFIG will be undefined.
+    console.log('🔍 System Config Diagnostic (v2.6.0):', {
+      configExists: typeof window.LOCAL_CONFIG !== 'undefined',
       hasAisKey: !!window.LOCAL_CONFIG?.AISSTREAM_API_KEY,
-      isSync: true
+      isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS
     });
+
+    // --- Cumulative Diagnostic v2.7.0 ---
+    (function () {
+      const diag = {
+        version: 'v2.7.0',
+        timestamp: new Date().toISOString(),
+        location: window.location.href,
+        configSource: window.LOCAL_CONFIG?.isProduction ? "PROD_INJECTED" : "LOCAL_FALLBACK",
+        configKeys: window.LOCAL_CONFIG ? Object.keys(window.LOCAL_CONFIG) : "NONE"
+      };
+      console.log('🏁 Diagnostic Link (v2.7.0):', diag);
+    })();
   </script>
   <script src="script.js"></script>
   <!-- News Reader Modal (Full Story View) -->

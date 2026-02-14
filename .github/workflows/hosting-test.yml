@@ -39,42 +39,65 @@ jobs:
           mkdir dist
           cp -r *.html *.js *.css *.json data scripts dist/ || true
           
-          python3 -c "
+          # Verifying environment before injection
+          echo "DEBUG: Starting Injection Pipeline v2.7.0"
+          echo "DEBUG: AIS_KEY Length is ${#AIS_KEY}"
+          echo "DEBUG: RUN_ID is ${RUN_ID}"
+          
+          cat << 'EOF' > inject_config.py
           import os, json
           run_id = os.environ.get('RUN_ID', 'UNK')
           ais_key = os.environ.get('AIS_KEY', '').strip()
           
+          print(f"--- RUNNER PYTHON DEBUG START (v2.7.0) ---")
+          print(f"Environment Check: Key Length={len(ais_key)}, RunID={run_id}")
+          
           if not ais_key:
-              print('!! FATAL: AIS Key missing !!')
+              print("!! ERROR: AIS_KEY is MISSING in Python environment !!")
               exit(1)
           
-          # 1. Prepare the JSON config
           config_payload = {
               'AISSTREAM_API_KEY': ais_key,
               'nptUser': os.environ.get('NPT_USER', ''),
               'nptPass': os.environ.get('NPT_PASS', ''),
               'FERRY_MMSI': '238690000',
               'ENABLE_REAL_AIS': True,
+              'isProduction': True,
               'urls': { 'npt': 'https://b2b.promet-info.hr' }
           }
           
-          # 2. Update index.html INLINE (Synchronous)
           with open('dist/index.html', 'r') as f:
               content = f.read()
           
           marker = '/* INJECT_PROD_CONFIG_SYNC */'
-          # We inject the actual JS code directly into the tag
-          sync_code = f'window.LOCAL_CONFIG = {json.dumps(config_payload)}; console.info(\"🚢 Synchronous Config Injected (Run {run_id})\");'
+          sync_code = f'window.LOCAL_CONFIG = {json.dumps(config_payload)}; console.info("🚢 LIVE: Config Injected (v2.7.0) [ID: {run_id}]");'
           
+          print(f"Target Marker: {marker}")
           if marker in content:
-              content = content.replace(marker, sync_code)
+              print(f"✓ Marker found. Replacing with payload...")
+              new_content = content.replace(marker, sync_code)
               with open('dist/index.html', 'w') as f:
-                  f.write(content)
-              print(f'✓ Synchronously injected config into index.html')
+                  f.write(new_content)
+              print(f"✓ WRITE SUCCESS: Payload length {len(sync_code)}")
+              
+              # Final verification of the dist file
+              with open('dist/index.html', 'r') as f:
+                  final_check = f.read()
+              if sync_code in final_check:
+                  print(f"✓ VERIFICATION PASSED: Payload exists in dist/index.html")
+              else:
+                  print("!! FATAL: Validation failed - payload missing from file after write !!")
+                  exit(1)
           else:
-              print('!! FATAL: Marker not found !!')
+              print(f"!! ERROR: Target marker NOT FOUND in dist/index.html !!")
+              print("--- START OF INDEX.HTML (v2.7.0 SNIPPET) ---")
+              print(content[content.find('<script'):content.find('</script>')+200]) # Snippet around script tags
+              print("--- END OF SNIPPET ---")
               exit(1)
-          "
+          print(f"--- RUNNER PYTHON DEBUG END (v2.7.0) ---")
+          EOF
+          
+          python3 inject_config.py
           touch dist/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
