@@ -1,7 +1,7 @@
 name: Data Sync
 on:
   schedule:
-    - cron: '*/5 * * * *' # Every 5 minutes for traffic/weather/ais
+    - cron: '*/15 * * * *' # Every 15 minutes for traffic/weather/ais
     - cron: '0 6 * * *' # Daily at 6am for sea quality
   workflow_dispatch: # Manual trigger
   push:
@@ -49,12 +49,12 @@ jobs:
           pwsh -File ./scripts/sync-raw-data.ps1
         continue-on-error: true
 
-      - name: Fetch AIS Snapshot (Real-Time)
-        env:
-          AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
-        run: |
-          node scripts/sync-ais-snapshot.js
-        continue-on-error: true
+#      - name: Fetch AIS Snapshot (Real-Time)
+#        env:
+#          AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
+#        run: |
+#          node scripts/sync-ais-snapshot.js
+#        continue-on-error: true
 
       - name: Fetch Cameras (once)
         run: |
@@ -96,6 +96,12 @@ jobs:
         run: |
           pwsh -File ./scripts/sync-izor.ps1
         continue-on-error: true
+
+      - name: Prepare Commit (Pull & Rebase)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
 
       - name: Commit Sea Quality Data
         uses: stefanzweifel/git-auto-commit-action@v5

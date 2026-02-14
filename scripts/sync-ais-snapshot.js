@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 
 const API_KEY = process.env.AISSTREAM_API_KEY;
-const TARGET_MMSI = '238118840'; // Rapska Plovidba Ferry (Active)
 const TIMEOUT_MS = 60000; // 60 seconds max wait
 
 if (!API_KEY) {
@@ -24,13 +23,15 @@ const timeout = setTimeout(() => {
     process.exit(0);
 }, TIMEOUT_MS);
 
+// Known Rapska Plovidba Ferries
+const TARGET_MMSIS = ['238118840', '238690000', '238113340', '238113350'];
+
 ws.on('open', () => {
     console.log('✓ CACHING: Connected to AISStream');
     const subscription = {
         APIKey: API_KEY,
-        BoundingBoxes: [[[44.5, 14.5], [45.0, 15.0]]],
-        FiltersShipMMSI: [TARGET_MMSI]
-        // FilterMessageTypes: ["PositionReport"] // Listen to ALL messages to catch anything
+        BoundingBoxes: [[[44.6, 14.7], [44.8, 15.0]]], // Tighter box around Rab/Stinica/Misnjak
+        // FiltersShipMMSI: REMOVED - Catch everything in box
     };
     ws.send(JSON.stringify(subscription));
 });
@@ -40,7 +41,8 @@ ws.on('message', (data) => {
         const message = JSON.parse(data);
         const mmsi = String(message.MetaData?.MMSI || '');
 
-        if (mmsi === TARGET_MMSI && message.Message?.PositionReport) {
+        // Check if message is from ANY known ferry
+        if (TARGET_MMSIS.includes(mmsi) && message.Message?.PositionReport) {
             const pos = message.Message.PositionReport;
             const snapshot = {
                 name: message.MetaData.ShipName,

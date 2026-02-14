@@ -560,8 +560,8 @@ function initMap() {
     showVesselAISModal('9822621')
   })
 
-  // Simulation Disabled - We are live with Snapshot Strategy
-  // startFerrySimulation(ferryMarker, misnjak, stinica)
+  // Start Simulation Loop (Simulation restored as fallback)
+  startFerrySimulation(ferryMarker, misnjak, stinica)
 
   // Enforce ferry integrity periodically to prevent duplicates created by
   // cluster/marker rebuilds or other layers. Runs every 3 seconds.
