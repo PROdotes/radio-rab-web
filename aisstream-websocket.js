@@ -12,7 +12,6 @@ class AISStreamClient {
 
   connect() {
     console.log('Connecting to AISStream.io...')
-    // Mask the key for security in production logs
     const maskedKey = this.apiKey ? `${this.apiKey.substring(0, 4)}...${this.apiKey.substring(this.apiKey.length - 4)}` : 'UNKNOWN';
     console.log(`Using API key: ${maskedKey}`)
 
@@ -39,6 +38,11 @@ class AISStreamClient {
         FiltersShipMMSI: [String(this.mmsi)], // Must be strings
         FilterMessageTypes: ["PositionReport"] // We only need position
       }
+
+      console.debug('Sending subscription payload:', {
+        ...subscriptionMessage,
+        APIKey: 'HIDDEN'
+      }) // Debug the payload structure without leaking the key
 
       this.ws.send(JSON.stringify(subscriptionMessage))
       console.log(`Subscribed to MMSI: ${this.mmsi} in Croatian waters`)
@@ -86,10 +90,12 @@ class AISStreamClient {
 
     this.ws.onerror = (error) => {
       console.error('AISStream WebSocket error:', error)
+      // Log connection state for debugging
+      console.debug('WS State:', this.ws.readyState)
     }
 
-    this.ws.onclose = () => {
-      console.log('AISStream connection closed. Reconnecting in 5s...')
+    this.ws.onclose = (event) => {
+      console.log(`AISStream connection closed (Code: ${event.code}). Reconnecting in 5s...`)
       setTimeout(() => this.connect(), 5000)
     }
   }
