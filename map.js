@@ -1151,6 +1151,7 @@ function updateMapVisualization() {
       })
 
       const newIds = new Set()
+      const coordGroupIdx = new Map() // Track index for same-coord markers
 
       features.forEach((f) => {
         try {
@@ -1163,9 +1164,9 @@ function updateMapVisualization() {
 
           // Calculate offset for same-coord markers
           const key = `${parseFloat(lat).toFixed(6)}:${parseFloat(lng).toFixed(6)}`
-          const group = coordGroups.get(key)
-          const indexInGroup = group ? group.indexOf(f) : -1
-          const offsetLat = indexInGroup > 0 ? indexInGroup * 0.00002 : 0
+          const idx = coordGroupIdx.get(key) || 0
+          coordGroupIdx.set(key, idx + 1)
+          const offsetLat = idx * 0.00002
 
           const icon = L.divIcon({
             className: props.iconClass || '',
@@ -1298,9 +1299,8 @@ function updateMapVisualization() {
   })
 
   const newIds = new Set()
-  // Track coord-group stacked markers created during this fast pass so we
-  // don't create duplicates when multiple clusters reference the same coords.
-  const coordGroupIndexes = new Set()
+  // Track index for same-coord markers so they get unique offsets
+  const coordGroupIdx = new Map()
 
   // Prune any stale non-cluster markers for managed layers so we don't show
   // duplicate raw points alongside Supercluster markers. Keep protected/ferry markers.
@@ -1429,9 +1429,9 @@ function updateMapVisualization() {
 
       // Apply tiny offset for same-coord markers so they're all clickable when not clustered
       const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
-      const group = coordGroups.get(key)
-      const indexInGroup = group ? group.indexOf(c) : -1
-      const offsetLat = indexInGroup > 0 ? indexInGroup * 0.00002 : 0 // ~2m per marker
+      const idx = coordGroupIdx.get(key) || 0
+      coordGroupIdx.set(key, idx + 1)
+      const offsetLat = idx * 0.00002 // ~2m per marker
 
       const existing = state.clusterMarkers.get(id)
       if (existing) {
@@ -1643,7 +1643,7 @@ function updateClustersForViewport() {
   })
 
   const newIds = new Set()
-  const coordGroupIndexes = new Set() // Track which coord groups we've processed
+  const coordGroupIdx = new Map() // Track index for same-coord markers
 
   clusters.forEach((c) => {
     const [lng, lat] = c.geometry.coordinates
@@ -1822,9 +1822,9 @@ function updateClustersForViewport() {
 
       // Apply tiny offset for same-coord markers
       const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
-      const group = coordGroups.get(key)
-      const indexInGroup = group ? group.indexOf(c) : -1
-      const offsetLat = indexInGroup > 0 ? indexInGroup * 0.00002 : 0
+      const idx = coordGroupIdx.get(key) || 0
+      coordGroupIdx.set(key, idx + 1)
+      const offsetLat = idx * 0.00002
 
       const icon = L.divIcon({
         className: props.iconClass || '',
