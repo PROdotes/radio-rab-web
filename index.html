@@ -753,7 +753,6 @@
   </div>
 
   <script src="config.js"></script>
-  <script src="aisstream-websocket.js"></script>
   <script src="data.js"></script>
   <script src="utils.js"></script>
   <script src="weather.js"></script>
@@ -763,14 +762,6 @@
   <script src="npt.js"></script>
   <script src="map.js"></script>
   <script src="ui.js"></script>
-  <script id="prod-config">/* INJECT_PROD_CONFIG_SYNC */</script>
-  // --- Production Check ---
-  if (window.LOCAL_CONFIG?.isProduction) {
-  console.info("🚢 AIS Configuration Loaded (Source: Production Injection)");
-  } else {
-  console.warn("⚠️ AIS Configuration Missing or Local Fallback Active");
-  }
-  </script>
   <script src="script.js"></script>
   <!-- News Reader Modal (Full Story View) -->
   <div id="news-reader-modal" class="modal" role="dialog" aria-modal="true" hidden>

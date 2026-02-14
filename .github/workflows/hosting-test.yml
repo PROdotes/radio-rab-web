@@ -30,81 +30,10 @@ jobs:
         with:
           node-version: '18'
       - name: Prepare Clean Distribution
-        env:
-          AIS_KEY: ${{ secrets.AISSTREAM_API_KEY }}
-          NPT_USER: ${{ secrets.NPT_USER }}
-          NPT_PASS: ${{ secrets.NPT_PASS }}
-          RUN_ID: ${{ github.run_id }}
         run: |
           mkdir dist
           cp -r *.html *.js *.css *.json data scripts dist/ || true
-          
-          # Verifying environment before injection
-          echo "DEBUG: Starting Injection Pipeline v2.7.0"
-          echo "DEBUG: AIS_KEY Length is ${#AIS_KEY}"
-          echo "DEBUG: RUN_ID is ${RUN_ID}"
-          
-          cat << 'EOF' > inject_config.py
-          import os, json
-          run_id = os.environ.get('RUN_ID', 'UNK')
-          ais_key = os.environ.get('AIS_KEY', '').strip()
-          
-          print(f"--- RUNNER PYTHON DEBUG START (v2.8.0) ---")
-          print(f"Goal: Inject secret into dist/index.html")
-          print(f"Input: SecretLength={len(ais_key)}")
-          
-          if not ais_key:
-              print("!! ERROR: AIS_KEY is MISSING in environment !!")
-              exit(1)
-          
-          config_payload = {
-              'AISSTREAM_API_KEY': ais_key,
-              'nptUser': os.environ.get('NPT_USER', ''),
-              'nptPass': os.environ.get('NPT_PASS', ''),
-              'isProduction': True,
-              'ENABLE_REAL_AIS': True,
-              'FERRY_MMSI': '238690000',
-              'urls': { 'npt': 'https://b2b.promet-info.hr' }
-          }
-          
-          with open('dist/index.html', 'r') as f:
-              content = f.read()
-          
-          marker = '/* INJECT_PROD_CONFIG_SYNC */'
-          # Force the payload to be a single line of valid JS
-          payload_js = json.dumps(config_payload)
-          sync_code = f'window.LOCAL_CONFIG = {payload_js}; console.info("🚢 LIVE: Config Injected (v2.8.0)");'
-          
-          print(f"Search: Looking for marker '{marker}' in content...")
-          if marker in content:
-              print(f"✓ Match: Found marker. Replacing...")
-              new_content = content.replace(marker, sync_code)
-          # 2. Inject Branch Marker
-          branch_marker = 'content="RAW_SOURCE_MAIN"'
-          branch_inject = 'content="INJECTED_GH_PAGES"'
-          if branch_marker in new_content:
-              print(f"✓ Branch Marker found. Replacing...")
-              new_content = new_content.replace(branch_marker, branch_inject)
-          else:
-              print(f"!! WARNING: Branch Marker '{branch_marker}' missing from file !!")
-          
-          # Write Final Content
-          with open('dist/index.html', 'w') as f:
-              f.write(new_content)
-          
-          # FINAL AUDIT: Read it back and print the exact line to the logs
-          with open('dist/index.html', 'r') as f:
-              lines = f.readlines()
-              for i, line in enumerate(lines):
-                  if 'prod-config' in line:
-                      print(f"✓ AUDIT CONFIG: Line {i+1}: {line.strip()[:100]}...")
-                  if 'deployment-source' in line:
-                      print(f"✓ AUDIT SOURCE: Line {i+1}: {line.strip()[:100]}...")
-          
-          print(f"--- RUNNER PYTHON DEBUG END (v2.9.0) ---")
-          EOF
-          
-          python3 inject_config.py
+          touch dist/.nojekyll
           touch dist/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -18,31 +18,25 @@ document.addEventListener('DOMContentLoaded', init)
  * Main Initialization function
  */
 function init() {
-  // Initialize AISStream WebSocket or Fallback to Simulation
-  const hasAisConfig = window.LOCAL_CONFIG && window.LOCAL_CONFIG.ENABLE_REAL_AIS && window.AISStreamClient;
+  // Initialize AIS Tracking (Snapshot Strategy)
+  const hasAisConfig = window.LOCAL_CONFIG && window.LOCAL_CONFIG.ENABLE_REAL_AIS;
 
   if (hasAisConfig) {
-    const apiKey = window.LOCAL_CONFIG.AISSTREAM_API_KEY;
-    const mmsi = window.LOCAL_CONFIG.FERRY_MMSI;
+    console.log('🚢 Initializing AIS Tracking (Snapshot Mode)...');
 
-    if (apiKey && mmsi) {
-      console.log('🚢 Initializing AISStream.io real-time tracking (v2.9.1)...');
+    const updateFerryFromSnapshot = async () => {
+      try {
+        const response = await fetch('data/ais-snapshot.json?t=' + Date.now()); // Bust cache
+        if (!response.ok) throw new Error('No snapshot data');
 
-      // Instantiate the client correctly
-      window.aisStreamClient = new window.AISStreamClient(apiKey, mmsi);
+        const data = await response.json();
+        const lastUpdate = new Date(data.timestamp);
+        const now = new Date();
+        const ageMinutes = Math.round((now - lastUpdate) / 60000);
 
-      // Set up the data callback BEFORE connecting
-      window.aisStreamClient.onData((data) => {
-        // console.log('✓ Live AIS update received (masked):', { ...data, mmsi: '***' }); // Debug safely
-
-        // Update ferry marker position on map if available
+        // Update ferry marker position
         if (typeof state !== 'undefined' && state.ferryMarker && data.latitude && data.longitude) {
           state.ferryMarker.setLatLng([data.latitude, data.longitude]);
-
-          // Force update the popup content if it's open
-          if (state.ferryMarker.isPopupOpen()) {
-            // We can trigger a refresh here if needed, or let the next click handle it
-          }
         }
 
         // Update status display
@@ -55,24 +49,28 @@ function init() {
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.85rem;">
               <div>Brzina: <strong>${(data.speed || 0).toFixed(1)} kn</strong></div>
               <div>Kurs: <strong>${(data.course || 0).toFixed(0)}°</strong></div>
-              <div style="grid-column: span 2;">Status: <strong>${data.status || '—'}</strong></div>
-              <div style="grid-column: span 2;">Destinacija: <strong>${data.destination || '—'}</strong></div>
+              <div style="grid-column: span 2;">Status: <strong>${data.status || 'Active'}</strong></div>
             </div>
             <div style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-dim); display: flex; align-items: center; gap: 0.5rem;">
-              <span class="live-indicator"></span> LIVE (${new Date().toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })})
+              <span class="live-indicator" style="background-color: ${ageMinutes < 20 ? 'var(--accent)' : 'orange'}"></span> 
+              ${ageMinutes < 1 ? 'UPRAVO SADA' : `PRIJE ${ageMinutes} MIN`}
             </div>
           `;
         }
-      });
+      } catch (err) {
+        // Silent fail - likely just no snapshot yet or network blink
+        // console.debug('AIS Snapshot fetch failed', err);
+      }
+    };
 
-      // Connect
-      window.aisStreamClient.connect();
+    // Initial fetch
+    updateFerryFromSnapshot();
 
-    } else {
-      console.warn('🚢 AIS configuration missing API Key or MMSI. Falling back to simulation.');
-    }
+    // Poll every 60 seconds
+    setInterval(updateFerryFromSnapshot, 60000);
+
   } else {
-    console.info('🚢 Using Simulated AIS data (Real AIS disabled or config missing).');
+    console.info('🚢 AIS Disabled or Simulated.');
   }
 
   // Initialize Lucide icons
