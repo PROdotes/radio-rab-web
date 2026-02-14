@@ -47,7 +47,16 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  background-color: var(--bg-card);
   transition: transform 0.8s var(--ease-out);
+}
+
+.feature-img.lazy-img {
+  background-image: none;
+}
+
+.feature-img.lazy-img.lazy-loaded {
+  transition: background-image 0.3s ease-in;
 }
 
 .main-feature:hover .feature-img {

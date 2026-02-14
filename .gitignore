@@ -2,3 +2,6 @@ docs/
 node_modules/
 .env
 config.local.js
+__pycache__/
+.agent/
+.claude/

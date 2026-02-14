@@ -356,3 +356,37 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
 function deg2rad(deg) {
   return deg * (Math.PI / 180)
 }
+
+function initLazyImages() {
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-bg]').forEach((el) => {
+      const bgUrl = el.dataset.bg
+      if (bgUrl) el.style.backgroundImage = `url('${bgUrl}')`
+    })
+    return
+  }
+
+  // Reuse existing observer or create new one
+  if (!window._lazyImgObserver) {
+    window._lazyImgObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target
+            const bgUrl = el.dataset.bg
+            if (bgUrl) {
+              el.style.backgroundImage = `url('${bgUrl}')`
+              el.classList.add('lazy-loaded')
+              window._lazyImgObserver.unobserve(el)
+            }
+          }
+        })
+      },
+      { rootMargin: '100px' }
+    )
+  }
+
+  document.querySelectorAll('[data-bg]:not(.lazy-loaded)').forEach((el) => {
+    window._lazyImgObserver.observe(el)
+  })
+}

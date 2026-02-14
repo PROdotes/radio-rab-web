@@ -86,7 +86,7 @@ async function fetchVesselAISData(imo) {
   // Try to get data from AISStream WebSocket if available
   if (window.aisStreamClient && window.aisStreamClient.getLatestData()) {
     const data = window.aisStreamClient.getLatestData()
-    console.log('Using live AISStream data:', data)
+    debugLog('Using live AISStream data:', data)
     return data
   }
 

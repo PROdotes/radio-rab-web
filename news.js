@@ -69,9 +69,9 @@ function renderHero(article) {
         }" style="--delay: 1;" data-category="${escapeHtml(article.category)}">
             <div class="feature-img-container">
                 <span class="category-pill">${getCategoryPillHTML(article.category)}</span>
-                <div class="feature-img" style="background-image: url('${escapeHtml(
+                <div class="feature-img lazy-img" data-bg="${escapeHtml(
                   article.image
-                )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
+                )}" role="img" aria-label="${escapeHtml(article.title)}"></div>
             </div>
             <div class="feature-content">
                 <div class="meta-row">
@@ -174,6 +174,11 @@ function loadMoreArticles() {
       hideLoader()
       if (btn) btn.style.display = 'none'
     }
+
+    // Initialize lazy loading for newly added cards
+    if (typeof initLazyImages === 'function') {
+      initLazyImages()
+    }
   }, CONFIG.loadDelay)
 }
 
@@ -187,9 +192,9 @@ function createNewsCard(article, index) {
   card.innerHTML = `
         <div class="feature-img-container">
             <span class="category-pill">${getCategoryPillHTML(article.category)}</span>
-            <div class="feature-img" style="background-image: url('${escapeHtml(
+            <div class="feature-img lazy-img" data-bg="${escapeHtml(
               article.image
-            )}');" role="img" aria-label="${escapeHtml(article.title)}"></div>
+            )}" role="img" aria-label="${escapeHtml(article.title)}"></div>
         </div>
         <div class="feature-content">
             <h3>${escapeHtml(article.title)}</h3>
