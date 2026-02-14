@@ -9,6 +9,7 @@
     content="Radio Rab - vaš izvor za lokalne vijesti, događanja i informacije s otoka Raba. Trajekti, vrijeme, kultura, sport i više." />
   <meta name="keywords" content="Radio Rab, otok Rab, vijesti, Hrvatska, Kvarner, trajekt, turizam" />
   <meta name="author" content="Radio Rab" />
+  <meta name="deployment-source" content="RAW_SOURCE_MAIN" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
@@ -771,16 +772,18 @@
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS
     });
 
-    // --- Cumulative Diagnostic v2.8.0 ---
+    // --- Cumulative Diagnostic v2.9.0 ---
     (function () {
       const tag = document.getElementById('prod-config');
+      const meta = document.querySelector('meta[name="deployment-source"]');
       const diag = {
-        version: 'v2.8.0',
+        version: 'v2.9.0',
         configSource: window.LOCAL_CONFIG?.isProduction ? "PROD_INJECTED" : "LOCAL_FALLBACK",
         rawTagContent: tag ? tag.innerHTML.trim() : "TAG_MISSING",
+        deploySource: meta ? meta.content : "META_MISSING", // This is the KEY
         windowConfigType: typeof window.LOCAL_CONFIG
       };
-      console.log('🧪 Source Inspection (v2.8.0):', diag);
+      console.log('🧪 SOURCE INSPECTOR (v2.9.0):', diag);
     })();
   </script>
   <script src="script.js"></script>

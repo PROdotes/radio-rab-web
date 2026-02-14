@@ -79,22 +79,29 @@ jobs:
           if marker in content:
               print(f"✓ Match: Found marker. Replacing...")
               new_content = content.replace(marker, sync_code)
-              with open('dist/index.html', 'w') as f:
-                  f.write(new_content)
-              
-              # FINAL AUDIT: Read it back and print the exact line to the logs
-              with open('dist/index.html', 'r') as f:
-                  lines = f.readlines()
-                  for i, line in enumerate(lines):
-                      if 'prod-config' in line:
-                          print(f"✓ AUDIT: Line {i+1} found: {line.strip()[:150]}...")
-                          break
-              print(f"--- RUNNER PYTHON DEBUG END (v2.8.0) ---")
+          # 2. Inject Branch Marker
+          branch_marker = 'content="RAW_SOURCE_MAIN"'
+          branch_inject = 'content="INJECTED_GH_PAGES"'
+          if branch_marker in new_content:
+              print(f"✓ Branch Marker found. Replacing...")
+              new_content = new_content.replace(branch_marker, branch_inject)
           else:
-              print(f"!! FATAL: Marker '{marker}' not found in dist/index.html !!")
-              print("Snippet of file context:")
-              print(content[content.find('prod-config')-50:content.find('prod-config')+150])
-              exit(1)
+              print(f"!! WARNING: Branch Marker '{branch_marker}' missing from file !!")
+          
+          # Write Final Content
+          with open('dist/index.html', 'w') as f:
+              f.write(new_content)
+          
+          # FINAL AUDIT: Read it back and print the exact line to the logs
+          with open('dist/index.html', 'r') as f:
+              lines = f.readlines()
+              for i, line in enumerate(lines):
+                  if 'prod-config' in line:
+                      print(f"✓ AUDIT CONFIG: Line {i+1}: {line.strip()[:100]}...")
+                  if 'deployment-source' in line:
+                      print(f"✓ AUDIT SOURCE: Line {i+1}: {line.strip()[:100]}...")
+          
+          print(f"--- RUNNER PYTHON DEBUG END (v2.9.0) ---")
           EOF
           
           python3 inject_config.py
