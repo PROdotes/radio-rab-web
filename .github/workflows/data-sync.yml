@@ -1,7 +1,7 @@
 name: Data Sync
 on:
   schedule:
-    - cron: '*/10 * * * *' # Every 10 minutes for traffic/weather
+    - cron: '*/5 * * * *' # Every 5 minutes for traffic/weather/ais
     - cron: '0 6 * * *' # Daily at 6am for sea quality
   workflow_dispatch: # Manual trigger
   push:
@@ -78,7 +78,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore: sync traffic/weather/ais data'
-          file_pattern: 'data/traffic*.json data/traffic*.js data/ais-snapshot.json config.local.js'
+          file_pattern: 'data/traffic*.json data/traffic*.js data/ais-snapshot.json'
 
 
   sync-sea-quality:
