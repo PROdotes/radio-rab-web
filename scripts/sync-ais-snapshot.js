@@ -29,8 +29,8 @@ ws.on('open', () => {
     const subscription = {
         APIKey: API_KEY,
         BoundingBoxes: [[[44.5, 14.5], [45.0, 15.0]]],
-        FiltersShipMMSI: [TARGET_MMSI],
-        FilterMessageTypes: ["PositionReport"]
+        FiltersShipMMSI: [TARGET_MMSI]
+        // FilterMessageTypes: ["PositionReport"] // Listen to ALL messages to catch anything
     };
     ws.send(JSON.stringify(subscription));
 });
