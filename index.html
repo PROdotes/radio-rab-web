@@ -43,16 +43,13 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#020617" />
 
-    <!-- Fonts -->
+    <!-- Fonts - use display: swap via API parameter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=Rajdhani:wght@600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
     <!-- Core CSS (render-blocking — needed for above-the-fold) -->
     <link rel="stylesheet" href="base.css" />
@@ -963,5 +960,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Lucide Icons - load after content renders -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   </body>
 </html>
