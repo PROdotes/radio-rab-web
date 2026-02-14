@@ -1640,7 +1640,7 @@ function attachClusterUpdateHandlers() {
     } catch (e) {
       debugWarn('Map: interactive cluster refresh failed', e)
     }
-  }, 50)
+  }, 150)
 
   // Final handler after interaction settles (ensure any needed rebuilds occur)
   const finalHandler = debounce(() => {
