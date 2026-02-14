@@ -1,0 +1,17 @@
+{
+  "name": "RAPSKA PLOVIDBA",
+  "mmsi": "238690000",
+  "imo": "9822621",
+  "type": "Passenger/Ro-Ro Cargo Ship",
+  "flag": "Croatia",
+  "latitude": 44.7086,
+  "longitude": 14.8647,
+  "speed": 8.5,
+  "course": 45,
+  "heading": 45,
+  "destination": "Stinica ⇄ Mišnjak",
+  "eta": "~15 min",
+  "status": "Under way using engine",
+  "timestamp": "2026-02-13T10:00:00Z",
+  "source": "Local Data"
+}
