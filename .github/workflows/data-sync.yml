@@ -29,6 +29,10 @@ jobs:
             urls: {
               npt: "https://b2b.promet-info.hr"
             },
+            // Legacy keys for sync-raw-data.ps1 regex
+            user: '${{ secrets.NPT_USER }}',
+            pass: '${{ secrets.NPT_PASS }}',
+            // Modern keys for app
             nptUser: '${{ secrets.NPT_USER }}',
             nptPass: '${{ secrets.NPT_PASS }}',
             AISSTREAM_API_KEY: '${{ secrets.AISSTREAM_API_KEY }}',
