@@ -771,16 +771,16 @@
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS
     });
 
-    // --- Cumulative Diagnostic v2.7.0 ---
+    // --- Cumulative Diagnostic v2.8.0 ---
     (function () {
+      const tag = document.getElementById('prod-config');
       const diag = {
-        version: 'v2.7.0',
-        timestamp: new Date().toISOString(),
-        location: window.location.href,
+        version: 'v2.8.0',
         configSource: window.LOCAL_CONFIG?.isProduction ? "PROD_INJECTED" : "LOCAL_FALLBACK",
-        configKeys: window.LOCAL_CONFIG ? Object.keys(window.LOCAL_CONFIG) : "NONE"
+        rawTagContent: tag ? tag.innerHTML.trim() : "TAG_MISSING",
+        windowConfigType: typeof window.LOCAL_CONFIG
       };
-      console.log('🏁 Diagnostic Link (v2.7.0):', diag);
+      console.log('🧪 Source Inspection (v2.8.0):', diag);
     })();
   </script>
   <script src="script.js"></script>
