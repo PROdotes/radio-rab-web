@@ -560,10 +560,8 @@ function initMap() {
     showVesselAISModal('9822621')
   })
 
-  // Start Simulation Loop only if NO real AIS config
-  if (!window.LOCAL_CONFIG || !window.LOCAL_CONFIG.ENABLE_REAL_AIS) {
-    startFerrySimulation(ferryMarker, misnjak, stinica)
-  }
+  // Simulation Disabled - We are live with Snapshot Strategy
+  // startFerrySimulation(ferryMarker, misnjak, stinica)
 
   // Enforce ferry integrity periodically to prevent duplicates created by
   // cluster/marker rebuilds or other layers. Runs every 3 seconds.

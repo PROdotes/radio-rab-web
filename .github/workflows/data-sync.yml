@@ -66,6 +66,8 @@ jobs:
           pwsh -File ./scripts/process-data.ps1
         continue-on-error: true
 
+
+
       - name: Prepare Commit (Pull & Rebase)
         run: |
           git config --global user.name "github-actions[bot]"

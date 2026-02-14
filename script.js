@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', init)
  */
 function init() {
   // Initialize AIS Tracking (Snapshot Strategy)
-  const hasAisConfig = window.LOCAL_CONFIG && window.LOCAL_CONFIG.ENABLE_REAL_AIS;
+  // Default to true (Snapshot Strategy always active if data exists)
+  const hasAisConfig = true;
 
   if (hasAisConfig) {
     console.log('🚢 Initializing AIS Tracking (Snapshot Mode)...');

@@ -70,5 +70,21 @@ ws.on('message', (data) => {
 
 ws.on('error', (err) => {
     console.error('!! WebSocket Error:', err);
-    process.exit(1);
+    writeFallback('error');
+    process.exit(0);
 });
+
+ws.on('close', (code, reason) => {
+    console.log(`WebSocket closed: ${code} ${reason}`);
+    if (code !== 1000) { // If not normal closure
+        writeFallback('closed');
+        process.exit(0);
+    }
+});
+
+function writeFallback(status) {
+    const fallbackPath = path.join(__dirname, '../data/ais-snapshot.json');
+    if (!fs.existsSync(fallbackPath)) {
+        fs.writeFileSync(fallbackPath, JSON.stringify({ status: status, timestamp: new Date().toISOString() }));
+    }
+}
