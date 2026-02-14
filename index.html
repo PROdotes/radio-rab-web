@@ -772,18 +772,25 @@
       isRealAis: !!window.LOCAL_CONFIG?.ENABLE_REAL_AIS
     });
 
-    // --- Cumulative Diagnostic v2.9.0 ---
+    // --- Cumulative Diagnostic v2.9.1 ---
     (function () {
       const tag = document.getElementById('prod-config');
       const meta = document.querySelector('meta[name="deployment-source"]');
+      const isMain = meta?.content === "RAW_SOURCE_MAIN";
+
       const diag = {
-        version: 'v2.9.0',
-        configSource: window.LOCAL_CONFIG?.isProduction ? "PROD_INJECTED" : "LOCAL_FALLBACK",
-        rawTagContent: tag ? tag.innerHTML.trim() : "TAG_MISSING",
-        deploySource: meta ? meta.content : "META_MISSING", // This is the KEY
-        windowConfigType: typeof window.LOCAL_CONFIG
+        version: 'v2.9.1',
+        deploySource: meta ? meta.content : "MISSING",
+        configInjected: !isMain,
+        rawTagContent: tag ? tag.innerHTML.trim() : "TAG_MISSING"
       };
-      console.log('🧪 SOURCE INSPECTOR (v2.9.0):', diag);
+      console.log('🧪 SOURCE INSPECTOR (v2.9.1):', diag);
+
+      if (isMain) {
+        console.error("🚨 CONFIGURATION ERROR: You are serving the 'main' branch!");
+        console.warn("👉 Go to GitHub Settings > Pages > Build and deployment > Branch");
+        console.warn("👉 Change 'main' to 'gh-pages' to see the injected keys.");
+      }
     })();
   </script>
   <script src="script.js"></script>
