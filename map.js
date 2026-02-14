@@ -1166,7 +1166,8 @@ function updateMapVisualization() {
           const key = `${parseFloat(lat).toFixed(6)}:${parseFloat(lng).toFixed(6)}`
           const idx = coordGroupIdx.get(key) || 0
           coordGroupIdx.set(key, idx + 1)
-          const offsetLat = idx * 0.00002
+          const offsetLat = idx * 0.00005
+          const offsetLng = idx % 2 === 1 ? 0.00003 : 0
 
           const icon = L.divIcon({
             className: props.iconClass || '',
@@ -1175,7 +1176,7 @@ function updateMapVisualization() {
           })
           const existing = state.clusterMarkers.get(id)
           if (existing) {
-            if (existing._isClusterized) existing.setLatLng([lat + offsetLat, lng])
+            if (existing._isClusterized) existing.setLatLng([lat + offsetLat, lng + offsetLng])
           } else {
             // Skip creating markers that would overlap the ferry
             try {
@@ -1431,12 +1432,13 @@ function updateMapVisualization() {
       const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
       const idx = coordGroupIdx.get(key) || 0
       coordGroupIdx.set(key, idx + 1)
-      const offsetLat = idx * 0.00002 // ~2m per marker
+      const offsetLat = idx * 0.00005
+      const offsetLng = idx % 2 === 1 ? 0.00003 : 0
 
       const existing = state.clusterMarkers.get(id)
       if (existing) {
         if (existing._isClusterized) {
-          existing.setLatLng([lat + offsetLat, lng])
+          existing.setLatLng([lat + offsetLat, lng + offsetLng])
           existing.setIcon(icon)
         }
       } else {
@@ -1824,7 +1826,8 @@ function updateClustersForViewport() {
       const key = `${lat.toFixed(6)}:${lng.toFixed(6)}`
       const idx = coordGroupIdx.get(key) || 0
       coordGroupIdx.set(key, idx + 1)
-      const offsetLat = idx * 0.00002
+      const offsetLat = idx * 0.00005
+      const offsetLng = idx % 2 === 1 ? 0.00003 : 0
 
       const icon = L.divIcon({
         className: props.iconClass || '',
@@ -1834,7 +1837,7 @@ function updateClustersForViewport() {
       const existing = state.clusterMarkers.get(id)
       if (existing) {
         if (existing._isFerry) return
-        if (existing._isClusterized) existing.setLatLng([lat + offsetLat, lng])
+        if (existing._isClusterized) existing.setLatLng([lat + offsetLat, lng + offsetLng])
       } else {
         // Prevent creation of point marker that would overlap the ferry
         try {
