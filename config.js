@@ -17,8 +17,8 @@ const CONFIG = {
     proximityBlocking: false,
   },
   urls: {
-    radioStream: 'http://de4.streamingpulse.com:7014/stream',
-    radioStreamDirect: 'http://de4.streamingpulse.com:7014/stream',
+    radioStream: 'https://de4.streamingpulse.com/stream/radiorab',
+    radioStreamDirect: 'https://de4.streamingpulse.com/stream/radiorab',
     metadataBase: 'https://radio-rab.hr',
     corsProxy: 'https://corsproxy.io/?url=',
     mapTiles: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
