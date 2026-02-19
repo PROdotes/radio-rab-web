@@ -583,6 +583,7 @@ function initRadioPlayer() {
       (u) => u, // Try direct first!
       (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
       (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,
     ]) {
       try {
         response = await fetch(proxy(targetUrl))
@@ -623,6 +624,7 @@ function initRadioPlayer() {
       (u) => u, // Try direct first!
       (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
       (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,
     ]) {
       try {
         response = await fetch(proxy(targetUrl))
@@ -678,6 +680,7 @@ function initRadioPlayer() {
       (u) => u, // Try direct first!
       (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
       (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,
     ]) {
       try {
         response = await fetch(proxy(targetUrl))
