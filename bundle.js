@@ -2801,7 +2801,7 @@ function initStickyOffsets() {
     const tickerH = ticker
       ? Math.ceil(ticker.getBoundingClientRect().height)
       : parseInt(getComputedStyle(document.documentElement).getPropertyValue('--ticker-height')) ||
-        0
+      0
 
     // Ensure header anchors immediately below the ticker to avoid tiny overlap
     header.style.top = `${tickerH}px`
@@ -3155,12 +3155,16 @@ function initRadioPlayer() {
     debugLog('Radio: Fetching metadata...')
 
     try {
-      // Fetch all three in parallel for faster initial load
-      const [expireTime] = await Promise.all([
+      // Fetch all three in parallel, but don't let one failure stop the others
+      const results = await Promise.allSettled([
         fetchCurrentSong(proxyBase, timestamp),
         fetchHistory(proxyBase, timestamp),
         fetchNext(proxyBase, timestamp),
       ])
+
+      const currentSongResult = results[0]
+      const expireTime =
+        currentSongResult.status === 'fulfilled' ? currentSongResult.value : null
 
       if (expireTime) {
         const now = new Date()
@@ -3194,10 +3198,21 @@ function initRadioPlayer() {
   }
 
   async function fetchCurrentSong(proxyBase, timestamp) {
-    const response = await fetch(
-      proxyBase + encodeURIComponent(`${CONFIG.urls.metadataBase}/NowOnAir.xml?t=${timestamp}`)
-    )
-    if (!response.ok) return null
+    const targetUrl = `${CONFIG.urls.metadataBase}/NowOnAir.xml?t=${timestamp}`
+    let response
+
+    // Fallback logic
+    for (const proxy of [
+      (u) => u, // Try direct first!
+      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+    ]) {
+      try {
+        response = await fetch(proxy(targetUrl))
+        if (response.ok) break
+      } catch (e) { }
+    }
+    if (!response || !response.ok) return null
     const str = await response.text()
     const xmlDoc = new DOMParser().parseFromString(str, 'text/xml')
 
@@ -3223,10 +3238,20 @@ function initRadioPlayer() {
   }
 
   async function fetchHistory(proxyBase, timestamp) {
-    const response = await fetch(
-      proxyBase +
-        encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`)
-    )
+    const targetUrl = `${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`
+    let response
+
+    // Fallback logic
+    for (const proxy of [
+      (u) => u, // Try direct first!
+      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+    ]) {
+      try {
+        response = await fetch(proxy(targetUrl))
+        if (response.ok) break
+      } catch (e) { }
+    }
     if (!response.ok) return
     const str = await response.text()
     const xmlDoc = new DOMParser().parseFromString(str, 'text/xml')
@@ -3268,10 +3293,21 @@ function initRadioPlayer() {
   }
 
   async function fetchNext(proxyBase, timestamp) {
-    const response = await fetch(
-      proxyBase + encodeURIComponent(`${CONFIG.urls.metadataBase}/AirPlayNext.xml?t=${timestamp}`)
-    )
-    if (!response.ok) return
+    const targetUrl = `${CONFIG.urls.metadataBase}/AirPlayNext.xml?t=${timestamp}`
+    let response
+
+    // Fallback logic
+    for (const proxy of [
+      (u) => u, // Try direct first!
+      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+    ]) {
+      try {
+        response = await fetch(proxy(targetUrl))
+        if (response.ok) break
+      } catch (e) { }
+    }
+    if (!response || !response.ok) return
     const str = await response.text()
     const xmlDoc = new DOMParser().parseFromString(str, 'text/xml')
 
@@ -3473,12 +3509,12 @@ function initMarketplace() {
         </div>
         <div class="market-grid">
             ${(typeof MARKET_ITEMS !== 'undefined' ? MARKET_ITEMS : getMockMarketItems())
-              .map(
-                (item) => `
+      .map(
+        (item) => `
                 <div class="market-card card-animate">
                     <div class="market-img" style="background-image: url('${escapeHtml(
-                      item.image
-                    )}')">
+          item.image
+        )}')">
                         <span class="price-tag">${escapeHtml(item.price)}</span>
                     </div>
                     <div class="market-info">
@@ -3488,8 +3524,8 @@ function initMarketplace() {
                     </div>
                 </div>
             `
-              )
-              .join('')}
+      )
+      .join('')}
         </div>
     `
 }
@@ -3547,12 +3583,12 @@ function initVideos() {
         </div>
         <div class="video-grid">
             ${getMockVideos()
-              .map(
-                (video) => `
+      .map(
+        (video) => `
                 <div class="video-card card-animate">
                     <div class="video-thumb" style="background-image: url('${escapeHtml(
-                      video.thumbnail
-                    )}')">
+          video.thumbnail
+        )}')">
                         <span class="video-duration">${escapeHtml(video.duration)}</span>
                         <div class="play-btn">▶</div>
                     </div>
@@ -3562,8 +3598,8 @@ function initVideos() {
                     </div>
                 </div>
             `
-              )
-              .join('')}
+      )
+      .join('')}
         </div>
     `
 }
