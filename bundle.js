@@ -818,132 +818,31 @@ async function showVesselAISModal(imo) {
  * @returns {Promise<Object>} Vessel data
  */
 async function fetchVesselAISData(imo) {
-  // Try to get data from AISStream WebSocket if available
-  if (window.aisStreamClient && window.aisStreamClient.getLatestData()) {
-    const data = window.aisStreamClient.getLatestData()
-    debugLog('Using live AISStream data:', data)
-    return data
+  // 1. Primary Source: Our live AIS snapshot (data/ais-snapshot.json)
+  if (state.aisData) {
+    // If the snapshot is for the requested vessel (checking name or IMO if available)
+    // Or if this is the main ferry (since we mostly track one for now)
+    const isMainFerry = (imo === '9822621' || imo === '238838340');
+
+    if (isMainFerry || state.aisData.imo === imo) {
+      debugLog('Using live AIS snapshot for modal:', state.aisData.name);
+      return {
+        ...state.aisData,
+        source: 'Live Snapshot (AISStream)',
+        note: 'Podaci u stvarnom vremenu osvježeni unutar zadnjih 5 minuta.'
+      };
+    }
   }
 
-  // Try to fetch from local proxy server (fallback)
-  const proxyUrl = `http://localhost:3001/api/vessel/${imo}`
-
+  // 2. Try to fetch from local proxy server (fallback for development)
+  const proxyUrl = `http://localhost:3001/api/vessel/${imo}`;
   try {
-    const response = await fetch(proxyUrl, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-      },
-    })
+    const response = await fetch(proxyUrl);
+    if (response.ok) return await response.json();
+  } catch (err) { }
 
-    if (response.ok) {
-      const data = await response.json()
-      return data
-    }
-  } catch (err) {
-    console.warn('Proxy server not available, using simulated data:', err)
-  }
-
-  // Fallback: Simulated live data for IMO 9822621 (Rapska Plovidba ferry)
-  // This simulates what real AIS data would look like
-  if (imo === '9822621') {
-    // Get current ferry position from the map marker if available
-    let currentLat = 44.7086
-    let currentLng = 14.8647
-    let estimatedSpeed = 8.5 // knots, typical ferry speed
-    let course = 45 // degrees
-
-    // Try to get actual position from the live ferry marker
-    try {
-      if (state.ferryMarker && state.ferryMarker.getLatLng) {
-        const pos = state.ferryMarker.getLatLng()
-        currentLat = pos.lat
-        currentLng = pos.lng
-
-        // Estimate course based on position (rough approximation)
-        const misnjak = CONFIG.ferry.misnjakCoords
-        const stinica = CONFIG.ferry.stinicaCoords
-        const distToMisnjak = Math.sqrt(
-          Math.pow(currentLat - misnjak[0], 2) + Math.pow(currentLng - misnjak[1], 2)
-        )
-        const distToStinica = Math.sqrt(
-          Math.pow(currentLat - stinica[0], 2) + Math.pow(currentLng - stinica[1], 2)
-        )
-
-        // If closer to Stinica, heading towards Mišnjak (southwest ~225°)
-        // If closer to Mišnjak, heading towards Stinica (northeast ~45°)
-        course = distToStinica < distToMisnjak ? 225 : 45
-      }
-    } catch (e) {
-      console.warn('Could not get live ferry position:', e)
-    }
-
-    return {
-      name: 'RAPSKA PLOVIDBA',
-      mmsi: '238690000',
-      imo: imo,
-      type: 'Passenger/Ro-Ro Cargo Ship',
-      flag: 'Croatia',
-      latitude: currentLat,
-      longitude: currentLng,
-      speed: estimatedSpeed,
-      course: course,
-      heading: course,
-      destination: 'Stinica ⇄ Mišnjak',
-      eta: '~15 min',
-      status: 'Under way using engine',
-      timestamp: new Date().toISOString(),
-      source: 'Live Simulation (Map Data)',
-      note: 'Pozicija sinkronizirana s kartom. Za stvarne AIS podatke potreban je API ključ.',
-    }
-  }
-
-  // For other vessels, try to fetch (likely will fail due to CORS)
-  const sources = [
-    {
-      name: 'MyShipTracking',
-      url: `https://api.myshiptracking.com/vessels/imo-${imo}.json`,
-      parser: (data) => ({
-        name: data.SHIPNAME || 'N/A',
-        mmsi: data.MMSI || 'N/A',
-        imo: data.IMO || imo,
-        type: data.TYPE_NAME || 'Ferry',
-        flag: data.FLAG || 'N/A',
-        latitude: data.LAT || 'N/A',
-        longitude: data.LON || 'N/A',
-        speed: data.SPEED || 'N/A',
-        course: data.COURSE || 'N/A',
-        heading: data.HEADING || 'N/A',
-        destination: data.DESTINATION || 'N/A',
-        eta: data.ETA || 'N/A',
-        status: data.NAVSTAT_NAME || 'N/A',
-        timestamp: data.TIMESTAMP || new Date().toISOString(),
-        source: 'MyShipTracking',
-      }),
-    },
-  ]
-
-  for (const source of sources) {
-    try {
-      const response = await fetch(source.url, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          Accept: 'application/json',
-        },
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-        return source.parser(data)
-      }
-    } catch (err) {
-      console.warn(`Failed to fetch from ${source.name}:`, err)
-      continue
-    }
-  }
-
-  throw new Error('Javne AIS usluge blokiraju CORS. Za live podatke potreban je backend proxy.')
+  // 3. Last resort: public sources (likely CORS blocked)
+  throw new Error('Live AIS podaci nisu dostupni. Za direktan uvid koristite kartu.');
 }
 
 /**
@@ -1033,20 +932,18 @@ function displayVesselAISData(container, data) {
 
         <!-- Footer -->
         <div style="padding-top: 1rem; border-top: 1px solid var(--border);">
-          ${
-            data.note
-              ? `
+          ${data.note
+      ? `
             <div style="padding: 0.75rem; margin-bottom: 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.875rem; color: var(--text-dim);">
               ℹ️ ${data.note}
             </div>
           `
-              : ''
-          }
+      : ''
+    }
           <div style="font-size: 0.75rem; color: var(--text-dim); display: flex; justify-content: space-between; align-items: center;">
             <span>Izvor: ${data.source}</span>
-            <button onclick="window.open('https://www.vesselfinder.com/vessels/details/${
-              data.imo
-            }', '_blank')"
+            <button onclick="window.open('https://www.vesselfinder.com/vessels/details/${data.imo
+    }', '_blank')"
                     style="padding: 0.25rem 0.75rem; background: var(--accent); color: white; border: none; border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem;">
               VesselFinder →
             </button>
@@ -3660,65 +3557,73 @@ function init() {
     const aisData = state.aisData
     const cimisData = state.cimisData
 
-    // 1. Update Sidebar Widget (#sidebar-ferry-status) - Narrative Mode
+    // 1. Update Sidebar Widget (#sidebar-ferry-status) - ROUTE MODE
     const sidebar = document.getElementById('sidebar-ferry-status')
     if (sidebar) {
       let html = ''
 
-      const keyFerries = [
-        { name: 'BARBAT', route: 'Stinica–Mišnjak', mmsi: '238838340' },
-        { name: 'ČETIRI ZVONIKA', route: 'Stinica–Mišnjak', mmsi: '238805940' },
-        { name: 'SVETI MARIN', route: 'Stinica–Mišnjak', mmsi: '238054940' },
-        { name: 'ILOVIK', route: 'Valbiska–Lopar', mmsi: '238030540' },
-        { name: 'KRK', route: 'Valbiska–Lopar', mmsi: '238123456' }, // Example MMSI
-        { name: 'JELENA', route: 'Katamaran', mmsi: '238000000' }
-      ]
+      // -- ROUTE 1: Stinica-Mišnjak (Main) --
+      const stinicaMisnjakShips = ['BARBAT', 'ČETIRI ZVONIKA', 'SVETI MARIN']
+      const latestMainMove = cimisData?.visits?.find(v => stinicaMisnjakShips.includes(v['Pomorski objekt'].toUpperCase()))
 
-      keyFerries.forEach(f => {
-        // Find latest CIMIS move for this boat
-        const latestMove = cimisData?.visits?.find(v => v['Pomorski objekt'] === f.name)
+      let mainDetail = 'Na vezu'
+      let mainClass = 'val-green'
 
-        if (latestMove) {
-          const status = latestMove['Status']
-          const port = latestMove['Luka']
-          const time = status === 'Otišao' ? latestMove['Odlazak'] : latestMove['Dolazak']
-          const shortTime = time ? time.split(' ')[1] : ''
+      if (latestMainMove) {
+        const status = latestMainMove['Status']
+        const port = latestMainMove['Luka']
+        const time = (status === 'Otišao' ? latestMainMove['Odlazak'] : latestMainMove['Dolazak'])?.split(' ')[1] || ''
 
-          let narrative = ''
-          let timeLabel = `u ${shortTime}`
-
-          if (status === 'Otišao') {
-            const dest = (port === 'Stinica') ? 'Mišnjaku' : (port === 'Mišnjak') ? 'Stinici' : (port === 'Valbiska') ? 'Loparu' : (port === 'Lopar') ? 'Valbiski' : 'odredištu'
-            narrative = `Isplovio iz ${port}, plovi prema ${dest}`
-          } else if (status === 'Došao' || status === 'U dolasku') {
-            narrative = `Pristao u luku ${port}`
-          }
-
-          // Supplement with AIS if available for THIS specific boat
-          if (aisData && aisData.name === f.name) {
-            if (aisData.speed > 2) {
-              const dest = (aisData.course > 180) ? 'kopnu (Stinica)' : 'otoku (Mišnjak)'
-              narrative = `U plovidbi prema ${dest} (${aisData.speed.toFixed(1)} kn)`
-            } else {
-              narrative = `Trenutno u luci ${aisData.status || 'privezan'}`
-            }
-          }
-
-          html += `
-            <div class="narrative-row">
-              <span class="narrative-vessel">${f.name}</span>
-              <span class="narrative-status">${narrative}</span>
-              <span class="narrative-time">${timeLabel}</span>
-            </div>
-          `
+        if (status === 'Otišao') {
+          const dest = (port === 'Stinica') ? 'Mišnjak' : 'Stinica'
+          mainDetail = `${port} (${time}) ➔ ${dest}`
+          mainClass = 'val-blue'
+        } else {
+          mainDetail = `${port} (${time}) • Privezan`
         }
-      })
+      }
 
-      // Always keep D8 status
+      // Live speed injection
+      if (aisData && stinicaMisnjakShips.includes(aisData.name.toUpperCase()) && aisData.speed > 1) {
+        mainDetail = `U plovidbi (${aisData.speed.toFixed(1)} kn)`
+        mainClass = 'val-blue'
+      }
+
       html += `
-        <div class="narrative-row" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-          <span class="narrative-vessel" style="color: #94a3b8;">Hrvatske Ceste</span>
-          <span class="narrative-status" id="d8-status">Magistrala D8: Otvoreno za sve skupine</span>
+        <div class="live-row">
+          <span class="label">Stinica–Mišnjak</span>
+          <span class="value ${mainClass}">${mainDetail}</span>
+        </div>
+      `
+
+      // -- ROUTE 2: Valbiska-Lopar --
+      const loparShips = ['ILOVIK', 'KRK']
+      const latestLoparMove = cimisData?.visits?.find(v => loparShips.includes(v['Pomorski objekt'].toUpperCase()))
+
+      let loparDetail = 'Nema podataka'
+      let loparClass = 'val-dim'
+
+      if (latestLoparMove) {
+        const status = latestLoparMove['Status']
+        const port = latestLoparMove['Luka']
+        const time = (status === 'Otišao' ? latestLoparMove['Odlazak'] : latestLoparMove['Dolazak'])?.split(' ')[1] || ''
+        const vessel = latestLoparMove['Pomorski objekt']
+        loparDetail = `${vessel}: ${status === 'Otišao' ? 'Isplovio' : 'Pristao'} (${time})`
+        loparClass = status === 'Otišao' ? 'val-blue' : 'val-green'
+      }
+
+      html += `
+        <div class="live-row">
+          <span class="label">Valbiska–Lopar</span>
+          <span class="value ${loparClass}">${loparDetail}</span>
+        </div>
+      `
+
+      // -- Magistrala (D8) --
+      html += `
+        <div class="live-row">
+          <span class="label">Magistrala (D8)</span>
+          <span class="value val-green" id="d8-status">Otvoreno</span>
         </div>
       `
 
@@ -3730,40 +3635,42 @@ function init() {
     if (mapOverlay) {
       let mapHtml = ''
 
-      // AIS Part (Live info)
       if (aisData) {
         const ageMinutes = Math.round((new Date() - new Date(aisData.timestamp)) / 60000)
         mapHtml += `
-          <div class="map-ais-section" style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <div style="margin-bottom: 0.5rem;">
-              <span style="color: var(--accent); font-weight: bold; font-size: 0.9rem;">${aisData.name} (LIVE)</span>
+          <div class="map-ais-section" style="margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <div style="margin-bottom: 0.4rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: var(--accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.05em;">${aisData.name}</span>
+              <span style="font-size: 0.65rem; color: ${ageMinutes < 20 ? 'var(--success)' : 'orange'}; font-weight: 700;">
+                ${ageMinutes < 1 ? 'LIVE' : ageMinutes + ' min'}
+              </span>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.8rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; font-size: 0.8rem;">
               <div>Brzina: <strong>${(aisData.speed || 0).toFixed(1)} kn</strong></div>
               <div>Kurs: <strong>${(aisData.course || 0).toFixed(0)}°</strong></div>
-              <div style="grid-column: span 2;">Status: <strong>${aisData.status || 'Plovidba'}</strong></div>
-            </div>
-            <div style="margin-top: 0.5rem; font-size: 0.7rem; color: var(--text-dim);">
-              Ažurirano prije ${ageMinutes} min
+              <div style="grid-column: span 2;">Status: <strong style="color: #fff;">${aisData.status || 'U plovidbi'}</strong></div>
             </div>
           </div>
         `
       }
 
-      // CIMIS Part (History)
       if (cimisData && cimisData.visits) {
-        const visits = cimisData.visits.slice(0, 3)
+        const relevantShips = ['BARBAT', 'ČETIRI ZVONIKA', 'SVETI MARIN', 'ILOVIK', 'KRK']
+        const visits = cimisData.visits
+          .filter(v => relevantShips.includes(v['Pomorski objekt'].toUpperCase()))
+          .slice(0, 3)
+
         mapHtml += `
-          <h5 style="font-size: 0.7rem; color: var(--text-dim); margin-bottom: 0.5rem; letter-spacing: 0.05em; text-transform: uppercase;">Zadnji prolazi</h5>
+          <h5 style="font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 0.05em; text-transform: uppercase;">Zadnji prolazi</h5>
           <div style="display: grid; gap: 0.4rem;">
             ${visits.map(v => `
               <div style="font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
                 <div style="line-height: 1.2;">
-                  <div style="font-weight: 600;">${v['Pomorski objekt']}</div>
-                  <div style="font-size: 0.65rem; opacity: 0.6;">${v['Luka']} • ${v['Dolazak'].split(' ')[1]}</div>
+                  <div style="font-weight: 600; color: #fff;">${v['Pomorski objekt']}</div>
+                  <div style="font-size: 0.65rem; color: var(--text-muted);">${v['Luka']} • ${v['Dolazak'].split(' ')[1]}</div>
                 </div>
-                <span style="padding: 1px 4px; border-radius: 3px; background: ${v['Status'] === 'Otišao' ? 'rgba(239, 68, 68, 0.15)' : 'rgba(34, 197, 94, 0.15)'}; color: ${v['Status'] === 'Otišao' ? '#f87171' : '#4ade80'}; font-size: 0.6rem; font-weight: bold;">
-                  ${v['Status']}
+                <span style="font-size: 0.65rem; font-weight: 800; color: ${v['Status'] === 'Otišao' ? 'var(--warning)' : 'var(--success)'};">
+                  ${v['Status'].toUpperCase()}
                 </span>
               </div>
             `).join('')}
@@ -3771,7 +3678,7 @@ function init() {
         `
       }
 
-      mapOverlay.innerHTML = mapHtml || '<p style="font-size:0.75rem; opacity:0.5;">Sinkronizacija...</p>'
+      mapOverlay.innerHTML = mapHtml || '<p style="font-size:0.75rem; opacity:0.5;">Učitavanje...</p>'
     }
   }
 

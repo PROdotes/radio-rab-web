@@ -83,132 +83,31 @@ async function showVesselAISModal(imo) {
  * @returns {Promise<Object>} Vessel data
  */
 async function fetchVesselAISData(imo) {
-  // Try to get data from AISStream WebSocket if available
-  if (window.aisStreamClient && window.aisStreamClient.getLatestData()) {
-    const data = window.aisStreamClient.getLatestData()
-    debugLog('Using live AISStream data:', data)
-    return data
+  // 1. Primary Source: Our live AIS snapshot (data/ais-snapshot.json)
+  if (state.aisData) {
+    // If the snapshot is for the requested vessel (checking name or IMO if available)
+    // Or if this is the main ferry (since we mostly track one for now)
+    const isMainFerry = (imo === '9822621' || imo === '238838340');
+
+    if (isMainFerry || state.aisData.imo === imo) {
+      debugLog('Using live AIS snapshot for modal:', state.aisData.name);
+      return {
+        ...state.aisData,
+        source: 'Live Snapshot (AISStream)',
+        note: 'Podaci u stvarnom vremenu osvježeni unutar zadnjih 5 minuta.'
+      };
+    }
   }
 
-  // Try to fetch from local proxy server (fallback)
-  const proxyUrl = `http://localhost:3001/api/vessel/${imo}`
-
+  // 2. Try to fetch from local proxy server (fallback for development)
+  const proxyUrl = `http://localhost:3001/api/vessel/${imo}`;
   try {
-    const response = await fetch(proxyUrl, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-      },
-    })
+    const response = await fetch(proxyUrl);
+    if (response.ok) return await response.json();
+  } catch (err) { }
 
-    if (response.ok) {
-      const data = await response.json()
-      return data
-    }
-  } catch (err) {
-    console.warn('Proxy server not available, using simulated data:', err)
-  }
-
-  // Fallback: Simulated live data for IMO 9822621 (Rapska Plovidba ferry)
-  // This simulates what real AIS data would look like
-  if (imo === '9822621') {
-    // Get current ferry position from the map marker if available
-    let currentLat = 44.7086
-    let currentLng = 14.8647
-    let estimatedSpeed = 8.5 // knots, typical ferry speed
-    let course = 45 // degrees
-
-    // Try to get actual position from the live ferry marker
-    try {
-      if (state.ferryMarker && state.ferryMarker.getLatLng) {
-        const pos = state.ferryMarker.getLatLng()
-        currentLat = pos.lat
-        currentLng = pos.lng
-
-        // Estimate course based on position (rough approximation)
-        const misnjak = CONFIG.ferry.misnjakCoords
-        const stinica = CONFIG.ferry.stinicaCoords
-        const distToMisnjak = Math.sqrt(
-          Math.pow(currentLat - misnjak[0], 2) + Math.pow(currentLng - misnjak[1], 2)
-        )
-        const distToStinica = Math.sqrt(
-          Math.pow(currentLat - stinica[0], 2) + Math.pow(currentLng - stinica[1], 2)
-        )
-
-        // If closer to Stinica, heading towards Mišnjak (southwest ~225°)
-        // If closer to Mišnjak, heading towards Stinica (northeast ~45°)
-        course = distToStinica < distToMisnjak ? 225 : 45
-      }
-    } catch (e) {
-      console.warn('Could not get live ferry position:', e)
-    }
-
-    return {
-      name: 'RAPSKA PLOVIDBA',
-      mmsi: '238690000',
-      imo: imo,
-      type: 'Passenger/Ro-Ro Cargo Ship',
-      flag: 'Croatia',
-      latitude: currentLat,
-      longitude: currentLng,
-      speed: estimatedSpeed,
-      course: course,
-      heading: course,
-      destination: 'Stinica ⇄ Mišnjak',
-      eta: '~15 min',
-      status: 'Under way using engine',
-      timestamp: new Date().toISOString(),
-      source: 'Live Simulation (Map Data)',
-      note: 'Pozicija sinkronizirana s kartom. Za stvarne AIS podatke potreban je API ključ.',
-    }
-  }
-
-  // For other vessels, try to fetch (likely will fail due to CORS)
-  const sources = [
-    {
-      name: 'MyShipTracking',
-      url: `https://api.myshiptracking.com/vessels/imo-${imo}.json`,
-      parser: (data) => ({
-        name: data.SHIPNAME || 'N/A',
-        mmsi: data.MMSI || 'N/A',
-        imo: data.IMO || imo,
-        type: data.TYPE_NAME || 'Ferry',
-        flag: data.FLAG || 'N/A',
-        latitude: data.LAT || 'N/A',
-        longitude: data.LON || 'N/A',
-        speed: data.SPEED || 'N/A',
-        course: data.COURSE || 'N/A',
-        heading: data.HEADING || 'N/A',
-        destination: data.DESTINATION || 'N/A',
-        eta: data.ETA || 'N/A',
-        status: data.NAVSTAT_NAME || 'N/A',
-        timestamp: data.TIMESTAMP || new Date().toISOString(),
-        source: 'MyShipTracking',
-      }),
-    },
-  ]
-
-  for (const source of sources) {
-    try {
-      const response = await fetch(source.url, {
-        method: 'GET',
-        mode: 'cors',
-        headers: {
-          Accept: 'application/json',
-        },
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-        return source.parser(data)
-      }
-    } catch (err) {
-      console.warn(`Failed to fetch from ${source.name}:`, err)
-      continue
-    }
-  }
-
-  throw new Error('Javne AIS usluge blokiraju CORS. Za live podatke potreban je backend proxy.')
+  // 3. Last resort: public sources (likely CORS blocked)
+  throw new Error('Live AIS podaci nisu dostupni. Za direktan uvid koristite kartu.');
 }
 
 /**
@@ -298,20 +197,18 @@ function displayVesselAISData(container, data) {
 
         <!-- Footer -->
         <div style="padding-top: 1rem; border-top: 1px solid var(--border);">
-          ${
-            data.note
-              ? `
+          ${data.note
+      ? `
             <div style="padding: 0.75rem; margin-bottom: 1rem; background: rgba(59, 130, 246, 0.1); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 0.875rem; color: var(--text-dim);">
               ℹ️ ${data.note}
             </div>
           `
-              : ''
-          }
+      : ''
+    }
           <div style="font-size: 0.75rem; color: var(--text-dim); display: flex; justify-content: space-between; align-items: center;">
             <span>Izvor: ${data.source}</span>
-            <button onclick="window.open('https://www.vesselfinder.com/vessels/details/${
-              data.imo
-            }', '_blank')"
+            <button onclick="window.open('https://www.vesselfinder.com/vessels/details/${data.imo
+    }', '_blank')"
                     style="padding: 0.25rem 0.75rem; background: var(--accent); color: white; border: none; border-radius: 0.25rem; cursor: pointer; font-size: 0.75rem;">
               VesselFinder →
             </button>

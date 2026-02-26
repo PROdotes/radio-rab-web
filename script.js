@@ -27,65 +27,73 @@ function init() {
     const aisData = state.aisData
     const cimisData = state.cimisData
 
-    // 1. Update Sidebar Widget (#sidebar-ferry-status) - Narrative Mode
+    // 1. Update Sidebar Widget (#sidebar-ferry-status) - ROUTE MODE
     const sidebar = document.getElementById('sidebar-ferry-status')
     if (sidebar) {
       let html = ''
 
-      const keyFerries = [
-        { name: 'BARBAT', route: 'Stinica–Mišnjak', mmsi: '238838340' },
-        { name: 'ČETIRI ZVONIKA', route: 'Stinica–Mišnjak', mmsi: '238805940' },
-        { name: 'SVETI MARIN', route: 'Stinica–Mišnjak', mmsi: '238054940' },
-        { name: 'ILOVIK', route: 'Valbiska–Lopar', mmsi: '238030540' },
-        { name: 'KRK', route: 'Valbiska–Lopar', mmsi: '238123456' }, // Example MMSI
-        { name: 'JELENA', route: 'Katamaran', mmsi: '238000000' }
-      ]
+      // -- ROUTE 1: Stinica-Mišnjak (Main) --
+      const stinicaMisnjakShips = ['BARBAT', 'ČETIRI ZVONIKA', 'SVETI MARIN']
+      const latestMainMove = cimisData?.visits?.find(v => stinicaMisnjakShips.includes(v['Pomorski objekt'].toUpperCase()))
 
-      keyFerries.forEach(f => {
-        // Find latest CIMIS move for this boat
-        const latestMove = cimisData?.visits?.find(v => v['Pomorski objekt'] === f.name)
+      let mainDetail = 'Na vezu'
+      let mainClass = 'val-green'
 
-        if (latestMove) {
-          const status = latestMove['Status']
-          const port = latestMove['Luka']
-          const time = status === 'Otišao' ? latestMove['Odlazak'] : latestMove['Dolazak']
-          const shortTime = time ? time.split(' ')[1] : ''
+      if (latestMainMove) {
+        const status = latestMainMove['Status']
+        const port = latestMainMove['Luka']
+        const time = (status === 'Otišao' ? latestMainMove['Odlazak'] : latestMainMove['Dolazak'])?.split(' ')[1] || ''
 
-          let narrative = ''
-          let timeLabel = `u ${shortTime}`
-
-          if (status === 'Otišao') {
-            const dest = (port === 'Stinica') ? 'Mišnjaku' : (port === 'Mišnjak') ? 'Stinici' : (port === 'Valbiska') ? 'Loparu' : (port === 'Lopar') ? 'Valbiski' : 'odredištu'
-            narrative = `Isplovio iz ${port}, plovi prema ${dest}`
-          } else if (status === 'Došao' || status === 'U dolasku') {
-            narrative = `Pristao u luku ${port}`
-          }
-
-          // Supplement with AIS if available for THIS specific boat
-          if (aisData && aisData.name === f.name) {
-            if (aisData.speed > 2) {
-              const dest = (aisData.course > 180) ? 'kopnu (Stinica)' : 'otoku (Mišnjak)'
-              narrative = `U plovidbi prema ${dest} (${aisData.speed.toFixed(1)} kn)`
-            } else {
-              narrative = `Trenutno u luci ${aisData.status || 'privezan'}`
-            }
-          }
-
-          html += `
-            <div class="narrative-row">
-              <span class="narrative-vessel">${f.name}</span>
-              <span class="narrative-status">${narrative}</span>
-              <span class="narrative-time">${timeLabel}</span>
-            </div>
-          `
+        if (status === 'Otišao') {
+          const dest = (port === 'Stinica') ? 'Mišnjak' : 'Stinica'
+          mainDetail = `${port} (${time}) ➔ ${dest}`
+          mainClass = 'val-blue'
+        } else {
+          mainDetail = `${port} (${time}) • Privezan`
         }
-      })
+      }
 
-      // Always keep D8 status
+      // Live speed injection
+      if (aisData && stinicaMisnjakShips.includes(aisData.name.toUpperCase()) && aisData.speed > 1) {
+        mainDetail = `U plovidbi (${aisData.speed.toFixed(1)} kn)`
+        mainClass = 'val-blue'
+      }
+
       html += `
-        <div class="narrative-row" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-          <span class="narrative-vessel" style="color: #94a3b8;">Hrvatske Ceste</span>
-          <span class="narrative-status" id="d8-status">Magistrala D8: Otvoreno za sve skupine</span>
+        <div class="live-row">
+          <span class="label">Stinica–Mišnjak</span>
+          <span class="value ${mainClass}">${mainDetail}</span>
+        </div>
+      `
+
+      // -- ROUTE 2: Valbiska-Lopar --
+      const loparShips = ['ILOVIK', 'KRK']
+      const latestLoparMove = cimisData?.visits?.find(v => loparShips.includes(v['Pomorski objekt'].toUpperCase()))
+
+      let loparDetail = 'Nema podataka'
+      let loparClass = 'val-dim'
+
+      if (latestLoparMove) {
+        const status = latestLoparMove['Status']
+        const port = latestLoparMove['Luka']
+        const time = (status === 'Otišao' ? latestLoparMove['Odlazak'] : latestLoparMove['Dolazak'])?.split(' ')[1] || ''
+        const vessel = latestLoparMove['Pomorski objekt']
+        loparDetail = `${vessel}: ${status === 'Otišao' ? 'Isplovio' : 'Pristao'} (${time})`
+        loparClass = status === 'Otišao' ? 'val-blue' : 'val-green'
+      }
+
+      html += `
+        <div class="live-row">
+          <span class="label">Valbiska–Lopar</span>
+          <span class="value ${loparClass}">${loparDetail}</span>
+        </div>
+      `
+
+      // -- Magistrala (D8) --
+      html += `
+        <div class="live-row">
+          <span class="label">Magistrala (D8)</span>
+          <span class="value val-green" id="d8-status">Otvoreno</span>
         </div>
       `
 
@@ -97,40 +105,42 @@ function init() {
     if (mapOverlay) {
       let mapHtml = ''
 
-      // AIS Part (Live info)
       if (aisData) {
         const ageMinutes = Math.round((new Date() - new Date(aisData.timestamp)) / 60000)
         mapHtml += `
-          <div class="map-ais-section" style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <div style="margin-bottom: 0.5rem;">
-              <span style="color: var(--accent); font-weight: bold; font-size: 0.9rem;">${aisData.name} (LIVE)</span>
+          <div class="map-ais-section" style="margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
+            <div style="margin-bottom: 0.4rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: var(--accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.05em;">${aisData.name}</span>
+              <span style="font-size: 0.65rem; color: ${ageMinutes < 20 ? 'var(--success)' : 'orange'}; font-weight: 700;">
+                ${ageMinutes < 1 ? 'LIVE' : ageMinutes + ' min'}
+              </span>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.8rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; font-size: 0.8rem;">
               <div>Brzina: <strong>${(aisData.speed || 0).toFixed(1)} kn</strong></div>
               <div>Kurs: <strong>${(aisData.course || 0).toFixed(0)}°</strong></div>
-              <div style="grid-column: span 2;">Status: <strong>${aisData.status || 'Plovidba'}</strong></div>
-            </div>
-            <div style="margin-top: 0.5rem; font-size: 0.7rem; color: var(--text-dim);">
-              Ažurirano prije ${ageMinutes} min
+              <div style="grid-column: span 2;">Status: <strong style="color: #fff;">${aisData.status || 'U plovidbi'}</strong></div>
             </div>
           </div>
         `
       }
 
-      // CIMIS Part (History)
       if (cimisData && cimisData.visits) {
-        const visits = cimisData.visits.slice(0, 3)
+        const relevantShips = ['BARBAT', 'ČETIRI ZVONIKA', 'SVETI MARIN', 'ILOVIK', 'KRK']
+        const visits = cimisData.visits
+          .filter(v => relevantShips.includes(v['Pomorski objekt'].toUpperCase()))
+          .slice(0, 3)
+
         mapHtml += `
-          <h5 style="font-size: 0.7rem; color: var(--text-dim); margin-bottom: 0.5rem; letter-spacing: 0.05em; text-transform: uppercase;">Zadnji prolazi</h5>
+          <h5 style="font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 0.05em; text-transform: uppercase;">Zadnji prolazi</h5>
           <div style="display: grid; gap: 0.4rem;">
             ${visits.map(v => `
               <div style="font-size: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
                 <div style="line-height: 1.2;">
-                  <div style="font-weight: 600;">${v['Pomorski objekt']}</div>
-                  <div style="font-size: 0.65rem; opacity: 0.6;">${v['Luka']} • ${v['Dolazak'].split(' ')[1]}</div>
+                  <div style="font-weight: 600; color: #fff;">${v['Pomorski objekt']}</div>
+                  <div style="font-size: 0.65rem; color: var(--text-muted);">${v['Luka']} • ${v['Dolazak'].split(' ')[1]}</div>
                 </div>
-                <span style="padding: 1px 4px; border-radius: 3px; background: ${v['Status'] === 'Otišao' ? 'rgba(239, 68, 68, 0.15)' : 'rgba(34, 197, 94, 0.15)'}; color: ${v['Status'] === 'Otišao' ? '#f87171' : '#4ade80'}; font-size: 0.6rem; font-weight: bold;">
-                  ${v['Status']}
+                <span style="font-size: 0.65rem; font-weight: 800; color: ${v['Status'] === 'Otišao' ? 'var(--warning)' : 'var(--success)'};">
+                  ${v['Status'].toUpperCase()}
                 </span>
               </div>
             `).join('')}
@@ -138,7 +148,7 @@ function init() {
         `
       }
 
-      mapOverlay.innerHTML = mapHtml || '<p style="font-size:0.75rem; opacity:0.5;">Sinkronizacija...</p>'
+      mapOverlay.innerHTML = mapHtml || '<p style="font-size:0.75rem; opacity:0.5;">Učitavanje...</p>'
     }
   }
 
