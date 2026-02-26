@@ -3138,18 +3138,27 @@ function initRadioPlayer() {
   async function fetchWithRetry(url) {
     const proxies = [
       (u) => u,
-      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+      (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, // API mode
       (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
       (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`
     ];
 
     for (const proxyFn of proxies) {
       try {
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 4000);
-        const res = await fetch(proxyFn(url), { signal: controller.signal });
+        const timeout = setTimeout(() => controller.abort(), 8000);
+        const proxyUrl = proxyFn(url);
+        const res = await fetch(proxyUrl, { signal: controller.signal });
         clearTimeout(timeout);
-        if (res.ok) return res;
+
+        if (res.ok) {
+          if (proxyUrl.includes('allorigins.win/get')) {
+            const json = await res.json();
+            return { text: () => Promise.resolve(json.contents), ok: true };
+          }
+          return res;
+        }
       } catch (e) { }
     }
     return null;

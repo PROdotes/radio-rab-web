@@ -32,7 +32,7 @@ jobs:
       - name: Prepare Clean Distribution
         run: |
           mkdir dist
-          cp -r *.html *.js *.css *.json data scripts dist/ || true
+          cp -r *.html *.js *.css *.json data fonts scripts dist/ || true
           touch dist/.nojekyll
           touch dist/.nojekyll
       - name: Deploy to GitHub Pages
@@ -41,4 +41,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           force_orphan: true
-          dotfiles: true
