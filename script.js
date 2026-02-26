@@ -34,7 +34,10 @@ function init() {
 
       // -- ROUTE 1: Stinica-Mišnjak (Main) --
       const stinicaMisnjakShips = ['BARBAT', 'ČETIRI ZVONIKA', 'SVETI MARIN']
-      const latestMainMove = cimisData?.visits?.find(v => stinicaMisnjakShips.includes(v['Pomorski objekt'].toUpperCase()))
+      const latestMainMove = cimisData?.visits?.find(v => {
+        const vesselName = v['Pomorski objekt'];
+        return vesselName && stinicaMisnjakShips.includes(vesselName.toUpperCase());
+      })
 
       let mainDetail = 'Na vezu'
       let mainClass = 'val-green'
@@ -54,7 +57,7 @@ function init() {
       }
 
       // Live speed injection
-      if (aisData && stinicaMisnjakShips.includes(aisData.name.toUpperCase()) && aisData.speed > 1) {
+      if (aisData && aisData.name && stinicaMisnjakShips.includes(aisData.name.toUpperCase()) && aisData.speed > 1) {
         mainDetail = `U plovidbi (${aisData.speed.toFixed(1)} kn)`
         mainClass = 'val-blue'
       }
@@ -68,7 +71,10 @@ function init() {
 
       // -- ROUTE 2: Valbiska-Lopar --
       const loparShips = ['ILOVIK', 'KRK']
-      const latestLoparMove = cimisData?.visits?.find(v => loparShips.includes(v['Pomorski objekt'].toUpperCase()))
+      const latestLoparMove = cimisData?.visits?.find(v => {
+        const vName = v['Pomorski objekt'];
+        return vName && loparShips.includes(vName.toUpperCase());
+      })
 
       let loparDetail = 'Nema podataka'
       let loparClass = 'val-dim'
@@ -105,7 +111,7 @@ function init() {
     if (mapOverlay) {
       let mapHtml = ''
 
-      if (aisData) {
+      if (aisData && aisData.name) {
         const ageMinutes = Math.round((new Date() - new Date(aisData.timestamp)) / 60000)
         mapHtml += `
           <div class="map-ais-section" style="margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
@@ -127,7 +133,10 @@ function init() {
       if (cimisData && cimisData.visits) {
         const relevantShips = ['BARBAT', 'ČETIRI ZVONIKA', 'SVETI MARIN', 'ILOVIK', 'KRK']
         const visits = cimisData.visits
-          .filter(v => relevantShips.includes(v['Pomorski objekt'].toUpperCase()))
+          .filter(v => {
+            const vName = v['Pomorski objekt'];
+            return vName && relevantShips.includes(vName.toUpperCase());
+          })
           .slice(0, 3)
 
         mapHtml += `

@@ -615,93 +615,102 @@ function initRadioPlayer() {
     return expireTime
   }
 
-  async function fetchHistory(proxyBase, timestamp) {
-    const targetUrl = `${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`
-    let response
-
-    // Fallback logic
-    for (const proxy of [
-      (u) => u, // Try direct first!
-      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+  async function fetchWithRetry(url) {
+    const proxies = [
+      (u) => u,
       (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,
-    ]) {
+      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`
+    ];
+
+    for (const proxyFn of proxies) {
       try {
-        response = await fetch(proxy(targetUrl))
-        if (response.ok) break
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 4000);
+        const res = await fetch(proxyFn(url), { signal: controller.signal });
+        clearTimeout(timeout);
+        if (res.ok) return res;
       } catch (e) { }
     }
-    if (!response.ok) return
-    const str = await response.text()
-    const xmlDoc = new DOMParser().parseFromString(str, 'text/xml')
+    return null;
+  }
 
-    // Items are in chronological order, so we take the last few for "most recent"
-    // But typically history file has oldest at top? Let's check structure.
-    // Based on typical log: appending. So last items are newest?
-    // Let's take the last 5 items and reverse them so newest is at top.
-    const allSongs = Array.from(xmlDoc.querySelectorAll('Song'))
-    const songs = allSongs.slice(-5).reverse()
+  async function fetchCurrentSong(proxyBase, timestamp) {
+    const targetUrl = `${CONFIG.urls.metadataBase}/NowOnAir.xml?t=${timestamp}`;
+    const response = await fetchWithRetry(targetUrl);
+    if (!response) return null;
 
-    const listContainer = document.getElementById('playlist-items')
-    const mainContainer = document.getElementById('playlist-container')
+    const str = await response.text();
+    const xmlDoc = new DOMParser().parseFromString(str, 'text/xml');
+    const event = xmlDoc.querySelector('Event[status="happening"]');
+    const songEl = event?.querySelector('Song');
+    const artist = songEl?.querySelector('Artist')?.getAttribute('name');
+    const songTitle = songEl?.getAttribute('title');
+    const expireTime = songEl?.querySelector('Expire')?.getAttribute('Time');
+
+    if (artist && songTitle) {
+      updateSongTitle(`${artist} - ${songTitle}`);
+      const nowPlayingLabel = document.querySelector('.now-playing');
+      if (nowPlayingLabel) {
+        nowPlayingLabel.textContent = '🎵 UŽIVO';
+        nowPlayingLabel.style.color = 'var(--primary)';
+      }
+    }
+    return expireTime;
+  }
+
+  async function fetchHistory(proxyBase, timestamp) {
+    const targetUrl = `${CONFIG.urls.metadataBase}/AirPlayHistory.xml?t=${timestamp}`;
+    const response = await fetchWithRetry(targetUrl);
+    if (!response) return;
+
+    const str = await response.text();
+    const xmlDoc = new DOMParser().parseFromString(str, 'text/xml');
+    const songs = Array.from(xmlDoc.querySelectorAll('Song')).slice(-5).reverse();
+    const listContainer = document.getElementById('playlist-items');
+    const mainContainer = document.getElementById('playlist-container');
 
     if (songs.length > 0 && listContainer) {
-      mainContainer.hidden = false
-      listContainer.innerHTML = ''
-
+      mainContainer.hidden = false;
+      listContainer.innerHTML = '';
       songs.forEach((song) => {
-        const title = song.getAttribute('title')
-        const artist = song.querySelector('Artist')?.getAttribute('name')
-        const info = song.querySelector('Info')
-        const startTime = info?.getAttribute('StartTime')?.substring(0, 5) || '' // HH:MM
+        const title = song.getAttribute('title');
+        const artist = song.querySelector('Artist')?.getAttribute('name');
+        const startTime = song.querySelector('Info')?.getAttribute('StartTime')?.substring(0, 5) || '';
 
         if (title && artist) {
-          const item = document.createElement('div')
-          item.className = 'playlist-item'
+          const item = document.createElement('div');
+          item.className = 'playlist-item';
           item.innerHTML = `
-                        <span class="playlist-time">${startTime}</span>
-                        <div class="playlist-meta">
-                            <span class="playlist-artist">${escapeHtml(artist)}</span>
-                            <span class="playlist-song">${escapeHtml(title)}</span>
-                        </div>
-                    `
-          listContainer.appendChild(item)
+            <span class="playlist-time">${startTime}</span>
+            <div class="playlist-meta">
+              <span class="playlist-artist">${escapeHtml(artist)}</span>
+              <span class="playlist-song">${escapeHtml(title)}</span>
+            </div>
+          `;
+          listContainer.appendChild(item);
         }
-      })
+      });
     }
   }
 
   async function fetchNext(proxyBase, timestamp) {
-    const targetUrl = `${CONFIG.urls.metadataBase}/AirPlayNext.xml?t=${timestamp}`
-    let response
+    const targetUrl = `${CONFIG.urls.metadataBase}/AirPlayNext.xml?t=${timestamp}`;
+    const response = await fetchWithRetry(targetUrl);
+    if (!response) return;
 
-    // Fallback logic
-    for (const proxy of [
-      (u) => u, // Try direct first!
-      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
-      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,
-    ]) {
-      try {
-        response = await fetch(proxy(targetUrl))
-        if (response.ok) break
-      } catch (e) { }
-    }
-    if (!response || !response.ok) return
-    const str = await response.text()
-    const xmlDoc = new DOMParser().parseFromString(str, 'text/xml')
-
-    const nextSong = xmlDoc.querySelector('Event[status="coming up"] Song')
+    const str = await response.text();
+    const xmlDoc = new DOMParser().parseFromString(str, 'text/xml');
+    const nextSong = xmlDoc.querySelector('Event[status="coming up"] Song');
 
     if (nextSong) {
-      const title = nextSong.getAttribute('title')
-      const artist = nextSong.querySelector('Artist')?.getAttribute('name')
-      const container = document.getElementById('next-up-container')
-
+      const title = nextSong.getAttribute('title');
+      const artist = nextSong.querySelector('Artist')?.getAttribute('name');
+      const container = document.getElementById('next-up-container');
       if (title && artist && container) {
-        container.hidden = false
-        document.getElementById('next-artist').textContent = artist
-        document.getElementById('next-song').textContent = title
+        container.hidden = false;
+        document.getElementById('next-artist').textContent = artist;
+        document.getElementById('next-song').textContent = title;
       }
     }
   }
