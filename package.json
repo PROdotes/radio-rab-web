@@ -15,10 +15,12 @@
   },
   "devDependencies": {
     "eslint": "^8.52.0",
-    "prettier": "^2.8.8",
+    "gh-pages": "^4.0.0",
     "htmlhint": "^1.1.4",
+    "playwright": "^1.58.2",
+    "prettier": "^2.8.8",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^25.0.0",
-    "gh-pages": "^4.0.0"
+    "ws": "^8.19.0"
   }
 }

@@ -520,3 +520,31 @@
     align-items: flex-start;
   }
 }
+
+/* --- FERRY NARRATIVE --- */
+.narrative-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.narrative-row:last-child {
+  border-bottom: none;
+}
+.narrative-vessel {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.narrative-status {
+  font-size: 0.85rem;
+  color: #fff;
+  line-height: 1.3;
+}
+.narrative-time {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}

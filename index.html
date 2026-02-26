@@ -383,16 +383,8 @@
             </div>
           </div>
 
-          <!-- Traffic Alerts Widget -->
-          <div id="traffic-alerts-widget" class="glass widget-card card-animate" style="--delay: 1.5; display: none">
-            <h3><span class="alert-pulse"></span> ALERTS</h3>
-            <div id="alert-items-container" class="alert-stack">
-              <!-- Injected by JS -->
-            </div>
-          </div>
-
           <!-- Live Island Status -->
-          <div class="glass widget-card card-animate" style="--delay: 2">
+          <div class="glass widget-card card-animate" style="--delay: 1.5">
             <div class="flex-between" style="margin-bottom: 1.25rem">
               <h3><span class="pulse-dot"></span> TRAJEKTI I PROMET</h3>
               <div class="sync-status">
@@ -400,14 +392,10 @@
                 <span id="npt-sync-text">Live</span>
               </div>
             </div>
-            <div class="live-indicator">
-              <div class="live-row" data-live="ferry-misnjak">
-                <span class="label">Stinica–Mišnjak</span>
-                <span class="value val-green">Na vrijeme</span>
-              </div>
+            <div class="live-indicator" id="sidebar-ferry-status">
+              <!-- Dynamically injected by script.js -->
               <div class="live-row">
-                <span class="label">Valbiska–Lopar</span>
-                <span class="value val-yellow">15 min kašnjenja</span>
+                <span class="label">Učitavanje...</span>
               </div>
               <div class="live-row">
                 <span class="label">Magistrala (D8)</span>
@@ -421,6 +409,14 @@
                   text-align: right;
                   opacity: 0.5;
                 ">Prikaži kartu AIS →</a>
+          </div>
+
+          <!-- Traffic Alerts Widget -->
+          <div id="traffic-alerts-widget" class="glass widget-card card-animate" style="--delay: 2; display: none">
+            <h3><span class="alert-pulse"></span> ALERTS</h3>
+            <div id="alert-items-container" class="alert-stack">
+              <!-- Injected by JS -->
+            </div>
           </div>
 
           <!-- Events Widget -->
@@ -530,11 +526,11 @@
         <div id="leaflet-map"></div>
 
         <div class="map-overlay-info glass">
-          <h4><span class="pulse-dot"></span> NPT LIVE DATA</h4>
-          <p>Izvor: Ministarstvo mora, prometa i infrastrukture (DATEX II)</p>
-          <div id="ferry-status-v2" style="margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem">
-            <!-- This will be mirrored by script.js -->
-            <p style="font-size: 0.75rem; color: var(--text-dim)">Učitavanje AIS podataka...</p>
+          <h4><span class="pulse-dot"></span> TRAJEKTNI RADAR</h4>
+          <p>Izvor: AIS Live & CIMIS Portal</p>
+          <div id="unified-ferry-overlay"
+            style="margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem">
+            <p style="font-size: 0.75rem; color: var(--text-dim)">Sinkronizacija radarskih podataka...</p>
           </div>
         </div>
       </div>

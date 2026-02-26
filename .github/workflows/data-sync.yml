@@ -41,20 +41,10 @@ jobs:
           };
           EOF
 
-      - name: Install dependencies
-        run: npm install ws
-
       - name: Fetch Traffic Data (NPT)
         run: |
           pwsh -File ./scripts/sync-raw-data.ps1
         continue-on-error: true
-
-      #      - name: Fetch AIS Snapshot (Real-Time)
-      #        env:
-      #          AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
-      #        run: |
-      #          node scripts/sync-ais-snapshot.js
-      #        continue-on-error: true
 
       - name: Fetch Cameras (once)
         run: |
@@ -75,8 +65,8 @@ jobs:
       - name: Commit Traffic Data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore: sync traffic/weather/ais data'
-          file_pattern: 'data/traffic*.json data/traffic*.js data/ais-snapshot.json'
+          commit_message: 'chore: sync traffic/weather data'
+          file_pattern: 'data/traffic*.json data/traffic*.js'
 
   sync-sea-quality:
     runs-on: ubuntu-latest

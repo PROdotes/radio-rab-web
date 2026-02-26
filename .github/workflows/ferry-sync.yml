@@ -1,0 +1,50 @@
+name: Ferry Data Sync
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Every 5 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-ferry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install ws playwright
+
+      - name: Fetch AIS Snapshot (Real-Time)
+        env:
+          AISSTREAM_API_KEY: ${{ secrets.AISSTREAM_API_KEY }}
+        run: |
+          node scripts/sync-ais-snapshot.js
+        continue-on-error: true
+
+      - name: Fetch CIMIS Port Visits
+        run: |
+          npx playwright install chromium --with-deps
+          node scripts/sync-cimis.js
+        continue-on-error: true
+
+      - name: Prepare Commit (Pull & Rebase)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
+
+      - name: Commit Ferry Data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: sync ferry data (5m)'
+          file_pattern: 'data/ais-snapshot.json data/cimis-visits.json'
