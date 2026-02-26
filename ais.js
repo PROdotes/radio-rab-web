@@ -102,8 +102,8 @@ async function fetchVesselAISData(imo) {
   // 2. Try to fetch from local proxy server (fallback for development)
   const proxyUrl = `http://localhost:3001/api/vessel/${imo}`;
   try {
-    const response = await fetch(proxyUrl);
-    if (response.ok) return await response.json();
+    const response = await fetchWithRetry(proxyUrl);
+    if (response) return await response.json();
   } catch (err) { }
 
   // 3. Last resort: public sources (likely CORS blocked)

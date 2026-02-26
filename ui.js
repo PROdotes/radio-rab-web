@@ -570,78 +570,9 @@ function initRadioPlayer() {
       nextDelay = 5000
     }
 
+
     debugLog(`Radio: Next update in ${Math.round(nextDelay / 1000)}s`)
     state.metadataTimeout = setTimeout(fetchMetadata, nextDelay)
-  }
-
-  async function fetchCurrentSong(proxyBase, timestamp) {
-    const targetUrl = `${CONFIG.urls.metadataBase}/NowOnAir.xml?t=${timestamp}`
-    let response
-
-    // Fallback logic
-    for (const proxy of [
-      (u) => u, // Try direct first!
-      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
-      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,
-    ]) {
-      try {
-        response = await fetch(proxy(targetUrl))
-        if (response.ok) break
-      } catch (e) { }
-    }
-    if (!response || !response.ok) return null
-    const str = await response.text()
-    const xmlDoc = new DOMParser().parseFromString(str, 'text/xml')
-
-    // Target the active event - Song is child of Event, Artist/Expire are children of Song
-    const event = xmlDoc.querySelector('Event[status="happening"]')
-    const songEl = event?.querySelector('Song')
-    const artist = songEl?.querySelector('Artist')?.getAttribute('name')
-    const songTitle = songEl?.getAttribute('title')
-    const expireTime = songEl?.querySelector('Expire')?.getAttribute('Time')
-
-    if (artist && songTitle) {
-      updateSongTitle(`${artist} - ${songTitle}`)
-      const nowPlayingLabel = document.querySelector('.now-playing')
-      if (nowPlayingLabel) {
-        // Visual feedback for live status
-        nowPlayingLabel.textContent = '🎵 UŽIVO'
-        nowPlayingLabel.style.color = 'var(--primary)'
-        nowPlayingLabel.style.fontWeight = 'bold'
-      }
-    }
-
-    return expireTime
-  }
-
-  async function fetchWithRetry(url) {
-    const proxies = [
-      (u) => u,
-      (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, // API mode
-      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
-      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`
-    ];
-
-    for (const proxyFn of proxies) {
-      try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 8000);
-        const proxyUrl = proxyFn(url);
-        const res = await fetch(proxyUrl, { signal: controller.signal });
-        clearTimeout(timeout);
-
-        if (res.ok) {
-          if (proxyUrl.includes('allorigins.win/get')) {
-            const json = await res.json();
-            return { text: () => Promise.resolve(json.contents), ok: true };
-          }
-          return res;
-        }
-      } catch (e) { }
-    }
-    return null;
   }
 
   async function fetchCurrentSong(proxyBase, timestamp) {

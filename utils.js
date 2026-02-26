@@ -130,12 +130,12 @@ function enforceFerryIntegrity(eps = 0.001) {
     if (state.clusterLayer) {
       try {
         candidates.push(...state.clusterLayer.getLayers())
-      } catch (e) {}
+      } catch (e) { }
     }
     if (state.layers && state.layers.markers) {
       try {
         candidates.push(...state.layers.markers.getLayers())
-      } catch (e) {}
+      } catch (e) { }
     }
 
     try {
@@ -194,15 +194,15 @@ function clearSpiderfiedClusters() {
           entry.markers.forEach((m) => {
             try {
               if (m && m._map) m.remove()
-            } catch (e) {}
+            } catch (e) { }
           })
         }
         if (entry.clusterMarker) {
           try {
             entry.clusterMarker.addTo(state.clusterLayer)
-          } catch (e) {}
+          } catch (e) { }
         }
-      } catch (e) {}
+      } catch (e) { }
     })
     state.spiderfiedClusters.clear()
   } catch (e) {
@@ -220,11 +220,10 @@ function createStackedMarker(key, leaves, lat, lng, clusterId = null) {
         const props = leaf.properties || {}
         const cameraPopup = props.popup || props.popupContent || props.popupHtml || ''
         if (cameraPopup) {
-          return `<div class="stacked-camera-item" style="${
-            idx > 0
-              ? 'border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 12px;'
-              : ''
-          }">${cameraPopup}</div>`
+          return `<div class="stacked-camera-item" style="${idx > 0
+            ? 'border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 12px;'
+            : ''
+            }">${cameraPopup}</div>`
         }
         return ''
       })
@@ -260,9 +259,9 @@ function createStackedMarker(key, leaves, lat, lng, clusterId = null) {
         if (clusterMarker) {
           try {
             state.clusterLayer.removeLayer(clusterMarker)
-          } catch (e) {}
+          } catch (e) { }
         }
-      } catch (e) {}
+      } catch (e) { }
     }
 
     m.addTo(state.clusterLayer)
@@ -302,14 +301,14 @@ function spiderfyCluster(clusterId, centerLat, centerLng, leaves) {
         const pid = props.id || `${props.layer}:${lng}:${lat}`
         const id = `spider:${clusterId}:${idx}`
         state.clusterMarkers.set(id, m)
-      } catch (e) {}
+      } catch (e) { }
     })
 
     const clusterMarker = state.clusterMarkers.get(`cluster:${clusterId}`)
     if (clusterMarker) {
       try {
         state.clusterLayer.removeLayer(clusterMarker)
-      } catch (e) {}
+      } catch (e) { }
     }
 
     state.spiderfiedClusters.set(clusterId, { markers: created, clusterMarker })
@@ -395,3 +394,37 @@ function initLazyImages() {
     window._lazyImgObserver.observe(el)
   })
 }
+
+
+/**
+ * Robust fetch with proxy-aware retry and timeout
+ */
+async function fetchWithRetry(url) {
+  const proxies = [
+    (u) => u,
+    (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,
+    (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+    (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+    (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`
+  ];
+
+  for (const proxyFn of proxies) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const proxyUrl = proxyFn(url);
+      const res = await fetch(proxyUrl, { signal: controller.signal });
+      clearTimeout(timeout);
+
+      if (res.ok) {
+        if (proxyUrl.includes('allorigins.win/get')) {
+          const json = await res.json();
+          return { text: () => Promise.resolve(json.contents), ok: true };
+        }
+        return res;
+      }
+    } catch (e) { }
+  }
+  return null;
+}
+window.fetchWithRetry = fetchWithRetry;

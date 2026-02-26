@@ -466,12 +466,12 @@ function enforceFerryIntegrity(eps = 0.001) {
     if (state.clusterLayer) {
       try {
         candidates.push(...state.clusterLayer.getLayers())
-      } catch (e) {}
+      } catch (e) { }
     }
     if (state.layers && state.layers.markers) {
       try {
         candidates.push(...state.layers.markers.getLayers())
-      } catch (e) {}
+      } catch (e) { }
     }
 
     try {
@@ -530,15 +530,15 @@ function clearSpiderfiedClusters() {
           entry.markers.forEach((m) => {
             try {
               if (m && m._map) m.remove()
-            } catch (e) {}
+            } catch (e) { }
           })
         }
         if (entry.clusterMarker) {
           try {
             entry.clusterMarker.addTo(state.clusterLayer)
-          } catch (e) {}
+          } catch (e) { }
         }
-      } catch (e) {}
+      } catch (e) { }
     })
     state.spiderfiedClusters.clear()
   } catch (e) {
@@ -556,11 +556,10 @@ function createStackedMarker(key, leaves, lat, lng, clusterId = null) {
         const props = leaf.properties || {}
         const cameraPopup = props.popup || props.popupContent || props.popupHtml || ''
         if (cameraPopup) {
-          return `<div class="stacked-camera-item" style="${
-            idx > 0
-              ? 'border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 12px;'
-              : ''
-          }">${cameraPopup}</div>`
+          return `<div class="stacked-camera-item" style="${idx > 0
+            ? 'border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; margin-top: 12px;'
+            : ''
+            }">${cameraPopup}</div>`
         }
         return ''
       })
@@ -596,9 +595,9 @@ function createStackedMarker(key, leaves, lat, lng, clusterId = null) {
         if (clusterMarker) {
           try {
             state.clusterLayer.removeLayer(clusterMarker)
-          } catch (e) {}
+          } catch (e) { }
         }
-      } catch (e) {}
+      } catch (e) { }
     }
 
     m.addTo(state.clusterLayer)
@@ -638,14 +637,14 @@ function spiderfyCluster(clusterId, centerLat, centerLng, leaves) {
         const pid = props.id || `${props.layer}:${lng}:${lat}`
         const id = `spider:${clusterId}:${idx}`
         state.clusterMarkers.set(id, m)
-      } catch (e) {}
+      } catch (e) { }
     })
 
     const clusterMarker = state.clusterMarkers.get(`cluster:${clusterId}`)
     if (clusterMarker) {
       try {
         state.clusterLayer.removeLayer(clusterMarker)
-      } catch (e) {}
+      } catch (e) { }
     }
 
     state.spiderfiedClusters.set(clusterId, { markers: created, clusterMarker })
@@ -731,6 +730,40 @@ function initLazyImages() {
     window._lazyImgObserver.observe(el)
   })
 }
+
+
+/**
+ * Robust fetch with proxy-aware retry and timeout
+ */
+async function fetchWithRetry(url) {
+  const proxies = [
+    (u) => u,
+    (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`,
+    (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
+    (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+    (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`
+  ];
+
+  for (const proxyFn of proxies) {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 8000);
+      const proxyUrl = proxyFn(url);
+      const res = await fetch(proxyUrl, { signal: controller.signal });
+      clearTimeout(timeout);
+
+      if (res.ok) {
+        if (proxyUrl.includes('allorigins.win/get')) {
+          const json = await res.json();
+          return { text: () => Promise.resolve(json.contents), ok: true };
+        }
+        return res;
+      }
+    } catch (e) { }
+  }
+  return null;
+}
+window.fetchWithRetry = fetchWithRetry;
 
 
 /**
@@ -1589,7 +1622,6 @@ async function initNPT() {
 
   try {
     // Handle both legacy array-only and new object-format data
-    // Handle both legacy array-only and new object-format data
     const alerts = Array.isArray(data) ? data : data.events || data.alerts || []
     const weather = Array.isArray(data) ? null : data.weather || null
     const islandWeather = Array.isArray(data) ? null : data.islandWeather || null
@@ -1620,8 +1652,7 @@ async function initNPT() {
     }
 
     debugLog(
-      `NPT: Loaded ${alerts.length} alerts, ${
-        state.nptIslandWeather?.length || 0
+      `NPT: Loaded ${alerts.length} alerts, ${state.nptIslandWeather?.length || 0
       } island weather stations, Updated: ${updatedAt}`
     )
 
@@ -1760,8 +1791,7 @@ function updateNewsTickerWithNPT(alerts) {
   const alertItems = critical
     .map(
       (a) => `
-        <span class="ticker-item" style="color: var(--warning); font-weight: 800;">⚠️ ${
-          a.road
+        <span class="ticker-item" style="color: var(--warning); font-weight: 800;">⚠️ ${a.road
         }: ${a.details.substring(0, 80)}${a.details.length > 80 ? '...' : ''}</span>
         <span class="ticker-separator">•</span>
     `
@@ -2067,12 +2097,11 @@ function openSeaHistoryModal(point) {
         header.type = 'button'
         header.className = 'sea-history-entry-header'
         header.innerHTML = `
-          <span>${escapeHtml(entry.dateLabel)}${
-          entry.timeLabel ? `, ${escapeHtml(entry.timeLabel)}` : ''
-        }</span>
+          <span>${escapeHtml(entry.dateLabel)}${entry.timeLabel ? `, ${escapeHtml(entry.timeLabel)}` : ''
+          }</span>
           <span class="sea-history-badge ${entry.qualityClass}">${escapeHtml(
-          entry.qualityLabel
-        )}</span>
+            entry.qualityLabel
+          )}</span>
         `
         header.addEventListener('click', () => {
           entryEl.classList.toggle('open')
@@ -2298,27 +2327,25 @@ function updateTrafficAlerts(alerts, updatedAt) {
     const severityClass = isMeteo ? `severity-${a.severity}` : `alert-${type}`
     const timeStr = a.onset
       ? new Date(a.onset).toLocaleDateString('hr-HR', { day: '2-digit', month: '2-digit' }) +
-        ' ' +
-        new Date(a.onset).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
+      ' ' +
+      new Date(a.onset).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
       : a.timestamp
-      ? new Date(a.timestamp).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
-      : ''
+        ? new Date(a.timestamp).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
+        : ''
 
     return `
-            <div class="alert-card ${severityClass}${
-      isHidden ? ' alert-hidden' : ''
-    }" title="Klikni za više">
+            <div class="alert-card ${severityClass}${isHidden ? ' alert-hidden' : ''
+      }" title="Klikni za više">
                 <div class="alert-icon">${isMeteo ? '⚠️' : icon}</div>
                 <div class="alert-info-wrapper">
                     <span class="alert-road">${escapeHtml(a.road || 'Obavijest')}</span>
                     <p class="alert-text">${escapeHtml(a.details)}</p>
-                    ${
-                      isMeteo
-                        ? `<p class="alert-instruction" style="display:none; margin-top:5px; font-size:0.8rem; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.1); padding-top:5px;">${escapeHtml(
-                            a.instruction
-                          )}</p>`
-                        : ''
-                    }
+                    ${isMeteo
+        ? `<p class="alert-instruction" style="display:none; margin-top:5px; font-size:0.8rem; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.1); padding-top:5px;">${escapeHtml(
+          a.instruction
+        )}</p>`
+        : ''
+      }
                     ${timeStr ? `<span class="alert-time">${timeStr}</span>` : ''}
                 </div>
             </div>
@@ -2427,10 +2454,6 @@ function getAlertIcon(type) {
 // ===========================================
 
 function updateWeatherWithNPT(weather) {
-  if (!weather || weather.length === 0) return
-
-  // Use Island Weather (Local) instead of global
-  // Log strongest wind in 75km radius for Ferry/Bridge decisions
   if (!weather || weather.length === 0) return
 
   // Sort by wind gust desc
@@ -3090,78 +3113,9 @@ function initRadioPlayer() {
       nextDelay = 5000
     }
 
+
     debugLog(`Radio: Next update in ${Math.round(nextDelay / 1000)}s`)
     state.metadataTimeout = setTimeout(fetchMetadata, nextDelay)
-  }
-
-  async function fetchCurrentSong(proxyBase, timestamp) {
-    const targetUrl = `${CONFIG.urls.metadataBase}/NowOnAir.xml?t=${timestamp}`
-    let response
-
-    // Fallback logic
-    for (const proxy of [
-      (u) => u, // Try direct first!
-      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
-      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`,
-    ]) {
-      try {
-        response = await fetch(proxy(targetUrl))
-        if (response.ok) break
-      } catch (e) { }
-    }
-    if (!response || !response.ok) return null
-    const str = await response.text()
-    const xmlDoc = new DOMParser().parseFromString(str, 'text/xml')
-
-    // Target the active event - Song is child of Event, Artist/Expire are children of Song
-    const event = xmlDoc.querySelector('Event[status="happening"]')
-    const songEl = event?.querySelector('Song')
-    const artist = songEl?.querySelector('Artist')?.getAttribute('name')
-    const songTitle = songEl?.getAttribute('title')
-    const expireTime = songEl?.querySelector('Expire')?.getAttribute('Time')
-
-    if (artist && songTitle) {
-      updateSongTitle(`${artist} - ${songTitle}`)
-      const nowPlayingLabel = document.querySelector('.now-playing')
-      if (nowPlayingLabel) {
-        // Visual feedback for live status
-        nowPlayingLabel.textContent = '🎵 UŽIVO'
-        nowPlayingLabel.style.color = 'var(--primary)'
-        nowPlayingLabel.style.fontWeight = 'bold'
-      }
-    }
-
-    return expireTime
-  }
-
-  async function fetchWithRetry(url) {
-    const proxies = [
-      (u) => u,
-      (u) => `https://api.allorigins.win/get?url=${encodeURIComponent(u)}`, // API mode
-      (u) => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
-      (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-      (u) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(u)}`
-    ];
-
-    for (const proxyFn of proxies) {
-      try {
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 8000);
-        const proxyUrl = proxyFn(url);
-        const res = await fetch(proxyUrl, { signal: controller.signal });
-        clearTimeout(timeout);
-
-        if (res.ok) {
-          if (proxyUrl.includes('allorigins.win/get')) {
-            const json = await res.json();
-            return { text: () => Promise.resolve(json.contents), ok: true };
-          }
-          return res;
-        }
-      } catch (e) { }
-    }
-    return null;
   }
 
   async function fetchCurrentSong(proxyBase, timestamp) {

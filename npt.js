@@ -41,7 +41,6 @@ async function initNPT() {
 
   try {
     // Handle both legacy array-only and new object-format data
-    // Handle both legacy array-only and new object-format data
     const alerts = Array.isArray(data) ? data : data.events || data.alerts || []
     const weather = Array.isArray(data) ? null : data.weather || null
     const islandWeather = Array.isArray(data) ? null : data.islandWeather || null
@@ -72,8 +71,7 @@ async function initNPT() {
     }
 
     debugLog(
-      `NPT: Loaded ${alerts.length} alerts, ${
-        state.nptIslandWeather?.length || 0
+      `NPT: Loaded ${alerts.length} alerts, ${state.nptIslandWeather?.length || 0
       } island weather stations, Updated: ${updatedAt}`
     )
 
@@ -212,8 +210,7 @@ function updateNewsTickerWithNPT(alerts) {
   const alertItems = critical
     .map(
       (a) => `
-        <span class="ticker-item" style="color: var(--warning); font-weight: 800;">⚠️ ${
-          a.road
+        <span class="ticker-item" style="color: var(--warning); font-weight: 800;">⚠️ ${a.road
         }: ${a.details.substring(0, 80)}${a.details.length > 80 ? '...' : ''}</span>
         <span class="ticker-separator">•</span>
     `
@@ -246,8 +243,8 @@ async function initMeteoAlerts() {
 
   try {
     const fetchPromises = urls.map((url) =>
-      fetch(`${CONFIG.urls.corsProxy}${encodeURIComponent(url)}`)
-        .then((res) => (res.ok ? res.text() : null))
+      fetchWithRetry(url)
+        .then((res) => (res ? res.text() : null))
         .catch(() => null)
     )
 
@@ -333,10 +330,10 @@ async function initMeteoAlerts() {
 async function initSeaTemperature() {
   try {
     const url = CONFIG.urls.meteo.seaTemp
-    const response = await fetch(`${CONFIG.urls.corsProxy}${encodeURIComponent(url)}`)
-    if (!response.ok) return
+    const res = await fetchWithRetry(url)
+    if (!res) return
 
-    const xmlStr = await response.text()
+    const xmlStr = await res.text()
     const parser = new DOMParser()
     const xmlDoc = parser.parseFromString(xmlStr, 'application/xml')
     const podatciNodes = xmlDoc.querySelectorAll('Podatci')
@@ -386,9 +383,10 @@ async function initSeaQuality() {
   // 2. Try Fetch (Production support)
   else {
     try {
-      const response = await fetch(CONFIG.urls.meteo.seaQuality)
-      if (response.ok) {
-        data = await response.json()
+      const res = await fetchWithRetry(CONFIG.urls.meteo.seaQuality)
+      if (!res) return
+      if (res) {
+        data = await res.json()
       }
     } catch (e) {
       debugWarn('SeaQuality: Fetch failed:', e)
@@ -519,12 +517,11 @@ function openSeaHistoryModal(point) {
         header.type = 'button'
         header.className = 'sea-history-entry-header'
         header.innerHTML = `
-          <span>${escapeHtml(entry.dateLabel)}${
-          entry.timeLabel ? `, ${escapeHtml(entry.timeLabel)}` : ''
-        }</span>
+          <span>${escapeHtml(entry.dateLabel)}${entry.timeLabel ? `, ${escapeHtml(entry.timeLabel)}` : ''
+          }</span>
           <span class="sea-history-badge ${entry.qualityClass}">${escapeHtml(
-          entry.qualityLabel
-        )}</span>
+            entry.qualityLabel
+          )}</span>
         `
         header.addEventListener('click', () => {
           entryEl.classList.toggle('open')
@@ -750,27 +747,25 @@ function updateTrafficAlerts(alerts, updatedAt) {
     const severityClass = isMeteo ? `severity-${a.severity}` : `alert-${type}`
     const timeStr = a.onset
       ? new Date(a.onset).toLocaleDateString('hr-HR', { day: '2-digit', month: '2-digit' }) +
-        ' ' +
-        new Date(a.onset).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
+      ' ' +
+      new Date(a.onset).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
       : a.timestamp
-      ? new Date(a.timestamp).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
-      : ''
+        ? new Date(a.timestamp).toLocaleTimeString('hr-HR', { hour: '2-digit', minute: '2-digit' })
+        : ''
 
     return `
-            <div class="alert-card ${severityClass}${
-      isHidden ? ' alert-hidden' : ''
-    }" title="Klikni za više">
+            <div class="alert-card ${severityClass}${isHidden ? ' alert-hidden' : ''
+      }" title="Klikni za više">
                 <div class="alert-icon">${isMeteo ? '⚠️' : icon}</div>
                 <div class="alert-info-wrapper">
                     <span class="alert-road">${escapeHtml(a.road || 'Obavijest')}</span>
                     <p class="alert-text">${escapeHtml(a.details)}</p>
-                    ${
-                      isMeteo
-                        ? `<p class="alert-instruction" style="display:none; margin-top:5px; font-size:0.8rem; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.1); padding-top:5px;">${escapeHtml(
-                            a.instruction
-                          )}</p>`
-                        : ''
-                    }
+                    ${isMeteo
+        ? `<p class="alert-instruction" style="display:none; margin-top:5px; font-size:0.8rem; color:var(--text-dim); border-top:1px solid rgba(255,255,255,0.1); padding-top:5px;">${escapeHtml(
+          a.instruction
+        )}</p>`
+        : ''
+      }
                     ${timeStr ? `<span class="alert-time">${timeStr}</span>` : ''}
                 </div>
             </div>
@@ -879,10 +874,6 @@ function getAlertIcon(type) {
 // ===========================================
 
 function updateWeatherWithNPT(weather) {
-  if (!weather || weather.length === 0) return
-
-  // Use Island Weather (Local) instead of global
-  // Log strongest wind in 75km radius for Ferry/Bridge decisions
   if (!weather || weather.length === 0) return
 
   // Sort by wind gust desc
