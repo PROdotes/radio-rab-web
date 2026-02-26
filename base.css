@@ -1,0 +1,242 @@
+/* ===========================================
+   Radio Rab News Portal – Base
+   Design tokens, reset, typography, utilities
+   =========================================== */
+/* stylelint-disable */
+
+/* --- DESIGN TOKENS --- */
+:root {
+  /* Colors - Midnight with subtle warmth */
+  --bg-dark: #030712;
+  /* Near black with hint of blue */
+  --bg-card: #0c1425;
+  /* Lifted card - more contrast from bg */
+  --bg-accent: #141d2e;
+  /* Interactive/hover zones */
+  --primary: #3b82f6;
+  /* Royal Blue */
+  --primary-glow: rgba(59, 130, 246, 0.25);
+  --accent: #0ea5e9;
+  /* Sky Action */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --text-main: #f1f5f9;
+  /* Slate 100 - primary text */
+  --text-dim: #c8d5e3;
+  /* Light blue-gray - readable on dark blue */
+  --text-muted: #8b9bb3;
+  /* Mid blue-gray - visible but secondary */
+  --border: rgba(59, 130, 246, 0.1);
+  /* Subtle Sapphire Border */
+  --border-hover: rgba(59, 130, 246, 0.4);
+
+  /* Effects */
+  --glass-blur: blur(20px);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  /* Layout */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-pill: 100px;
+  --container-max: 1400px;
+  --header-height: 96px;
+  --ticker-height: 32px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Category Colors */
+  --cat-local: var(--primary);
+  --cat-sport: var(--success);
+  --cat-sea: #0284c7;
+  --cat-culture: #9333ea;
+  --cat-tourism: #ea580c;
+  --cat-gastro: #db2777;
+}
+
+/* --- RESET & BASE --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: var(--ticker-height);
+  /* Compensate for fixed ticker */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- ACCESSIBILITY --- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  z-index: 10000;
+  border-radius: 0 0 var(--radius-sm) 0;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Visually hidden but accessible to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* --- UTILITIES --- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* --- TAB CONTENT --- */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.4s var(--ease-out);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-animate {
+  opacity: 0;
+  animation: fadeInUp 0.6s var(--ease-bounce) forwards;
+  animation-delay: calc(var(--delay, 1) * 80ms);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
