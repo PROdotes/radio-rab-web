@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-27T22:41:04.420Z",
+  "timestamp": "2026-02-27T23:02:10.143Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -292,38 +292,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "JELENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.02.2026 16:50",
-      "Odlazak": "26.02.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.02.2026 09:05",
-      "Odlazak": "26.02.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "JELENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.02.2026 06:50",
-      "Odlazak": "26.02.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.02.2026 19:40",
-      "Odlazak": "26.02.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
@@ -340,12 +308,44 @@
       "Status": "Došao"
     },
     {
+      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
+      "Pomorski objekt": "MAČEK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.10.2025 14:14",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Lopar",
       "Pomorski objekt": "ALBATROS DVA",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.10.2025 15:30",
       "Odlazak": "06.04.2026 13:15",
       "Status": "Došao"
+    },
+    {
+      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
+      "Pomorski objekt": "SAGENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.10.2025 15:02",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SUZANA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.10.2025 13:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "GRGA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.09.2025 16:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
     }
   ]
 }
