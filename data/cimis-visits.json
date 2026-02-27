@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-02-27T20:16:56.029Z",
+  "timestamp": "2026-02-27T20:31:45.917Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 43,
   "visits": [
     {
       "Luka": "Valbiska",
@@ -336,14 +336,6 @@
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.02.2026 07:57",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
-      "Pomorski objekt": "MAČEK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "18.10.2025 14:14",
       "Odlazak": "-",
       "Status": "Došao"
     },
