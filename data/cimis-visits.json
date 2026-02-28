@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-02-28T16:21:05.419Z",
+  "timestamp": "2026-02-28T16:36:43.578Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.02.2026 17:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "ILOVIK",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "28.02.2026 16:25",
       "Odlazak": "28.02.2026 16:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -244,14 +252,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "28.02.2026 05:25",
-      "Odlazak": "28.02.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -320,16 +320,16 @@
       "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.02.2026 07:57",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "28.02.2026 17:31",
+      "Status": "Otišao"
     },
     {
       "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.02.2026 07:57",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "28.02.2026 17:26",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
