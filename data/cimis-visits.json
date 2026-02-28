@@ -1,14 +1,30 @@
 {
-  "timestamp": "2026-02-28T04:36:32.474Z",
+  "timestamp": "2026-02-28T05:00:12.689Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
     {
       "Luka": "Valbiska",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.02.2026 07:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.02.2026 06:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.02.2026 05:25",
-      "Odlazak": "-",
+      "Odlazak": "28.02.2026 05:45",
       "Status": "U dolasku"
     },
     {
@@ -16,8 +32,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.02.2026 00:14",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "28.02.2026 05:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -80,7 +96,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.02.2026 19:40",
-      "Odlazak": "-",
+      "Odlazak": "28.02.2026 05:45",
       "Status": "Došao"
     },
     {
@@ -212,14 +228,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.02.2026 13:25",
-      "Odlazak": "27.02.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -257,14 +265,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "27.02.2026 11:15",
       "Odlazak": "27.02.2026 12:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.02.2026 10:45",
-      "Odlazak": "27.02.2026 11:00",
       "Status": "Otišao"
     },
     {
