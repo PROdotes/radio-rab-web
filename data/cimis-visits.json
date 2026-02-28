@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-28T06:02:39.313Z",
+  "timestamp": "2026-02-28T06:19:58.399Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -24,7 +24,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.02.2026 06:55",
-      "Odlazak": "-",
+      "Odlazak": "28.02.2026 07:15",
       "Status": "U dolasku"
     },
     {
@@ -32,7 +32,7 @@
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.02.2026 06:50",
-      "Odlazak": "-",
+      "Odlazak": "28.02.2026 06:55",
       "Status": "U dolasku"
     },
     {
