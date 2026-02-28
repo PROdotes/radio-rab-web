@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-02-28T09:55:25.714Z",
+  "timestamp": "2026-02-28T10:02:06.696Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 42,
   "visits": [
     {
       "Luka": "Stinica",
@@ -320,14 +320,6 @@
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.02.2026 07:57",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
-      "Pomorski objekt": "MAČEK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "18.10.2025 14:14",
       "Odlazak": "-",
       "Status": "Došao"
     },
