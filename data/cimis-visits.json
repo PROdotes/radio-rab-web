@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-01T12:35:20.917Z",
+  "timestamp": "2026-03-01T12:58:34.280Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 43,
   "visits": [
     {
       "Luka": "Valbiska",
@@ -301,18 +301,18 @@
     },
     {
       "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "TVRDI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.02.2026 07:57",
-      "Odlazak": "28.02.2026 17:31",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.02.2026 07:57",
       "Odlazak": "28.02.2026 17:26",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "TVRDI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.02.2026 07:57",
+      "Odlazak": "28.02.2026 17:31",
       "Status": "Otišao"
     },
     {
@@ -344,14 +344,6 @@
       "Pomorski objekt": "SUZANA",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.10.2025 13:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "GRGA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
     }
