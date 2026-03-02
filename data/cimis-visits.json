@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-02T15:46:39.698Z",
+  "timestamp": "2026-03-02T16:24:50.266Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -16,7 +16,7 @@
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
       "Dolazak": "02.03.2026 16:50",
-      "Odlazak": "-",
+      "Odlazak": "02.03.2026 16:55",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +32,8 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "02.03.2026 16:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "02.03.2026 16:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
