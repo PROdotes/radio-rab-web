@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-02T15:07:04.191Z",
+  "timestamp": "2026-03-02T15:26:56.402Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.03.2026 17:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Rab",
       "Pomorski objekt": "JELENA",
@@ -136,7 +144,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "02.03.2026 09:05",
-      "Odlazak": "-",
+      "Odlazak": "02.03.2026 16:00",
       "Status": "Došao"
     },
     {
@@ -233,14 +241,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "02.03.2026 05:25",
       "Odlazak": "02.03.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "02.03.2026 02:41",
-      "Odlazak": "02.03.2026 02:45",
       "Status": "Otišao"
     },
     {
