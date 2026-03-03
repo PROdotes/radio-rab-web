@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-03T11:36:17.989Z",
+  "timestamp": "2026-03-03T11:50:55.577Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -17,7 +17,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "03.03.2026 11:55",
       "Odlazak": "03.03.2026 12:15",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
