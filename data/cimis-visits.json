@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-03T07:33:29.401Z",
+  "timestamp": "2026-03-03T07:52:37.358Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 43,
   "visits": [
     {
       "Luka": "Lopar",
@@ -57,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "03.03.2026 07:05",
       "Odlazak": "03.03.2026 07:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -330,14 +330,6 @@
       "Dolazak": "12.10.2025 13:00",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "MALA MARIS",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.10.2025 20:10",
-      "Odlazak": "01.05.2026 08:00",
-      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
