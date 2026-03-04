@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-04T16:22:57.167Z",
+  "timestamp": "2026-03-04T16:41:38.784Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.03.2026 17:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "ILOVIK",
@@ -17,7 +25,15 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.03.2026 16:50",
       "Odlazak": "04.03.2026 16:55",
-      "Status": "U dolasku"
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.03.2026 16:45",
+      "Odlazak": "-",
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -25,15 +41,15 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.03.2026 16:25",
       "Odlazak": "04.03.2026 16:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "04.03.2026 16:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "04.03.2026 16:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -236,14 +252,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.03.2026 07:05",
-      "Odlazak": "04.03.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -257,14 +265,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.03.2026 06:50",
       "Odlazak": "04.03.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.03.2026 06:30",
-      "Odlazak": "04.03.2026 06:45",
       "Status": "Otišao"
     },
     {
