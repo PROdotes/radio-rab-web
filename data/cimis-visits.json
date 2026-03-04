@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-04T04:55:01.439Z",
+  "timestamp": "2026-03-04T05:17:42.231Z",
   "source": "CIMIS Public Portal",
   "count": 41,
   "visits": [
@@ -8,6 +8,14 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "04.03.2026 07:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.03.2026 06:50",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -25,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.03.2026 05:25",
       "Odlazak": "04.03.2026 05:45",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -297,14 +305,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "15.10.2025 15:30",
       "Odlazak": "06.04.2026 13:15",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
-      "Pomorski objekt": "SAGENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.10.2025 15:02",
-      "Odlazak": "-",
       "Status": "Došao"
     },
     {
