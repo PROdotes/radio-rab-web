@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-06T11:08:03.275Z",
+  "timestamp": "2026-03-06T11:20:45.419Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -8,15 +8,15 @@
       "Pomorski objekt": "BASKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.03.2026 12:02",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "06.03.2026 12:14",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.03.2026 11:55",
-      "Odlazak": "-",
+      "Odlazak": "06.03.2026 12:15",
       "Status": "U dolasku"
     },
     {
@@ -25,7 +25,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "06.03.2026 11:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
