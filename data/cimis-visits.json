@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-06T19:24:13.106Z",
+  "timestamp": "2026-03-06T19:41:15.105Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 43,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.03.2026 20:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
@@ -25,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "06.03.2026 19:40",
       "Odlazak": "06.03.2026 19:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -268,14 +276,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "06.03.2026 08:55",
-      "Odlazak": "06.03.2026 09:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
@@ -322,14 +322,6 @@
       "Dolazak": "04.03.2026 19:40",
       "Odlazak": "05.03.2026 05:45",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
-      "Pomorski objekt": "MAČEK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "18.10.2025 14:14",
-      "Odlazak": "-",
-      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
