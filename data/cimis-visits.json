@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-06T13:49:12.463Z",
+  "timestamp": "2026-03-06T14:07:31.985Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.03.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
@@ -321,14 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "15.10.2025 15:30",
       "Odlazak": "06.04.2026 13:15",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
-      "Pomorski objekt": "SAGENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.10.2025 15:02",
-      "Odlazak": "-",
       "Status": "Došao"
     },
     {
