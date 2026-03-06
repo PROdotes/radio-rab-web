@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-06T10:55:42.830Z",
+  "timestamp": "2026-03-06T11:08:03.275Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -7,9 +7,9 @@
       "Luka": "Lopar",
       "Pomorski objekt": "BASKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "06.03.2026 12:00",
+      "Dolazak": "06.03.2026 12:02",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
