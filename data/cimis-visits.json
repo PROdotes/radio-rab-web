@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-07T13:59:44.591Z",
+  "timestamp": "2026-03-07T14:10:54.360Z",
   "source": "CIMIS Public Portal",
-  "count": 42,
+  "count": 43,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.03.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
