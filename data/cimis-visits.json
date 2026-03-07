@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T06:21:38.435Z",
+  "timestamp": "2026-03-07T06:39:05.273Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -32,8 +32,8 @@
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.03.2026 06:50",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "07.03.2026 06:55",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
