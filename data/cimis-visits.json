@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-08T06:46:47.860Z",
+  "timestamp": "2026-03-08T07:05:21.793Z",
   "source": "CIMIS Public Portal",
-  "count": 41,
+  "count": 42,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.03.2026 09:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
@@ -16,7 +24,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.03.2026 07:05",
-      "Odlazak": "-",
+      "Odlazak": "08.03.2026 07:45",
       "Status": "Došao"
     },
     {
