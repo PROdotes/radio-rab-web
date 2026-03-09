@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-09T07:05:49.348Z",
+  "timestamp": "2026-03-09T07:33:30.611Z",
   "source": "CIMIS Public Portal",
-  "count": 42,
+  "count": 41,
   "visits": [
     {
       "Luka": "Lopar",
@@ -12,12 +12,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.03.2026 08:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.03.2026 07:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "09.03.2026 07:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.03.2026 06:55",
       "Odlazak": "09.03.2026 07:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -268,14 +276,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.03.2026 12:15",
-      "Odlazak": "08.03.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
@@ -298,14 +298,6 @@
       "Dolazak": "07.03.2026 19:40",
       "Odlazak": "08.03.2026 05:45",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
-      "Pomorski objekt": "MAČEK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "18.10.2025 14:14",
-      "Odlazak": "-",
-      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
