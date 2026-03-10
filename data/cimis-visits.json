@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-10T18:01:15.342Z",
+  "timestamp": "2026-03-10T18:27:29.776Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -8,6 +8,22 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 19:40",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.03.2026 19:40",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.03.2026 19:25",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -25,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 17:55",
       "Odlazak": "10.03.2026 18:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -41,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 17:20",
       "Odlazak": "10.03.2026 18:20",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -201,7 +217,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 08:55",
       "Odlazak": "10.03.2026 18:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -209,14 +225,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 08:30",
       "Odlazak": "10.03.2026 08:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 08:25",
-      "Odlazak": "10.03.2026 09:15",
       "Status": "Otišao"
     },
     {
@@ -232,14 +240,6 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 07:30",
-      "Odlazak": "10.03.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 07:05",
       "Odlazak": "10.03.2026 07:45",
       "Status": "Otišao"
     },
