@@ -1,8 +1,48 @@
 {
-  "timestamp": "2026-03-11T13:46:36.070Z",
+  "timestamp": "2026-03-11T14:12:58.349Z",
   "source": "CIMIS Public Portal",
-  "count": 41,
+  "count": 42,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 15:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 14:15",
+      "Odlazak": "11.03.2026 15:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 13:55",
+      "Odlazak": "11.03.2026 14:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 13:35",
+      "Odlazak": "11.03.2026 13:40",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
@@ -12,11 +52,51 @@
       "Status": "Otišao"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 13:15",
+      "Odlazak": "11.03.2026 13:20",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 12:45",
+      "Odlazak": "11.03.2026 13:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 12:15",
+      "Odlazak": "11.03.2026 12:30",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 11:55",
       "Odlazak": "11.03.2026 12:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 11:15",
+      "Odlazak": "11.03.2026 12:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 10:45",
+      "Odlazak": "11.03.2026 11:00",
       "Status": "Otišao"
     },
     {
@@ -32,8 +112,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 10:10",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "11.03.2026 10:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -164,14 +244,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 23:45",
-      "Odlazak": "10.03.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
@@ -180,43 +252,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 22:15",
-      "Odlazak": "10.03.2026 23:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 21:45",
-      "Odlazak": "10.03.2026 22:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 20:55",
       "Odlazak": "10.03.2026 22:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 20:45",
-      "Odlazak": "10.03.2026 21:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 19:45",
-      "Odlazak": "10.03.2026 20:30",
       "Status": "Otišao"
     },
     {
@@ -236,43 +276,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 18:45",
-      "Odlazak": "10.03.2026 19:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 17:45",
-      "Odlazak": "10.03.2026 18:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 16:50",
       "Odlazak": "10.03.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 16:45",
-      "Odlazak": "10.03.2026 17:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 16:15",
-      "Odlazak": "10.03.2026 16:30",
       "Status": "Otišao"
     },
     {
