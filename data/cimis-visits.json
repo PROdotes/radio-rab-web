@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-11T05:52:30.599Z",
+  "timestamp": "2026-03-11T06:10:34.113Z",
   "source": "CIMIS Public Portal",
   "count": 41,
   "visits": [
@@ -8,6 +8,14 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 07:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 07:00",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -24,7 +32,7 @@
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 06:50",
-      "Odlazak": "-",
+      "Odlazak": "11.03.2026 06:55",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +40,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 06:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "11.03.2026 06:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -257,14 +265,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 11:15",
       "Odlazak": "10.03.2026 12:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 10:45",
-      "Odlazak": "10.03.2026 11:00",
       "Status": "Otišao"
     },
     {
