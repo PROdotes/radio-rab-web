@@ -1,15 +1,31 @@
 {
-  "timestamp": "2026-03-11T08:42:53.962Z",
+  "timestamp": "2026-03-11T09:03:30.837Z",
   "source": "CIMIS Public Portal",
   "count": 41,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 10:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.03.2026 10:10",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 09:44",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "11.03.2026 09:55",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -209,7 +225,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 19:25",
       "Odlazak": "11.03.2026 09:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -236,14 +252,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 17:20",
-      "Odlazak": "10.03.2026 18:20",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
@@ -265,14 +273,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 16:15",
       "Odlazak": "10.03.2026 16:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.03.2026 15:45",
-      "Odlazak": "10.03.2026 16:00",
       "Status": "Otišao"
     },
     {
