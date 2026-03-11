@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-11T23:28:40.506Z",
+  "timestamp": "2026-03-11T23:42:50.612Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -41,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 22:55",
       "Odlazak": "11.03.2026 23:59",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
