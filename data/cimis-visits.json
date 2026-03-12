@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-12T04:31:20.309Z",
+  "timestamp": "2026-03-12T05:07:40.547Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 44,
   "visits": [
     {
       "Luka": "San Marino (Lopar)",
@@ -21,10 +21,34 @@
     },
     {
       "Luka": "Valbiska",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.03.2026 07:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.03.2026 06:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.03.2026 06:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.03.2026 05:25",
-      "Odlazak": "-",
+      "Odlazak": "12.03.2026 05:45",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +56,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.03.2026 00:14",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "12.03.2026 05:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -96,7 +120,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 19:40",
-      "Odlazak": "-",
+      "Odlazak": "12.03.2026 05:45",
       "Status": "Došao"
     },
     {
@@ -252,27 +276,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.03.2026 11:55",
-      "Odlazak": "11.03.2026 12:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.03.2026 11:15",
       "Odlazak": "11.03.2026 12:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.03.2026 10:45",
-      "Odlazak": "11.03.2026 11:00",
       "Status": "Otišao"
     },
     {
