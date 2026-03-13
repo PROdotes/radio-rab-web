@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-13T13:41:10.666Z",
+  "timestamp": "2026-03-13T14:05:56.234Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.03.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
@@ -337,14 +345,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "13.10.2025 15:02",
       "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "MALA MARIS",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.10.2025 20:10",
-      "Odlazak": "01.05.2026 08:00",
       "Status": "Došao"
     }
   ]
