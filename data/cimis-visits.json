@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-13T05:11:50.844Z",
+  "timestamp": "2026-03-13T05:37:01.349Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -12,6 +12,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.03.2026 06:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Rab",
       "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
@@ -20,12 +28,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.03.2026 06:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "13.03.2026 06:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "13.03.2026 06:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -33,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "13.03.2026 05:25",
       "Odlazak": "13.03.2026 05:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -228,14 +244,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.03.2026 13:25",
-      "Odlazak": "12.03.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -257,14 +265,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "12.03.2026 12:15",
       "Odlazak": "12.03.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.03.2026 11:15",
-      "Odlazak": "12.03.2026 12:00",
       "Status": "Otišao"
     },
     {
