@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-03-14T06:29:12.204Z",
+  "timestamp": "2026-03-14T06:50:52.226Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.03.2026 09:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
@@ -16,8 +24,8 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.03.2026 07:05",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "14.03.2026 07:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.03.2026 06:55",
       "Odlazak": "14.03.2026 07:15",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.03.2026 06:50",
       "Odlazak": "14.03.2026 06:55",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -301,7 +309,7 @@
     },
     {
       "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "PLANKTON",
+      "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.03.2026 10:44",
       "Odlazak": "-",
@@ -309,7 +317,7 @@
     },
     {
       "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "TVRDI",
+      "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.03.2026 10:44",
       "Odlazak": "-",
@@ -330,14 +338,6 @@
       "Dolazak": "13.10.2025 15:02",
       "Odlazak": "-",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "SUZANA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.10.2025 13:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
     },
     {
       "Luka": "Rab",
