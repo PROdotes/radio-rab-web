@@ -1,23 +1,39 @@
 {
-  "timestamp": "2026-03-16T08:17:39.747Z",
+  "timestamp": "2026-03-16T09:07:39.366Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.03.2026 10:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.03.2026 09:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 09:05",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 09:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "16.03.2026 09:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -25,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 08:55",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -185,7 +201,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "15.03.2026 19:25",
       "Odlazak": "16.03.2026 09:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -252,27 +268,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.03.2026 16:25",
-      "Odlazak": "15.03.2026 16:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.03.2026 16:15",
       "Odlazak": "15.03.2026 16:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.03.2026 15:45",
-      "Odlazak": "15.03.2026 16:00",
       "Status": "Otišao"
     },
     {
