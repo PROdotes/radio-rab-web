@@ -1,14 +1,30 @@
 {
-  "timestamp": "2026-03-16T13:49:17.540Z",
+  "timestamp": "2026-03-16T14:21:21.442Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "ALBATROS DVA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.03.2026 19:15",
+      "Odlazak": "24.04.2026 15:15",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.03.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 14:55",
-      "Odlazak": "-",
+      "Odlazak": "16.03.2026 15:15",
       "Status": "U dolasku"
     },
     {
@@ -17,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 14:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -304,8 +320,8 @@
       "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.03.2026 10:44",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "16.03.2026 15:18",
+      "Status": "Otišao"
     },
     {
       "Luka": "San Marino (Lopar)",
@@ -336,22 +352,6 @@
       "Pomorski objekt": "SUZANA",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.10.2025 13:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "MALA MARIS",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.10.2025 20:10",
-      "Odlazak": "01.05.2026 08:00",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "GRGA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
     }
