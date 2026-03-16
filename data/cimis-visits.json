@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-16T22:58:27.625Z",
+  "timestamp": "2026-03-16T23:11:35.275Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 43,
   "visits": [
     {
       "Luka": "Stinica",
@@ -16,7 +16,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "16.03.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -292,35 +292,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "JELENA",
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
-      "Dolazak": "15.03.2026 16:50",
-      "Odlazak": "15.03.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "JELENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.03.2026 09:50",
-      "Odlazak": "15.03.2026 09:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.03.2026 09:05",
-      "Odlazak": "15.03.2026 17:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "14.03.2026 19:40",
-      "Odlazak": "15.03.2026 05:45",
+      "Dolazak": "12.03.2026 10:44",
+      "Odlazak": "16.03.2026 15:20",
       "Status": "Otišao"
     },
     {
@@ -329,14 +305,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "12.03.2026 10:44",
       "Odlazak": "16.03.2026 15:18",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "PLANKTON",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.03.2026 10:44",
-      "Odlazak": "16.03.2026 15:20",
       "Status": "Otišao"
     },
     {
@@ -354,6 +322,30 @@
       "Dolazak": "13.10.2025 15:02",
       "Odlazak": "-",
       "Status": "Došao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SUZANA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.10.2025 13:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "MALA MARIS",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.10.2025 20:10",
+      "Odlazak": "01.05.2026 08:00",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "GRGA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.09.2025 16:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
     }
   ]
 }
