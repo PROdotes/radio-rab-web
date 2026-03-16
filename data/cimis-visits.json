@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-16T09:07:39.366Z",
+  "timestamp": "2026-03-16T09:37:57.304Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 44,
   "visits": [
     {
       "Luka": "Valbiska",
@@ -17,7 +17,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 09:30",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
@@ -354,14 +354,6 @@
       "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "BARBA FRANE",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "06.09.2025 18:01",
-      "Odlazak": "-",
-      "Status": "Došao"
     }
   ]
 }
