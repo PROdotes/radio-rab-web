@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-17T23:07:27.526Z",
+  "timestamp": "2026-03-17T23:21:05.820Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
@@ -24,7 +24,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.03.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "17.03.2026 23:59",
       "Status": "Došao"
     },
     {
