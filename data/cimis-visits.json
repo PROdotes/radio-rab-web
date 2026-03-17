@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-17T22:39:06.000Z",
+  "timestamp": "2026-03-17T22:55:49.215Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
@@ -17,15 +17,15 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.03.2026 22:55",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.03.2026 22:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "17.03.2026 23:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
