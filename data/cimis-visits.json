@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-18T14:08:35.133Z",
+  "timestamp": "2026-03-18T14:43:20.136Z",
   "source": "CIMIS Public Portal",
   "count": 41,
   "visits": [
@@ -16,8 +16,8 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "18.03.2026 14:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "18.03.2026 15:15",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
