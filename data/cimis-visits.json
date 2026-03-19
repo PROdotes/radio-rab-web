@@ -1,31 +1,39 @@
 {
-  "timestamp": "2026-03-19T18:08:09.522Z",
+  "timestamp": "2026-03-19T19:18:14.635Z",
   "source": "CIMIS Public Portal",
-  "count": 41,
+  "count": 40,
   "visits": [
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.03.2026 19:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.03.2026 19:40",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.03.2026 19:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "19.03.2026 19:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.03.2026 18:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "19.03.2026 19:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -49,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.03.2026 17:20",
       "Odlazak": "19.03.2026 18:20",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -252,14 +260,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.03.2026 08:00",
-      "Odlazak": "19.03.2026 08:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
@@ -314,14 +314,6 @@
       "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "BARBA FRANE",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "06.09.2025 18:01",
-      "Odlazak": "-",
-      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
