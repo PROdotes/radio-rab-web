@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-03-20T07:56:19.664Z",
+  "timestamp": "2026-03-20T08:09:02.209Z",
   "source": "CIMIS Public Portal",
-  "count": 42,
+  "count": 41,
   "visits": [
     {
       "Luka": "Lopar",
@@ -322,14 +322,6 @@
       "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "BARBA FRANE",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "06.09.2025 18:01",
-      "Odlazak": "-",
-      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
