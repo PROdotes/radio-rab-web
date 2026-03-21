@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-21T04:57:25.745Z",
+  "timestamp": "2026-03-21T05:19:35.487Z",
   "source": "CIMIS Public Portal",
   "count": 41,
   "visits": [
@@ -12,20 +12,44 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
+      "Luka": "Rab",
+      "Pomorski objekt": "JELENA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "21.03.2026 05:25",
-      "Odlazak": "21.03.2026 05:45",
+      "Dolazak": "21.03.2026 06:50",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "21.03.2026 00:14",
+      "Dolazak": "21.03.2026 06:30",
       "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.03.2026 06:00",
+      "Odlazak": "21.03.2026 06:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.03.2026 05:25",
+      "Odlazak": "21.03.2026 05:45",
       "Status": "Došao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.03.2026 00:14",
+      "Odlazak": "21.03.2026 05:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -236,14 +260,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.03.2026 12:45",
-      "Odlazak": "20.03.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -257,14 +273,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "20.03.2026 12:03",
       "Odlazak": "20.03.2026 12:14",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.03.2026 10:45",
-      "Odlazak": "20.03.2026 11:00",
       "Status": "Otišao"
     },
     {
@@ -296,14 +304,6 @@
       "Pomorski objekt": "MAČEK",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.03.2026 07:02",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
-      "Pomorski objekt": "SAGENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.10.2025 15:02",
       "Odlazak": "-",
       "Status": "Došao"
     },
