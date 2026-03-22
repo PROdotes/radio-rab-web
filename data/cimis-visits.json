@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-03-22T18:54:21.048Z",
+  "timestamp": "2026-03-22T19:06:49.402Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "TVRDI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.03.2026 08:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "PLANKTON",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.03.2026 08:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
@@ -338,22 +354,6 @@
       "Dolazak": "10.03.2026 07:02",
       "Odlazak": "22.03.2026 12:57",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "SUZANA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.10.2025 13:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "GRGA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "28.09.2025 16:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
     }
   ]
 }
