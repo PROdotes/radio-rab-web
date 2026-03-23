@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-23T07:17:35.148Z",
+  "timestamp": "2026-03-23T07:47:14.431Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -12,10 +12,18 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Stinica",
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.03.2026 08:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "23.03.2026 08:00",
+      "Dolazak": "23.03.2026 08:30",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -23,17 +31,25 @@
       "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
-      "Dolazak": "23.03.2026 08:00",
+      "Dolazak": "23.03.2026 08:30",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
-      "Dolazak": "23.03.2026 08:00",
+      "Dolazak": "23.03.2026 08:30",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.03.2026 08:00",
+      "Odlazak": "23.03.2026 08:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -49,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "23.03.2026 07:05",
       "Odlazak": "23.03.2026 07:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -268,14 +284,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.03.2026 14:55",
-      "Odlazak": "22.03.2026 18:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -289,14 +297,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.03.2026 13:15",
       "Odlazak": "22.03.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.03.2026 12:45",
-      "Odlazak": "22.03.2026 13:00",
       "Status": "Otišao"
     },
     {
