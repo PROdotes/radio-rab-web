@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-23T21:59:38.389Z",
+  "timestamp": "2026-03-23T22:19:56.601Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -17,7 +17,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "23.03.2026 22:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
