@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-23T03:32:17.748Z",
+  "timestamp": "2026-03-23T04:25:47.092Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -16,6 +16,14 @@
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.03.2026 08:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.03.2026 05:25",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -232,14 +240,6 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "22.03.2026 12:45",
-      "Odlazak": "22.03.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.03.2026 12:40",
       "Odlazak": "22.03.2026 13:00",
       "Status": "Otišao"
     },
