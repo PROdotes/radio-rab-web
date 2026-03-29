@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-03-29T17:19:00.190Z",
+  "timestamp": "2026-03-29T17:51:59.071Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "29.03.2026 20:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "29.03.2026 19:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
@@ -16,15 +32,15 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.03.2026 18:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "29.03.2026 19:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.03.2026 18:35",
-      "Odlazak": "-",
+      "Odlazak": "29.03.2026 19:15",
       "Status": "Došao"
     },
     {
@@ -208,7 +224,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.03.2026 08:55",
-      "Odlazak": "-",
+      "Odlazak": "29.03.2026 19:45",
       "Status": "Došao"
     },
     {
@@ -257,14 +273,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "29.03.2026 06:30",
       "Odlazak": "29.03.2026 06:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "29.03.2026 06:00",
-      "Odlazak": "29.03.2026 06:15",
       "Status": "Otišao"
     },
     {
@@ -346,14 +354,6 @@
       "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ZELEN BOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.09.2023 14:12",
-      "Odlazak": "-",
-      "Status": "Došao"
     }
   ]
 }
