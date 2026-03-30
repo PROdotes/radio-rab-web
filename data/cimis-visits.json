@@ -1,23 +1,39 @@
 {
-  "timestamp": "2026-03-30T20:04:01.697Z",
+  "timestamp": "2026-03-30T20:59:10.632Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.03.2026 22:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.03.2026 22:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.03.2026 21:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "30.03.2026 22:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.03.2026 20:55",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "30.03.2026 22:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -244,14 +260,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.03.2026 08:55",
-      "Odlazak": "30.03.2026 19:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -265,14 +273,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.03.2026 08:00",
       "Odlazak": "30.03.2026 08:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.03.2026 07:30",
-      "Odlazak": "30.03.2026 07:45",
       "Status": "Otišao"
     },
     {
