@@ -1,23 +1,31 @@
 {
-  "timestamp": "2026-03-31T15:55:16.661Z",
+  "timestamp": "2026-03-31T16:58:56.920Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
+      "Luka": "Lopar",
+      "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 17:55",
+      "Dolazak": "31.03.2026 19:40",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
       "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "31.03.2026 17:55",
+      "Odlazak": "31.03.2026 18:15",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Valbiska",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 17:20",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Dolazak": "31.03.2026 17:30",
+      "Odlazak": "31.03.2026 18:20",
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -72,7 +80,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "31.03.2026 08:55",
-      "Odlazak": "-",
+      "Odlazak": "31.03.2026 18:45",
       "Status": "Došao"
     },
     {
@@ -330,14 +338,6 @@
       "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ZELEN BOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.09.2023 14:12",
-      "Odlazak": "-",
-      "Status": "Došao"
     }
   ]
 }
