@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-03-31T18:39:17.478Z",
+  "timestamp": "2026-03-31T19:40:00.868Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "31.03.2026 21:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "31.03.2026 20:55",
+      "Odlazak": "31.03.2026 21:00",
+      "Status": "Došao"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
@@ -17,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "31.03.2026 19:40",
       "Odlazak": "31.03.2026 19:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -76,27 +92,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 10:25",
-      "Odlazak": "31.03.2026 10:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "31.03.2026 09:15",
       "Odlazak": "31.03.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 08:55",
-      "Odlazak": "31.03.2026 18:45",
       "Status": "Otišao"
     },
     {
