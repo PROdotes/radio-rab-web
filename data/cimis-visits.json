@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-01T09:56:32.027Z",
+  "timestamp": "2026-04-01T10:46:55.929Z",
   "source": "CIMIS Public Portal",
   "count": 26,
   "visits": [
@@ -9,14 +9,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "01.04.2026 11:55",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.04.2026 10:28",
-      "Odlazak": "-",
+      "Odlazak": "01.04.2026 12:15",
       "Status": "Došao"
     },
     {
