@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-04-01T21:43:41.088Z",
+  "timestamp": "2026-04-01T22:22:30.237Z",
   "source": "CIMIS Public Portal",
-  "count": 26,
+  "count": 24,
   "visits": [
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.04.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "01.04.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -92,52 +92,12 @@
       "Status": "Došao"
     },
     {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 09:15",
-      "Odlazak": "31.03.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "JELENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 06:50",
-      "Odlazak": "31.03.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "31.03.2026 06:30",
       "Odlazak": "-",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 06:00",
-      "Odlazak": "31.03.2026 06:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "31.03.2026 00:14",
-      "Odlazak": "31.03.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.03.2026 19:50",
-      "Odlazak": "31.03.2026 05:45",
-      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -196,6 +156,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Rab",
+      "Pomorski objekt": "BARBA FRANE",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.09.2025 18:01",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "SVETI MARIN",
       "Zastava": "HRVATSKA",
@@ -204,10 +172,26 @@
       "Status": "Došao"
     },
     {
+      "Luka": "Rab",
+      "Pomorski objekt": "SVETI JOSIP",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.12.2024 20:30",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Lopar",
       "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Dumići (Rab)",
+      "Pomorski objekt": "MAESTRAL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.04.2021 12:00",
       "Odlazak": "-",
       "Status": "Došao"
     }
