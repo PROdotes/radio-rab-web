@@ -1,15 +1,31 @@
 {
-  "timestamp": "2026-04-02T18:11:00.546Z",
+  "timestamp": "2026-04-02T19:15:49.175Z",
   "source": "CIMIS Public Portal",
   "count": 32,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.04.2026 20:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.04.2026 20:15",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "02.04.2026 19:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "02.04.2026 20:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -17,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "02.04.2026 19:40",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -25,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "02.04.2026 19:25",
       "Odlazak": "02.04.2026 19:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -140,14 +156,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "02.04.2026 08:55",
-      "Odlazak": "02.04.2026 09:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
@@ -248,14 +256,6 @@
       "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.09.2023 14:12",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Dumići (Rab)",
-      "Pomorski objekt": "MAESTRAL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.04.2021 12:00",
       "Odlazak": "-",
       "Status": "Došao"
     }
