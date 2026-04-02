@@ -1,15 +1,47 @@
 {
-  "timestamp": "2026-04-02T13:53:45.329Z",
+  "timestamp": "2026-04-02T14:46:40.373Z",
   "source": "CIMIS Public Portal",
-  "count": 25,
+  "count": 27,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.04.2026 17:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.04.2026 16:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.04.2026 16:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.04.2026 15:45",
+      "Odlazak": "02.04.2026 16:15",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "02.04.2026 15:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "02.04.2026 15:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -25,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "02.04.2026 13:25",
       "Odlazak": "02.04.2026 15:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -76,28 +108,12 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "01.04.2026 22:55",
-      "Odlazak": "01.04.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "01.04.2026 20:55",
-      "Odlazak": "01.04.2026 22:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "31.03.2026 19:40",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "02.04.2026 16:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
