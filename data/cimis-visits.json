@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-04-04T14:34:48.077Z",
+  "timestamp": "2026-04-04T15:04:06.119Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "BASKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.04.2026 17:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "ILOVIK",
@@ -20,6 +28,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.04.2026 16:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -32,8 +48,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "04.04.2026 16:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "04.04.2026 16:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -56,7 +72,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "04.04.2026 14:55",
-      "Odlazak": "-",
+      "Odlazak": "04.04.2026 16:45",
       "Status": "Došao"
     },
     {
@@ -193,7 +209,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.04.2026 09:05",
       "Odlazak": "04.04.2026 16:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -225,14 +241,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.04.2026 08:00",
       "Odlazak": "04.04.2026 08:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.04.2026 07:30",
-      "Odlazak": "04.04.2026 07:45",
       "Status": "Otišao"
     },
     {
@@ -330,14 +338,6 @@
       "Dolazak": "28.09.2025 16:30",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ZELEN BOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.09.2023 14:12",
-      "Odlazak": "-",
-      "Status": "Došao"
     }
   ]
 }
