@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-05T21:51:02.157Z",
+  "timestamp": "2026-04-05T22:05:28.047Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -269,46 +269,6 @@
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.04.2026 17:29",
-      "Odlazak": "04.04.2026 17:38",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.04.2026 16:50",
-      "Odlazak": "04.04.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.04.2026 09:05",
-      "Odlazak": "04.04.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "JELENA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.04.2026 06:50",
-      "Odlazak": "04.04.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ILOVIK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "03.04.2026 19:40",
-      "Odlazak": "04.04.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
       "Pomorski objekt": "MAČEK",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.03.2026 15:16",
@@ -345,6 +305,46 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "11.10.2025 20:10",
       "Odlazak": "01.05.2026 08:00",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "BARBA ŠIME",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.10.2025 11:00",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "GRGA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.09.2025 16:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "BARBA FRANE",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.09.2025 18:01",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "SVETI JOSIP",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.12.2024 20:30",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "ZELEN BOR",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
       "Status": "Došao"
     }
   ]
