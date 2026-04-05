@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-05T15:52:07.356Z",
+  "timestamp": "2026-04-05T16:21:27.768Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -40,7 +40,7 @@
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.04.2026 16:25",
-      "Odlazak": "-",
+      "Odlazak": "05.04.2026 18:15",
       "Status": "Došao"
     },
     {
@@ -161,7 +161,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "05.04.2026 09:05",
       "Odlazak": "05.04.2026 17:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
