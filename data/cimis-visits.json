@@ -1,15 +1,47 @@
 {
-  "timestamp": "2026-04-06T01:09:10.600Z",
+  "timestamp": "2026-04-06T04:15:57.437Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.04.2026 07:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "CVIJETA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.04.2026 06:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.04.2026 06:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.04.2026 05:25",
+      "Odlazak": "06.04.2026 05:45",
+      "Status": "Došao"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.04.2026 00:14",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "06.04.2026 05:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -72,7 +104,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.04.2026 20:35",
-      "Odlazak": "-",
+      "Odlazak": "06.04.2026 05:45",
       "Status": "Došao"
     },
     {
@@ -220,35 +252,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.04.2026 11:55",
-      "Odlazak": "05.04.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.04.2026 11:15",
       "Odlazak": "05.04.2026 12:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.04.2026 10:45",
-      "Odlazak": "05.04.2026 11:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.04.2026 10:25",
-      "Odlazak": "05.04.2026 12:15",
       "Status": "Otišao"
     },
     {
@@ -328,14 +336,6 @@
       "Pomorski objekt": "BARBA FRANE",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.09.2025 18:01",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "SVETI JOSIP",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.12.2024 20:30",
       "Odlazak": "-",
       "Status": "Došao"
     },
