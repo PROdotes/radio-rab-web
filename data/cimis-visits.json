@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-04-08T04:41:40.505Z",
+  "timestamp": "2026-04-08T05:26:25.323Z",
   "source": "CIMIS Public Portal",
   "count": 41,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.04.2026 07:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "ILOVIK",
@@ -12,11 +20,19 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.04.2026 07:00",
+      "Odlazak": "08.04.2026 07:15",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.04.2026 06:55",
-      "Odlazak": "-",
+      "Odlazak": "08.04.2026 07:15",
       "Status": "U dolasku"
     },
     {
@@ -24,7 +40,7 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.04.2026 06:50",
-      "Odlazak": "-",
+      "Odlazak": "08.04.2026 06:55",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +48,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.04.2026 06:30",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "08.04.2026 06:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -249,22 +265,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.04.2026 14:50",
       "Odlazak": "07.04.2026 14:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.04.2026 14:15",
-      "Odlazak": "07.04.2026 14:35",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.04.2026 13:15",
-      "Odlazak": "07.04.2026 14:00",
       "Status": "Otišao"
     },
     {
