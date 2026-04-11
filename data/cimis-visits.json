@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-11T10:00:41.226Z",
+  "timestamp": "2026-04-11T10:19:27.160Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
@@ -8,7 +8,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.04.2026 11:55",
-      "Odlazak": "-",
+      "Odlazak": "11.04.2026 12:15",
       "Status": "U dolasku"
     },
     {
@@ -17,7 +17,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "11.04.2026 11:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
