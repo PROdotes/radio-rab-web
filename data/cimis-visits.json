@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-14T20:32:56.669Z",
+  "timestamp": "2026-04-14T20:55:37.889Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -16,6 +16,14 @@
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.04.2026 08:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.04.2026 22:55",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -49,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.04.2026 20:55",
       "Odlazak": "14.04.2026 22:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -257,14 +265,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.04.2026 10:45",
       "Odlazak": "14.04.2026 11:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "14.04.2026 10:25",
-      "Odlazak": "14.04.2026 10:45",
       "Status": "Otišao"
     },
     {
