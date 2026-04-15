@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-15T14:55:58.828Z",
+  "timestamp": "2026-04-15T15:23:56.483Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -16,7 +16,7 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.04.2026 16:50",
-      "Odlazak": "-",
+      "Odlazak": "15.04.2026 16:55",
       "Status": "U dolasku"
     },
     {
@@ -104,8 +104,8 @@
       "Pomorski objekt": "NOIR",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.04.2026 12:27",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "15.04.2026 17:14",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
