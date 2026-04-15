@@ -1,15 +1,39 @@
 {
-  "timestamp": "2026-04-15T07:44:16.629Z",
+  "timestamp": "2026-04-15T08:57:35.627Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 45,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "NOIR",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "15.04.2026 12:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "15.04.2026 10:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "15.04.2026 10:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.04.2026 09:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "15.04.2026 10:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -57,7 +81,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "15.04.2026 08:00",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "San Marino (Lopar)",
@@ -104,8 +128,8 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.04.2026 06:50",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "15.04.2026 06:55",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -233,7 +257,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.04.2026 19:25",
       "Odlazak": "15.04.2026 09:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -260,14 +284,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "14.04.2026 17:20",
-      "Odlazak": "14.04.2026 18:20",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
@@ -281,14 +297,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.04.2026 16:45",
       "Odlazak": "14.04.2026 17:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "14.04.2026 16:15",
-      "Odlazak": "14.04.2026 16:30",
       "Status": "Otišao"
     },
     {
