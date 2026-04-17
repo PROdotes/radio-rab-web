@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-04-17T12:37:21.000Z",
+  "timestamp": "2026-04-17T13:03:28.250Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "ILOVIK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.04.2026 14:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
@@ -57,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.04.2026 11:55",
       "Odlazak": "17.04.2026 13:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -249,14 +257,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.04.2026 21:15",
       "Odlazak": "16.04.2026 21:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.04.2026 20:55",
-      "Odlazak": "16.04.2026 22:00",
       "Status": "Otišao"
     },
     {
