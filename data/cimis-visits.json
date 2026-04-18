@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-18T14:44:53.828Z",
+  "timestamp": "2026-04-18T15:03:31.400Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -16,7 +16,7 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "18.04.2026 16:50",
-      "Odlazak": "-",
+      "Odlazak": "18.04.2026 16:55",
       "Status": "U dolasku"
     },
     {
@@ -64,7 +64,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "18.04.2026 14:55",
-      "Odlazak": "-",
+      "Odlazak": "18.04.2026 16:45",
       "Status": "Došao"
     },
     {
