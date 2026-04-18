@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-04-18T07:00:26.249Z",
+  "timestamp": "2026-04-18T07:34:49.604Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 45,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "TAJANA KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.04.2026 11:28",
+      "Odlazak": "18.04.2026 14:28",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.04.2026 09:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
@@ -16,7 +32,15 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "18.04.2026 09:00",
-      "Odlazak": "-",
+      "Odlazak": "18.04.2026 09:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "ANTONELA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.04.2026 09:00",
+      "Odlazak": "19.04.2026 06:00",
       "Status": "U dolasku"
     },
     {
@@ -265,14 +289,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.04.2026 16:50",
       "Odlazak": "17.04.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.04.2026 16:45",
-      "Odlazak": "17.04.2026 17:30",
       "Status": "Otišao"
     },
     {
