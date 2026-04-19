@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-19T11:55:42.479Z",
+  "timestamp": "2026-04-19T12:06:21.375Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 44,
   "visits": [
     {
       "Luka": "Valbiska",
@@ -64,7 +64,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 11:55",
-      "Odlazak": "-",
+      "Odlazak": "19.04.2026 13:45",
       "Status": "Došao"
     },
     {
@@ -330,14 +330,6 @@
       "Dolazak": "17.04.2026 19:45",
       "Odlazak": "18.04.2026 05:45",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Barbat (Rab)",
-      "Pomorski objekt": "GRGA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.04.2026 14:33",
-      "Odlazak": "-",
-      "Status": "U dolasku"
     },
     {
       "Luka": "Lopar",
