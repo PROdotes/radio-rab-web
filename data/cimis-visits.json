@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-19T17:55:14.487Z",
+  "timestamp": "2026-04-19T18:09:02.876Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -12,12 +12,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.04.2026 20:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 19:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "19.04.2026 20:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -281,14 +289,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 06:30",
       "Odlazak": "19.04.2026 19:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.04.2026 00:14",
-      "Odlazak": "19.04.2026 05:45",
       "Status": "Otišao"
     },
     {
