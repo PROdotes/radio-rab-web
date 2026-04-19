@@ -1,15 +1,31 @@
 {
-  "timestamp": "2026-04-19T17:02:51.252Z",
+  "timestamp": "2026-04-19T17:20:49.284Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 46,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.04.2026 20:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.04.2026 19:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "19.04.2026 18:35",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Dolazak": "19.04.2026 18:40",
+      "Odlazak": "19.04.2026 19:15",
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -57,7 +73,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 16:25",
       "Odlazak": "19.04.2026 18:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -240,14 +256,6 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 07:30",
-      "Odlazak": "19.04.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.04.2026 07:10",
       "Odlazak": "19.04.2026 07:45",
       "Status": "Otišao"
     },
