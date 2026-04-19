@@ -1,22 +1,30 @@
 {
-  "timestamp": "2026-04-19T21:56:18.419Z",
+  "timestamp": "2026-04-19T22:07:42.125Z",
   "source": "CIMIS Public Portal",
-  "count": 46,
+  "count": 42,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "20.04.2026 00:14",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 23:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "19.04.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "19.04.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -284,43 +292,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.04.2026 08:30",
-      "Odlazak": "19.04.2026 08:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "18.04.2026 19:40",
       "Odlazak": "19.04.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "18.04.2026 16:50",
-      "Odlazak": "18.04.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "TAJANA KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "18.04.2026 11:49",
-      "Odlazak": "18.04.2026 13:58",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "18.04.2026 09:05",
-      "Odlazak": "18.04.2026 16:00",
       "Status": "Otišao"
     },
     {
@@ -332,20 +308,12 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
+      "Luka": "Barbat (Rab)",
+      "Pomorski objekt": "GRGA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "18.04.2026 06:50",
-      "Odlazak": "18.04.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.04.2026 19:45",
-      "Odlazak": "18.04.2026 05:45",
-      "Status": "Otišao"
+      "Dolazak": "11.04.2026 14:33",
+      "Odlazak": "-",
+      "Status": "U dolasku"
     },
     {
       "Luka": "Lopar",
