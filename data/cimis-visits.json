@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-19T15:57:34.856Z",
+  "timestamp": "2026-04-19T16:12:13.754Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -24,7 +24,7 @@
       "Pomorski objekt": "ILOVIK",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 17:55",
-      "Odlazak": "-",
+      "Odlazak": "19.04.2026 18:00",
       "Status": "U dolasku"
     },
     {
@@ -201,7 +201,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.04.2026 09:05",
       "Odlazak": "19.04.2026 17:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
