@@ -1,15 +1,23 @@
 {
-  "timestamp": "2026-04-20T16:21:24.960Z",
+  "timestamp": "2026-04-20T16:49:26.600Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "20.04.2026 19:40",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "20.04.2026 17:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "20.04.2026 18:15",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -17,14 +25,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "20.04.2026 17:45",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "20.04.2026 17:20",
-      "Odlazak": "-",
+      "Odlazak": "20.04.2026 18:20",
       "Status": "Došao"
     },
     {
@@ -353,14 +361,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 17:22",
       "Odlazak": "24.04.2026 15:15",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ZELEN BOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.09.2023 14:12",
-      "Odlazak": "-",
       "Status": "Došao"
     }
   ]
