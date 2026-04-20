@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-20T11:20:49.838Z",
+  "timestamp": "2026-04-20T11:53:01.605Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 44,
   "visits": [
     {
       "Luka": "Valbiska",
@@ -330,14 +330,6 @@
       "Dolazak": "18.04.2026 09:00",
       "Odlazak": "19.04.2026 06:00",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Barbat (Rab)",
-      "Pomorski objekt": "GRGA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.04.2026 14:33",
-      "Odlazak": "-",
-      "Status": "U dolasku"
     },
     {
       "Luka": "Lopar",
