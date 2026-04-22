@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-04-22T22:42:28.669Z",
+  "timestamp": "2026-04-22T23:04:16.557Z",
   "source": "CIMIS Public Portal",
-  "count": 40,
+  "count": 41,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SUPETAR",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.04.2026 00:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
