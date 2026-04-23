@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-23T17:06:57.474Z",
+  "timestamp": "2026-04-23T17:43:40.438Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -20,6 +20,30 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.04.2026 18:45",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.04.2026 18:25",
+      "Odlazak": "23.04.2026 18:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.04.2026 18:05",
+      "Odlazak": "23.04.2026 18:10",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -32,8 +56,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.04.2026 17:45",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "23.04.2026 17:50",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -41,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "23.04.2026 17:20",
       "Odlazak": "23.04.2026 18:20",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -249,30 +273,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "23.04.2026 08:55",
       "Odlazak": "23.04.2026 09:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.04.2026 08:30",
-      "Odlazak": "23.04.2026 08:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.04.2026 08:00",
-      "Odlazak": "23.04.2026 08:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.04.2026 07:30",
-      "Odlazak": "23.04.2026 07:45",
       "Status": "Otišao"
     },
     {
