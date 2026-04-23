@@ -1,22 +1,30 @@
 {
-  "timestamp": "2026-04-23T21:58:17.576Z",
+  "timestamp": "2026-04-23T22:18:08.262Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 41,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.04.2026 00:14",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.04.2026 23:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "23.04.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.04.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "23.04.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -236,14 +244,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.04.2026 12:45",
-      "Odlazak": "23.04.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -293,14 +293,6 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.04.2026 16:50",
-      "Odlazak": "22.04.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
       "Pomorski objekt": "EXCELLENCE NERA",
       "Zastava": "HRVATSKA",
       "Dolazak": "22.04.2026 16:40",
@@ -308,19 +300,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Luka": "Rab",
+      "Pomorski objekt": "ANTONELA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "22.04.2026 09:15",
-      "Odlazak": "22.04.2026 18:10",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "21.04.2026 19:45",
-      "Odlazak": "22.04.2026 05:45",
+      "Dolazak": "21.04.2026 20:00",
+      "Odlazak": "23.04.2026 07:00",
       "Status": "Otišao"
     },
     {
