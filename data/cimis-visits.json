@@ -1,14 +1,22 @@
 {
-  "timestamp": "2026-04-23T15:58:17.864Z",
+  "timestamp": "2026-04-23T16:36:18.495Z",
   "source": "CIMIS Public Portal",
-  "count": 42,
+  "count": 43,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SUPETAR",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.04.2026 19:40",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.04.2026 17:55",
-      "Odlazak": "-",
+      "Odlazak": "23.04.2026 18:15",
       "Status": "U dolasku"
     },
     {
@@ -24,8 +32,8 @@
       "Pomorski objekt": "SUPETAR",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.04.2026 17:20",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "23.04.2026 18:20",
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
