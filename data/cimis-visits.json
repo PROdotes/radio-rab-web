@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-24T07:33:28.227Z",
+  "timestamp": "2026-04-24T08:22:41.198Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 43,
   "visits": [
     {
       "Luka": "Lopar",
@@ -20,12 +20,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.04.2026 10:39",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Lopar",
       "Pomorski objekt": "SUPETAR",
       "Zastava": "HRVATSKA",
       "Dolazak": "24.04.2026 09:05",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "24.04.2026 08:55",
       "Odlazak": "24.04.2026 09:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -56,7 +64,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "24.04.2026 08:25",
-      "Odlazak": "-",
+      "Odlazak": "24.04.2026 10:00",
       "Status": "Došao"
     },
     {
@@ -276,14 +284,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "SUPETAR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.04.2026 17:20",
-      "Odlazak": "23.04.2026 18:20",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
@@ -324,14 +324,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "EXCELLENCE NERA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.04.2026 16:40",
-      "Odlazak": "23.04.2026 06:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "MAČEK",
       "Zastava": "HRVATSKA",
@@ -344,8 +336,8 @@
       "Pomorski objekt": "ALBATROS DVA",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.03.2026 17:22",
-      "Odlazak": "24.04.2026 15:15",
-      "Status": "Došao"
+      "Odlazak": "24.04.2026 10:06",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
