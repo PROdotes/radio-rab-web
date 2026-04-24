@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T21:02:09.224Z",
+  "timestamp": "2026-04-24T21:26:19.798Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -25,7 +25,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "24.04.2026 22:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -88,8 +88,8 @@
       "Pomorski objekt": "SUPETAR",
       "Zastava": "HRVATSKA",
       "Dolazak": "24.04.2026 19:40",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "24.04.2026 20:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
