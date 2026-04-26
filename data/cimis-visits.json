@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-04-26T15:11:18.038Z",
+  "timestamp": "2026-04-26T15:30:41.774Z",
   "source": "CIMIS Public Portal",
   "count": 40,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "VALUN",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.04.2026 18:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Rab",
       "Pomorski objekt": "PRINCESS ELEGANZA",
@@ -168,7 +176,7 @@
       "Pomorski objekt": "VALUN",
       "Zastava": "HRVATSKA",
       "Dolazak": "26.04.2026 09:05",
-      "Odlazak": "-",
+      "Odlazak": "26.04.2026 17:15",
       "Status": "Došao"
     },
     {
@@ -272,14 +280,6 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.04.2026 23:45",
-      "Odlazak": "25.04.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.04.2026 22:55",
       "Odlazak": "25.04.2026 23:59",
       "Status": "Otišao"
     },
