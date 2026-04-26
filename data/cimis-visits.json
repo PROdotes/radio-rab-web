@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-26T07:24:42.092Z",
+  "timestamp": "2026-04-26T07:59:42.429Z",
   "source": "CIMIS Public Portal",
   "count": 41,
   "visits": [
@@ -9,6 +9,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.04.2026 19:30",
       "Odlazak": "27.04.2026 11:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "PRINCESS ELEGANZA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.04.2026 17:00",
+      "Odlazak": "27.04.2026 08:00",
       "Status": "U dolasku"
     },
     {
@@ -25,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.04.2026 09:05",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.04.2026 09:00",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.04.2026 08:55",
       "Odlazak": "26.04.2026 09:15",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -297,14 +305,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "25.04.2026 09:05",
       "Odlazak": "25.04.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.04.2026 06:50",
-      "Odlazak": "25.04.2026 06:55",
       "Status": "Otišao"
     },
     {
