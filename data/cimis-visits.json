@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-27T12:51:04.685Z",
+  "timestamp": "2026-04-27T13:24:18.594Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -12,10 +12,10 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Sv. Eufemija (Rab)",
-      "Pomorski objekt": "SUZANA",
+      "Luka": "Rab",
+      "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 16:00",
+      "Dolazak": "27.04.2026 16:50",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -25,6 +25,22 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "27.04.2026 16:00",
       "Odlazak": "28.04.2026 08:00",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Sv. Eufemija (Rab)",
+      "Pomorski objekt": "SUZANA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "27.04.2026 16:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "27.04.2026 15:15",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -40,8 +56,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.04.2026 14:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "27.04.2026 15:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -72,7 +88,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.04.2026 13:25",
-      "Odlazak": "-",
+      "Odlazak": "27.04.2026 15:15",
       "Status": "Došao"
     },
     {
@@ -85,18 +101,18 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "KALIPSA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 13:00",
-      "Odlazak": "28.04.2026 08:00",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Rab",
       "Pomorski objekt": "EQUATOR",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.04.2026 13:00",
       "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "KALIPSA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "27.04.2026 13:00",
+      "Odlazak": "28.04.2026 08:00",
       "Status": "Došao"
     },
     {
@@ -324,27 +340,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.04.2026 21:45",
-      "Odlazak": "26.04.2026 22:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "VALUN",
       "Zastava": "HRVATSKA",
       "Dolazak": "26.04.2026 20:35",
       "Odlazak": "27.04.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.04.2026 16:50",
-      "Odlazak": "26.04.2026 16:55",
       "Status": "Otišao"
     },
     {
