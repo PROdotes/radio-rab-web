@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-04-28T21:45:07.687Z",
+  "timestamp": "2026-04-28T22:10:42.876Z",
   "source": "CIMIS Public Portal",
-  "count": 47,
+  "count": 45,
   "visits": [
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.04.2026 23:55",
-      "Odlazak": "-",
+      "Odlazak": "28.04.2026 23:59",
       "Status": "U dolasku"
     },
     {
@@ -317,14 +317,6 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 16:50",
-      "Odlazak": "27.04.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
       "Pomorski objekt": "BARBA ŠIME",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.04.2026 14:10",
@@ -341,14 +333,6 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "EQUATOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 13:00",
-      "Odlazak": "28.04.2026 08:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
       "Pomorski objekt": "KALIPSA",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.04.2026 13:00",
@@ -356,28 +340,28 @@
       "Status": "Došao"
     },
     {
-      "Luka": "Sv. Grgur (Lopar)",
-      "Pomorski objekt": "LAHOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 11:24",
-      "Odlazak": "27.04.2026 13:47",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "VALUN",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 09:05",
-      "Odlazak": "27.04.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
+      "Luka": "Rab",
       "Pomorski objekt": "EQUATOR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 09:00",
-      "Odlazak": "27.04.2026 09:30",
+      "Dolazak": "27.04.2026 13:00",
+      "Odlazak": "28.04.2026 08:00",
       "Status": "Otišao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "MAČEK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.03.2026 15:16",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "ZELEN BOR",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
+      "Status": "Došao"
     }
   ]
 }
