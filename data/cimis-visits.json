@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-04-28T06:37:06.240Z",
+  "timestamp": "2026-04-28T07:32:16.463Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.04.2026 09:30",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "VALUN",
@@ -10,6 +18,14 @@
       "Dolazak": "28.04.2026 09:05",
       "Odlazak": "-",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.04.2026 09:00",
+      "Odlazak": "28.04.2026 09:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -24,8 +40,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.04.2026 08:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "28.04.2026 08:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -33,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "28.04.2026 08:25",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -73,7 +89,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "28.04.2026 07:05",
       "Odlazak": "28.04.2026 07:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -290,22 +306,6 @@
       "Dolazak": "27.04.2026 16:00",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 15:45",
-      "Odlazak": "27.04.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 15:15",
-      "Odlazak": "27.04.2026 15:30",
-      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
