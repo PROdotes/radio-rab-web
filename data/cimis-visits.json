@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-04-29T15:01:26.805Z",
+  "timestamp": "2026-04-29T15:50:08.938Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "29.04.2026 18:02",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "29.04.2026 17:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
@@ -16,7 +32,7 @@
       "Pomorski objekt": "VALUN",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.04.2026 17:20",
-      "Odlazak": "-",
+      "Odlazak": "29.04.2026 17:30",
       "Status": "U dolasku"
     },
     {
@@ -24,16 +40,16 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.04.2026 16:50",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "29.04.2026 16:55",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.04.2026 16:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "29.04.2026 17:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -41,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "29.04.2026 16:25",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -72,8 +88,8 @@
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.04.2026 15:25",
-      "Odlazak": "29.04.2026 16:45",
-      "Status": "Došao"
+      "Odlazak": "29.04.2026 16:50",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -252,14 +268,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "VALUN",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "29.04.2026 07:05",
-      "Odlazak": "29.04.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -281,14 +289,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "29.04.2026 06:30",
       "Odlazak": "29.04.2026 06:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "29.04.2026 06:00",
-      "Odlazak": "29.04.2026 06:15",
       "Status": "Otišao"
     },
     {
