@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-04-30T21:11:37.399Z",
+  "timestamp": "2026-04-30T21:36:36.655Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.04.2026 23:15",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
@@ -16,8 +24,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.04.2026 22:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "30.04.2026 23:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -233,14 +241,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.04.2026 16:15",
       "Odlazak": "30.04.2026 16:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.04.2026 16:01",
-      "Odlazak": "30.04.2026 17:00",
       "Status": "Otišao"
     },
     {
