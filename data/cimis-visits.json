@@ -1,13 +1,29 @@
 {
-  "timestamp": "2026-05-01T12:37:59.131Z",
+  "timestamp": "2026-05-01T13:04:25.692Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
     {
       "Luka": "Rab",
+      "Pomorski objekt": "CVIJETA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "01.05.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
       "Pomorski objekt": "DALMATIA",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.05.2026 16:04",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "BASKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "01.05.2026 16:00",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -328,22 +344,6 @@
       "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.04.2026 07:09",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "BARBA ŠIME",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.04.2026 14:10",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "MAČEK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.03.2026 15:16",
       "Odlazak": "-",
       "Status": "Došao"
     }
