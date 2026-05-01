@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-01T15:53:40.198Z",
+  "timestamp": "2026-05-01T16:16:08.088Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
@@ -8,6 +8,14 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.05.2026 18:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "01.05.2026 18:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -24,8 +32,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.05.2026 17:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "01.05.2026 18:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -268,20 +276,12 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "01.05.2026 09:30",
-      "Odlazak": "01.05.2026 10:25",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.05.2026 09:10",
       "Odlazak": "01.05.2026 17:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
