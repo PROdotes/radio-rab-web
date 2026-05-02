@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-05-02T07:21:16.152Z",
+  "timestamp": "2026-05-02T08:01:07.753Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 44,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "TAJANA KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "02.05.2026 11:23",
+      "Odlazak": "02.05.2026 14:23",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
@@ -17,7 +25,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "02.05.2026 09:05",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "02.05.2026 08:55",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -48,7 +56,7 @@
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "02.05.2026 08:25",
-      "Odlazak": "-",
+      "Odlazak": "02.05.2026 09:15",
       "Status": "Došao"
     },
     {
@@ -280,8 +288,8 @@
       "Pomorski objekt": "DALMATIA",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.05.2026 16:04",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "02.05.2026 08:51",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
