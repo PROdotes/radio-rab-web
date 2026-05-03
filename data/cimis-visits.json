@@ -1,22 +1,30 @@
 {
-  "timestamp": "2026-05-03T21:43:17.529Z",
+  "timestamp": "2026-05-03T22:23:47.009Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 42,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.05.2026 00:14",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 23:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "03.05.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 23:05",
-      "Odlazak": "-",
+      "Odlazak": "03.05.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -101,19 +109,19 @@
     },
     {
       "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "03.05.2026 18:45",
-      "Odlazak": "03.05.2026 19:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 18:45",
       "Odlazak": "-",
       "Status": "Došao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "03.05.2026 18:45",
+      "Odlazak": "03.05.2026 19:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -228,14 +236,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "03.05.2026 15:45",
-      "Odlazak": "03.05.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
@@ -324,44 +324,20 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
+      "Luka": "Lopar",
+      "Pomorski objekt": "MAČEK",
       "Zastava": "HRVATSKA",
-      "Dolazak": "02.05.2026 16:50",
-      "Odlazak": "02.05.2026 16:55",
-      "Status": "Otišao"
+      "Dolazak": "30.03.2026 15:16",
+      "Odlazak": "-",
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "02.05.2026 09:05",
-      "Odlazak": "02.05.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "01.05.2026 20:40",
-      "Odlazak": "02.05.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "PLANKTON",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "28.04.2026 07:09",
-      "Odlazak": "02.05.2026 05:42",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "TVRDI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "28.04.2026 07:09",
-      "Odlazak": "02.05.2026 05:44",
-      "Status": "Otišao"
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
+      "Status": "Došao"
     }
   ]
 }
