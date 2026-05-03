@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-03T13:52:34.587Z",
+  "timestamp": "2026-05-03T14:17:03.280Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -16,6 +16,14 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "03.05.2026 16:25",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -57,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 15:20",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -113,7 +121,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 14:10",
       "Odlazak": "03.05.2026 15:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -298,14 +306,6 @@
       "Dolazak": "03.05.2026 09:05",
       "Odlazak": "-",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "03.05.2026 08:55",
-      "Odlazak": "03.05.2026 09:15",
-      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
