@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-04T01:53:19.820Z",
+  "timestamp": "2026-05-04T02:55:52.268Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
@@ -288,8 +288,8 @@
       "Pomorski objekt": "STONČICA",
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 13:30",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "04.05.2026 04:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
