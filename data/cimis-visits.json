@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-05-05T05:52:59.745Z",
+  "timestamp": "2026-05-05T06:35:47.709Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "SAN SPIRITO",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.05.2026 14:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Rab",
       "Pomorski objekt": "SUZANA",
@@ -20,12 +28,36 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.05.2026 08:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.05.2026 08:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.05.2026 08:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.05.2026 08:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "05.05.2026 08:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -57,7 +89,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "05.05.2026 06:55",
       "Odlazak": "05.05.2026 07:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -260,30 +292,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.05.2026 16:45",
-      "Odlazak": "04.05.2026 17:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.05.2026 16:25",
-      "Odlazak": "05.05.2026 07:45",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.05.2026 15:05",
-      "Odlazak": "04.05.2026 16:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "ACI marina Rab",
       "Pomorski objekt": "ARIA",
       "Zastava": "HRVATSKA",
@@ -321,14 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "03.05.2026 16:22",
       "Odlazak": "04.05.2026 08:48",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "FELIX",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "03.05.2026 15:35",
-      "Odlazak": "04.05.2026 08:00",
       "Status": "Otišao"
     },
     {
