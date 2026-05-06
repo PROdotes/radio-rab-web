@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-06T10:46:12.027Z",
+  "timestamp": "2026-05-06T11:27:58.912Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -12,12 +12,36 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.05.2026 13:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.05.2026 13:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.05.2026 12:45",
+      "Odlazak": "06.05.2026 13:00",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.05.2026 12:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "06.05.2026 12:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -25,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "06.05.2026 11:55",
       "Odlazak": "06.05.2026 12:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -252,35 +276,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.05.2026 20:45",
-      "Odlazak": "05.05.2026 21:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.05.2026 20:15",
-      "Odlazak": "05.05.2026 20:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.05.2026 19:40",
       "Odlazak": "06.05.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.05.2026 19:25",
-      "Odlazak": "05.05.2026 19:45",
       "Status": "Otišao"
     },
     {
