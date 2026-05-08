@@ -1,22 +1,30 @@
 {
-  "timestamp": "2026-05-08T21:56:20.170Z",
+  "timestamp": "2026-05-08T22:17:57.603Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.05.2026 00:14",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.05.2026 23:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "08.05.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.05.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "08.05.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -252,14 +260,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.05.2026 12:15",
-      "Odlazak": "08.05.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
@@ -309,18 +309,18 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.05.2026 16:50",
-      "Odlazak": "07.05.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
       "Pomorski objekt": "QUEEN ELEGANZA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.05.2026 14:00",
       "Odlazak": "08.05.2026 08:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "PROVIDENCA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.05.2026 12:00",
+      "Odlazak": "08.05.2026 07:10",
       "Status": "Otišao"
     },
     {
@@ -333,19 +333,19 @@
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Pomorski objekt": "MAČEK",
       "Zastava": "HRVATSKA",
-      "Dolazak": "07.05.2026 09:05",
-      "Odlazak": "07.05.2026 16:00",
-      "Status": "Otišao"
+      "Dolazak": "30.03.2026 15:16",
+      "Odlazak": "-",
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "06.05.2026 19:45",
-      "Odlazak": "07.05.2026 05:45",
-      "Status": "Otišao"
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
+      "Status": "Došao"
     }
   ]
 }
