@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-05-09T13:39:11.926Z",
+  "timestamp": "2026-05-09T14:10:34.557Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.05.2026 17:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
@@ -15,9 +23,17 @@
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
+      "Dolazak": "09.05.2026 16:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 14:55",
       "Odlazak": "09.05.2026 15:15",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -32,8 +48,8 @@
       "Pomorski objekt": "TAJANA KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 14:27",
-      "Odlazak": "09.05.2026 16:55",
-      "Status": "Došao"
+      "Odlazak": "09.05.2026 15:56",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -136,7 +152,7 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 09:05",
-      "Odlazak": "-",
+      "Odlazak": "09.05.2026 16:00",
       "Status": "Došao"
     },
     {
@@ -268,14 +284,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.05.2026 22:55",
-      "Odlazak": "08.05.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -288,14 +296,6 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.05.2026 21:45",
-      "Odlazak": "08.05.2026 22:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.05.2026 20:55",
       "Odlazak": "08.05.2026 22:00",
       "Status": "Otišao"
     },
