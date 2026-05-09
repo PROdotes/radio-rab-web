@@ -1,22 +1,30 @@
 {
-  "timestamp": "2026-05-09T11:31:26.135Z",
+  "timestamp": "2026-05-09T11:52:59.786Z",
   "source": "CIMIS Public Portal",
-  "count": 42,
+  "count": 43,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "BARBA ŠIME",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.05.2026 14:32",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "ALBATROS DVA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "09.05.2026 19:45",
+      "Dolazak": "09.05.2026 13:37",
       "Odlazak": "22.05.2026 15:45",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 13:25",
-      "Odlazak": "-",
+      "Odlazak": "09.05.2026 13:45",
       "Status": "U dolasku"
     },
     {
