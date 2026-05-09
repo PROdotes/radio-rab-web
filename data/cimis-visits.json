@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-05-09T12:10:49.003Z",
+  "timestamp": "2026-05-09T12:36:11.293Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.05.2026 14:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Rab",
       "Pomorski objekt": "BARBA ŠIME",
@@ -15,9 +23,9 @@
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "TAJANA KRK",
       "Zastava": "HRVATSKA",
-      "Dolazak": "09.05.2026 13:55",
+      "Dolazak": "09.05.2026 14:27",
       "Odlazak": "09.05.2026 16:55",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 13:25",
       "Odlazak": "09.05.2026 13:45",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 13:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -289,14 +297,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.05.2026 19:40",
       "Odlazak": "09.05.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.05.2026 19:40",
-      "Odlazak": "08.05.2026 19:45",
       "Status": "Otišao"
     },
     {
