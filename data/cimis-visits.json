@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-09T17:17:27.917Z",
+  "timestamp": "2026-05-09T17:38:59.359Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 42,
   "visits": [
     {
       "Luka": "Lopar",
@@ -329,14 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.05.2026 16:02",
       "Odlazak": "08.05.2026 16:13",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "TAJANA KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.05.2026 11:39",
-      "Odlazak": "08.05.2026 13:56",
       "Status": "Otišao"
     },
     {
