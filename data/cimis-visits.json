@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-09T11:52:59.786Z",
+  "timestamp": "2026-05-09T12:10:49.003Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -9,6 +9,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 14:32",
       "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Sv. Grgur (Lopar)",
+      "Pomorski objekt": "TAJANA KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.05.2026 13:55",
+      "Odlazak": "09.05.2026 16:55",
       "Status": "U dolasku"
     },
     {
@@ -337,14 +345,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.05.2026 06:50",
       "Odlazak": "08.05.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.05.2026 19:45",
-      "Odlazak": "08.05.2026 05:45",
       "Status": "Otišao"
     }
   ]
