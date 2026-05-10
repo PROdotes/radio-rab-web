@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-10T05:51:09.479Z",
+  "timestamp": "2026-05-10T06:45:52.683Z",
   "source": "CIMIS Public Portal",
-  "count": 40,
+  "count": 41,
   "visits": [
     {
       "Luka": "Rab",
@@ -9,6 +9,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 16:00",
       "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "PRINCESS ELEGANZA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.05.2026 14:00",
+      "Odlazak": "11.05.2026 08:30",
       "Status": "U dolasku"
     },
     {
@@ -21,11 +29,19 @@
     },
     {
       "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.05.2026 08:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 07:05",
       "Odlazak": "10.05.2026 07:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -33,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 06:55",
       "Odlazak": "10.05.2026 07:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -105,14 +121,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.05.2026 16:25",
       "Odlazak": "09.05.2026 16:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.05.2026 14:55",
-      "Odlazak": "09.05.2026 15:15",
       "Status": "Otišao"
     },
     {
