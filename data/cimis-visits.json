@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-05-10T16:14:01.866Z",
+  "timestamp": "2026-05-10T16:36:07.588Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "ANTONELA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.05.2026 20:30",
+      "Odlazak": "12.05.2026 07:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.05.2026 18:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
@@ -16,15 +32,15 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 18:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "10.05.2026 18:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 17:55",
-      "Odlazak": "-",
+      "Odlazak": "10.05.2026 18:15",
       "Status": "U dolasku"
     },
     {
@@ -268,14 +284,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 07:30",
-      "Odlazak": "10.05.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -298,14 +306,6 @@
       "Dolazak": "09.05.2026 16:50",
       "Odlazak": "09.05.2026 16:55",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "DALMATIA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.05.2026 14:38",
-      "Odlazak": "10.05.2026 07:37",
-      "Status": "Došao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
