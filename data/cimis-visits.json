@@ -1,13 +1,21 @@
 {
-  "timestamp": "2026-05-10T14:11:55.781Z",
+  "timestamp": "2026-05-10T14:38:22.044Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 42,
   "visits": [
     {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 16:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.05.2026 16:45",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -20,12 +28,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.05.2026 16:15",
+      "Odlazak": "10.05.2026 16:30",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 15:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "10.05.2026 16:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -260,27 +276,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 05:45",
-      "Odlazak": "10.05.2026 05:46",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 05:25",
       "Odlazak": "10.05.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 05:15",
-      "Odlazak": "10.05.2026 05:30",
       "Status": "Otišao"
     },
     {
@@ -306,14 +306,6 @@
       "Dolazak": "09.05.2026 14:38",
       "Odlazak": "10.05.2026 07:37",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "BARBA ŠIME",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.05.2026 14:32",
-      "Odlazak": "-",
-      "Status": "U dolasku"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
