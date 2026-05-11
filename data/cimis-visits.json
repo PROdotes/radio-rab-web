@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-05-11T06:12:08.226Z",
+  "timestamp": "2026-05-11T07:35:08.539Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "SV.VID",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.05.2026 10:00",
+      "Odlazak": "12.05.2026 08:00",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.05.2026 09:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
@@ -15,9 +31,33 @@
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "11.05.2026 08:00",
+      "Dolazak": "11.05.2026 09:00",
+      "Odlazak": "11.05.2026 09:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.05.2026 08:55",
       "Odlazak": "-",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.05.2026 08:30",
+      "Odlazak": "11.05.2026 08:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.05.2026 08:00",
+      "Odlazak": "11.05.2026 08:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -33,7 +73,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "11.05.2026 07:05",
       "Odlazak": "11.05.2026 07:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -200,7 +240,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 19:25",
-      "Odlazak": "-",
+      "Odlazak": "11.05.2026 09:15",
       "Status": "Došao"
     },
     {
@@ -244,35 +284,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 17:45",
-      "Odlazak": "10.05.2026 18:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 17:15",
-      "Odlazak": "10.05.2026 17:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 16:50",
       "Odlazak": "10.05.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 16:45",
-      "Odlazak": "10.05.2026 17:00",
       "Status": "Otišao"
     },
     {
@@ -284,11 +300,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
+      "Luka": "Rab",
+      "Pomorski objekt": "PRINCESS ELEGANZA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 14:55",
-      "Odlazak": "10.05.2026 15:15",
+      "Dolazak": "10.05.2026 14:00",
+      "Odlazak": "11.05.2026 08:30",
       "Status": "Otišao"
     },
     {
@@ -296,16 +312,8 @@
       "Pomorski objekt": "FELIX",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.05.2026 14:00",
-      "Odlazak": "11.05.2026 08:00",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "PRINCESS ELEGANZA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.05.2026 14:00",
-      "Odlazak": "11.05.2026 08:30",
-      "Status": "U dolasku"
+      "Odlazak": "11.05.2026 08:11",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -352,14 +360,6 @@
       "Pomorski objekt": "MAČEK",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.03.2026 15:16",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ZELEN BOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.09.2023 14:12",
       "Odlazak": "-",
       "Status": "Došao"
     }
