@@ -1,15 +1,31 @@
 {
-  "timestamp": "2026-05-12T15:12:15.181Z",
+  "timestamp": "2026-05-12T16:56:34.972Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.05.2026 19:40",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.05.2026 17:55",
+      "Odlazak": "12.05.2026 18:15",
+      "Status": "Došao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.05.2026 17:20",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "12.05.2026 18:20",
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -17,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "12.05.2026 16:50",
       "Odlazak": "12.05.2026 16:55",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -25,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "12.05.2026 16:30",
       "Odlazak": "12.05.2026 16:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -176,7 +192,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.05.2026 08:55",
-      "Odlazak": "-",
+      "Odlazak": "12.05.2026 18:45",
       "Status": "Došao"
     },
     {
@@ -224,14 +240,6 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.05.2026 07:00",
-      "Odlazak": "12.05.2026 07:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.05.2026 06:55",
       "Odlazak": "12.05.2026 07:15",
       "Status": "Otišao"
     },
@@ -346,14 +354,6 @@
       "Dolazak": "07.05.2026 10:30",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "MAČEK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.03.2026 15:16",
-      "Odlazak": "-",
-      "Status": "Došao"
     }
   ]
 }
