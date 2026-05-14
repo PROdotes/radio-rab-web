@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-05-14T20:11:43.962Z",
+  "timestamp": "2026-05-14T20:46:33.523Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.05.2026 22:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
@@ -25,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.05.2026 20:55",
       "Odlazak": "14.05.2026 22:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -249,14 +257,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.05.2026 09:10",
       "Odlazak": "14.05.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "14.05.2026 08:55",
-      "Odlazak": "14.05.2026 18:15",
       "Status": "Otišao"
     },
     {
