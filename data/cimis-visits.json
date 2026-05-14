@@ -1,15 +1,47 @@
 {
-  "timestamp": "2026-05-14T05:51:15.279Z",
+  "timestamp": "2026-05-14T06:51:45.982Z",
   "source": "CIMIS Public Portal",
-  "count": 42,
+  "count": 43,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.05.2026 09:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.05.2026 09:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.05.2026 08:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.05.2026 08:30",
+      "Odlazak": "14.05.2026 08:45",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.05.2026 08:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "14.05.2026 08:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -24,8 +56,8 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.05.2026 07:05",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "14.05.2026 07:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -41,7 +73,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.05.2026 06:55",
       "Odlazak": "14.05.2026 07:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -228,27 +260,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.05.2026 17:15",
-      "Odlazak": "13.05.2026 17:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "13.05.2026 16:50",
       "Odlazak": "13.05.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.05.2026 16:45",
-      "Odlazak": "13.05.2026 17:00",
       "Status": "Otišao"
     },
     {
@@ -264,8 +280,8 @@
       "Pomorski objekt": "PRINCESS ELEGANZA",
       "Zastava": "HRVATSKA",
       "Dolazak": "13.05.2026 15:30",
-      "Odlazak": "14.05.2026 08:00",
-      "Status": "U dolasku"
+      "Odlazak": "14.05.2026 07:54",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -273,14 +289,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "13.05.2026 15:00",
       "Odlazak": "14.05.2026 07:58",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.05.2026 14:55",
-      "Odlazak": "13.05.2026 15:25",
       "Status": "Otišao"
     },
     {
