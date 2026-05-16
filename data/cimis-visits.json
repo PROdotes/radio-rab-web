@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-16T20:10:00.926Z",
+  "timestamp": "2026-05-16T20:29:17.272Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 44,
   "visits": [
     {
       "Luka": "Mišnjak",
@@ -322,14 +322,6 @@
       "Dolazak": "15.05.2026 16:01",
       "Odlazak": "15.05.2026 16:18",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "DALMATIA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.05.2026 15:18",
-      "Odlazak": "16.05.2026 07:18",
-      "Status": "U dolasku"
     },
     {
       "Luka": "Lopar",
