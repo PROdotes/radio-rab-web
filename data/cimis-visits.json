@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-17T11:37:08.361Z",
+  "timestamp": "2026-05-17T12:01:32.605Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -12,12 +12,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.05.2026 13:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "ACI marina Rab",
       "Pomorski objekt": "ARIA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "17.05.2026 14:00",
+      "Dolazak": "17.05.2026 13:40",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -32,8 +40,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.05.2026 13:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.05.2026 13:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -72,8 +80,8 @@
       "Pomorski objekt": "TAJANA KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.05.2026 11:30",
-      "Odlazak": "17.05.2026 14:20",
-      "Status": "Došao"
+      "Odlazak": "17.05.2026 13:55",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -249,14 +257,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.05.2026 00:14",
       "Odlazak": "17.05.2026 05:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.05.2026 23:45",
-      "Odlazak": "16.05.2026 23:59",
       "Status": "Otišao"
     },
     {
