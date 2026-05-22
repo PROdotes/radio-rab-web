@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-22T19:23:10.338Z",
+  "timestamp": "2026-05-22T20:06:26.710Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -7,9 +7,33 @@
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 21:15",
+      "Dolazak": "22.05.2026 22:05",
       "Odlazak": "-",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "22.05.2026 21:59",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "22.05.2026 21:45",
+      "Odlazak": "22.05.2026 21:50",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "22.05.2026 21:15",
+      "Odlazak": "22.05.2026 21:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -25,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.05.2026 20:55",
       "Odlazak": "22.05.2026 21:05",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -244,35 +268,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 14:15",
-      "Odlazak": "22.05.2026 15:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 13:45",
-      "Odlazak": "22.05.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "22.05.2026 13:32",
       "Odlazak": "22.05.2026 14:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 11:55",
-      "Odlazak": "22.05.2026 13:45",
       "Status": "Otišao"
     },
     {
