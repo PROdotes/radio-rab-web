@@ -1,22 +1,30 @@
 {
-  "timestamp": "2026-05-23T21:54:56.622Z",
+  "timestamp": "2026-05-23T22:14:46.536Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 41,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.05.2026 00:14",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.05.2026 23:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "23.05.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.05.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "23.05.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -236,14 +244,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.05.2026 13:45",
-      "Odlazak": "23.05.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
@@ -309,51 +309,27 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
+      "Pomorski objekt": "BARBA ŠIME",
       "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 16:50",
-      "Odlazak": "22.05.2026 16:55",
+      "Dolazak": "21.05.2026 16:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "GRGA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.04.2026 15:50",
+      "Odlazak": "23.05.2026 10:00",
       "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
+      "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 16:21",
-      "Odlazak": "22.05.2026 17:53",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Sv. Grgur (Lopar)",
-      "Pomorski objekt": "TAJANA KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 14:32",
-      "Odlazak": "22.05.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "DALMATIA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 11:05",
-      "Odlazak": "22.05.2026 15:00",
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 09:58",
-      "Odlazak": "22.05.2026 10:14",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.05.2026 06:50",
-      "Odlazak": "22.05.2026 06:55",
-      "Status": "Otišao"
     }
   ]
 }
