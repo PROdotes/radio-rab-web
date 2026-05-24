@@ -1,15 +1,39 @@
 {
-  "timestamp": "2026-05-24T16:55:12.985Z",
+  "timestamp": "2026-05-24T17:20:09.284Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.05.2026 20:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.05.2026 19:28",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.05.2026 19:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "24.05.2026 18:35",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "24.05.2026 19:15",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -25,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "24.05.2026 17:55",
       "Odlazak": "24.05.2026 18:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -80,8 +104,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "24.05.2026 16:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "24.05.2026 19:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -244,14 +268,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "24.05.2026 12:15",
-      "Odlazak": "24.05.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
@@ -300,14 +316,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "24.05.2026 08:55",
-      "Odlazak": "24.05.2026 10:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -345,14 +353,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.05.2026 19:45",
       "Odlazak": "23.05.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "GRGA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.04.2026 15:50",
-      "Odlazak": "23.05.2026 10:00",
       "Status": "Otišao"
     }
   ]
