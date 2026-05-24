@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-05-24T18:09:01.732Z",
+  "timestamp": "2026-05-24T19:02:13.658Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.05.2026 20:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.05.2026 20:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
@@ -16,8 +32,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "24.05.2026 20:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "24.05.2026 20:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -33,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "24.05.2026 19:28",
       "Odlazak": "24.05.2026 19:45",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -49,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "24.05.2026 18:35",
       "Odlazak": "24.05.2026 19:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -260,14 +276,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "24.05.2026 12:45",
-      "Odlazak": "24.05.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
@@ -290,14 +298,6 @@
       "Dolazak": "24.05.2026 11:00",
       "Odlazak": "-",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "24.05.2026 10:35",
-      "Odlazak": "24.05.2026 10:55",
-      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
