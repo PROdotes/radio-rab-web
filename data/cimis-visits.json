@@ -1,15 +1,31 @@
 {
-  "timestamp": "2026-05-25T17:53:08.909Z",
+  "timestamp": "2026-05-25T18:26:00.962Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
+    {
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "LABUD",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.05.2026 07:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.05.2026 20:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.05.2026 19:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "25.05.2026 20:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -25,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "25.05.2026 19:40",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -33,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "25.05.2026 19:25",
       "Odlazak": "25.05.2026 19:45",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -252,14 +268,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.05.2026 11:15",
-      "Odlazak": "25.05.2026 11:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
@@ -338,14 +346,6 @@
       "Dolazak": "23.05.2026 10:50",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "ZELEN BOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.09.2023 14:12",
-      "Odlazak": "-",
-      "Status": "Došao"
     }
   ]
 }
