@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-25T20:15:22.315Z",
+  "timestamp": "2026-05-25T20:47:56.446Z",
   "source": "CIMIS Public Portal",
   "count": 43,
   "visits": [
@@ -16,6 +16,14 @@
       "Pomorski objekt": "LABUD",
       "Zastava": "HRVATSKA",
       "Dolazak": "26.05.2026 07:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.05.2026 22:55",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "25.05.2026 20:55",
       "Odlazak": "25.05.2026 22:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -282,14 +290,6 @@
       "Dolazak": "25.05.2026 11:52",
       "Odlazak": "26.05.2026 11:15",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.05.2026 11:15",
-      "Odlazak": "25.05.2026 12:15",
-      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
