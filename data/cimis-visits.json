@@ -1,15 +1,31 @@
 {
-  "timestamp": "2026-05-25T02:08:32.746Z",
+  "timestamp": "2026-05-25T03:26:24.330Z",
   "source": "CIMIS Public Portal",
   "count": 42,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.05.2026 05:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.05.2026 05:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.05.2026 00:14",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "25.05.2026 05:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -244,14 +260,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "24.05.2026 14:15",
-      "Odlazak": "24.05.2026 15:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "PRINCESS ELEGANZA",
       "Zastava": "HRVATSKA",
@@ -284,20 +292,12 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "24.05.2026 12:05",
-      "Odlazak": "24.05.2026 12:25",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "STONČICA",
       "Zastava": "HRVATSKA",
       "Dolazak": "24.05.2026 11:00",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "25.05.2026 04:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
