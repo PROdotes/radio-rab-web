@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-26T18:45:04.803Z",
+  "timestamp": "2026-05-26T19:33:07.281Z",
   "source": "CIMIS Public Portal",
-  "count": 46,
+  "count": 45,
   "visits": [
     {
       "Luka": "Valbiska",
@@ -305,14 +305,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.05.2026 11:55",
       "Odlazak": "26.05.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "TAJANA KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.05.2026 11:32",
-      "Odlazak": "26.05.2026 14:00",
       "Status": "Otišao"
     },
     {
