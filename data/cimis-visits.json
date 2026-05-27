@@ -1,14 +1,22 @@
 {
-  "timestamp": "2026-05-27T21:45:15.407Z",
+  "timestamp": "2026-05-27T22:23:22.549Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "28.05.2026 00:14",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "28.05.2026 00:06",
-      "Odlazak": "-",
+      "Odlazak": "28.05.2026 00:07",
       "Status": "U dolasku"
     },
     {
@@ -16,8 +24,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.05.2026 23:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "27.05.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -25,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "27.05.2026 23:06",
       "Odlazak": "27.05.2026 23:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -308,14 +316,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "27.05.2026 13:15",
-      "Odlazak": "27.05.2026 13:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "KAPETAN NEMO",
       "Zastava": "HRVATSKA",
@@ -357,11 +357,11 @@
     },
     {
       "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "LEONORA",
+      "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
-      "Dolazak": "26.05.2026 13:03",
-      "Odlazak": "26.05.2026 16:30",
-      "Status": "Otišao"
+      "Dolazak": "26.05.2026 07:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
     }
   ]
 }
