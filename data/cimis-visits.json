@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T14:23:45.178Z",
+  "timestamp": "2026-05-30T14:55:02.627Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -20,10 +20,10 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Palit (Rab)",
-      "Pomorski objekt": "MIKI",
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
-      "Dolazak": "30.05.2026 17:12",
+      "Dolazak": "30.05.2026 16:45",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -36,12 +36,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Palit (Rab)",
+      "Pomorski objekt": "MIKI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.05.2026 16:20",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 16:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "30.05.2026 16:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -49,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 15:45",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -57,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 15:20",
       "Odlazak": "30.05.2026 16:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -72,7 +80,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 14:55",
-      "Odlazak": "-",
+      "Odlazak": "30.05.2026 16:45",
       "Status": "Došao"
     },
     {
@@ -289,14 +297,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 08:55",
       "Odlazak": "30.05.2026 10:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.05.2026 08:30",
-      "Odlazak": "30.05.2026 08:45",
       "Status": "Otišao"
     },
     {
