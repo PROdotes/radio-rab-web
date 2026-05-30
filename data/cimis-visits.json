@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-30T13:50:19.629Z",
+  "timestamp": "2026-05-30T14:23:45.178Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 44,
   "visits": [
     {
       "Luka": "Rab",
@@ -12,10 +12,34 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.05.2026 17:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Palit (Rab)",
       "Pomorski objekt": "MIKI",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 17:12",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.05.2026 16:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.05.2026 16:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -32,8 +56,8 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 15:20",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "30.05.2026 16:00",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -65,7 +89,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 14:10",
       "Odlazak": "30.05.2026 15:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
@@ -80,8 +104,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 13:45",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "30.05.2026 16:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -276,22 +300,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.05.2026 08:00",
-      "Odlazak": "30.05.2026 08:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.05.2026 07:05",
-      "Odlazak": "30.05.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
@@ -345,22 +353,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "29.05.2026 13:10",
       "Odlazak": "29.05.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Sv. Grgur (Lopar)",
-      "Pomorski objekt": "MALI PIN I",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "29.05.2026 12:30",
-      "Odlazak": "29.05.2026 13:50",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "29.05.2026 06:50",
-      "Odlazak": "29.05.2026 06:55",
       "Status": "Otišao"
     }
   ]
