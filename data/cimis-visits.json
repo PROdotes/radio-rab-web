@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T19:00:12.861Z",
+  "timestamp": "2026-05-30T19:37:19.214Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -41,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 19:50",
       "Odlazak": "30.05.2026 20:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -296,8 +296,8 @@
       "Pomorski objekt": "LEONORA",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.05.2026 13:02",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "30.05.2026 16:35",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
