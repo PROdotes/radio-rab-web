@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T02:26:43.966Z",
+  "timestamp": "2026-06-03T03:46:51.253Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -7,9 +7,33 @@
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "03.06.2026 00:14",
+      "Dolazak": "03.06.2026 05:45",
       "Odlazak": "-",
-      "Status": "Došao"
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "03.06.2026 05:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "03.06.2026 05:15",
+      "Odlazak": "03.06.2026 05:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "03.06.2026 00:14",
+      "Odlazak": "03.06.2026 05:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -260,14 +284,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "02.06.2026 14:15",
-      "Odlazak": "02.06.2026 15:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "ACI marina Rab",
       "Pomorski objekt": "ARIA",
       "Zastava": "HRVATSKA",
@@ -282,22 +298,6 @@
       "Dolazak": "02.06.2026 13:55",
       "Odlazak": "04.06.2026 10:15",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "02.06.2026 13:45",
-      "Odlazak": "02.06.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "02.06.2026 13:25",
-      "Odlazak": "02.06.2026 15:15",
-      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
