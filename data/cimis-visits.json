@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-04T20:55:34.755Z",
+  "timestamp": "2026-06-04T21:30:19.380Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
@@ -17,7 +17,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.06.2026 22:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
