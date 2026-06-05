@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-06-05T17:28:22.533Z",
+  "timestamp": "2026-06-05T18:54:58.913Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
     {
-      "Luka": "Valbiska",
+      "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "05.06.2026 19:50",
+      "Dolazak": "05.06.2026 21:50",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -15,25 +15,65 @@
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
-      "Dolazak": "05.06.2026 19:25",
+      "Dolazak": "05.06.2026 20:55",
       "Odlazak": "-",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.06.2026 20:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.06.2026 20:15",
+      "Odlazak": "05.06.2026 20:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.06.2026 19:50",
+      "Odlazak": "05.06.2026 20:30",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.06.2026 19:45",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.06.2026 19:25",
+      "Odlazak": "05.06.2026 19:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.06.2026 19:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "05.06.2026 19:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.06.2026 18:50",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "05.06.2026 18:55",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -152,8 +192,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.06.2026 15:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "05.06.2026 20:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -236,14 +276,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.06.2026 13:40",
-      "Odlazak": "05.06.2026 14:10",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -268,35 +300,11 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.06.2026 12:45",
-      "Odlazak": "05.06.2026 13:55",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.06.2026 12:45",
       "Odlazak": "05.06.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.06.2026 12:15",
-      "Odlazak": "05.06.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.06.2026 12:15",
-      "Odlazak": "05.06.2026 12:30",
       "Status": "Otišao"
     },
     {
@@ -369,14 +377,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "04.06.2026 17:55",
       "Odlazak": "05.06.2026 07:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.06.2026 17:20",
-      "Odlazak": "04.06.2026 18:30",
       "Status": "Otišao"
     },
     {
