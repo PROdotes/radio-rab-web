@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T16:06:20.886Z",
+  "timestamp": "2026-06-06T16:36:59.782Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -8,6 +8,14 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.06.2026 18:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.06.2026 18:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -24,7 +32,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.06.2026 17:55",
-      "Odlazak": "-",
+      "Odlazak": "06.06.2026 18:15",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +40,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "06.06.2026 17:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "06.06.2026 18:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "06.06.2026 17:20",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -305,14 +313,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "06.06.2026 11:00",
       "Odlazak": "06.06.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "06.06.2026 10:45",
-      "Odlazak": "06.06.2026 11:00",
       "Status": "Otišao"
     },
     {
