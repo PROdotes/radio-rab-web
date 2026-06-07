@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T15:27:07.066Z",
+  "timestamp": "2026-06-07T15:57:39.289Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -20,6 +20,22 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 18:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 17:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -32,8 +48,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 17:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "07.06.2026 17:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Banjol (Rab)",
@@ -121,7 +137,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 15:40",
       "Odlazak": "07.06.2026 16:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -284,14 +300,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 12:10",
-      "Odlazak": "07.06.2026 12:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
@@ -321,14 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 11:05",
       "Odlazak": "07.06.2026 11:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 10:30",
-      "Odlazak": "07.06.2026 10:50",
       "Status": "Otišao"
     },
     {
