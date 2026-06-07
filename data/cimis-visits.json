@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T16:59:42.418Z",
+  "timestamp": "2026-06-07T17:36:03.694Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -8,6 +8,22 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 19:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 19:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 19:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -24,7 +40,7 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 18:50",
-      "Odlazak": "-",
+      "Odlazak": "07.06.2026 18:55",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +48,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 18:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "07.06.2026 19:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -48,7 +64,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 18:00",
-      "Odlazak": "-",
+      "Odlazak": "07.06.2026 19:15",
       "Status": "Došao"
     },
     {
@@ -65,7 +81,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 17:20",
       "Odlazak": "07.06.2026 18:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -113,7 +129,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 16:40",
       "Odlazak": "07.06.2026 18:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -300,27 +316,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 12:30",
-      "Odlazak": "07.06.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 12:05",
       "Odlazak": "07.06.2026 12:20",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 11:15",
-      "Odlazak": "07.06.2026 11:45",
       "Status": "Otišao"
     },
     {
