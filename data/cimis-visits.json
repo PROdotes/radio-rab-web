@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T14:54:03.350Z",
+  "timestamp": "2026-06-07T15:27:07.066Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -12,10 +12,26 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Rab",
+      "Pomorski objekt": "CVIJETA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 18:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 17:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 17:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -40,8 +56,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 16:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "07.06.2026 17:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -57,7 +73,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 16:40",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -65,7 +81,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 16:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -276,27 +292,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Keki (Rab)",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 12:06",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 12:05",
       "Odlazak": "07.06.2026 12:20",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 11:40",
-      "Odlazak": "07.06.2026 11:55",
       "Status": "Otišao"
     },
     {
