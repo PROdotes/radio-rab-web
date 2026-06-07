@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T11:00:08.056Z",
+  "timestamp": "2026-06-07T11:40:45.410Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -52,6 +52,46 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 13:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 13:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 13:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 13:15",
+      "Odlazak": "07.06.2026 13:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 13:15",
+      "Odlazak": "07.06.2026 13:30",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -72,16 +112,16 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 12:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "07.06.2026 13:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 12:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "07.06.2026 13:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -100,20 +140,20 @@
       "Status": "Otišao"
     },
     {
+      "Luka": "Keki (Rab)",
+      "Pomorski objekt": "BASKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.06.2026 12:06",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 12:05",
       "Odlazak": "07.06.2026 12:20",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Keki (Rab)",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 12:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -260,43 +300,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 09:00",
-      "Odlazak": "07.06.2026 09:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 08:55",
-      "Odlazak": "07.06.2026 09:25",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 08:55",
       "Odlazak": "07.06.2026 10:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 08:35",
-      "Odlazak": "07.06.2026 08:40",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.06.2026 08:30",
-      "Odlazak": "07.06.2026 08:45",
       "Status": "Otišao"
     },
     {
@@ -321,14 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.06.2026 05:25",
       "Odlazak": "07.06.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "06.06.2026 22:55",
-      "Odlazak": "06.06.2026 23:59",
       "Status": "Otišao"
     },
     {
