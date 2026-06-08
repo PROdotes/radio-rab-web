@@ -150,6 +150,24 @@
   margin: 0;
 }
 
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  display: block;
+  height: 64px;
+  width: auto;
+}
+
+@media (min-width: 1024px) {
+  .brand-logo {
+    height: 90px;
+  }
+}
+
 .brand h1 span {
   color: var(--primary);
   display: inline-block;
@@ -220,6 +238,45 @@
 
 .nav-link .nav-icon {
   margin-bottom: 0.15rem;
+}
+
+/* Header utility action icons (icon-only row) */
+.header-actions {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-actions ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.15rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.action-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: var(--text-dim);
+  transition: color 0.18s var(--ease-out), background 0.18s var(--ease-out);
+}
+
+.action-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+}
+
+.action-icon:hover,
+.action-icon:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* Hamburger/menu button */
@@ -836,6 +893,21 @@
     width: 28px !important;
     height: 28px !important;
     transform: translateY(2px) !important;
+  }
+
+  .header-actions ul {
+    gap: 0.1rem;
+    justify-content: flex-end;
+  }
+
+  .action-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .action-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .filter-sticky-wrapper {
