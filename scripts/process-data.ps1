@@ -151,7 +151,16 @@ foreach ($FileDef in $EventFiles) {
     Write-Host "  Added $FileEventCount events." -ForegroundColor Cyan
 }
 
-Write-Host "Found $( $AllEvents.Count ) traffic events." -ForegroundColor Green
+Write-Host "Found $( $AllEvents.Count ) traffic events (before dedup)." -ForegroundColor Green
+
+# Deduplicate events by (lat, lng, details) — same roadwork can appear in multiple provider feeds
+$Seen = @{}
+$AllEvents = $AllEvents | Where-Object {
+    $Key = $_.details.Trim()
+    if ($Seen.ContainsKey($Key)) { $false } else { $Seen[$Key] = $true; $true }
+}
+
+Write-Host "Found $( $AllEvents.Count ) traffic events (after dedup)." -ForegroundColor Green
 
 
 # -----------------------------------------------------------------------------
