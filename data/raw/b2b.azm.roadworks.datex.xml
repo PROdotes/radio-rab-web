@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<d2LogicalModel xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" modelBaseVersion="2" xmlns="http://datex2.eu/schema/2/2_0">
+  <exchange>
+    <supplierIdentification>
+      <country>hr</country>
+      <nationalIdentifier>AZM</nationalIdentifier>
+    </supplierIdentification>
+  </exchange>
+  <payloadPublication xsi:type="SituationPublication" lang="en">
+    <publicationTime>2026-01-27T17:31:00.1584388Z</publicationTime>
+    <publicationCreator>
+      <country>hr</country>
+      <nationalIdentifier>AZM</nationalIdentifier>
+    </publicationCreator>
+  </payloadPublication>
+</d2LogicalModel>
