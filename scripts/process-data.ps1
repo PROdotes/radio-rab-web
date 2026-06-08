@@ -131,7 +131,7 @@ foreach ($FileDef in $EventFiles) {
             $ValidStart = Get-SafeValue $Rec "validity.validityTimeSpecification.overallStartTime"
             $ValidEnd = Get-SafeValue $Rec "validity.validityTimeSpecification.overallEndTime"
 
-            if ($Lat -and $Lng -and $MainText) {
+            if ($Lat -and $Lng -and $MainText -and [double]$Lat -ne 0 -and [double]$Lng -ne 0) {
                 $AllEvents += [PSCustomObject]@{
                     id         = $Id
                     type       = $FileDef.Type
@@ -246,7 +246,7 @@ foreach ($FileName in $WeatherFiles) {
         }
 
         # Only add if we have at least location and ONE meaningful metric
-        if ($Lat -and ($WindSpeed -or $Temp)) {
+        if ($Lat -and [double]$Lat -ne 0 -and [double]$Lng -ne 0 -and ($WindSpeed -or $Temp)) {
             $AllWeather += [PSCustomObject]@{
                 id        = $StationId
                 lat       = $Lat
@@ -379,7 +379,7 @@ foreach ($CounterFile in $CounterFiles) {
             }
         }
         
-        if ($Lat -and ($Flow -or $Speed)) {
+        if ($Lat -and [double]$Lat -ne 0 -and [double]$Lng -ne 0 -and ($Flow -or $Speed)) {
             $AllCounters += [PSCustomObject]@{
                 id    = $SourceId
                 name  = $Name
