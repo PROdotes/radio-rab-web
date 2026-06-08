@@ -870,8 +870,8 @@ async function fetchVesselAISData(imo) {
   // 2. Try to fetch from local proxy server (fallback for development)
   const proxyUrl = `http://localhost:3001/api/vessel/${imo}`;
   try {
-    const response = await fetch(proxyUrl);
-    if (response.ok) return await response.json();
+    const response = await fetchWithRetry(proxyUrl);
+    if (response) return await response.json();
   } catch (err) { }
 
   // 3. Last resort: public sources (likely CORS blocked)
@@ -1824,8 +1824,8 @@ async function initMeteoAlerts() {
 
   try {
     const fetchPromises = urls.map((url) =>
-      fetch(`${CONFIG.urls.corsProxy}${encodeURIComponent(url)}`)
-        .then((res) => (res.ok ? res.text() : null))
+      fetchWithRetry(url)
+        .then((res) => (res ? res.text() : null))
         .catch(() => null)
     )
 
@@ -1911,10 +1911,10 @@ async function initMeteoAlerts() {
 async function initSeaTemperature() {
   try {
     const url = CONFIG.urls.meteo.seaTemp
-    const response = await fetch(`${CONFIG.urls.corsProxy}${encodeURIComponent(url)}`)
-    if (!response.ok) return
+    const res = await fetchWithRetry(url)
+    if (!res) return
 
-    const xmlStr = await response.text()
+    const xmlStr = await res.text()
     const parser = new DOMParser()
     const xmlDoc = parser.parseFromString(xmlStr, 'application/xml')
     const podatciNodes = xmlDoc.querySelectorAll('Podatci')
@@ -1964,9 +1964,10 @@ async function initSeaQuality() {
   // 2. Try Fetch (Production support)
   else {
     try {
-      const response = await fetch(CONFIG.urls.meteo.seaQuality)
-      if (response.ok) {
-        data = await response.json()
+      const res = await fetchWithRetry(CONFIG.urls.meteo.seaQuality)
+      if (!res) return
+      if (res) {
+        data = await res.json()
       }
     } catch (e) {
       debugWarn('SeaQuality: Fetch failed:', e)
@@ -2180,8 +2181,12 @@ function parseSeaYear(rawDate) {
 
 function getSeaHistoryYears(entries) {
   const years = entries.map((entry) => entry.year).filter((year) => Number.isFinite(year))
-  const maxYear = years.length > 0 ? Math.max(...years) : new Date().getFullYear()
-  return [maxYear, maxYear - 1, maxYear - 2]
+  if (years.length === 0) {
+    const current = new Date().getFullYear()
+    return [current, current - 1, current - 2]
+  }
+  // Show every year that actually has data, newest first.
+  return [...new Set(years)].sort((a, b) => b - a)
 }
 
 function getSeaQualityInfo(qualityVal) {

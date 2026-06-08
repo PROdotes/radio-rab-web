@@ -57,8 +57,9 @@ function SanitizeRecord($rec) {
     return [PSCustomObject]$out
 }
 
-# Load existing data
-$existing = Get-Content $OutputFile -Raw | ConvertFrom-Json
+# Load existing data. Read as UTF-8 explicitly: Windows PowerShell 5.1 defaults to the
+# ANSI codepage (Windows-1252) and would silently mangle UTF-8 (e.g. 'ž' -> 'Å¾').
+$existing = Get-Content $OutputFile -Raw -Encoding UTF8 | ConvertFrom-Json
 $markersMap = @{}
 foreach ($p in $existing.points) {
     $k = $p.lsta
@@ -69,7 +70,7 @@ foreach ($p in $existing.points) {
 $meta = @{}
 if (Test-Path $MetaFile) {
     try {
-        $rawMeta = Get-Content $MetaFile -Raw | ConvertFrom-Json
+        $rawMeta = Get-Content $MetaFile -Raw -Encoding UTF8 | ConvertFrom-Json
         # Convert PSCustomObject to hashtable for safe ContainsKey and indexing
         if ($rawMeta -and $rawMeta.psobject -and $rawMeta.psobject.Properties.Count -gt 0) {
             foreach ($prop in $rawMeta.psobject.Properties) { $meta[$prop.Name] = $prop.Value }

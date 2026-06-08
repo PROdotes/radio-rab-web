@@ -8,16 +8,19 @@ $JsOutputFile = Join-Path $DataDir "sea-quality.js"
 
 Write-Host "Fetching IZOR Sea Quality markers (multiple years)..." -ForegroundColor Cyan
 
-# Fixed years: explicitly fetch 2025, 2024 and 2023 (do not depend on runtime year)
-# We keep this static to ensure we always aggregate those historical years.
-$Years = @(2025, 2024, 2023)
+# Years to aggregate: 2023 (historical floor) through the current year.
+# Built dynamically so new seasons (e.g. 2026) are picked up automatically
+# instead of being silently filtered out.
+$Years = @(2023..((Get-Date).Year))
 
 try {
     # If previous output exists, load it and seed markersMap so we merge instead of overwrite
     $markersMap = @{}
     if (Test-Path $OutputFile) {
         try {
-            $existing = Get-Content $OutputFile -Raw | ConvertFrom-Json -ErrorAction Stop
+            # Read as UTF-8 explicitly. Under Windows PowerShell 5.1 the default is the
+            # ANSI codepage (Windows-1252), which silently mangles UTF-8 (e.g. 'ž' -> 'Å¾').
+            $existing = Get-Content $OutputFile -Raw -Encoding UTF8 | ConvertFrom-Json -ErrorAction Stop
             if ($existing -and $existing.points) {
                 foreach ($p in $existing.points) {
                     # Ensure key exists and convert to a mutable PSCustomObject for safe mutation

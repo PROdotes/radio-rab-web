@@ -600,8 +600,12 @@ function parseSeaYear(rawDate) {
 
 function getSeaHistoryYears(entries) {
   const years = entries.map((entry) => entry.year).filter((year) => Number.isFinite(year))
-  const maxYear = years.length > 0 ? Math.max(...years) : new Date().getFullYear()
-  return [maxYear, maxYear - 1, maxYear - 2]
+  if (years.length === 0) {
+    const current = new Date().getFullYear()
+    return [current, current - 1, current - 2]
+  }
+  // Show every year that actually has data, newest first.
+  return [...new Set(years)].sort((a, b) => b - a)
 }
 
 function getSeaQualityInfo(qualityVal) {

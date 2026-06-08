@@ -989,7 +989,18 @@ function updateMapVisualization() {
       state.seaQualityPoints.forEach((p) => {
         if (!isWithinScope(p.lat, p.lng)) return
 
-        const qualityVal = parseInt(p.locj)
+        // Grade shown in the popup comes from the most recent measurement, not the
+        // static `locj` marker field (that was seeded once from a now-defunct IZOR
+        // endpoint and is frozen at 1 for every location). Pick the newest history
+        // reading by date; fall back to locj only when there is no history.
+        const latestReading = (p.history || []).reduce((newest, rec) => {
+          const ts = Date.parse(rec.vri || rec.datum || rec.dan || '')
+          if (Number.isNaN(ts)) return newest
+          return !newest || ts > newest.ts ? { ts, rec } : newest
+        }, null)
+        const qualityVal = latestReading
+          ? parseInt(latestReading.rec.ocj ?? latestReading.rec.locj ?? latestReading.rec.ocjena)
+          : parseInt(p.locj)
         const qualityTxt =
           qualityVal === 1
             ? 'Izvrsna'
