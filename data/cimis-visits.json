@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-06-10T21:48:54.642Z",
+  "timestamp": "2026-06-10T22:31:02.944Z",
   "source": "CIMIS Public Portal",
-  "count": 46,
+  "count": 44,
   "visits": [
     {
       "Luka": "Stinica",
@@ -16,7 +16,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.06.2026 22:55",
-      "Odlazak": "-",
+      "Odlazak": "10.06.2026 23:59",
       "Status": "Došao"
     },
     {
@@ -349,27 +349,11 @@
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "09.06.2026 17:20",
-      "Odlazak": "09.06.2026 18:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.06.2026 13:05",
-      "Odlazak": "09.06.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "LEONORA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.06.2026 13:00",
-      "Odlazak": "09.06.2026 16:25",
-      "Status": "Otišao"
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
+      "Status": "Došao"
     }
   ]
 }
