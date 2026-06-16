@@ -1,23 +1,47 @@
 {
-  "timestamp": "2026-06-16T21:31:48.739Z",
+  "timestamp": "2026-06-16T22:22:01.657Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.06.2026 00:14",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.06.2026 23:50",
+      "Odlazak": "16.06.2026 23:59",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.06.2026 23:45",
+      "Odlazak": "16.06.2026 23:59",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.06.2026 22:55",
-      "Odlazak": "16.06.2026 22:56",
-      "Status": "U dolasku"
+      "Odlazak": "16.06.2026 22:57",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.06.2026 22:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "16.06.2026 23:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -284,30 +308,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.06.2026 12:45",
-      "Odlazak": "16.06.2026 14:25",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.06.2026 12:45",
-      "Odlazak": "16.06.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.06.2026 12:40",
-      "Odlazak": "16.06.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "TAJANA KRK",
       "Zastava": "HRVATSKA",
@@ -341,15 +341,15 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "LINDA",
+      "Pomorski objekt": "NOCTURNO",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.06.2026 09:00",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "TVRDI",
+      "Pomorski objekt": "LABUD",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.06.2026 07:47",
       "Odlazak": "-",
@@ -357,7 +357,7 @@
     },
     {
       "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "LABUD",
+      "Pomorski objekt": "TVRDI",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.06.2026 07:47",
       "Odlazak": "-",
