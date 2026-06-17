@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-17T19:06:24.880Z",
+  "timestamp": "2026-06-17T19:52:51.715Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -12,20 +12,28 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.06.2026 21:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.06.2026 20:55",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.06.2026 20:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.06.2026 21:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.06.2026 19:50",
       "Odlazak": "17.06.2026 20:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -76,6 +84,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "ACI marina Rab",
+      "Pomorski objekt": "ARIA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.06.2026 18:50",
+      "Odlazak": "18.06.2026 12:00",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
@@ -90,14 +106,6 @@
       "Dolazak": "17.06.2026 18:45",
       "Odlazak": "-",
       "Status": "Došao"
-    },
-    {
-      "Luka": "ACI marina Rab",
-      "Pomorski objekt": "ARIA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.06.2026 18:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
     },
     {
       "Luka": "Stinica",
@@ -321,14 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.06.2026 12:45",
       "Odlazak": "17.06.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.06.2026 12:40",
-      "Odlazak": "17.06.2026 13:30",
       "Status": "Otišao"
     },
     {
