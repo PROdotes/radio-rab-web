@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-06-20T20:23:36.590Z",
+  "timestamp": "2026-06-20T20:53:32.010Z",
   "source": "CIMIS Public Portal",
   "count": 44,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "20.06.2026 22:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
@@ -17,7 +25,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "20.06.2026 21:50",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "20.06.2026 20:55",
       "Odlazak": "20.06.2026 22:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -108,14 +116,6 @@
       "Status": "Došao"
     },
     {
-      "Luka": "Sv. Grgur (Lopar)",
-      "Pomorski objekt": "SOMNIUM",
-      "Zastava": "MALTA",
-      "Dolazak": "20.06.2026 18:20",
-      "Odlazak": "21.06.2026 18:20",
-      "Status": "U dolasku"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -130,6 +130,14 @@
       "Dolazak": "20.06.2026 17:55",
       "Odlazak": "20.06.2026 18:15",
       "Status": "Otišao"
+    },
+    {
+      "Luka": "Sv. Grgur (Lopar)",
+      "Pomorski objekt": "SOMNIUM",
+      "Zastava": "MALTA",
+      "Dolazak": "20.06.2026 17:51",
+      "Odlazak": "21.06.2026 18:20",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -257,14 +265,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "20.06.2026 15:10",
       "Odlazak": "20.06.2026 15:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.06.2026 15:04",
-      "Odlazak": "20.06.2026 15:24",
       "Status": "Otišao"
     },
     {
