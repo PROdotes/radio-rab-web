@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-21T12:57:35.674Z",
+  "timestamp": "2026-06-21T13:35:08.300Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -36,10 +36,26 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.06.2026 15:21",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.06.2026 15:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.06.2026 15:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -52,12 +68,20 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.06.2026 15:05",
+      "Odlazak": "21.06.2026 15:06",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.06.2026 14:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.06.2026 14:50",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -72,16 +96,16 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.06.2026 14:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.06.2026 15:15",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.06.2026 14:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.06.2026 15:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -257,30 +281,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "21.06.2026 10:50",
       "Odlazak": "21.06.2026 11:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "21.06.2026 10:50",
-      "Odlazak": "21.06.2026 11:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "21.06.2026 10:30",
-      "Odlazak": "21.06.2026 10:35",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "21.06.2026 10:25",
-      "Odlazak": "21.06.2026 10:35",
       "Status": "Otišao"
     },
     {
