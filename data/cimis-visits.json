@@ -1,23 +1,31 @@
 {
-  "timestamp": "2026-06-23T21:30:57.445Z",
+  "timestamp": "2026-06-23T22:03:16.513Z",
   "source": "CIMIS Public Portal",
-  "count": 47,
+  "count": 46,
   "visits": [
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.06.2026 23:45",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.06.2026 22:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "23.06.2026 23:59",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.06.2026 22:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "23.06.2026 23:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -316,14 +324,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.06.2026 12:45",
-      "Odlazak": "23.06.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "TAJANA KRK",
       "Zastava": "HRVATSKA",
@@ -369,14 +369,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.06.2026 22:20",
       "Odlazak": "23.06.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.06.2026 17:20",
-      "Odlazak": "22.06.2026 18:30",
       "Status": "Otišao"
     }
   ]
