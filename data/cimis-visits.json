@@ -1,15 +1,23 @@
 {
-  "timestamp": "2026-06-26T20:25:00.081Z",
+  "timestamp": "2026-06-26T21:38:25.922Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.06.2026 23:02",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "26.06.2026 22:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
@@ -17,7 +25,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.06.2026 21:50",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.06.2026 21:11",
       "Odlazak": "26.06.2026 22:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -130,6 +138,14 @@
       "Dolazak": "26.06.2026 18:05",
       "Odlazak": "26.06.2026 18:25",
       "Status": "Otišao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "VOJKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.06.2026 18:00",
+      "Odlazak": "27.06.2026 10:00",
+      "Status": "U dolasku"
     },
     {
       "Luka": "Rab",
@@ -265,7 +281,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.06.2026 15:00",
       "Odlazak": "26.06.2026 16:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -308,14 +324,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.06.2026 13:35",
-      "Odlazak": "26.06.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -338,14 +346,6 @@
       "Dolazak": "26.06.2026 11:38",
       "Odlazak": "26.06.2026 13:55",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "ACI marina Rab",
-      "Pomorski objekt": "KIT-KAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.06.2026 11:15",
-      "Odlazak": "26.06.2026 13:30",
-      "Status": "Otkazan"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
