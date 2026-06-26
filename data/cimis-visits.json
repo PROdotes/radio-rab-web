@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-26T01:26:47.881Z",
+  "timestamp": "2026-06-26T02:18:08.446Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -311,9 +311,9 @@
       "Luka": "Lopar",
       "Pomorski objekt": "PLOVPUT SPLIT",
       "Zastava": "HRVATSKA",
-      "Dolazak": "25.06.2026 14:00",
+      "Dolazak": "25.06.2026 14:10",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
