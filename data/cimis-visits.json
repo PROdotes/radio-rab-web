@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T15:38:53.115Z",
+  "timestamp": "2026-06-27T16:05:56.131Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
@@ -16,6 +16,14 @@
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.06.2026 18:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SILBA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "27.06.2026 18:30",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -48,7 +56,7 @@
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
       "Dolazak": "27.06.2026 17:30",
-      "Odlazak": "-",
+      "Odlazak": "27.06.2026 17:45",
       "Status": "U dolasku"
     },
     {
@@ -377,14 +385,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.06.2026 15:30",
       "Odlazak": "27.06.2026 10:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Sv. Grgur (Lopar)",
-      "Pomorski objekt": "VOJKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.06.2026 15:00",
-      "Odlazak": "26.06.2026 16:00",
       "Status": "Otišao"
     }
   ]
