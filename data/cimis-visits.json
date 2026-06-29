@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-06-29T18:54:23.577Z",
+  "timestamp": "2026-06-29T19:30:02.378Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "29.06.2026 22:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
@@ -32,7 +40,7 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.06.2026 19:50",
-      "Odlazak": "-",
+      "Odlazak": "29.06.2026 21:00",
       "Status": "Došao"
     },
     {
@@ -377,14 +385,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "28.06.2026 17:20",
       "Odlazak": "28.06.2026 18:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "28.06.2026 16:00",
-      "Odlazak": "28.06.2026 16:13",
       "Status": "Otišao"
     }
   ]
