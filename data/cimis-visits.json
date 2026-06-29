@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-29T19:30:02.378Z",
+  "timestamp": "2026-06-29T20:16:16.131Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
@@ -12,20 +12,36 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "29.06.2026 22:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "29.06.2026 21:45",
+      "Odlazak": "29.06.2026 22:00",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.06.2026 20:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "29.06.2026 22:00",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.06.2026 20:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "29.06.2026 21:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -41,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "29.06.2026 19:50",
       "Odlazak": "29.06.2026 21:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -324,28 +340,12 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "29.06.2026 12:45",
-      "Odlazak": "29.06.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Sv. Eufemija (Rab)",
       "Pomorski objekt": "ADRIATICA",
       "Zastava": "HRVATSKA",
       "Dolazak": "29.06.2026 12:16",
       "Odlazak": "30.06.2026 07:00",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "29.06.2026 12:15",
-      "Odlazak": "29.06.2026 12:30",
-      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
