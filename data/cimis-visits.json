@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T15:37:40.278Z",
+  "timestamp": "2026-06-30T16:30:03.649Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -12,12 +12,28 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.06.2026 18:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "30.06.2026 17:55",
+      "Odlazak": "30.06.2026 18:15",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "30.06.2026 17:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "30.06.2026 18:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -33,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.06.2026 17:20",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -113,7 +129,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "30.06.2026 15:10",
       "Odlazak": "30.06.2026 16:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
@@ -300,14 +316,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.06.2026 10:45",
-      "Odlazak": "30.06.2026 10:46",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "LAHOR",
       "Zastava": "HRVATSKA",
@@ -346,14 +354,6 @@
       "Dolazak": "30.06.2026 09:00",
       "Odlazak": "-",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "30.06.2026 08:55",
-      "Odlazak": "30.06.2026 09:15",
-      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
