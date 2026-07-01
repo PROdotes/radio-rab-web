@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T18:52:52.281Z",
+  "timestamp": "2026-07-01T19:27:32.764Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
@@ -8,6 +8,14 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.07.2026 21:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "01.07.2026 21:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -24,8 +32,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "01.07.2026 20:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "01.07.2026 21:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "01.07.2026 19:50",
       "Odlazak": "01.07.2026 20:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -130,6 +138,14 @@
       "Dolazak": "01.07.2026 18:15",
       "Odlazak": "01.07.2026 18:30",
       "Status": "Otišao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "VOJKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "01.07.2026 18:00",
+      "Odlazak": "02.07.2026 09:30",
+      "Status": "U dolasku"
     },
     {
       "Luka": "Valbiska",
@@ -297,7 +313,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "01.07.2026 15:00",
       "Odlazak": "01.07.2026 16:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -324,14 +340,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "01.07.2026 14:15",
-      "Odlazak": "01.07.2026 15:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -345,14 +353,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "01.07.2026 13:35",
       "Odlazak": "01.07.2026 14:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "ACI marina Rab",
-      "Pomorski objekt": "ARIA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "01.07.2026 13:19",
-      "Odlazak": "01.07.2026 14:40",
       "Status": "Otišao"
     },
     {
