@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-07-04T21:38:59.032Z",
+  "timestamp": "2026-07-04T22:03:22.363Z",
   "source": "CIMIS Public Portal",
-  "count": 46,
+  "count": 45,
   "visits": [
     {
       "Luka": "Stinica",
@@ -16,8 +16,8 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "04.07.2026 23:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "04.07.2026 23:59",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -361,14 +361,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "03.07.2026 21:50",
       "Odlazak": "04.07.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "03.07.2026 20:30",
-      "Odlazak": "03.07.2026 20:39",
       "Status": "Otišao"
     }
   ]
