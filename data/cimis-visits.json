@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-07-05T17:34:37.807Z",
+  "timestamp": "2026-07-05T17:59:04.959Z",
   "source": "CIMIS Public Portal",
-  "count": 45,
+  "count": 46,
   "visits": [
+    {
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "PLANKTON",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "06.07.2026 07:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
@@ -12,11 +20,19 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.07.2026 19:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 19:25",
-      "Odlazak": "-",
+      "Odlazak": "05.07.2026 19:45",
       "Status": "U dolasku"
     },
     {
@@ -24,8 +40,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 19:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "05.07.2026 19:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -33,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 18:50",
       "Odlazak": "05.07.2026 18:55",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -41,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 18:45",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -305,14 +321,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 13:05",
       "Odlazak": "05.07.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.07.2026 12:40",
-      "Odlazak": "05.07.2026 13:10",
       "Status": "Otišao"
     },
     {
