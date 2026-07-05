@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-05T20:22:43.281Z",
+  "timestamp": "2026-07-05T20:44:33.198Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -20,11 +20,19 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.07.2026 22:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 22:25",
-      "Odlazak": "-",
+      "Odlazak": "05.07.2026 22:30",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +40,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 22:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "05.07.2026 22:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "05.07.2026 21:50",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -330,14 +338,6 @@
       "Dolazak": "05.07.2026 15:00",
       "Odlazak": "06.07.2026 08:00",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.07.2026 14:45",
-      "Odlazak": "05.07.2026 15:00",
-      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
