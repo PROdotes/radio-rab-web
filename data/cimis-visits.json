@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-08T16:58:30.854Z",
+  "timestamp": "2026-07-08T17:33:10.430Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -20,11 +20,19 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.07.2026 19:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 18:50",
-      "Odlazak": "-",
+      "Odlazak": "08.07.2026 18:55",
       "Status": "U dolasku"
     },
     {
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 18:30",
       "Odlazak": "08.07.2026 18:45",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -49,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 17:55",
       "Odlazak": "08.07.2026 18:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "ACI marina Rab",
@@ -65,7 +73,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 17:20",
       "Odlazak": "08.07.2026 18:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -209,14 +217,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 12:15",
       "Odlazak": "08.07.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.07.2026 11:55",
-      "Odlazak": "08.07.2026 12:35",
       "Status": "Otišao"
     },
     {
