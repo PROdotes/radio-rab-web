@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-08T12:08:15.557Z",
+  "timestamp": "2026-07-08T12:47:51.301Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
@@ -73,15 +73,15 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 14:10",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 13:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "08.07.2026 14:20",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -97,7 +97,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 13:05",
       "Odlazak": "08.07.2026 14:00",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "San Marino (Lopar)",
