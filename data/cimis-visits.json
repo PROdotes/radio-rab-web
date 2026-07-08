@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-08T17:33:10.430Z",
+  "timestamp": "2026-07-08T18:06:16.200Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -24,7 +24,7 @@
       "Pomorski objekt": "KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 19:25",
-      "Odlazak": "-",
+      "Odlazak": "08.07.2026 19:45",
       "Status": "U dolasku"
     },
     {
@@ -33,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 18:50",
       "Odlazak": "08.07.2026 18:55",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -41,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 18:30",
       "Odlazak": "08.07.2026 18:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
