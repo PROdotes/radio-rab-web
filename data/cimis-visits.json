@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-08T19:48:17.358Z",
+  "timestamp": "2026-07-08T20:19:22.260Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -9,6 +9,14 @@
       "Zastava": "BAHAMI",
       "Dolazak": "14.07.2026 06:30",
       "Odlazak": "14.07.2026 15:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.07.2026 22:25",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -25,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 20:55",
       "Odlazak": "08.07.2026 21:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -161,14 +169,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "08.07.2026 14:10",
       "Odlazak": "08.07.2026 15:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "08.07.2026 13:55",
-      "Odlazak": "08.07.2026 14:20",
       "Status": "Otišao"
     },
     {
