@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-09T19:59:57.821Z",
+  "timestamp": "2026-07-09T20:41:03.951Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -9,6 +9,22 @@
       "Zastava": "BAHAMI",
       "Dolazak": "14.07.2026 06:30",
       "Odlazak": "14.07.2026 15:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KRK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.07.2026 22:25",
+      "Odlazak": "09.07.2026 22:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.07.2026 22:15",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -24,8 +40,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.07.2026 21:45",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "09.07.2026 22:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -81,7 +97,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.07.2026 19:25",
       "Odlazak": "09.07.2026 21:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -284,14 +300,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.07.2026 14:45",
-      "Odlazak": "09.07.2026 15:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "LAHOR",
       "Zastava": "HRVATSKA",
@@ -313,14 +321,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.07.2026 14:15",
       "Odlazak": "09.07.2026 15:19",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KRK",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.07.2026 13:33",
-      "Odlazak": "09.07.2026 13:45",
       "Status": "Otišao"
     },
     {
