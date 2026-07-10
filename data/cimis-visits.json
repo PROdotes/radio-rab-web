@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-10T17:57:00.731Z",
+  "timestamp": "2026-07-10T18:29:45.627Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -15,16 +15,32 @@
       "Luka": "Lopar",
       "Pomorski objekt": "BASKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "10.07.2026 20:30",
+      "Dolazak": "10.07.2026 20:28",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.07.2026 20:25",
       "Odlazak": "-",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "10.07.2026 20:09",
+      "Odlazak": "10.07.2026 20:10",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 20:00",
-      "Odlazak": "-",
+      "Odlazak": "10.07.2026 20:20",
       "Status": "U dolasku"
     },
     {
@@ -40,8 +56,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 19:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "10.07.2026 19:55",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -49,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 19:25",
       "Odlazak": "10.07.2026 19:45",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -305,22 +321,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 14:45",
       "Odlazak": "10.07.2026 14:50",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.07.2026 14:15",
-      "Odlazak": "10.07.2026 15:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.07.2026 14:15",
-      "Odlazak": "10.07.2026 14:30",
       "Status": "Otišao"
     },
     {
