@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-10T20:11:07.118Z",
+  "timestamp": "2026-07-10T20:44:48.453Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -16,7 +16,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 22:25",
-      "Odlazak": "-",
+      "Odlazak": "10.07.2026 22:30",
       "Status": "U dolasku"
     },
     {
@@ -33,7 +33,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 21:50",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -57,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 21:25",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
