@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-07-11T11:31:47.830Z",
+  "timestamp": "2026-07-11T11:53:37.858Z",
   "source": "CIMIS Public Portal",
-  "count": 48,
+  "count": 47,
   "visits": [
     {
       "Luka": "Rab",
@@ -20,6 +20,22 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.07.2026 13:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "11.07.2026 13:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -32,8 +48,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "11.07.2026 13:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "11.07.2026 13:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -41,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "11.07.2026 13:05",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -65,7 +81,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "11.07.2026 12:45",
       "Odlazak": "11.07.2026 13:10",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -276,14 +292,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.07.2026 08:35",
-      "Odlazak": "11.07.2026 09:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -297,14 +305,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "11.07.2026 07:10",
       "Odlazak": "11.07.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.07.2026 06:55",
-      "Odlazak": "11.07.2026 07:25",
       "Status": "Otišao"
     },
     {
@@ -377,14 +377,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "10.07.2026 15:00",
       "Odlazak": "10.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.07.2026 13:10",
-      "Odlazak": "10.07.2026 14:00",
       "Status": "Otišao"
     }
   ]
