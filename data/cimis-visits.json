@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-12T13:01:53.897Z",
+  "timestamp": "2026-07-12T13:37:43.769Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -37,9 +37,25 @@
     },
     {
       "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.07.2026 15:40",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.07.2026 15:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.07.2026 15:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -48,16 +64,16 @@
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.07.2026 14:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "12.07.2026 15:15",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.07.2026 14:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "12.07.2026 15:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -89,7 +105,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "12.07.2026 14:10",
       "Odlazak": "12.07.2026 14:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
@@ -308,27 +324,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.07.2026 09:45",
-      "Odlazak": "12.07.2026 10:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.07.2026 09:05",
       "Odlazak": "12.07.2026 09:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.07.2026 08:55",
-      "Odlazak": "12.07.2026 09:20",
       "Status": "Otišao"
     },
     {
