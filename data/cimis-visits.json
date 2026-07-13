@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-13T20:58:43.830Z",
+  "timestamp": "2026-07-13T21:23:06.672Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -28,12 +28,28 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.07.2026 23:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.07.2026 23:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "13.07.2026 22:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "13.07.2026 23:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -41,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "13.07.2026 22:25",
       "Odlazak": "13.07.2026 22:30",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -49,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "13.07.2026 22:20",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -292,14 +308,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.07.2026 15:45",
-      "Odlazak": "13.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -337,14 +345,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "13.07.2026 15:00",
       "Odlazak": "13.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.07.2026 14:55",
-      "Odlazak": "13.07.2026 15:15",
       "Status": "Otišao"
     },
     {
