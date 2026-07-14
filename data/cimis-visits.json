@@ -1,23 +1,31 @@
 {
-  "timestamp": "2026-07-14T21:42:25.854Z",
+  "timestamp": "2026-07-14T22:07:37.383Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "15.07.2026 00:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 23:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "14.07.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 23:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "14.07.2026 23:59",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -181,8 +189,8 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "BARBA FRANE",
-      "Zastava": "HRVATSKA",
+      "Pomorski objekt": "STORMBORN",
+      "Zastava": "KAJMANSKO OTOČJE",
       "Dolazak": "14.07.2026 18:00",
       "Odlazak": "-",
       "Status": "U dolasku"
@@ -197,8 +205,8 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "STORMBORN",
-      "Zastava": "KAJMANSKO OTOČJE",
+      "Pomorski objekt": "BARBA FRANE",
+      "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 18:00",
       "Odlazak": "-",
       "Status": "U dolasku"
@@ -273,14 +281,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 16:15",
       "Odlazak": "14.07.2026 16:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "14.07.2026 15:45",
-      "Odlazak": "14.07.2026 16:00",
       "Status": "Otišao"
     },
     {
@@ -372,11 +372,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Lopar",
-      "Pomorski objekt": "SILBA",
+      "Luka": "Sv. Grgur (Lopar)",
+      "Pomorski objekt": "GRGA",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 11:00",
-      "Odlazak": "14.07.2026 11:15",
+      "Odlazak": "14.07.2026 12:00",
       "Status": "Otišao"
     }
   ]
