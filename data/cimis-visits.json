@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-14T17:09:46.248Z",
+  "timestamp": "2026-07-14T17:39:16.560Z",
   "source": "CIMIS Public Portal",
   "count": 49,
   "visits": [
@@ -56,8 +56,8 @@
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 18:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "14.07.2026 18:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -121,7 +121,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 17:20",
       "Odlazak": "14.07.2026 18:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
