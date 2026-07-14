@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-14T20:02:23.647Z",
+  "timestamp": "2026-07-14T20:33:36.051Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -8,6 +8,14 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 22:25",
+      "Odlazak": "14.07.2026 22:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.07.2026 22:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -24,8 +32,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 21:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "14.07.2026 22:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -305,14 +313,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "14.07.2026 13:50",
       "Odlazak": "14.07.2026 14:57",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "14.07.2026 13:45",
-      "Odlazak": "14.07.2026 14:00",
       "Status": "Otišao"
     },
     {
