@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-07-16T17:19:58.429Z",
+  "timestamp": "2026-07-16T17:49:25.045Z",
   "source": "CIMIS Public Portal",
-  "count": 48,
+  "count": 47,
   "visits": [
     {
       "Luka": "Valbiska",
@@ -16,7 +16,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.07.2026 19:25",
-      "Odlazak": "-",
+      "Odlazak": "16.07.2026 19:45",
       "Status": "U dolasku"
     },
     {
@@ -33,14 +33,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.07.2026 18:45",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "BARBA ŠIME",
+      "Pomorski objekt": "VOJKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.07.2026 18:30",
-      "Odlazak": "-",
+      "Odlazak": "17.07.2026 09:30",
       "Status": "U dolasku"
     },
     {
@@ -61,10 +61,10 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "VOJKA",
+      "Pomorski objekt": "BARBA ŠIME",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.07.2026 18:30",
-      "Odlazak": "17.07.2026 09:30",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -377,14 +377,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.07.2026 10:39",
       "Odlazak": "16.07.2026 11:38",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.07.2026 06:50",
-      "Odlazak": "16.07.2026 06:55",
       "Status": "Otišao"
     }
   ]
