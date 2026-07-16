@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-16T01:48:45.629Z",
+  "timestamp": "2026-07-16T02:48:32.706Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -7,9 +7,25 @@
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "16.07.2026 00:15",
+      "Dolazak": "16.07.2026 04:45",
       "Odlazak": "-",
-      "Status": "Došao"
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.07.2026 04:15",
+      "Odlazak": "16.07.2026 04:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.07.2026 00:15",
+      "Odlazak": "16.07.2026 04:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -276,14 +292,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.07.2026 15:45",
-      "Odlazak": "15.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
@@ -297,14 +305,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "15.07.2026 15:25",
       "Odlazak": "15.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.07.2026 15:15",
-      "Odlazak": "15.07.2026 15:30",
       "Status": "Otišao"
     },
     {
