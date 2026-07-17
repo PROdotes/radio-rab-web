@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T18:54:19.342Z",
+  "timestamp": "2026-07-17T19:24:34.393Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -20,12 +20,28 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.07.2026 21:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.07.2026 21:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 20:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.07.2026 21:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -49,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 19:50",
       "Odlazak": "17.07.2026 20:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -57,7 +73,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 19:50",
       "Odlazak": "17.07.2026 20:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -284,14 +300,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.07.2026 15:15",
-      "Odlazak": "17.07.2026 16:20",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -337,14 +345,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 14:00",
       "Odlazak": "17.07.2026 14:59",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.07.2026 13:25",
-      "Odlazak": "17.07.2026 13:55",
       "Status": "Otišao"
     },
     {
