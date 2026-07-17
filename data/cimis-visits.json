@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T09:32:34.441Z",
+  "timestamp": "2026-07-17T10:14:48.007Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -29,6 +29,14 @@
     },
     {
       "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.07.2026 13:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Lopar",
       "Pomorski objekt": "KAMELIJA",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 12:55",
@@ -40,8 +48,16 @@
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 11:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.07.2026 11:45",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.07.2026 11:20",
+      "Odlazak": "17.07.2026 11:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
@@ -52,20 +68,12 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.07.2026 11:05",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 11:00",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -81,15 +89,15 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 10:45",
       "Odlazak": "17.07.2026 11:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "LAHOR",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 10:32",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "17.07.2026 11:39",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -112,7 +120,7 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 09:05",
-      "Odlazak": "17.07.2026 09:45",
+      "Odlazak": "17.07.2026 09:55",
       "Status": "Otišao"
     },
     {
@@ -369,14 +377,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.07.2026 17:20",
       "Odlazak": "16.07.2026 18:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "GRGA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.07.2026 15:30",
-      "Odlazak": "17.07.2026 10:00",
       "Status": "Otišao"
     }
   ]
