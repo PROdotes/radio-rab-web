@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-17T19:24:34.393Z",
+  "timestamp": "2026-07-17T20:15:17.006Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -12,6 +12,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.07.2026 22:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -20,20 +28,28 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.07.2026 21:45",
+      "Odlazak": "17.07.2026 22:00",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 21:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.07.2026 21:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 21:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.07.2026 21:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -48,8 +64,8 @@
       "Pomorski objekt": "BASKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 20:28",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "17.07.2026 21:43",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -284,27 +300,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.07.2026 15:45",
-      "Odlazak": "17.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.07.2026 15:25",
       "Odlazak": "17.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.07.2026 15:15",
-      "Odlazak": "17.07.2026 15:30",
       "Status": "Otišao"
     },
     {
