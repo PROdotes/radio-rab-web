@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-19T15:48:18.300Z",
+  "timestamp": "2026-07-19T16:11:02.730Z",
   "source": "CIMIS Public Portal",
   "count": 49,
   "visits": [
@@ -32,6 +32,14 @@
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 18:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 18:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -137,7 +145,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 16:35",
       "Odlazak": "19.07.2026 17:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -369,14 +377,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 11:40",
       "Odlazak": "19.07.2026 12:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 11:10",
-      "Odlazak": "19.07.2026 11:55",
       "Status": "Otišao"
     },
     {
