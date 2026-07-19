@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-19T15:27:06.216Z",
+  "timestamp": "2026-07-19T15:48:18.300Z",
   "source": "CIMIS Public Portal",
   "count": 49,
   "visits": [
@@ -13,10 +13,10 @@
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "ALBATROS DVA",
+      "Pomorski objekt": "KAŽIMIR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 20:30",
-      "Odlazak": "21.07.2026 10:30",
+      "Dolazak": "19.07.2026 20:42",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -28,12 +28,60 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SILBA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 18:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 17:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 17:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "ALBATROS DVA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 17:47",
+      "Odlazak": "21.07.2026 10:30",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 17:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 17:35",
+      "Odlazak": "19.07.2026 17:40",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Rab",
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 17:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "19.07.2026 17:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -48,16 +96,16 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 17:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "19.07.2026 17:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 17:05",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "19.07.2026 17:20",
+      "Status": "Otišao"
     },
     {
       "Luka": "Banjol (Rab)",
@@ -113,7 +161,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 16:15",
       "Odlazak": "19.07.2026 16:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -268,14 +316,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 13:45",
-      "Odlazak": "19.07.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -289,22 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 13:20",
       "Odlazak": "19.07.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 13:15",
-      "Odlazak": "19.07.2026 13:35",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 13:15",
-      "Odlazak": "19.07.2026 13:30",
       "Status": "Otišao"
     },
     {
@@ -340,14 +364,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "SILBA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 12:00",
-      "Odlazak": "19.07.2026 12:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -377,22 +393,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 11:00",
       "Odlazak": "19.07.2026 13:10",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Sv. Grgur (Lopar)",
-      "Pomorski objekt": "LAHOR",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 10:40",
-      "Odlazak": "19.07.2026 11:41",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 10:30",
-      "Odlazak": "19.07.2026 11:00",
       "Status": "Otišao"
     }
   ]
