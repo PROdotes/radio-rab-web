@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-07-19T21:12:55.018Z",
+  "timestamp": "2026-07-19T21:34:40.543Z",
   "source": "CIMIS Public Portal",
-  "count": 49,
+  "count": 48,
   "visits": [
     {
       "Luka": "Rab",
@@ -378,14 +378,6 @@
       "Dolazak": "19.07.2026 13:01",
       "Odlazak": "19.07.2026 16:30",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "VOJKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 13:00",
-      "Odlazak": "20.07.2026 09:30",
-      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
