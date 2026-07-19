@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-19T18:52:05.719Z",
+  "timestamp": "2026-07-19T19:21:12.784Z",
   "source": "CIMIS Public Portal",
   "count": 49,
   "visits": [
@@ -20,11 +20,19 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "19.07.2026 21:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 20:55",
-      "Odlazak": "-",
+      "Odlazak": "19.07.2026 21:15",
       "Status": "U dolasku"
     },
     {
@@ -32,8 +40,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 20:45",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "19.07.2026 21:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -57,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "19.07.2026 19:55",
       "Odlazak": "19.07.2026 20:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -314,14 +322,6 @@
       "Dolazak": "19.07.2026 15:25",
       "Odlazak": "19.07.2026 16:00",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "SVETI MARIN",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "19.07.2026 15:20",
-      "Odlazak": "-",
-      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
