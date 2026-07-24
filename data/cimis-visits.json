@@ -1,8 +1,32 @@
 {
-  "timestamp": "2026-07-24T01:01:45.611Z",
+  "timestamp": "2026-07-24T04:19:17.004Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 43,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.07.2026 07:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "CVIJETA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.07.2026 06:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.07.2026 05:25",
+      "Odlazak": "24.07.2026 05:50",
+      "Status": "Došao"
+    },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
@@ -56,7 +80,7 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.07.2026 21:50",
-      "Odlazak": "-",
+      "Odlazak": "24.07.2026 05:45",
       "Status": "Došao"
     },
     {
@@ -276,22 +300,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.07.2026 15:45",
-      "Odlazak": "23.07.2026 16:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.07.2026 15:20",
-      "Odlazak": "23.07.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
@@ -337,22 +345,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "23.07.2026 13:13",
       "Odlazak": "23.07.2026 16:22",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.07.2026 13:05",
-      "Odlazak": "23.07.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "SILBA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "23.07.2026 11:00",
-      "Odlazak": "23.07.2026 11:15",
       "Status": "Otišao"
     }
   ]
