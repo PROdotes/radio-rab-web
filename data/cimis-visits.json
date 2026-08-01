@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-31T23:42:37.467Z",
+  "timestamp": "2026-08-01T01:14:24.807Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -325,6 +325,14 @@
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
+      "Pomorski objekt": "SAN MARINO",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "31.07.2026 15:10",
+      "Odlazak": "31.07.2026 16:27",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "VOJKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "31.07.2026 15:00",
@@ -362,14 +370,6 @@
       "Dolazak": "31.07.2026 13:00",
       "Odlazak": "31.07.2026 16:28",
       "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "LABUD",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "31.07.2026 12:45",
-      "Odlazak": "-",
-      "Status": "Došao"
     }
   ]
 }
