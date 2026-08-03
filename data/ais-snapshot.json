@@ -1,12 +1,12 @@
 {
-  "name": "CETIRI ZVONIKA",
+  "name": "",
   "mmsi": "238118840",
-  "latitude": 44.705695,
-  "longitude": 14.863521666666665,
-  "speed": 8.7,
-  "course": 288,
-  "heading": 271,
+  "latitude": 44.703880000000005,
+  "longitude": 14.86679,
+  "speed": 7.9,
+  "course": 304,
+  "heading": 312,
   "status": 0,
-  "timestamp": "2026-07-10T15:41:08.505Z",
+  "timestamp": "2026-08-03T11:36:24.676Z",
   "source": "GitHub Action Snapshot"
 }
