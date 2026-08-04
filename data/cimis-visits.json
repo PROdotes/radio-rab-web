@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-03T23:21:09.840Z",
+  "timestamp": "2026-08-04T00:19:07.905Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
@@ -9,6 +9,14 @@
       "Zastava": "BAHAMI",
       "Dolazak": "08.08.2026 06:30",
       "Odlazak": "08.08.2026 15:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.08.2026 02:22",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -306,14 +314,6 @@
       "Dolazak": "03.08.2026 15:25",
       "Odlazak": "-",
       "Status": "Došao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "03.08.2026 15:20",
-      "Odlazak": "03.08.2026 16:00",
-      "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
