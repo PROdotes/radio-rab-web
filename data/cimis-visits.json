@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-05T04:21:29.695Z",
+  "timestamp": "2026-08-05T17:05:23.602Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -12,372 +12,372 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 06:50",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 06:01",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 05:44",
-      "Odlazak": "05.08.2026 05:46",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 05:25",
-      "Odlazak": "05.08.2026 05:45",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 05:15",
-      "Odlazak": "05.08.2026 05:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 04:45",
-      "Odlazak": "05.08.2026 05:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 04:15",
-      "Odlazak": "05.08.2026 04:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 01:35",
-      "Odlazak": "05.08.2026 01:36",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "05.08.2026 00:15",
-      "Odlazak": "05.08.2026 04:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 23:45",
-      "Odlazak": "04.08.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 23:25",
-      "Odlazak": "04.08.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 23:15",
-      "Odlazak": "04.08.2026 23:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 22:45",
-      "Odlazak": "04.08.2026 23:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 22:25",
-      "Odlazak": "04.08.2026 22:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 22:15",
-      "Odlazak": "04.08.2026 22:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 21:45",
-      "Odlazak": "04.08.2026 22:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 21:15",
-      "Odlazak": "04.08.2026 21:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 20:55",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 20:45",
-      "Odlazak": "04.08.2026 21:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 20:15",
-      "Odlazak": "04.08.2026 20:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 19:50",
+      "Dolazak": "05.08.2026 19:50",
       "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 19:45",
-      "Odlazak": "04.08.2026 20:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 19:25",
-      "Odlazak": "04.08.2026 21:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 19:15",
-      "Odlazak": "04.08.2026 19:30",
-      "Status": "Otišao"
+      "Status": "U dolasku"
     },
     {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 18:50",
-      "Odlazak": "04.08.2026 18:55",
+      "Dolazak": "05.08.2026 18:50",
+      "Odlazak": "05.08.2026 18:55",
       "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 18:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
     },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 18:45",
-      "Odlazak": "04.08.2026 19:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "EROS",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 18:40",
-      "Odlazak": "05.08.2026 09:30",
+      "Dolazak": "05.08.2026 18:45",
+      "Odlazak": "-",
       "Status": "Došao"
     },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 18:30",
-      "Odlazak": "04.08.2026 18:45",
+      "Dolazak": "05.08.2026 18:30",
+      "Odlazak": "05.08.2026 18:45",
       "Status": "Otišao"
     },
     {
       "Luka": "Rab",
-      "Pomorski objekt": "MALA MARIS",
+      "Pomorski objekt": "VOJKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 18:30",
-      "Odlazak": "07.08.2026 09:00",
-      "Status": "U dolasku"
+      "Dolazak": "05.08.2026 18:30",
+      "Odlazak": "06.08.2026 09:30",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 18:15",
-      "Odlazak": "-",
+      "Dolazak": "05.08.2026 18:15",
+      "Odlazak": "05.08.2026 18:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 17:55",
+      "Odlazak": "05.08.2026 18:15",
       "Status": "Došao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "SV.VID",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 17:50",
+      "Odlazak": "06.08.2026 08:00",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 17:45",
+      "Odlazak": "05.08.2026 18:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "FELIX",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 17:30",
+      "Odlazak": "06.08.2026 08:00",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 17:20",
+      "Odlazak": "05.08.2026 18:30",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 17:15",
+      "Odlazak": "05.08.2026 17:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 18:02",
-      "Odlazak": "04.08.2026 19:45",
+      "Dolazak": "05.08.2026 16:55",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 16:45",
+      "Odlazak": "05.08.2026 17:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 16:25",
+      "Odlazak": "05.08.2026 16:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 16:15",
+      "Odlazak": "05.08.2026 16:30",
       "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 17:45",
-      "Odlazak": "04.08.2026 18:00",
+      "Dolazak": "05.08.2026 15:45",
+      "Odlazak": "05.08.2026 16:00",
       "Status": "Otišao"
     },
     {
-      "Luka": "Lopar",
+      "Luka": "Rab",
+      "Pomorski objekt": "KAŽIMIR",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 15:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 15:26",
+      "Odlazak": "05.08.2026 16:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 17:20",
-      "Odlazak": "04.08.2026 18:30",
+      "Dolazak": "05.08.2026 15:20",
+      "Odlazak": "05.08.2026 16:00",
       "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 17:15",
-      "Odlazak": "04.08.2026 18:30",
+      "Dolazak": "05.08.2026 15:15",
+      "Odlazak": "05.08.2026 18:30",
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "BARBA ŠIME",
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 17:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 16:25",
-      "Odlazak": "04.08.2026 18:15",
+      "Dolazak": "05.08.2026 15:15",
+      "Odlazak": "05.08.2026 15:30",
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
+      "Luka": "Sv. Grgur (Lopar)",
+      "Pomorski objekt": "VOJKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 15:20",
-      "Odlazak": "04.08.2026 16:00",
+      "Dolazak": "05.08.2026 15:00",
+      "Odlazak": "05.08.2026 16:00",
       "Status": "Otišao"
     },
     {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "LAHOR",
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 14:54",
-      "Odlazak": "04.08.2026 16:06",
+      "Dolazak": "05.08.2026 14:45",
+      "Odlazak": "05.08.2026 15:00",
       "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "BURA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 14:00",
-      "Odlazak": "04.08.2026 14:53",
+      "Dolazak": "05.08.2026 14:45",
+      "Odlazak": "05.08.2026 14:47",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 14:25",
+      "Odlazak": "05.08.2026 15:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 14:15",
+      "Odlazak": "05.08.2026 14:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 13:53",
+      "Odlazak": "05.08.2026 14:20",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 13:45",
+      "Odlazak": "05.08.2026 14:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 13:45",
+      "Odlazak": "05.08.2026 15:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 13:15",
+      "Odlazak": "05.08.2026 13:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 13:10",
+      "Odlazak": "05.08.2026 13:30",
       "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "KAMELIJA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 13:09",
-      "Odlazak": "04.08.2026 15:43",
+      "Dolazak": "05.08.2026 13:10",
+      "Odlazak": "05.08.2026 15:15",
       "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 13:05",
-      "Odlazak": "04.08.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "ANGELINA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 13:05",
-      "Odlazak": "04.08.2026 14:20",
+      "Dolazak": "05.08.2026 13:05",
+      "Odlazak": "05.08.2026 14:00",
       "Status": "Otišao"
     },
     {
       "Luka": "San Marino (Lopar)",
       "Pomorski objekt": "LEONORA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 13:01",
-      "Odlazak": "04.08.2026 16:30",
+      "Dolazak": "05.08.2026 13:00",
+      "Odlazak": "05.08.2026 16:44",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 12:45",
+      "Odlazak": "05.08.2026 13:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 12:40",
+      "Odlazak": "05.08.2026 12:55",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 12:40",
+      "Odlazak": "05.08.2026 13:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 12:15",
+      "Odlazak": "05.08.2026 12:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LINDA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 12:15",
+      "Odlazak": "05.08.2026 13:40",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 12:05",
+      "Odlazak": "05.08.2026 12:35",
       "Status": "Otišao"
     },
     {
       "Luka": "Rab",
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 12:00",
-      "Odlazak": "04.08.2026 17:45",
+      "Dolazak": "05.08.2026 12:00",
+      "Odlazak": "05.08.2026 17:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "KALIPSA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 12:00",
+      "Odlazak": "05.08.2026 15:00",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "05.08.2026 11:45",
+      "Odlazak": "05.08.2026 12:25",
       "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "GRGA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 11:01",
-      "Odlazak": "04.08.2026 12:01",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "SILBA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "04.08.2026 11:00",
-      "Odlazak": "04.08.2026 11:15",
-      "Status": "Otišao"
+      "Dolazak": "05.08.2026 11:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
     }
   ]
 }
