@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-07T17:09:02.420Z",
+  "timestamp": "2026-08-07T18:00:20.533Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -20,12 +20,28 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.08.2026 19:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.08.2026 19:25",
-      "Odlazak": "-",
+      "Odlazak": "07.08.2026 19:45",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "07.08.2026 19:15",
+      "Odlazak": "07.08.2026 19:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -48,8 +64,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "07.08.2026 18:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "07.08.2026 19:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -73,7 +89,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.08.2026 18:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -97,7 +113,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.08.2026 17:20",
       "Odlazak": "07.08.2026 18:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -281,22 +297,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.08.2026 14:10",
       "Odlazak": "07.08.2026 14:35",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "SVETI MARIN",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.08.2026 13:55",
-      "Odlazak": "07.08.2026 14:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.08.2026 13:45",
-      "Odlazak": "07.08.2026 14:00",
       "Status": "Otišao"
     },
     {
