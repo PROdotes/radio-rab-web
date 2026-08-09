@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-09T21:49:37.939Z",
+  "timestamp": "2026-08-09T22:14:25.863Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -16,8 +16,8 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.08.2026 23:25",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "09.08.2026 23:59",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -348,19 +348,19 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Lopar",
-      "Pomorski objekt": "SILBA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.08.2026 11:00",
-      "Odlazak": "09.08.2026 11:15",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "GRGA",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.08.2026 11:00",
       "Odlazak": "09.08.2026 12:03",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SILBA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.08.2026 11:00",
+      "Odlazak": "09.08.2026 11:15",
       "Status": "Otišao"
     }
   ]
