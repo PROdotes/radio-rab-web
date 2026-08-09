@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-08-09T17:15:28.500Z",
+  "timestamp": "2026-08-09T17:49:23.193Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "BASKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.08.2026 20:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
@@ -16,8 +24,16 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.08.2026 19:25",
-      "Odlazak": "-",
+      "Odlazak": "09.08.2026 19:45",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "09.08.2026 19:15",
+      "Odlazak": "-",
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -32,8 +48,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.08.2026 18:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "09.08.2026 19:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -41,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.08.2026 18:30",
       "Odlazak": "09.08.2026 18:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -292,14 +308,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.08.2026 13:30",
-      "Odlazak": "09.08.2026 13:31",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -361,14 +369,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "09.08.2026 09:15",
       "Odlazak": "09.08.2026 09:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "09.08.2026 07:59",
-      "Odlazak": "09.08.2026 08:10",
       "Status": "Otišao"
     }
   ]
