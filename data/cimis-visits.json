@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-08-15T17:21:39.594Z",
+  "timestamp": "2026-08-15T17:57:03.689Z",
   "source": "CIMIS Public Portal",
-  "count": 47,
+  "count": 46,
   "visits": [
     {
       "Luka": "Rab",
@@ -20,20 +20,36 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "15.08.2026 19:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.08.2026 19:32",
-      "Odlazak": "-",
+      "Odlazak": "15.08.2026 19:45",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Kamporska Draga (Rab)",
+      "Pomorski objekt": "NIKOLA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "15.08.2026 19:23",
+      "Odlazak": "-",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.08.2026 19:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "15.08.2026 19:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -188,14 +204,6 @@
       "Status": "Došao"
     },
     {
-      "Luka": "Kamporska Draga (Rab)",
-      "Pomorski objekt": "NIKOLA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.08.2026 15:50",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -276,14 +284,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.08.2026 14:15",
-      "Odlazak": "15.08.2026 14:50",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
@@ -345,14 +345,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "15.08.2026 12:07",
       "Odlazak": "15.08.2026 12:22",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "Pomorski objekt": "SILBA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.08.2026 12:00",
-      "Odlazak": "15.08.2026 12:15",
       "Status": "Otišao"
     },
     {
