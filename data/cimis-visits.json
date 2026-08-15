@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-15T14:47:38.976Z",
+  "timestamp": "2026-08-15T15:02:17.561Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -28,6 +28,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "15.08.2026 16:45",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
@@ -40,8 +48,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.08.2026 16:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "15.08.2026 16:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -220,14 +228,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.08.2026 13:15",
-      "Odlazak": "15.08.2026 13:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -264,8 +264,8 @@
       "Pomorski objekt": "LAHOR",
       "Zastava": "HRVATSKA",
       "Dolazak": "15.08.2026 12:56",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "15.08.2026 16:51",
+      "Status": "Otišao"
     },
     {
       "Luka": "Sv. Eufemija (Rab)",
