@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-16T20:27:46.080Z",
+  "timestamp": "2026-08-16T20:46:39.270Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
@@ -9,6 +9,14 @@
       "Zastava": "FRANCUSKA",
       "Dolazak": "17.08.2026 10:00",
       "Odlazak": "17.08.2026 22:00",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 22:45",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -24,8 +32,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 22:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "16.08.2026 22:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 21:50",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -338,14 +346,6 @@
       "Dolazak": "16.08.2026 15:00",
       "Odlazak": "17.08.2026 08:00",
       "Status": "U dolasku"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "SVETI MARIN",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.08.2026 14:45",
-      "Odlazak": "16.08.2026 15:15",
-      "Status": "Otišao"
     },
     {
       "Luka": "San Marino (Lopar)",
