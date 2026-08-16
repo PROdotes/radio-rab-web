@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-08-16T09:03:08.703Z",
+  "timestamp": "2026-08-16T09:34:49.211Z",
   "source": "CIMIS Public Portal",
-  "count": 47,
+  "count": 48,
   "visits": [
     {
       "Luka": "Rab",
@@ -53,6 +53,30 @@
     },
     {
       "Luka": "Rab",
+      "Pomorski objekt": "SILBA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 12:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "SVETI MARIN",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 11:35",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 11:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
       "Pomorski objekt": "TAJANA KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 11:25",
@@ -60,12 +84,28 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 11:20",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "SVETI MARIN",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 11:10",
+      "Odlazak": "16.08.2026 11:20",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 11:05",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -80,16 +120,16 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 11:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "16.08.2026 11:10",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
       "Pomorski objekt": "SILBA",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 11:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "16.08.2026 11:15",
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -120,8 +160,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 10:35",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "16.08.2026 10:50",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -129,7 +169,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 10:34",
       "Odlazak": "16.08.2026 10:52",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -193,7 +233,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 09:40",
       "Odlazak": "16.08.2026 10:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -252,22 +292,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.08.2026 08:10",
-      "Odlazak": "16.08.2026 08:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.08.2026 07:45",
-      "Odlazak": "16.08.2026 08:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
@@ -289,14 +313,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 07:05",
       "Odlazak": "16.08.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.08.2026 06:50",
-      "Odlazak": "16.08.2026 07:00",
       "Status": "Otišao"
     },
     {
@@ -329,14 +345,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "15.08.2026 21:55",
       "Odlazak": "16.08.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "15.08.2026 20:55",
-      "Odlazak": "15.08.2026 21:15",
       "Status": "Otišao"
     },
     {
