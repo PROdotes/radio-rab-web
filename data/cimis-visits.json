@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-17T15:33:45.142Z",
+  "timestamp": "2026-08-17T15:53:50.965Z",
   "source": "CIMIS Public Portal",
   "count": 49,
   "visits": [
@@ -57,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 16:55",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -65,7 +65,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 16:50",
       "Odlazak": "17.08.2026 17:03",
-      "Status": "U dolasku"
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
