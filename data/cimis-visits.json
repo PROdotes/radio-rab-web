@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-17T07:29:16.699Z",
+  "timestamp": "2026-08-17T08:08:06.727Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
@@ -20,6 +20,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 11:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Rab",
       "Pomorski objekt": "LE BOUGAINVILLE",
       "Zastava": "FRANCUSKA",
@@ -28,20 +36,52 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "SVETI MARIN",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 09:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 09:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 09:45",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "SVETI MARIN",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 09:35",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.08.2026 09:40",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 09:31",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.08.2026 09:35",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 09:15",
+      "Odlazak": "17.08.2026 09:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -52,20 +92,12 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.08.2026 09:15",
-      "Odlazak": "-",
-      "Status": "U dolasku"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "17.08.2026 09:05",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Dolazak": "17.08.2026 09:10",
+      "Odlazak": "17.08.2026 09:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -88,8 +120,8 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 08:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "17.08.2026 09:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -236,35 +268,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.08.2026 00:35",
-      "Odlazak": "17.08.2026 00:50",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.08.2026 00:15",
-      "Odlazak": "17.08.2026 00:25",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 23:45",
       "Odlazak": "16.08.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.08.2026 23:15",
-      "Odlazak": "16.08.2026 23:30",
       "Status": "Otišao"
     },
     {
@@ -297,14 +305,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "16.08.2026 19:55",
       "Odlazak": "16.08.2026 20:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "16.08.2026 19:31",
-      "Odlazak": "16.08.2026 19:45",
       "Status": "Otišao"
     },
     {
