@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-08-17T23:42:43.121Z",
+  "timestamp": "2026-08-17T23:58:21.188Z",
   "source": "CIMIS Public Portal",
-  "count": 39,
+  "count": 47,
   "visits": [
     {
       "Luka": "Mišnjak",
@@ -52,6 +52,14 @@
       "Status": "Otišao"
     },
     {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 22:20",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
@@ -89,6 +97,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 20:45",
       "Odlazak": "17.08.2026 21:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "BASKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 20:28",
+      "Odlazak": "17.08.2026 20:42",
       "Status": "Otišao"
     },
     {
@@ -196,6 +212,14 @@
       "Status": "Otišao"
     },
     {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 17:25",
+      "Odlazak": "17.08.2026 18:30",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Stinica",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
@@ -284,6 +308,14 @@
       "Status": "Došao"
     },
     {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 13:05",
+      "Odlazak": "17.08.2026 14:00",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Rab",
       "Pomorski objekt": "KALIPSA",
       "Zastava": "HRVATSKA",
@@ -308,12 +340,44 @@
       "Status": "Otišao"
     },
     {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 09:10",
+      "Odlazak": "17.08.2026 09:45",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Rab",
       "Pomorski objekt": "LINDA",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 09:00",
       "Odlazak": "-",
       "Status": "Došao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "BASKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "17.08.2026 07:57",
+      "Odlazak": "17.08.2026 08:10",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 21:50",
+      "Odlazak": "17.08.2026 05:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "SAGENA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "16.08.2026 18:57",
+      "Odlazak": "17.08.2026 09:17",
+      "Status": "Otišao"
     }
   ]
 }
