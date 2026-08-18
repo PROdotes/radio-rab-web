@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T07:51:05.673Z",
+  "timestamp": "2026-08-18T08:19:07.402Z",
   "source": "CIMIS Public Portal",
   "count": 49,
   "visits": [
@@ -17,6 +17,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "18.08.2026 18:30",
       "Odlazak": "21.08.2026 09:30",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "BARBA ŠIME",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.08.2026 18:14",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -48,6 +56,14 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "18.08.2026 11:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Sv. Grgur (Lopar)",
+      "Pomorski objekt": "GRGA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.08.2026 11:00",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -104,7 +120,7 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "18.08.2026 08:55",
-      "Odlazak": "-",
+      "Odlazak": "18.08.2026 10:00",
       "Status": "Došao"
     },
     {
@@ -321,7 +337,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 19:25",
       "Odlazak": "18.08.2026 09:15",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Rab",
@@ -364,14 +380,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "STONČICA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.08.2026 14:00",
-      "Odlazak": "18.08.2026 08:52",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -385,14 +393,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.08.2026 09:10",
       "Odlazak": "17.08.2026 09:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.08.2026 07:57",
-      "Odlazak": "17.08.2026 08:10",
       "Status": "Otišao"
     }
   ]
