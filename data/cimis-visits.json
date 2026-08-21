@@ -1,15 +1,47 @@
 {
-  "timestamp": "2026-08-21T07:32:20.463Z",
+  "timestamp": "2026-08-21T08:08:10.402Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.08.2026 11:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "SVETI MARIN",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.08.2026 10:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.08.2026 09:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "SVETI MARIN",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.08.2026 09:45",
+      "Odlazak": "21.08.2026 09:50",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 09:30",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.08.2026 09:40",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -32,16 +64,16 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 09:05",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.08.2026 09:45",
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 08:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.08.2026 10:00",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -204,35 +236,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.08.2026 23:45",
-      "Odlazak": "20.08.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "20.08.2026 23:25",
       "Odlazak": "20.08.2026 23:59",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.08.2026 23:15",
-      "Odlazak": "20.08.2026 23:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.08.2026 22:45",
-      "Odlazak": "20.08.2026 23:00",
       "Status": "Otišao"
     },
     {
@@ -265,14 +273,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "20.08.2026 19:50",
       "Odlazak": "20.08.2026 20:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.08.2026 19:30",
-      "Odlazak": "20.08.2026 21:15",
       "Status": "Otišao"
     },
     {
@@ -328,8 +328,8 @@
       "Pomorski objekt": "MARITIMO",
       "Zastava": "HRVATSKA",
       "Dolazak": "20.08.2026 17:00",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.08.2026 07:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Sv. Grgur (Lopar)",
