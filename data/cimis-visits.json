@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-21T05:00:22.705Z",
+  "timestamp": "2026-08-21T05:32:23.578Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -8,6 +8,14 @@
       "Pomorski objekt": "BASKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 08:00",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.08.2026 07:15",
       "Odlazak": "-",
       "Status": "U dolasku"
     },
@@ -24,8 +32,8 @@
       "Pomorski objekt": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 06:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.08.2026 07:22",
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -36,12 +44,20 @@
       "Status": "Otišao"
     },
     {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.08.2026 06:45",
+      "Odlazak": "21.08.2026 07:00",
+      "Status": "Otišao"
+    },
+    {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 06:29",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "21.08.2026 06:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -268,14 +284,6 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.08.2026 18:15",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "BARBA ŠIME",
       "Zastava": "HRVATSKA",
@@ -289,14 +297,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "20.08.2026 17:55",
       "Odlazak": "20.08.2026 18:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "20.08.2026 17:45",
-      "Odlazak": "20.08.2026 18:30",
       "Status": "Otišao"
     },
     {
