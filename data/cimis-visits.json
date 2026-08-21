@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-21T17:04:28.977Z",
+  "timestamp": "2026-08-21T17:38:45.243Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
@@ -20,6 +20,14 @@
       "Status": "U dolasku"
     },
     {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "21.08.2026 19:15",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
       "Zastava": "HRVATSKA",
@@ -32,8 +40,8 @@
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 18:45",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "21.08.2026 19:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 18:15",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Valbiska",
@@ -73,7 +81,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 17:20",
       "Odlazak": "21.08.2026 18:30",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -233,14 +241,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "21.08.2026 13:40",
       "Odlazak": "21.08.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "21.08.2026 13:35",
-      "Odlazak": "21.08.2026 13:40",
       "Status": "Otišao"
     },
     {
