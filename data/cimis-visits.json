@@ -1,8 +1,16 @@
 {
-  "timestamp": "2026-08-22T16:20:57.735Z",
+  "timestamp": "2026-08-22T16:45:47.165Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "22.08.2026 19:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Rab",
       "Pomorski objekt": "CVIJETA",
@@ -33,7 +41,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.08.2026 17:55",
       "Odlazak": "22.08.2026 18:15",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -41,7 +49,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.08.2026 17:45",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Rab",
@@ -49,7 +57,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.08.2026 17:30",
       "Odlazak": "22.08.2026 17:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Kamporska Draga (Rab)",
@@ -72,7 +80,7 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "22.08.2026 17:20",
-      "Odlazak": "-",
+      "Odlazak": "22.08.2026 18:30",
       "Status": "Došao"
     },
     {
@@ -321,14 +329,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.08.2026 11:06",
       "Odlazak": "22.08.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.08.2026 11:05",
-      "Odlazak": "22.08.2026 11:45",
       "Status": "Otišao"
     },
     {
