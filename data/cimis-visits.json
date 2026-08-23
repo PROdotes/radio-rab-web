@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-23T13:48:08.492Z",
+  "timestamp": "2026-08-23T14:03:44.513Z",
   "source": "CIMIS Public Portal",
   "count": 48,
   "visits": [
@@ -17,6 +17,14 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "23.08.2026 18:00",
       "Odlazak": "24.08.2026 09:00",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.08.2026 17:20",
+      "Odlazak": "-",
       "Status": "U dolasku"
     },
     {
@@ -40,8 +48,8 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.08.2026 15:20",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "23.08.2026 16:00",
+      "Status": "Došao"
     },
     {
       "Luka": "Mišnjak",
@@ -345,14 +353,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "22.08.2026 21:50",
       "Odlazak": "23.08.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "BASKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "22.08.2026 20:29",
-      "Odlazak": "22.08.2026 20:44",
       "Status": "Otišao"
     },
     {
