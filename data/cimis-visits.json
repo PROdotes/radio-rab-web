@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-08-25T18:18:17.749Z",
+  "timestamp": "2026-08-25T19:01:17.629Z",
   "source": "CIMIS Public Portal",
   "count": 46,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.08.2026 21:50",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.08.2026 20:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "ČETIRI ZVONIKA",
@@ -16,8 +32,8 @@
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.08.2026 19:50",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "25.08.2026 20:30",
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -113,7 +129,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "25.08.2026 16:35",
       "Odlazak": "25.08.2026 19:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -284,14 +300,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.08.2026 11:10",
-      "Odlazak": "25.08.2026 11:40",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "GRGA",
       "Zastava": "HRVATSKA",
@@ -328,14 +336,6 @@
       "Pomorski objekt": "PLANKTON",
       "Zastava": "HRVATSKA",
       "Dolazak": "25.08.2026 07:01",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "San Marino (Lopar)",
-      "Pomorski objekt": "TVRDI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.08.2026 07:00",
       "Odlazak": "-",
       "Status": "Došao"
     },
