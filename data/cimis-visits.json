@@ -1,8 +1,24 @@
 {
-  "timestamp": "2026-09-13T21:33:30.639Z",
+  "timestamp": "2026-09-13T23:27:05.944Z",
   "source": "CIMIS Public Portal",
   "count": 47,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "14.09.2026 00:15",
+      "Odlazak": "14.09.2026 00:20",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "ČETIRI ZVONIKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.09.2026 23:45",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
@@ -16,8 +32,8 @@
       "Pomorski objekt": "ČETIRI ZVONIKA",
       "Zastava": "HRVATSKA",
       "Dolazak": "13.09.2026 22:15",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "13.09.2026 23:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
@@ -252,14 +268,6 @@
       "Status": "U dolasku"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.09.2026 14:55",
-      "Odlazak": "13.09.2026 15:26",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Stinica",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
@@ -316,14 +324,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "13.09.2026 12:45",
-      "Odlazak": "13.09.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Sv. Grgur (Lopar)",
       "Pomorski objekt": "LAHOR",
       "Zastava": "HRVATSKA",
@@ -364,20 +364,20 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Luka": "San Marino (Lopar)",
+      "Pomorski objekt": "GRGA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "12.09.2026 17:30",
-      "Odlazak": "12.09.2026 18:30",
+      "Dolazak": "11.09.2026 15:30",
+      "Odlazak": "13.09.2026 10:00",
       "Status": "Otišao"
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "12.09.2026 13:15",
-      "Odlazak": "12.09.2026 14:00",
-      "Status": "Otišao"
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
+      "Status": "Došao"
     }
   ]
 }
