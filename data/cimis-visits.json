@@ -1,23 +1,103 @@
 {
-  "timestamp": "2026-09-26T17:55:27.490Z",
+  "timestamp": "2026-09-26T22:53:38.883Z",
   "source": "CIMIS Public Portal",
-  "count": 44,
+  "count": 42,
   "visits": [
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "27.09.2026 00:14",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 23:45",
+      "Odlazak": "26.09.2026 23:59",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 23:25",
+      "Odlazak": "26.09.2026 23:59",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 22:25",
+      "Odlazak": "26.09.2026 22:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 22:15",
+      "Odlazak": "26.09.2026 23:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Lopar",
+      "Pomorski objekt": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 21:50",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 21:45",
+      "Odlazak": "26.09.2026 22:00",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 20:55",
+      "Odlazak": "26.09.2026 21:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 20:45",
+      "Odlazak": "26.09.2026 21:30",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "Pomorski objekt": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "26.09.2026 20:15",
+      "Odlazak": "26.09.2026 20:30",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
       "Dolazak": "26.09.2026 19:50",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "26.09.2026 20:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
       "Pomorski objekt": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "26.09.2026 19:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "26.09.2026 20:00",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -25,7 +105,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.09.2026 19:25",
       "Odlazak": "-",
-      "Status": "U dolasku"
+      "Status": "Došao"
     },
     {
       "Luka": "Stinica",
@@ -57,7 +137,7 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "26.09.2026 18:35",
       "Odlazak": "26.09.2026 19:45",
-      "Status": "Došao"
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -196,22 +276,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 13:25",
-      "Odlazak": "26.09.2026 15:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 13:15",
-      "Odlazak": "26.09.2026 13:30",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "Pomorski objekt": "LOŠINJ",
       "Zastava": "HRVATSKA",
@@ -228,67 +292,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 12:45",
-      "Odlazak": "26.09.2026 14:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 12:45",
-      "Odlazak": "26.09.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 12:20",
-      "Odlazak": "26.09.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 12:15",
-      "Odlazak": "26.09.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "MLJET",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 12:13",
-      "Odlazak": "26.09.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "Pomorski objekt": "ČETIRI ZVONIKA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 11:45",
-      "Odlazak": "26.09.2026 12:00",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Rab",
       "Pomorski objekt": "TAJANA KRK",
       "Zastava": "HRVATSKA",
       "Dolazak": "26.09.2026 11:40",
       "Odlazak": "26.09.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "26.09.2026 11:10",
-      "Odlazak": "26.09.2026 12:15",
       "Status": "Otišao"
     },
     {
@@ -316,44 +324,20 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "Pomorski objekt": "CVIJETA",
+      "Luka": "Lopar",
+      "Pomorski objekt": "ALBATROS DVA",
       "Zastava": "HRVATSKA",
-      "Dolazak": "25.09.2026 18:50",
-      "Odlazak": "25.09.2026 18:55",
-      "Status": "Otišao"
+      "Dolazak": "18.09.2026 19:18",
+      "Odlazak": "15.10.2026 16:30",
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
+      "Pomorski objekt": "ZELEN BOR",
       "Zastava": "HRVATSKA",
-      "Dolazak": "25.09.2026 17:20",
-      "Odlazak": "25.09.2026 18:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.09.2026 13:05",
-      "Odlazak": "25.09.2026 14:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "25.09.2026 09:05",
-      "Odlazak": "25.09.2026 09:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "24.09.2026 21:50",
-      "Odlazak": "25.09.2026 05:45",
-      "Status": "Otišao"
+      "Dolazak": "16.09.2023 14:12",
+      "Odlazak": "-",
+      "Status": "Došao"
     }
   ]
 }
