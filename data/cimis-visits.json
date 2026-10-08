@@ -1,8 +1,56 @@
 {
-  "timestamp": "2026-10-08T03:00:57.262Z",
+  "timestamp": "2026-10-08T10:09:27.510Z",
   "source": "CIMIS Public Portal",
-  "count": 31,
+  "count": 32,
   "visits": [
+    {
+      "Luka": "Rab",
+      "Pomorski objekt": "EXCELLENCE NERA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.10.2026 14:30",
+      "Odlazak": "09.10.2026 11:00",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.10.2026 11:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.10.2026 10:25",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.10.2026 08:55",
+      "Odlazak": "08.10.2026 10:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.10.2026 06:58",
+      "Odlazak": "08.10.2026 07:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "Pomorski objekt": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "08.10.2026 05:28",
+      "Odlazak": "08.10.2026 05:45",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Valbiska",
       "Pomorski objekt": "BOL",
@@ -49,46 +97,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "07.10.2026 17:55",
       "Odlazak": "07.10.2026 18:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.10.2026 17:20",
-      "Odlazak": "07.10.2026 18:20",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.10.2026 16:25",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.10.2026 14:55",
-      "Odlazak": "07.10.2026 16:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.10.2026 14:25",
-      "Odlazak": "07.10.2026 15:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "Pomorski objekt": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "07.10.2026 13:25",
-      "Odlazak": "07.10.2026 13:45",
       "Status": "Otišao"
     },
     {
