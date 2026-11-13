@@ -1,15 +1,135 @@
 {
-  "timestamp": "2026-11-12T20:26:32.249Z",
+  "timestamp": "2026-11-13T08:03:16.424Z",
   "source": "CIMIS Public Portal",
-  "count": 43,
+  "count": 44,
   "visits": [
+    {
+      "Luka": "Lopar",
+      "POMORSKI_OBJEKT": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 09:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 08:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Mišnjak",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 08:30",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 08:25",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Banjol (Rab)",
+      "POMORSKI_OBJEKT": "LABUD",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 08:11",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Stinica",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 08:00",
+      "Odlazak": "13.11.2026 08:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 07:30",
+      "Odlazak": "13.11.2026 07:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 07:10",
+      "Odlazak": "13.11.2026 07:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 07:00",
+      "Odlazak": "13.11.2026 07:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 06:55",
+      "Odlazak": "13.11.2026 07:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 06:30",
+      "Odlazak": "13.11.2026 06:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 06:00",
+      "Odlazak": "13.11.2026 06:15",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "KORNATI",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 05:25",
+      "Odlazak": "13.11.2026 05:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Mišnjak",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "13.11.2026 00:14",
+      "Odlazak": "13.11.2026 05:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Stinica",
+      "POMORSKI_OBJEKT": "BARBAT",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "12.11.2026 23:45",
+      "Odlazak": "12.11.2026 23:59",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Mišnjak",
       "POMORSKI_OBJEKT": "BARBAT",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.11.2026 20:45",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "12.11.2026 23:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Stinica",
@@ -24,8 +144,8 @@
       "POMORSKI_OBJEKT": "BOL",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.11.2026 19:25",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "13.11.2026 07:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Mišnjak",
@@ -132,14 +252,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Mišnjak",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 13:35",
-      "Odlazak": "12.11.2026 13:40",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Valbiska",
       "POMORSKI_OBJEKT": "BOL",
       "Zastava": "HRVATSKA",
@@ -148,107 +260,11 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Stinica",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 13:15",
-      "Odlazak": "12.11.2026 13:20",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 12:45",
-      "Odlazak": "12.11.2026 13:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 12:15",
-      "Odlazak": "12.11.2026 12:30",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 11:55",
-      "Odlazak": "12.11.2026 12:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 11:55",
-      "Odlazak": "12.11.2026 12:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 11:34",
-      "Odlazak": "12.11.2026 11:40",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Mišnjak",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 11:15",
-      "Odlazak": "12.11.2026 11:25",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Stinica",
-      "POMORSKI_OBJEKT": "BARBAT",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 10:45",
-      "Odlazak": "12.11.2026 11:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "BOL",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 10:25",
-      "Odlazak": "12.11.2026 10:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "POMORSKI_OBJEKT": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 09:05",
-      "Odlazak": "-",
-      "Status": "Došao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 08:55",
-      "Odlazak": "12.11.2026 19:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 07:10",
-      "Odlazak": "12.11.2026 07:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 06:55",
-      "Odlazak": "12.11.2026 07:15",
+      "Dolazak": "12.11.2026 09:15",
+      "Odlazak": "13.11.2026 05:45",
       "Status": "Otišao"
     },
     {
@@ -268,44 +284,12 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "POMORSKI_OBJEKT": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.11.2026 16:50",
-      "Odlazak": "11.11.2026 16:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "POMORSKI_OBJEKT": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.11.2026 09:10",
-      "Odlazak": "11.11.2026 16:00",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Rab",
-      "POMORSKI_OBJEKT": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.11.2026 06:50",
-      "Odlazak": "11.11.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "POMORSKI_OBJEKT": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "10.11.2026 19:50",
-      "Odlazak": "11.11.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "POMORSKI_OBJEKT": "LABUD",
       "Zastava": "HRVATSKA",
       "Dolazak": "09.11.2026 18:43",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Odlazak": "13.11.2026 06:30",
+      "Status": "Otišao"
     },
     {
       "Luka": "Banjol (Rab)",
@@ -324,11 +308,27 @@
       "Status": "Došao"
     },
     {
+      "Luka": "Supetarska Draga - Vardaškolj (Rab)",
+      "POMORSKI_OBJEKT": "MAČEK",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "25.10.2026 09:17",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
       "Luka": "Lopar",
       "POMORSKI_OBJEKT": "SAGENA",
       "Zastava": "HRVATSKA",
       "Dolazak": "12.10.2026 17:55",
       "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Rab",
+      "POMORSKI_OBJEKT": "VOJKA",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.10.2026 19:00",
+      "Odlazak": "01.06.2027 10:00",
       "Status": "Došao"
     },
     {
@@ -338,6 +338,14 @@
       "Dolazak": "28.09.2026 19:00",
       "Odlazak": "-",
       "Status": "U dolasku"
+    },
+    {
+      "Luka": "Rab",
+      "POMORSKI_OBJEKT": "BARBA ŠIME",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "23.09.2026 18:01",
+      "Odlazak": "-",
+      "Status": "Došao"
     },
     {
       "Luka": "Lopar",
