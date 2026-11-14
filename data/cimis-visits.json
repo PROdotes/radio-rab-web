@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-13T21:56:47.124Z",
+  "timestamp": "2026-11-14T01:55:47.592Z",
   "source": "CIMIS Public Portal",
   "count": 45,
   "visits": [
@@ -8,8 +8,8 @@
       "POMORSKI_OBJEKT": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "13.11.2026 22:55",
-      "Odlazak": "-",
-      "Status": "U dolasku"
+      "Odlazak": "13.11.2026 23:59",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -276,22 +276,6 @@
       "Status": "Otišao"
     },
     {
-      "Luka": "Rab",
-      "POMORSKI_OBJEKT": "CVIJETA",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "12.11.2026 06:50",
-      "Odlazak": "12.11.2026 06:55",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Lopar",
-      "POMORSKI_OBJEKT": "LOŠINJ",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "11.11.2026 19:50",
-      "Odlazak": "12.11.2026 05:45",
-      "Status": "Otišao"
-    },
-    {
       "Luka": "Lopar",
       "POMORSKI_OBJEKT": "LABUD",
       "Zastava": "HRVATSKA",
@@ -352,6 +336,22 @@
       "POMORSKI_OBJEKT": "BARBA ŠIME",
       "Zastava": "HRVATSKA",
       "Dolazak": "23.09.2026 18:01",
+      "Odlazak": "-",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Rab",
+      "POMORSKI_OBJEKT": "MALA MARIS",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "04.09.2026 18:30",
+      "Odlazak": "01.06.2027 09:00",
+      "Status": "Došao"
+    },
+    {
+      "Luka": "Rab",
+      "POMORSKI_OBJEKT": "BARBA FRANE",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "24.08.2026 18:09",
       "Odlazak": "-",
       "Status": "Došao"
     },
