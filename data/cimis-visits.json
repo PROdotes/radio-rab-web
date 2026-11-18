@@ -1,8 +1,48 @@
 {
-  "timestamp": "2026-11-18T01:21:46.540Z",
+  "timestamp": "2026-11-18T08:41:02.174Z",
   "source": "CIMIS Public Portal",
-  "count": 33,
+  "count": 34,
   "visits": [
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "OTOK PAŠMAN",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.11.2026 10:45",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Lopar",
+      "POMORSKI_OBJEKT": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.11.2026 09:05",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.11.2026 08:55",
+      "Odlazak": "-",
+      "Status": "U dolasku"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "LOŠINJ",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.11.2026 07:05",
+      "Odlazak": "18.11.2026 07:45",
+      "Status": "Otišao"
+    },
+    {
+      "Luka": "Valbiska",
+      "POMORSKI_OBJEKT": "BOL",
+      "Zastava": "HRVATSKA",
+      "Dolazak": "18.11.2026 06:55",
+      "Odlazak": "18.11.2026 07:15",
+      "Status": "Otišao"
+    },
     {
       "Luka": "Valbiska",
       "POMORSKI_OBJEKT": "BOL",
@@ -23,9 +63,9 @@
       "Luka": "Lopar",
       "POMORSKI_OBJEKT": "LOŠINJ",
       "Zastava": "HRVATSKA",
-      "Dolazak": "17.11.2026 19:40",
-      "Odlazak": "-",
-      "Status": "Došao"
+      "Dolazak": "17.11.2026 19:55",
+      "Odlazak": "18.11.2026 05:45",
+      "Status": "Otišao"
     },
     {
       "Luka": "Valbiska",
@@ -40,7 +80,7 @@
       "POMORSKI_OBJEKT": "KORNATI",
       "Zastava": "HRVATSKA",
       "Dolazak": "17.11.2026 19:25",
-      "Odlazak": "-",
+      "Odlazak": "18.11.2026 09:15",
       "Status": "Došao"
     },
     {
@@ -57,38 +97,6 @@
       "Zastava": "HRVATSKA",
       "Dolazak": "17.11.2026 17:20",
       "Odlazak": "17.11.2026 18:20",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.11.2026 16:25",
-      "Odlazak": "17.11.2026 16:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.11.2026 14:55",
-      "Odlazak": "17.11.2026 15:15",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.11.2026 13:25",
-      "Odlazak": "17.11.2026 13:45",
-      "Status": "Otišao"
-    },
-    {
-      "Luka": "Valbiska",
-      "POMORSKI_OBJEKT": "KORNATI",
-      "Zastava": "HRVATSKA",
-      "Dolazak": "17.11.2026 11:55",
-      "Odlazak": "17.11.2026 12:15",
       "Status": "Otišao"
     },
     {
